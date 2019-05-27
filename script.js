@@ -35,6 +35,8 @@ function addCard() {
     div.innerHTML = "Test Card";
     document.getElementById("test-column").appendChild(div);
 
+
+
 }
 
 /* ADD COLUMN */
@@ -49,4 +51,28 @@ function addColumn() {
     div.setAttribute("ondragover", "dropItem(event)");
     document.getElementById("container").appendChild(div);
 
+}
+
+/* EDIT COLUMN TEXT */
+
+function toggleEditor() {
+   var colText = document.getElementById("col-txt");
+   var theEditor = document.getElementById("tf");
+   var editorArea = document.getElementById("editor");
+   var subject = colText.innerHTML;
+
+   theEditor.value = subject;
+   colText.style.display = "none";
+   editorArea.style.display = "inline";
+}
+
+function doEdit() {
+   var colText = document.getElementById('col-txt');
+   var theEditor = document.getElementById('tf');
+   var editorArea = document.getElementById("editor");
+   var subject = theEditor.value;
+
+   colText.innerHTML = subject;
+   colText.style.display = "inline";
+   editorArea.style.display = "none";
 }

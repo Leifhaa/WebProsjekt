@@ -12,7 +12,14 @@
         <div id="progressbar"><div id="progress"></div></div>
         <div id="container">
         <div id="test-column-holder">
-        <div id="col-txt">To do:</div>
+
+
+        <div id="col-txt" onclick="toggleEditor()">To do:</div>
+        <div id="editor">
+        <input id="tf" name="tf" type="text"></input>
+        <input id="name="submit" id="submit" type="button" value="Edit" onclick="doEdit()" />
+        </div>
+
         <div id="test-column">
 
         </div><!-- test column -->
