@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.min.css' rel='stylesheet' />
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.print.css' media='print' />
+    <title>KALENDER</title>
+</head>
+
+<style>
+    body {
+        margin: 40px 10px;
+        padding: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 14px;
+    }
+
+    #calendar {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+</style>
+
+<body>
+<div id="calendar"></div>
+<div id="title"></div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.min.js'></script>
+<script>
+    $(document).ready(function() {
+
+    $('#calendar').fullCalendar({
+        header: {
+            right: 'prev, next, today',
+            center: 'title',
+            left: 'month, basicWeek, basicDay'
+        },
+        navLinks: true,
+        editable: true,
+        eventLimit: true,
+        events: [
+            {
+                title: 'TTTTTeest', // Variabel til kortnavn her
+                start: '2019-05-26', // Variabel til dato her
+            }
+        ]
+    });
+
+    });
+</script>
+</body>
+</html>
+
