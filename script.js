@@ -3,7 +3,7 @@
 var startCol = document.createElement("div");
 startCol.setAttribute("id", "col_0");
 startCol.setAttribute("class", "column");
-document.getElementById("1col").appendChild(startCol);
+document.getElementById("col1").appendChild(startCol);
 startCol.innerHTML = "<div class='colTitle'>Doing</div>";
 document.getElementById("col1").appendChild(startCol);
 
