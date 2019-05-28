@@ -1,4 +1,3 @@
-
 // GENERATING ID FOR CARDS
 var cardArr = [];
 var testId = 0;
@@ -7,16 +6,14 @@ var delId = 0;
 
 // GENERATING ID FOR COLS
 var colArr = [];
-var testColId = 0;
 var testColName = "Test Col";
 
-
 //Test card
-var Card1 = {ID:"1", 
-			Title:"TitleCard1", 
-			Text:"TextCard1"
+var Card1 = {
+    ID: "1",
+    Title: "TitleCard1",
+    Text: "TextCard1"
 };
-
 
 /* ADD COLUMN */
 
@@ -25,65 +22,62 @@ addCol.addEventListener("click", addColumn);
 
 function addColumn() {
     var div = document.createElement('div');
-
+	columnID = colArr.length;
     div.setAttribute("class", "column");
     div.setAttribute("ondrop", "drop(event)");
     div.setAttribute("ondragover", "dropItem(event)");
 
-    testColId += 1;
-    colArr.push({id : testColId, name : testColName });
-    for (var i = 0; i < colArr.length; i++) {
-        testCol = i;
-    }
+    colArr.push({
+        id: "col_" + columnID,
+        name: testColName
+    });
     console.log(colArr);
-    console.log(testCol);
 
-    div.setAttribute("id", "test-column");
+
+    div.setAttribute("id", "col_" + columnID);
 
     // DELETE COL BUTTON
     var div1 = document.createElement("div");
-    div1.setAttribute("id", "del-col");
-    div1.setAttribute("onclick", "delCol()");
+    div1.setAttribute("id", "del_col" + columnID);
+    div1.setAttribute("onclick", "delCol(this.id)");
     div1.innerHTML = "x";
 
-
     document.getElementById("container").appendChild(div);
-    document.getElementById("test-column").appendChild(div1);
+    document.getElementById("col_" + columnID).appendChild(div1);
 
 }
 
-    // DELETE COL FUNCTION
-    function delCol() {
-        var deleteColumn = document.getElementById("test-column");
-        deleteColumn.parentNode.removeChild(deleteColumn);
-        colArr.pop(testCol);
+// DELETE COL FUNCTION
+function delCol(delID) {
+    var deleteColumn = document.getElementById(delID);
+    deleteColumn.parentNode.remove();
+    colArr.pop(columnID);
+    console.log(colArr)
 }
-
 
 /* EDIT COLUMN TEXT */
 
 function toggleEditor() {
-   var colText = document.getElementById("col-txt");
-   var theEditor = document.getElementById("tf");
-   var editorArea = document.getElementById("editor");
-   var subject = colText.innerHTML;
+    var colText = document.getElementById("col-txt");
+    var theEditor = document.getElementById("tf");
+    var editorArea = document.getElementById("editor");
+    var subject = colText.innerHTML;
 
-   theEditor.value = subject;
-   colText.style.display = "none";
-   editorArea.style.display = "inline";
+    theEditor.value = subject;
+    colText.style.display = "none";
+    editorArea.style.display = "inline";
 }
 
 function doEdit() {
-   var colText = document.getElementById('col-txt');
-   var theEditor = document.getElementById('tf');
-   var editorArea = document.getElementById("editor");
-   var subject = theEditor.value;
+    var colText = document.getElementById('col-txt');
+    var theEditor = document.getElementById('tf');
+    var editorArea = document.getElementById("editor");
+    var subject = theEditor.value;
 
-   colText.innerHTML = subject;
-   colText.style.display = "inline";
-   editorArea.style.display = "none";
+    colText.innerHTML = subject;
+    colText.style.display = "inline";
+    editorArea.style.display = "none";
 }
-
 
 /* ADD CARD */
 
@@ -101,14 +95,17 @@ function addCard() {
 
     // CREATES ID AND NAME IN cardArr
     testId += 1;
-    cardArr.push({id : testId, name : testCardName });
+    cardArr.push({
+        id: testId,
+        name: testCardName
+    });
 
     for (var i = 0; i < cardArr.length; i++) {
         delId = i;
     }
     console.log(delId);
 
-    div.setAttribute("id", "test-card_" + delId);
+    div.setAttribute("id", "test-card_" + testCol);
     // PRINTS THE ARRAY
     console.log(cardArr);
 
@@ -118,23 +115,20 @@ function addCard() {
     div1.setAttribute("onclick", "delCard()");
     div1.innerHTML = "x";
 
-    document.getElementById("test-column_0").appendChild(div);
-    document.getElementById("test-card_" + delId).appendChild(div1);
-
+    document.getElementById("test-column").appendChild(div);
+    document.getElementById("test-card").appendChild(div1);
 
 }
 
-    // DELETE CARD FUNCTION
-    function delCard() {
+// DELETE CARD FUNCTION
+function delCard() {
     var deleteCard = document.getElementById("test-card_" + delId);
     deleteCard.parentNode.removeChild(deleteCard);
     cardArr.pop(delId);
 
-
 }
 
 /* DRAG EVENTS */
- sendAjax()
 
 var tc = document.getElementById("test-column");
 tc.setAttribute("ondrop", "drop(event)");
@@ -159,30 +153,31 @@ function drop(userInt) {
     userInt.target.appendChild(document.getElementById(data));
 }
 
-function sendAjax(){
-                var xhr = new XMLHttpRequest;
-				console.log('UNSENT: ', xhr.status);
+function sendAjax() {
+    var xhr = new XMLHttpRequest;
+    console.log('UNSENT: ', xhr.status);
 
-				xhr.open('POST', '/',true);
-				console.log('OPENED: ', xhr.status);
+    xhr.open('POST', '/', true);
+    console.log('OPENED: ', xhr.status);
 
-				xhr.onprogress = function () {
-				  console.log('LOADING: ', xhr.status);
-				};
+    xhr.onprogress = function() {
+        console.log('LOADING: ', xhr.status);
+    }
+    ;
 
-				xhr.onload = function () {
-				  console.log('DONE: ', xhr.status);
-				};
+    xhr.onload = function() {
+        console.log('DONE: ', xhr.status);
+    }
+    ;
 
-				/*xhr.send();
+    /*xhr.send();
 				*/
-				xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
-				jsonSend = JSON.stringify(Card1);
-				console.log(jsonSend);
-                xhr.send(jsonSend);
+    xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+    jsonSend = JSON.stringify(Card1);
+    console.log(jsonSend);
+    xhr.send(jsonSend);
 
-
-				/**
+    /**
 				 * Outputs the following:
 				 *
 				 * UNSENT: 0
@@ -191,14 +186,13 @@ function sendAjax(){
 				 * DONE: 200
 				 */
 
-                /*xhr.onreadystatechange = function(){
+    /*xhr.onreadystatechange = function(){
                     if(xhr.readyState==4 && xhr.status == 200){
                         console.log(xhr.responseText);
                     }
                 }
 				*/
-				
- }
- 
- sendAjax()
 
+}
+
+//sendAjax()
