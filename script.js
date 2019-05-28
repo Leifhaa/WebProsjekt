@@ -166,7 +166,7 @@ function drop(userInt) {
     var dropElement = userInt.dataTransfer.getData("text");
 
     //Always append the card to column, not to another card.
-    if (targetClass == "column" || targetClass == "del_col" ) {
+    if (targetClass == "column") {
     	userInt.target.append(document.getElementById(dropElement));
     }
     else{
