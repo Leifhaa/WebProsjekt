@@ -41,8 +41,16 @@ app.post('/', function(req, res) {
   // Return the POST message
   //var asd = JSON.stringify(post_body);
   //res.send(post_body);
-  
+  console.log(JSON.stringify(req.body))
+  console.log(__dirname +  "/input2.json")
+  fs.writeFile (__dirname +  "/input2.json", JSON.stringify(req.body), function(err) {
+    if (err) throw err;
+    console.log('complete');
+    }
+);
 });
+
+
 
 var server = app.listen(8081, function () {
    var host = server.address().address

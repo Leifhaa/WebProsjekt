@@ -8,5 +8,5 @@ var jason = JSON.stringify(Card);
 
 console.log("Stop");
 
-fs.writeFile('myjsonfile.json', json, 'utf8', callback);
+fs.writeFile('/myjsonfile.json', json, 'utf8', callback);
 alert("stop");
