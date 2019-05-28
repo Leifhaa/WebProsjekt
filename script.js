@@ -40,7 +40,7 @@ function addColumn() {
     var div1 = document.createElement("div");
     div1.setAttribute("id", "del_col" + columnID);
     div1.setAttribute("onclick", "delCol(this.id)");
-    div1.innerHTML = "x";
+    div1.innerHTML = "<i class='fas fa-times'></i>";
 
     document.getElementById("container").appendChild(div);
     document.getElementById("col_" + columnID).appendChild(div1);
@@ -87,25 +87,20 @@ testBtn.addEventListener("click", addCard);
 function addCard() {
     var divHold = document.createElement("divHold");
     var div = document.createElement("div");
-
+    cardID = cardArr.length;
     div.setAttribute("class", "cardStyle");
     div.setAttribute("draggable", true);
     div.setAttribute("ondragstart", "drag(event)");
     div.innerHTML = testCardName;
 
     // CREATES ID AND NAME IN cardArr
-    testId += 1;
     cardArr.push({
-        id: testId,
+        id: "card_" + cardID,
         name: testCardName
     });
-
-    for (var i = 0; i < cardArr.length; i++) {
-        delId = i;
-    }
     console.log(delId);
 
-    div.setAttribute("id", "test-card_" + testCol);
+    div.setAttribute("id", "card_" + cardID);
     // PRINTS THE ARRAY
     console.log(cardArr);
 
@@ -113,16 +108,16 @@ function addCard() {
     var div1 = document.createElement("div");
     div1.setAttribute("id", "del-card");
     div1.setAttribute("onclick", "delCard()");
-    div1.innerHTML = "x";
+    div1.innerHTML = "<i class='fas fa-times'></i>";
 
-    document.getElementById("test-column").appendChild(div);
-    document.getElementById("test-card").appendChild(div1);
+    document.getElementById("col_0").appendChild(div);
+    document.getElementById("card_" + cardID).appendChild(div1);
 
 }
 
 // DELETE CARD FUNCTION
 function delCard() {
-    var deleteCard = document.getElementById("test-card_" + delId);
+    var deleteCard = document.getElementById("card_" + cardID);
     deleteCard.parentNode.removeChild(deleteCard);
     cardArr.pop(delId);
 
