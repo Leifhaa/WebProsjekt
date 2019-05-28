@@ -4,7 +4,7 @@ var startCol = document.createElement("div");
 startCol.setAttribute("id", "col_0");
 startCol.setAttribute("class", "column");
 document.getElementById("col1").appendChild(startCol);
-startCol.innerHTML = "<div class='colTitle'>Doing</div>";
+startCol.innerHTML = "<div class='column'>Doing</div>";
 document.getElementById("col1").appendChild(startCol);
 
 
@@ -37,7 +37,7 @@ function addColumn() {
     div.setAttribute("class", "column");
     div.setAttribute("ondrop", "drop(event)");
     div.setAttribute("ondragover", "dropItem(event)");
-    div.innerHTML = "<div class='colTitle'>Doing</div>";
+    div.innerHTML = "<div class='column'>Doing</div>";
 
     colArr.push({
         id: "col_" + columnID,
@@ -51,7 +51,7 @@ function addColumn() {
     // DELETE COL BUTTON
     var div1 = document.createElement("div");
     div1.setAttribute("id", "del_col" + columnID);
-    div1.setAttribute("class", "del_col");
+    div1.setAttribute("class", "column");
     div1.setAttribute("onclick", "delCol(this.id)");
     div1.innerHTML = "<i class='fas fa-times'></i>";
 
