@@ -1,14 +1,18 @@
 body {
-    background-color:  #03a9f4;
+    background-color: #4a148c;
+    background-image: linear-gradient(315deg, #4a148c 0%, #12005e 100%);
     margin: 0;
+    padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #111;
 }
+
 
 header {
     position: relative;
     height: 60px;
     width: 100%;
-    background-color: #111111;
+    background-color: #ffffff;
     margin-bottom: 20px;
 }
 /* SCROLL BAR STYLING */
@@ -34,13 +38,28 @@ header {
 
 #logo {
     position: absolute;
-    top: 5px;
-    left: 0;
+    top: 20px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
     font-weight: 700;
     font-size: 40px;
     letter-spacing: -2px;
-    color: #ffffff;
-    margin-left: 20px;
+    padding-top: 0px;
+    background-image: url(logotest.svg);
+    background-repeat: no-repeat;
+
+}
+
+#logoText {
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    width: 250px;
+    height: 40px;
+    font-weight: 700;
+    font-size: 25px;
+    letter-spacing: -2px;
     padding-top: 0px;
 
 }
@@ -67,30 +86,32 @@ header {
     position: absolute;
     right: 0;
     margin-top: 10px;
-    margin-right: 20px;
-    width: 40px;
-    height: 40px;
+    margin-right: 60px;
+    width: 34px;
+    height: 34px;
     background-color: #ffffff;
     background-image: url("profile1.png");
     background-size: cover;
     border-radius: 50%;
+    border: 3px solid #4a148c;
 
 }
 #boardContainer {
     width: 100%;
-    min-height: 500px;
+    height: 500px;
     overflow: scroll;
     overflow-y: hidden;
 
 }
 
 #container {
-    min-height: 100%;
+    min-height: 300px;
     display: inline-flex;
     flex-direction: row;
     align-items: flex-start;
     align-content: flex-start;
     vertical-align: top;
+
 
 
 }
@@ -159,7 +180,7 @@ header {
 }
 
 .delColStyle:hover {
-    color: #000;
+    color: #c62828;
 }
 
 .delCardStyle {
@@ -172,7 +193,7 @@ header {
 }
 
 .delCardStyle:hover {
-    color: #000;
+    color: #c62828;
 }
 
 .cardStyle {
@@ -221,13 +242,13 @@ header {
     position: absolute;
     bottom: -20px;
     left: 130px;
-    background-color: #cccccc;
+    background-color: #29b6f6;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     border-radius: 50%;
     height: 40px;
     width: 40px;
-    border: none;
+    border: 3px solid #0085c1;
     outline:none;
     cursor: pointer;
     color: #fff;
@@ -237,29 +258,31 @@ header {
 }
 
 #addCardBtn.btnStyle:hover {
-    background-color: #a5d6a7;
+    background-color: #0085c1;
     transition: ease .5s;
 
 }
 
 #addColumnBtn.btnStyle {
-    background-color: #a5d6a7;
+    background-color: #ffffff;
+    border: 3px solid #4a148c;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     border-radius: 50%;
     height: 40px;
     width: 40px;
-    border: none;
     outline:none;
     cursor: pointer;
-    color: #fff;
+    color: #4a148c;
     font-size: 16px;
 
 }
 
 #addColumnBtn.btnStyle:hover {
-    background-color: #66bb6a;
+    background-color: #4a148c;
+    border: 3px solid #4a148c;
     transition: ease .5s;
+    color: #ffffff;
 
 }
 
