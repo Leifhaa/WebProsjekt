@@ -1,7 +1,7 @@
 //Adds a start column to the board
 
 var startCol = document.createElement("div");
-startCol.setAttribute("id", "startCol");
+startCol.setAttribute("id", "col_0");
 startCol.setAttribute("class", "column");
 document.getElementById("1col").appendChild(startCol);
 
@@ -118,7 +118,7 @@ function addCard() {
     div1.setAttribute("onclick", "delCard(this.id)");
     div1.innerHTML = "<i class='fas fa-times'></i>";
 
-    document.getElementById("startCol").appendChild(div);
+    document.getElementById("col_0").appendChild(div);
     document.getElementById("card_" + cardID).appendChild(div1);
 
     cardID += 1;
@@ -135,13 +135,12 @@ function delCard(cardID) {
 
 /* DRAG EVENTS */
 
-var tc = document.getElementById("startCol");
+var tc = document.getElementById("col_0");
 tc.setAttribute("ondrop", "drop(event)");
 tc.setAttribute("ondragover", "dropItem(event)");
 
 function dropItem(userInt) {
     userInt.preventDefault();
-
     if (userInt.target.getAttribute("draggable") == "true")
         userInt.dataTransfer.dropEffect = "none";
     else
@@ -153,9 +152,20 @@ function drag(userInt) {
 }
 
 function drop(userInt) {
+	console.log("Dropped")
+	console.log(userInt.target.className);
     userInt.preventDefault();
-    var data = userInt.dataTransfer.getData("text");
-    userInt.target.appendChild(document.getElementById(data));
+    var targetClass = userInt.target.className;
+    var dropElement = userInt.dataTransfer.getData("text");
+
+    //Always append the card to column, not to another card.
+    if (targetClass == "column" ) {
+    	userInt.target.append(document.getElementById(dropElement));
+    }
+    else{
+    	//Duplicate parentNodes due to div 'deleteCard' causing multiple childs.
+    	userInt.target.parentNode.parentNode.append(document.getElementById(dropElement));
+    }
 }
 
 function sendAjax() {
