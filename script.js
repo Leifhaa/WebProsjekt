@@ -11,6 +11,13 @@ var testColId = 0;
 var testColName = "Test Col";
 
 
+//Test card
+var Card1 = {ID:"1", 
+			Title:"TitleCard1", 
+			Text:"TextCard1"
+};
+
+
 /* ADD COLUMN */
 
 var addCol = document.getElementById("addColumn");
@@ -31,7 +38,7 @@ function addColumn() {
     console.log(colArr);
     console.log(testCol);
 
-    div.setAttribute("id", "test-column_" + testCol);
+    div.setAttribute("id", "test-column");
 
     // DELETE COL BUTTON
     var div1 = document.createElement("div");
@@ -41,13 +48,13 @@ function addColumn() {
 
 
     document.getElementById("container").appendChild(div);
-    document.getElementById("test-column_" + testCol).appendChild(div1);
+    document.getElementById("test-column").appendChild(div1);
 
 }
 
     // DELETE COL FUNCTION
     function delCol() {
-        var deleteColumn = document.getElementById("test-column_" + testCol);
+        var deleteColumn = document.getElementById("test-column");
         deleteColumn.parentNode.removeChild(deleteColumn);
         colArr.pop(testCol);
 }
@@ -127,8 +134,9 @@ function addCard() {
 }
 
 /* DRAG EVENTS */
+ sendAjax()
 
-var tc = document.getElementById("test-column_" + testCol);
+var tc = document.getElementById("test-column");
 tc.setAttribute("ondrop", "drop(event)");
 tc.setAttribute("ondragover", "dropItem(event)");
 
@@ -150,3 +158,47 @@ function drop(userInt) {
     var data = userInt.dataTransfer.getData("text");
     userInt.target.appendChild(document.getElementById(data));
 }
+
+function sendAjax(){
+                var xhr = new XMLHttpRequest;
+				console.log('UNSENT: ', xhr.status);
+
+				xhr.open('POST', '/',true);
+				console.log('OPENED: ', xhr.status);
+
+				xhr.onprogress = function () {
+				  console.log('LOADING: ', xhr.status);
+				};
+
+				xhr.onload = function () {
+				  console.log('DONE: ', xhr.status);
+				};
+
+				/*xhr.send();
+				*/
+				xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+				jsonSend = JSON.stringify(Card1);
+				console.log(jsonSend);
+                xhr.send(jsonSend);
+
+
+				/**
+				 * Outputs the following:
+				 *
+				 * UNSENT: 0
+				 * OPENED: 0
+				 * LOADING: 200
+				 * DONE: 200
+				 */
+
+                /*xhr.onreadystatechange = function(){
+                    if(xhr.readyState==4 && xhr.status == 200){
+                        console.log(xhr.responseText);
+                    }
+                }
+				*/
+				
+ }
+ 
+ sendAjax()
+
