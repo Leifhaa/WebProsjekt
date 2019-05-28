@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.min.css' rel='stylesheet' />
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.print.css' media='print' />
+    <link href='fullcalendar/core/main.css' rel='stylesheet' />
+    <link href='fullcalendar/daygrid/main.css' rel='stylesheet' />
     <title>KALENDER</title>
 </head>
 
@@ -24,34 +25,48 @@
 </style>
 
 <body>
-<div id="calendar"></div>
-<div id="title"></div>
+    <div id="calendar"></div>
 
-<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.min.js'></script>
-<script>
-    $(document).ready(function() {
+    <p id="demo"></p>
 
-    $('#calendar').fullCalendar({
-        header: {
-            right: 'prev, next, today',
-            center: 'title',
-            left: 'month, basicWeek, basicDay'
-        },
-        navLinks: true,
-        editable: true,
-        eventLimit: true,
-        events: [
-            {
-                title: 'TTTTTeest', // Variabel til kortnavn her
-                start: '2019-05-26', // Variabel til dato her
-            }
-        ]
-    });
+    <script src='fullcalendar/core/main.js'></script>
+    <script src='fullcalendar/daygrid/main.js'></script>
 
-    });
-</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: ['dayGrid'],
+                defaultView: 'dayGridMonth',
+                header: {
+                    center: 'addEventButton'
+                },
+                customButtons: {
+                    addEventButton: {
+                        text: 'Add event',
+                        click: function () {
+                            var eventName = prompt('Enter a name');
+                            var dateStr = prompt('Enter date in YYYY-MM-DD')
+                            var date = new Date(dateStr + 'T00:00:00');
+
+                            if (!isNaN(date.valueOf())) { // valid?
+                                calendar.addEvent({
+                                    title: eventName,
+                                    start: date,
+                                    allDay: true
+                                });
+                            } else {
+                                alert('Invalid date.');
+                            }
+                        }
+                    }
+                }
+            });
+
+            calendar.render();
+        });
+    </script>
 </body>
-</html>
 
+</html>
