@@ -4,6 +4,8 @@ var startCol = document.createElement("div");
 startCol.setAttribute("id", "col_0");
 startCol.setAttribute("class", "column");
 document.getElementById("1col").appendChild(startCol);
+startCol.innerHTML = "<div class='colTitle'>Doing</div>";
+document.getElementById("col1").appendChild(startCol);
 
 
 // GENERATING ID FOR CARDS
@@ -30,10 +32,12 @@ var addCol = document.getElementById("addColumn");
 addCol.addEventListener("click", addColumn);
 
 function addColumn() {
+
     var div = document.createElement('div');
     div.setAttribute("class", "column");
     div.setAttribute("ondrop", "drop(event)");
     div.setAttribute("ondragover", "dropItem(event)");
+    div.innerHTML = "<div class='colTitle'>Doing</div>";
 
     colArr.push({
         id: "col_" + columnID,
@@ -47,6 +51,7 @@ function addColumn() {
     // DELETE COL BUTTON
     var div1 = document.createElement("div");
     div1.setAttribute("id", "del_col" + columnID);
+    div1.setAttribute("class", "delColStyle");
     div1.setAttribute("onclick", "delCol(this.id)");
     div1.innerHTML = "<i class='fas fa-times'></i>";
 
@@ -115,10 +120,12 @@ function addCard() {
     // DELETE CARD BUTTON
     var div1 = document.createElement("div");
     div1.setAttribute("id", "del-card_" + cardID);
+    div1.setAttribute("class", "delCardStyle");
     div1.setAttribute("onclick", "delCard(this.id)");
     div1.innerHTML = "<i class='fas fa-times'></i>";
 
     document.getElementById("col_0").appendChild(div);
+
     document.getElementById("card_" + cardID).appendChild(div1);
 
     cardID += 1;
