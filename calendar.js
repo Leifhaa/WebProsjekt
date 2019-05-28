@@ -16,11 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     var eventName = prompt('Enter a name');
                     var dateStr = prompt('Enter date in YYYY-MM-DD');
                     var date = new Date(dateStr + 'T00:00:00');
+                    var eventColor = prompt('Choose color');
 
-                    if (!isNaN(date.valueOf())) { // valid?
+                    if (!isNaN(date.valueOf())) { //Date check
                         calendar.addEvent({
                             title: eventName,
                             start: date,
+                            color: eventColor,
                             allDay: true
                         });
                     } else {
