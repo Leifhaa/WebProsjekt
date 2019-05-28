@@ -51,7 +51,7 @@ function addColumn() {
     // DELETE COL BUTTON
     var div1 = document.createElement("div");
     div1.setAttribute("id", "del_col" + columnID);
-    div1.setAttribute("class", "delColStyle");
+    div1.setAttribute("class", "del_col");
     div1.setAttribute("onclick", "delCol(this.id)");
     div1.innerHTML = "<i class='fas fa-times'></i>";
 
@@ -166,7 +166,7 @@ function drop(userInt) {
     var dropElement = userInt.dataTransfer.getData("text");
 
     //Always append the card to column, not to another card.
-    if (targetClass == "column" ) {
+    if (targetClass == "column" || targetClass == "del_col" ) {
     	userInt.target.append(document.getElementById(dropElement));
     }
     else{
