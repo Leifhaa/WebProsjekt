@@ -135,7 +135,7 @@ function delCard(cardID) {
 
 /* DRAG EVENTS */
 
-var tc = document.getElementById("test-column");
+var tc = document.getElementById("startCol");
 tc.setAttribute("ondrop", "drop(event)");
 tc.setAttribute("ondragover", "dropItem(event)");
 
