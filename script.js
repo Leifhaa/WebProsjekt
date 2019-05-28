@@ -1,11 +1,12 @@
 // GENERATING ID FOR CARDS
 var cardArr = [];
-var testId = 0;
+var cardID = 0;
 var testCardName = "Test Card";
 var delId = 0;
 
 // GENERATING ID FOR COLS
 var colArr = [];
+var columnID = 0
 var testColName = "Test Col";
 
 //Test card
@@ -22,7 +23,6 @@ addCol.addEventListener("click", addColumn);
 
 function addColumn() {
     var div = document.createElement('div');
-	columnID = colArr.length;
     div.setAttribute("class", "column");
     div.setAttribute("ondrop", "drop(event)");
     div.setAttribute("ondragover", "dropItem(event)");
@@ -44,6 +44,8 @@ function addColumn() {
 
     document.getElementById("container").appendChild(div);
     document.getElementById("col_" + columnID).appendChild(div1);
+
+	 columnID += 1;
 
 }
 
@@ -87,7 +89,6 @@ testBtn.addEventListener("click", addCard);
 function addCard() {
     var divHold = document.createElement("divHold");
     var div = document.createElement("div");
-    cardID = cardArr.length;
     div.setAttribute("class", "cardStyle");
     div.setAttribute("draggable", true);
     div.setAttribute("ondragstart", "drag(event)");
@@ -98,7 +99,6 @@ function addCard() {
         id: "card_" + cardID,
         name: testCardName
     });
-    console.log(delId);
 
     div.setAttribute("id", "card_" + cardID);
     // PRINTS THE ARRAY
@@ -106,19 +106,21 @@ function addCard() {
 
     // DELETE CARD BUTTON
     var div1 = document.createElement("div");
-    div1.setAttribute("id", "del-card");
-    div1.setAttribute("onclick", "delCard()");
+    div1.setAttribute("id", "del-card_" + cardID);
+    div1.setAttribute("onclick", "delCard(this.id)");
     div1.innerHTML = "<i class='fas fa-times'></i>";
 
     document.getElementById("col_0").appendChild(div);
     document.getElementById("card_" + cardID).appendChild(div1);
 
+    cardID += 1;
+
 }
 
 // DELETE CARD FUNCTION
-function delCard() {
-    var deleteCard = document.getElementById("card_" + cardID);
-    deleteCard.parentNode.removeChild(deleteCard);
+function delCard(cardID) {
+    var deleteCard = document.getElementById(cardID);
+    deleteCard.parentNode.remove();
     cardArr.pop(delId);
 
 }
