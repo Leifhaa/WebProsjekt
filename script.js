@@ -2,10 +2,16 @@
 
 var startCol = document.createElement("div");
 startCol.setAttribute("id", "col_0");
-startCol.setAttribute("class", "column");
-document.getElementById("col1").appendChild(startCol);
-startCol.innerHTML = "<div class='column'>Doing</div>";
-document.getElementById("col1").appendChild(startCol);
+startCol.setAttribute("class", "column colStyle");
+startCol.innerHTML = "<div id='colName' class='column colTitle'>Doing</div><button id='addCardBtn' class='btnStyle'><i class='fas fa-plus'></i></button>";
+document.getElementById("container").appendChild(startCol);
+
+
+var addColBtn1 = document.createElement("button");
+addColBtn1.setAttribute("id", "addColumnBtn");
+addColBtn1.setAttribute("class", "btnStyle");
+addColBtn1.innerHTML = "<i class='fas fa-plus'></i>";
+document.getElementById("head").appendChild(addColBtn1);
 
 
 // GENERATING ID FOR CARDS
@@ -28,16 +34,16 @@ var Card1 = {
 
 /* ADD COLUMN */
 
-var addCol = document.getElementById("addColumn");
+var addCol = document.getElementById("addColumnBtn");
 addCol.addEventListener("click", addColumn);
 
 function addColumn() {
 
     var div = document.createElement('div');
-    div.setAttribute("class", "column");
+    div.setAttribute("class", "column colStyle");
     div.setAttribute("ondrop", "drop(event)");
     div.setAttribute("ondragover", "dropItem(event)");
-    div.innerHTML = "<div class='column'>Doing</div>";
+    div.innerHTML = "<div class='column colTitle'>Doing</div>";
 
     colArr.push({
         id: "col_" + columnID,
@@ -51,7 +57,7 @@ function addColumn() {
     // DELETE COL BUTTON
     var div1 = document.createElement("div");
     div1.setAttribute("id", "del_col" + columnID);
-    div1.setAttribute("class", "column");
+    div1.setAttribute("class", "column delColStyle");
     div1.setAttribute("onclick", "delCol(this.id)");
     div1.innerHTML = "<i class='fas fa-times'></i>";
 
@@ -96,11 +102,10 @@ function doEdit() {
 
 /* ADD CARD */
 
-var testBtn = document.getElementById("testBtn");
-testBtn.addEventListener("click", addCard);
+var addCardBtn = document.getElementById("addCardBtn");
+addCardBtn.addEventListener("click", addCard);
 
 function addCard() {
-    var divHold = document.createElement("divHold");
     var div = document.createElement("div");
     div.setAttribute("class", "cardStyle");
     div.setAttribute("draggable", true);
@@ -166,7 +171,7 @@ function drop(userInt) {
     var dropElement = userInt.dataTransfer.getData("text");
 
     //Always append the card to column, not to another card.
-    if (targetClass == "column") {
+    if (targetClass == "column colStyle") {
     	userInt.target.append(document.getElementById(dropElement));
     }
     else{

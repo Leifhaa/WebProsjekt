@@ -5,14 +5,36 @@ body {
 }
 
 header {
+    position: relative;
     height: 60px;
     width: 100%;
     background-color: #111111;
     margin-bottom: 20px;
 }
+/* SCROLL BAR STYLING */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #29b6f6;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0288d1;
+}
+
+::-webkit-scrollbar-corner {
+    background: none;
+}
 
 #logo {
     position: absolute;
+    top: 5px;
     left: 0;
     font-weight: 700;
     font-size: 40px;
@@ -56,21 +78,25 @@ header {
 }
 #boardContainer {
     width: 100%;
-    height: 400px;
+    min-height: 500px;
     overflow: scroll;
+    overflow-y: hidden;
+
 }
 
 #container {
-    min-width: 100px;
-    min-height: 80px;
+    min-height: 100%;
     display: inline-flex;
     flex-direction: row;
     align-items: flex-start;
+    align-content: flex-start;
+    vertical-align: top;
+
 
 }
 
 #test-column-holder {
-
+    position: relative;
 
 }
 
@@ -81,7 +107,7 @@ header {
 
 #test-column {
     width: 270px;
-    min-height: 50px;
+    min-height: 100px;
     background-color: #ffffff;
     padding: 20px 20px 10px 20px;
     margin: auto;
@@ -97,21 +123,30 @@ header {
     position: relative;
 }
 
+#col1 {
+    position: relative;
+}
+
 .colTitle {
-    position: absolute;
+    position: relative;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .column {
+
+}
+
+.colStyle {
     position: relative;
     width: 270px;
-    min-height: 50px;
+    min-height: 100px;
     background-color: #ffffff;
-    padding: 20px 20px 10px 20px;
-    margin: auto;
+    padding: 20px 20px 20px 20px;
     margin-left: 20px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.07);
     border-radius: 2px;
+
 }
 
 .delColStyle {
@@ -123,6 +158,10 @@ header {
     cursor: pointer;
 }
 
+.delColStyle:hover {
+    color: #000;
+}
+
 .delCardStyle {
     position: absolute;
     top: 10px;
@@ -132,27 +171,8 @@ header {
     cursor: pointer;
 }
 
-#test-column-2 {
-    width: 270px;
-    min-height: 50px;
-    background-color: #ffffff;
-    padding: 20px 20px 10px 20px;
-    margin: auto;
-    margin-left: 20px;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-    border-radius: 2px;
-    transition: height 2s;
-
-}
-
-#test-card {
-    width: 260px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    padding: 10px 5px 10px 5px;
-    background-color: #f5f5f5;
-    align-self: flex-start;
-
+.delCardStyle:hover {
+    color: #000;
 }
 
 .cardStyle {
@@ -192,20 +212,69 @@ header {
     cursor: pointer;
 }
 
-#testBtn {
-    position: relative;
+#addCardBtn {
+
+
 }
 
-#addColumn {
-    position: relative;
+#addCardBtn.btnStyle {
+    position: absolute;
+    bottom: -20px;
+    left: 130px;
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    border: none;
+    outline:none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    transition: ease .5s;
+
+}
+
+#addCardBtn.btnStyle:hover {
+    background-color: #a5d6a7;
+    transition: ease .5s;
+
+}
+
+#addColumnBtn.btnStyle {
+    background-color: #a5d6a7;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    border: none;
+    outline:none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+
+}
+
+#addColumnBtn.btnStyle:hover {
+    background-color: #66bb6a;
+    transition: ease .5s;
+
+}
+
+#addColumnBtn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
 }
 
 #button-holder {
-    position: relative;
+
     color: #fff;
     font-size: 14px;
-    margin-left: 20px;
-    margin-top: 10px;
+
 }
 
 #idgen {
