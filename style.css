@@ -63,7 +63,7 @@ header {
 }
 
 #test-column-holder {
-    margin-left: 20px;
+
 
 }
 
@@ -154,6 +154,7 @@ header {
 #button-holder {
     color: #fff;
     font-size: 14px;
+    margin-left: 20px;
 }
 
 #idgen {

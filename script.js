@@ -1,3 +1,11 @@
+//Adds a start column to the board
+
+var startCol = document.createElement("div");
+startCol.setAttribute("id", "startCol");
+startCol.setAttribute("class", "column");
+document.getElementById("1col").appendChild(startCol);
+
+
 // GENERATING ID FOR CARDS
 var cardArr = [];
 var cardID = 0;
@@ -6,7 +14,7 @@ var delId = 0;
 
 // GENERATING ID FOR COLS
 var colArr = [];
-var columnID = 0
+var columnID = 1;
 var testColName = "Test Col";
 
 //Test card
@@ -110,7 +118,7 @@ function addCard() {
     div1.setAttribute("onclick", "delCard(this.id)");
     div1.innerHTML = "<i class='fas fa-times'></i>";
 
-    document.getElementById("col_0").appendChild(div);
+    document.getElementById("startCol").appendChild(div);
     document.getElementById("card_" + cardID).appendChild(div1);
 
     cardID += 1;
