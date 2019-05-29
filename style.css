@@ -341,3 +341,9 @@ header {
     outline: none;
     padding: 0;
 }
+
+#lolid {
+    width: 100px;
+    height: 50px;
+    background-color: #ff00cc;
+}

@@ -38,12 +38,12 @@ var addCol = document.getElementById("addColumnBtn");
 addCol.addEventListener("click", addColumn);
 
 function addColumn() {
-    var testColName = prompt("Type the name of your column!");
+    div.innerHTML = "<div class='column colTitle'>" + testColName + "</div>";
     var div = document.createElement('div');
     div.setAttribute("class", "column colStyle");
     div.setAttribute("ondrop", "drop(event)");
     div.setAttribute("ondragover", "dropItem(event)");
-    div.innerHTML = "<div class='column colTitle'>" + testColName + "</div>";
+
 
 
 
@@ -52,7 +52,6 @@ function addColumn() {
         name: testColName
     });
     console.log(colArr);
-
 
     div.setAttribute("id", "col_" + columnID);
 
@@ -108,12 +107,26 @@ var addCardBtn = document.getElementById("addCardBtn");
 addCardBtn.addEventListener("click", addCard);
 
 function addCard() {
-    var testCardName = prompt("Type the name of your card!");
+    //var testCardName = prompt("Type the name of your card!");
     var div = document.createElement("div");
     div.setAttribute("class", "cardStyle");
     div.setAttribute("draggable", true);
     div.setAttribute("ondragstart", "drag(event)");
-    div.innerHTML = testCardName;
+
+
+    // CARD TITLE
+    var addCardTitle = document.createElement('input');
+    addCardTitle.type = "text";
+    addCardTitle.setAttribute("class", "editCardTitle");
+    addCardTitle.setAttribute("id", "cardTitleTest");
+
+    var cardTitleBtn = document.createElement('button');
+    cardTitleBtn.addEventListener("click", addTitle);
+    cardTitleBtn.innerHTML ="OK";
+
+
+
+
 
     // CREATES ID AND NAME IN cardArr
     cardArr.push({
@@ -125,6 +138,8 @@ function addCard() {
     // PRINTS THE ARRAY
     console.log(cardArr);
 
+
+
     // DELETE CARD BUTTON
     var div1 = document.createElement("div");
     div1.setAttribute("id", "del-card_" + cardID);
@@ -135,10 +150,39 @@ function addCard() {
     document.getElementById("col_0").appendChild(div);
 
     document.getElementById("card_" + cardID).appendChild(div1);
+    document.getElementById("card_" + cardID).appendChild(addCardTitle);
+    document.getElementById("card_" + cardID).appendChild(cardTitleBtn);
 
     cardID += 1;
 
 }
+
+function addTitle() {
+    var titleValue = document.getElementById("cardTitleTest");
+    var titleName = document.createElement("div");
+    titleName.innerHTML = titleValue.value;
+
+
+    /*var div = document.createElement("div");
+    div.setAttribute("id", "lolid");
+    div.innerHTML = "TEST TEST TEST TEST";*/
+
+    document.getElementById("card_0").appendChild(titleName);
+
+
+
+}
+
+/*
+    document.getElementById("card_" + cardID).appendChild(div);
+
+
+
+    var titleValue = document.getElementById("editColTitle");
+    var titlePlacement = document.getElementById("card_" + cardId);
+    titlePlacement.innerHTML = titleValue.value;
+
+    */
 
 // DELETE CARD FUNCTION
 function delCard(cardID) {
