@@ -47,12 +47,13 @@ function addColumn() {
 
 
 
+
+
     colArr.push({
         id: "col_" + columnID,
         name: testColName
     });
     console.log(colArr);
-
 
     div.setAttribute("id", "col_" + columnID);
 
@@ -108,12 +109,32 @@ var addCardBtn = document.getElementById("addCardBtn");
 addCardBtn.addEventListener("click", addCard);
 
 function addCard() {
-    var testCardName = prompt("Type the name of your card!");
+    //Card
     var div = document.createElement("div");
-    div.setAttribute("class", "cardStyle");
+    div.setAttribute("class", "card cardID" + cardID);
     div.setAttribute("draggable", true);
     div.setAttribute("ondragstart", "drag(event)");
-    div.innerHTML = testCardName;
+    div.setAttribute("id", "card_" + cardID);
+
+    var cardTitle = document.createElement("div");
+    cardTitle.setAttribute("id", "cardTitleText_" + cardID);
+    cardTitle.setAttribute("class", "card cardID" + cardID);
+
+
+    // CARD TITLE INPUT
+    var addCardTitle = document.createElement('input');
+    addCardTitle.type = "text";
+    addCardTitle.setAttribute("class", "card cardID" + cardID);
+    addCardTitle.setAttribute("id", "cardTitleInput_" + cardID);
+
+
+	//CARD TITLE INPUT OK BUTTON
+    var cardTitleBtn = document.createElement('button');
+    cardTitleBtn.setAttribute("class","card cardID" + cardID);
+    cardTitleBtn.setAttribute("id","cardTitleBtn_" + cardID)
+    cardTitleBtn.setAttribute("onclick", "addCardTitle(this.className)");
+    cardTitleBtn.innerHTML ="OK";
+
 
     // CREATES ID AND NAME IN cardArr
     cardArr.push({
@@ -121,22 +142,53 @@ function addCard() {
         name: testCardName
     });
 
-    div.setAttribute("id", "card_" + cardID);
     // PRINTS THE ARRAY
     console.log(cardArr);
+
+
 
     // DELETE CARD BUTTON
     var div1 = document.createElement("div");
     div1.setAttribute("id", "del-card_" + cardID);
-    div1.setAttribute("class", "delCardStyle");
+    div1.setAttribute("class", "card cardID" + cardID);
     div1.setAttribute("onclick", "delCard(this.id)");
     div1.innerHTML = "<i class='fas fa-times'></i>";
 
     document.getElementById("col_0").appendChild(div);
 
+    document.getElementById("card_" + cardID).appendChild(cardTitle);
     document.getElementById("card_" + cardID).appendChild(div1);
+    document.getElementById("card_" + cardID).appendChild(addCardTitle);
+    document.getElementById("card_" + cardID).appendChild(cardTitleBtn);
 
     cardID += 1;
+
+}
+
+function addCardTitle(csName) {
+	var cardID
+	var cardIDindx;
+	if (csName.includes("cardID")){
+		//Extract the classID of card
+		cardIDindx = csName.indexOf("cardID") + 6;
+		var nextSpc = csName.indexOf(' ',cardIDindx)
+		if (nextSpc = -1){
+			nextSpc = csName.length //There's no more spaces in str.
+		}
+		cardID = csName.substring(cardIDindx, nextSpc);
+	}
+	else{
+		return;
+	}
+    var cardInputElem = document.getElementById("cardTitleInput_" + cardID);
+    var cardBtn = document.getElementById("cardTitleBtn_" + cardID);
+    var cardTitle = document.getElementById("cardTitleText_" + cardID);
+    cardTitle.innerHTML = cardInputElem.value;
+    cardInputElem.remove();
+    cardBtn.remove();
+   //document.getElementById("card_0").appendChild(titleName);
+
+
 
 }
 

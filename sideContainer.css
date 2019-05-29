@@ -1,0 +1,47 @@
+#sideContainer {
+    position: fixed;
+    right: 0;
+    top: 35%;
+    width: 5.5em;
+    height: 11em;
+    margin: 0;
+    z-index: 5;
+}
+
+.squareContainer {
+    position: absolute;
+    right: 0;
+}
+
+#calendarContainer {
+    bottom: 50%;
+}
+
+#statisticsContainer {
+    top: 50%;
+}
+
+.sideSquare {
+    position: relative;
+    right: 0;
+    width: 5em;
+    height: 5em;
+    border: solid black 0.1em;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+.sideSquareIcon {
+    text-align: center;
+    padding: 2em;
+    border: 0;
+    margin: 0;
+    font-weight: 900;
+}
+
+#calendarSquare:hover, #statisticsSquare:hover {
+    width: 5.5em;
+    height: 5.5em;
+    transition: all .5s;
+    cursor: pointer;
+}
