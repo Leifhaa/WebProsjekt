@@ -5,26 +5,32 @@
     <link rel="stylesheet" href="fullCard.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-
+    <script src="fullCard.js"></script>
     <title>Document</title>
 </head>
 <body>
 
-    <button onclick="document.getElementById('card').style.display='block'" style='width:auto;'>
-    Edit card</button>
+
+    <div class="infoBox">
+        <div class="infoBox-button">
+            <button onclick="document.getElementById('card').style.display='block'" style='width:auto;'>
+            Edit</button>
+        </div>
+        <h1 id="showInfo">Do work</h1>
+    </div>
 
     <div id="card" class="modal">
-        <form class="modal-content animate">
+        <form id="infoForm" class="modal-content animate">
             <div class="container">
                 <label for="title">
                     <b>Title</b>
                 </label>
                 <i class="fas fa-pencil-alt edit"></i>
-                <input type="text" placeholder="Enter title" required name="title">
+                <input type="text" name="title" placeholder="Enter title" required>
                 <label for="desc">
                     <b>Description</b>
                 </label>
-                <input type="text" placeholder="Enter description" name="desc">
+                <input type="text" name="desc" placeholder="Enter description">
 
                 <i class="fas fa-plus-square fa-2x pluscolor"></i>
                 <i class="fas fa-user-ninja fa-2x avatar"></i>
@@ -44,23 +50,10 @@
                 to
                 <input type="date" name="date-end" id="date-end">
 
-                <button type="submit" onclick="changeColor()">Confirm</button>
+                <button type="button" onclick="displayInfo()">Confirm</button>
             </div>
         </form>
     </div>
-
-    <script>
-        var modal = document.getElementById('card');
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        function changeColor(color) {
-            document.getElementsByClassName('modal-content')[0].style.border = color;
-        }
-    </script>
     
 </body>
 </html>

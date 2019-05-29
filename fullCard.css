@@ -117,3 +117,18 @@ input[type=date] {
 .pink {
     color: pink;
 }
+
+.infoBox {
+    background-color: pink;
+    max-width: 250px;
+    padding: 10px;
+    text-align: left;
+    border-radius: 2%;
+
+    overflow: hidden;
+}
+
+.infoBox-button {
+    text-align: center;
+    float: right;
+}
