@@ -109,21 +109,26 @@ var addCardBtn = document.getElementById("addCardBtn");
 addCardBtn.addEventListener("click", addCard);
 
 function addCard() {
-    //var testCardName = prompt("Type the name of your card!");
+    //Card
     var div = document.createElement("div");
-    div.setAttribute("class", "cardStyle");
+    div.setAttribute("class", "card cardID" + cardID);
     div.setAttribute("draggable", true);
     div.setAttribute("ondragstart", "drag(event)");
+    div.setAttribute("id", "card_" + cardID);
 
 
-    // CARD TITLE
+    // CARD TITLE INPUT
     var addCardTitle = document.createElement('input');
     addCardTitle.type = "text";
-    addCardTitle.setAttribute("class", "editCardTitle");
-    addCardTitle.setAttribute("id", "cardTitleTest");
+    addCardTitle.setAttribute("class", "card cardID" + cardID);
+    addCardTitle.setAttribute("id", "cardTitle_" + cardID);
 
+
+	//CARD TITLE INPUT OK BUTTON
     var cardTitleBtn = document.createElement('button');
-    cardTitleBtn.addEventListener("click", addTitle);
+    cardTitleBtn.setAttribute("class","card cardID" + cardID);
+    cardTitleBtn.setAttribute("id","cardTitleBtn_" + cardID)
+    cardTitleBtn.setAttribute("onclick", "addCardTitle(this.className)");
     cardTitleBtn.innerHTML ="OK";
 
 
@@ -133,7 +138,6 @@ function addCard() {
         name: testCardName
     });
 
-    div.setAttribute("id", "card_" + cardID);
     // PRINTS THE ARRAY
     console.log(cardArr);
 
@@ -142,7 +146,7 @@ function addCard() {
     // DELETE CARD BUTTON
     var div1 = document.createElement("div");
     div1.setAttribute("id", "del-card_" + cardID);
-    div1.setAttribute("class", "delCardStyle");
+    div1.setAttribute("class", "card cardID" + cardID);
     div1.setAttribute("onclick", "delCard(this.id)");
     div1.innerHTML = "<i class='fas fa-times'></i>";
 
@@ -156,11 +160,25 @@ function addCard() {
 
 }
 
-function addTitle() {
-    var titleValue = document.getElementById("cardTitleTest");
-    var titleName = document.createElement("div");
-    titleName.innerHTML = titleValue.value;
-    document.getElementById("card_0").appendChild(titleName);
+function addCardTitle(csName) {
+	var cardID
+	var cardIDindx;
+	if (csName.includes("cardID")){
+		//Extract the classID of card
+		cardIDindx = csName.indexOf("cardID") + 6;
+		var nextSpc = csName.indexOf(' ',cardIDindx)
+		if (nextSpc = -1){
+			nextSpc = csName.length //There's no more spaces in str. 
+		}
+		cardID = csName.substring(cardIDindx, nextSpc);
+	}
+	else{
+		return;
+	}
+    var cardElem = document.getElementById("cardTitle_" + cardID);
+    console.log(cardElem.value);
+    cardElem.innerHTML = cardElem.value;
+   //document.getElementById("card_0").appendChild(titleName);
 
 
 
