@@ -38,12 +38,14 @@ var addCol = document.getElementById("addColumnBtn");
 addCol.addEventListener("click", addColumn);
 
 function addColumn() {
-
+    var testColName = prompt("Type the name of your column!");
     var div = document.createElement('div');
     div.setAttribute("class", "column colStyle");
     div.setAttribute("ondrop", "drop(event)");
     div.setAttribute("ondragover", "dropItem(event)");
-    div.innerHTML = "<div class='column colTitle'>Doing</div>";
+    div.innerHTML = "<div class='column colTitle'>" + testColName + "</div>";
+
+
 
     colArr.push({
         id: "col_" + columnID,
@@ -106,6 +108,7 @@ var addCardBtn = document.getElementById("addCardBtn");
 addCardBtn.addEventListener("click", addCard);
 
 function addCard() {
+    var testCardName = prompt("Type the name of your card!");
     var div = document.createElement("div");
     div.setAttribute("class", "cardStyle");
     div.setAttribute("draggable", true);
