@@ -117,7 +117,7 @@ function addCard() {
     div.setAttribute("id", "card_" + cardID);
 
     var cardTitle = document.createElement("div");
-    cardTitle.setAttribute("id", "cardTitleText");
+    cardTitle.setAttribute("id", "cardTitleText_" + cardID);
     cardTitle.setAttribute("class", "card cardID" + cardID);
 
 
@@ -180,9 +180,12 @@ function addCardTitle(csName) {
 	else{
 		return;
 	}
-    var cardElem = document.getElementById("cardTitle_" + cardID);
-    console.log(cardElem.value);
-    cardElem.innerHTML = cardElem.value;
+    var cardInputElem = document.getElementById("cardTitleInput_" + cardID);
+    var cardBtn = document.getElementById("cardTitleBtn_" + cardID);
+    var cardTitle = document.getElementById("cardTitleText_" + cardID);
+    cardTitle.innerHTML = cardInputElem.value;
+    cardInputElem.remove();
+    cardBtn.remove();
    //document.getElementById("card_0").appendChild(titleName);
 
 
