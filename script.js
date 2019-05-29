@@ -116,12 +116,16 @@ function addCard() {
     div.setAttribute("ondragstart", "drag(event)");
     div.setAttribute("id", "card_" + cardID);
 
+    var cardTitle = document.createElement("div");
+    cardTitle.setAttribute("id", "cardTitleText");
+    cardTitle.setAttribute("class", "card cardID" + cardID);
+
 
     // CARD TITLE INPUT
     var addCardTitle = document.createElement('input');
     addCardTitle.type = "text";
     addCardTitle.setAttribute("class", "card cardID" + cardID);
-    addCardTitle.setAttribute("id", "cardTitle_" + cardID);
+    addCardTitle.setAttribute("id", "cardTitleInput_" + cardID);
 
 
 	//CARD TITLE INPUT OK BUTTON
@@ -152,6 +156,7 @@ function addCard() {
 
     document.getElementById("col_0").appendChild(div);
 
+    document.getElementById("card_" + cardID).appendChild(cardTitle);
     document.getElementById("card_" + cardID).appendChild(div1);
     document.getElementById("card_" + cardID).appendChild(addCardTitle);
     document.getElementById("card_" + cardID).appendChild(cardTitleBtn);
@@ -168,7 +173,7 @@ function addCardTitle(csName) {
 		cardIDindx = csName.indexOf("cardID") + 6;
 		var nextSpc = csName.indexOf(' ',cardIDindx)
 		if (nextSpc = -1){
-			nextSpc = csName.length //There's no more spaces in str. 
+			nextSpc = csName.length //There's no more spaces in str.
 		}
 		cardID = csName.substring(cardIDindx, nextSpc);
 	}
