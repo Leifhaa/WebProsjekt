@@ -38,11 +38,13 @@ var addCol = document.getElementById("addColumnBtn");
 addCol.addEventListener("click", addColumn);
 
 function addColumn() {
-    div.innerHTML = "<div class='column colTitle'>" + testColName + "</div>";
+    var testColName = prompt("Type the name of your column!");
     var div = document.createElement('div');
     div.setAttribute("class", "column colStyle");
     div.setAttribute("ondrop", "drop(event)");
     div.setAttribute("ondragover", "dropItem(event)");
+    div.innerHTML = "<div class='column colTitle'>" + testColName + "</div>";
+
 
 
 
@@ -125,9 +127,6 @@ function addCard() {
     cardTitleBtn.innerHTML ="OK";
 
 
-
-
-
     // CREATES ID AND NAME IN cardArr
     cardArr.push({
         id: "card_" + cardID,
@@ -161,28 +160,11 @@ function addTitle() {
     var titleValue = document.getElementById("cardTitleTest");
     var titleName = document.createElement("div");
     titleName.innerHTML = titleValue.value;
-
-
-    /*var div = document.createElement("div");
-    div.setAttribute("id", "lolid");
-    div.innerHTML = "TEST TEST TEST TEST";*/
-
     document.getElementById("card_0").appendChild(titleName);
 
 
 
 }
-
-/*
-    document.getElementById("card_" + cardID).appendChild(div);
-
-
-
-    var titleValue = document.getElementById("editColTitle");
-    var titlePlacement = document.getElementById("card_" + cardId);
-    titlePlacement.innerHTML = titleValue.value;
-
-    */
 
 // DELETE CARD FUNCTION
 function delCard(cardID) {
