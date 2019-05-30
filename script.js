@@ -40,9 +40,12 @@ addCol.addEventListener("click", addColumn);
 function addColumn() {
     var testColName = prompt("Type the name of your column!");
     var div = document.createElement('div');
-    div.setAttribute("class", "column colStyle");
+    div.setAttribute("class", "column droptarget colStyle");
+
     div.setAttribute("ondrop", "drop(event)");
-    div.setAttribute("ondragover", "dropItem(event)");
+    div.setAttribute("ondragover", "dragOver(event)");
+    div.setAttribute("ondragenter", "dragEnter(event)");
+    div.setAttribute("ondragleave", "dragLeave(event)");
     div.innerHTML = "<div class='column colTitle'>" + testColName + "</div>";
 
 
@@ -136,14 +139,14 @@ function addCard() {
     cardTitleBtn.setAttribute("class","card cardOkBtn cardID" + cardID);
     cardTitleBtn.setAttribute("id","cardTitleBtn_" + cardID)
     cardTitleBtn.setAttribute("onclick", "addCardTitle(this.className)");
-    cardTitleBtn.innerHTML ="OK";
+    cardTitleBtn.innerHTML ="Ok";
 
     //CARD TITLE INPUT CANCEL BUTTON
     var cardTitleBtnCancel = document.createElement('button');
     cardTitleBtnCancel.setAttribute("class","card cardCancelBtn cardID" + cardID);
     cardTitleBtnCancel.setAttribute("id","cardTitleBtnCancel_" + cardID)
     cardTitleBtnCancel.setAttribute("onclick", "delCard(this.id)");
-    cardTitleBtnCancel.innerHTML ="CANCEL";
+    cardTitleBtnCancel.innerHTML ="Cancel";
 
 
     // CREATES ID AND NAME IN cardArr
@@ -187,9 +190,9 @@ function addCard() {
     cardID += 1;
 
 }
-
+var cardID
 function addCardTitle(csName) {
-	var cardID
+
 	var cardIDindx;
 	if (csName.includes("cardID")){
 		//Extract the classID of card
@@ -277,49 +280,87 @@ function closeEditor() {
 
 var tc = document.getElementById("col_0");
 tc.setAttribute("ondrop", "drop(event)");
-tc.setAttribute("ondragover", "dropItem(event)");
+tc.setAttribute("ondragover", "dragOver(event)");
+tc.setAttribute("ondragenter", "dragEnter(event)");
 
 // ADJUSTS TRASHCAN ICON
 var cardTrash = document.getElementById("deleteObj");
 cardTrash.setAttribute("ondrop", "drop(event)");
-cardTrash.setAttribute("ondragover", "dropItem(event)");
+cardTrash.setAttribute("ondragover", "dragOver(event)");
 
-function dropItem(userInt) {
+
+function dragOver(dragEv) {
     cardTrash.setAttribute("class", "dragging");
 
-    userInt.preventDefault();
-    if (userInt.target.getAttribute("draggable") == "true")
-        userInt.dataTransfer.dropEffect = "none";
+    dragEv.preventDefault();
+    if (dragEv.target.getAttribute("draggable") == "true")
+        dragEv.dataTransfer.dropEffect = "none";
     else
-        userInt.dataTransfer.dropEffect = "all";
+        dragEv.dataTransfer.dropEffect = "all";
 
 }
 
-function drag(userInt) {
-    userInt.dataTransfer.setData("text", userInt.target.id);
+// WHEN CARD ENTERS COL DO THIS
+function dragEnter(dragEv) {
+    var targetClass = dragEv.target.className;
+
+    if (targetClass.includes ("droptarget")) {
+        dragEv.target.style.border = "3px dotted red";
+}
+}
+
+// WHEN CARD LEAVES COL DO THIS
+function dragLeave(dragEv) {
+    var targetClass = dragEv.target.className;
+
+    if (targetClass.includes ("droptarget")) {
+    dragEv.target.style.border = "";
+  }
 
 }
 
-function drop(userInt) {
+// WHEN DRAG ENDS
+function dragEnd(dragEv) {
+
+
+
+
+}
+
+function drag(dragEv) {
+
+    dragEv.dataTransfer.setData("text", dragEv.target.id);
+
+
+
+}
+
+function drop(dragEv) {
 	console.log("Dropped")
-	console.log(userInt.target.className);
-    userInt.preventDefault();
-    var targetClass = userInt.target.className;
-    var dropElementText = userInt.dataTransfer.getData("text");
+	console.log(dragEv.target.className);
+    dragEv.preventDefault();
+    var targetClass = dragEv.target.className;
+    var dropElementText = dragEv.dataTransfer.getData("text");
     var dropElement = document.getElementById(dropElementText);
+
+    var targetClass = dragEv.target.className;
+
+    if (targetClass.includes ("droptarget")) {
+    dragEv.target.style.border = "";
+  }
 
 
     //Always append the card to column, not to another card.
     if (targetClass.includes ("column")) {
-    	userInt.target.append(dropElement);
+    	dragEv.target.append(dropElement);
     }
     else if (targetClass.includes("trash")){
     	dropElement.remove();
-		
+
     }
     else{
     	//Duplicate parentNodes due to div 'deleteCard' causing multiple childs.
-    	userInt.target.parentNode.parentNode.append(document.getElementById(dropElement));
+    	dragEv.target.parentNode.parentNode.append(document.getElementById(dropElement));
     }
 }
 
