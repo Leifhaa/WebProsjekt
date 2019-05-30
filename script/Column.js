@@ -35,9 +35,9 @@ function addColumn() {
         name: testColName
     });
     console.log(colArr);
-	
+
 	if (columnID == 0){
-	   div.innerHTML = "<div id='colName' class='column colTitle'>Doing</div><button id='addCardBtn' class='btnStyle'><i class='fas fa-plus'></i></button>";
+	   div.innerHTML = "<div id='colName' class='column colTitle'>" + testColName + "</div><button id='addCardBtn' class='btnStyle'><i class='fas fa-plus'></i></button>";
     }
     div.setAttribute("id", "col_" + columnID);
 
