@@ -67,6 +67,15 @@ input[type=date] {
     padding: 0 0 0 10px;
 }
 
+input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
 .container {
     padding: 30px;
 }
@@ -90,16 +99,6 @@ input[type=date] {
 
 .fas {
     padding: 10px 10px 10px 0px;
-}
-
-.avatar {
-    color: black;
-}
-
-.avatar:active,
-.avatar:focus,
-.avatar:hover {
-    color: red;
 }
 
 .red {
@@ -149,6 +148,6 @@ input[type=date] {
     cursor: pointer;
 }
 
-[type=checkbox] + img {
-    cursor: pointer;
+[type=checkbox]:checked + .avatar {
+    color: red;
 }

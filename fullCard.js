@@ -15,20 +15,22 @@ function changeAvatarColor(color) {
 
 var allCards = [];
 
-function Card(title, desc, dateStart, dateEnd, color, persons) {
+function Card(title, desc, dateStart, dateEnd, color, persons, id, budget) {
     this.title = title;
     this.desc = desc;
     this.dateStart = dateStart;
     this.dateEnd = dateEnd;
     this.color = color;
     this.persons = persons;
+    this.id = id;
+    this.budget = budget;
 }
 
-function addCard(title, desc, dateStart, dateEnd, color, persons) {
-    allCards.push(new Card(title, desc, dateStart, dateEnd, color, persons));
+function editCard(title, desc, dateStart, dateEnd, color, persons, id, budget) {
+    allCards.push(new Card(title, desc, dateStart, dateEnd, color, persons, id, budget));
 }
 
-function pushData(form, name) {
+function pushData() {
 
     var color = '';
     if (document.getElementById('redRadio').checked == true) {
@@ -62,8 +64,10 @@ function pushData(form, name) {
     desc = document.getElementById('descInput').value;
     dateStart = document.getElementById('date-start').value;
     dateEnd = document.getElementById('date-end').value;
+    id = new Date().getTime();
+    budget = document.getElementById('budgetInput').value;
 
-    addCard(title, desc, dateStart, dateEnd, color, persons);
+    editCard(title, desc, dateStart, dateEnd, color, persons, id, budget);
 
     console.log(allCards);
 }
