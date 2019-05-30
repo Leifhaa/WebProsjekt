@@ -59,12 +59,12 @@ function pushData() {
     if (document.getElementById('ava4').checked == true) {
         persons.push('person4')
     }
-
+    
+    id = new Date().getTime();
     title = document.getElementById('titleInput').value;
     desc = document.getElementById('descInput').value;
     dateStart = document.getElementById('date-start').value;
     dateEnd = document.getElementById('date-end').value;
-    id = new Date().getTime();
     budget = document.getElementById('budgetInput').value;
 
     editCard(title, desc, dateStart, dateEnd, color, persons, id, budget);
