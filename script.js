@@ -6,13 +6,11 @@ startCol.setAttribute("class", "column colStyle");
 startCol.innerHTML = "<div id='colName' class='column colTitle'>Doing</div><button id='addCardBtn' class='btnStyle'><i class='fas fa-plus'></i></button>";
 document.getElementById("container").appendChild(startCol);
 
-
 var addColBtn1 = document.createElement("button");
 addColBtn1.setAttribute("id", "addColumnBtn");
 addColBtn1.setAttribute("class", "btnStyle");
-addColBtn1.innerHTML = "<i class='fas fa-plus'></i>";
+addColBtn1.innerHTML = "<i class='column fas fa-plus'></i>";
 document.getElementById("head").appendChild(addColBtn1);
-
 
 // GENERATING ID FOR CARDS
 var cardArr = [];
@@ -40,17 +38,13 @@ addCol.addEventListener("click", addColumn);
 function addColumn() {
     var testColName = prompt("Type the name of your column!");
     var div = document.createElement('div');
-    div.setAttribute("class", "column droptarget colStyle");
+    div.setAttribute("class", "columnBase column droptarget colStyle");
 
     div.setAttribute("ondrop", "drop(event)");
     div.setAttribute("ondragover", "dragOver(event)");
     div.setAttribute("ondragenter", "dragEnter(event)");
     div.setAttribute("ondragleave", "dragLeave(event)");
-    div.innerHTML = "<div class='column colTitle'>" + testColName + "</div>";
-
-
-
-
+    div.innerHTML = "<div id = 'colTitle_" + columnID +"' class='column colTitle'>" + testColName + "</div>";
 
     colArr.push({
         id: "col_" + columnID,
@@ -65,12 +59,12 @@ function addColumn() {
     div1.setAttribute("id", "del_col" + columnID);
     div1.setAttribute("class", "column delColIcon");
     div1.setAttribute("onclick", "delCol(this.id)");
-    div1.innerHTML = "<i class='fas fa-times'></i>";
+    div1.innerHTML = "<i id = 'delColIcon_" + columnID + "' class='column colDelete fas fa-times'></i>";
 
     document.getElementById("container").appendChild(div);
     document.getElementById("col_" + columnID).appendChild(div1);
 
-	 columnID += 1;
+    columnID += 1;
 
 }
 
@@ -124,7 +118,6 @@ function addCard() {
     cardTitle.setAttribute("id", "cardTitleText_" + cardID);
     cardTitle.setAttribute("class", "card cardID" + cardID);
 
-
     // CARD TITLE INPUT
     var addCardTitle = document.createElement('input');
     addCardTitle.type = "text";
@@ -133,21 +126,19 @@ function addCard() {
     addCardTitle.setAttribute("onfocus", "this.value=''");
     addCardTitle.setAttribute("placeholder", "Name card");
 
-
-	//CARD TITLE INPUT OK BUTTON
+    //CARD TITLE INPUT OK BUTTON
     var cardTitleBtn = document.createElement('button');
-    cardTitleBtn.setAttribute("class","card cardOkBtn cardID" + cardID);
-    cardTitleBtn.setAttribute("id","cardTitleBtn_" + cardID)
+    cardTitleBtn.setAttribute("class", "card cardOkBtn cardID" + cardID);
+    cardTitleBtn.setAttribute("id", "cardTitleBtn_" + cardID)
     cardTitleBtn.setAttribute("onclick", "addCardTitle(this.className)");
-    cardTitleBtn.innerHTML ="Ok";
+    cardTitleBtn.innerHTML = "Ok";
 
     //CARD TITLE INPUT CANCEL BUTTON
     var cardTitleBtnCancel = document.createElement('button');
-    cardTitleBtnCancel.setAttribute("class","card cardCancelBtn cardID" + cardID);
-    cardTitleBtnCancel.setAttribute("id","cardTitleBtnCancel_" + cardID)
+    cardTitleBtnCancel.setAttribute("class", "card cardCancelBtn cardID" + cardID);
+    cardTitleBtnCancel.setAttribute("id", "cardTitleBtnCancel_" + cardID)
     cardTitleBtnCancel.setAttribute("onclick", "delCard(this.id)");
-    cardTitleBtnCancel.innerHTML ="Cancel";
-
+    cardTitleBtnCancel.innerHTML = "Cancel";
 
     // CREATES ID AND NAME IN cardArr
     cardArr.push({
@@ -157,10 +148,6 @@ function addCard() {
 
     // PRINTS THE ARRAY
     console.log(cardArr);
-
-
-
-
 
     // DELETE CARD BUTTON - NOT IN USE ATM
     /*
@@ -176,8 +163,7 @@ function addCard() {
     div2.setAttribute("id", "del-card_" + cardID);
     div2.setAttribute("class", "card editCardIcon cardID" + cardID);
     div2.setAttribute("onclick", "editCard()");
-    div2.innerHTML = "<i class='far fa-edit'></i>";
-
+    div2.innerHTML = "<i id = 'editCard_" + cardID + "' class=' far fa-edit card'></i>";
 
     document.getElementById("col_0").appendChild(div);
 
@@ -191,22 +177,31 @@ function addCard() {
 
 }
 
-function addCardTitle(csName) {
-	var cardID
+function getCardClassID(cardClasses) {
+    //The classID of a cardClass where there's multiple classes.
+    //E.g a class has multiple classes: 'card',cardID0' 
+    //We want to retrieve the class cardID of this card, which is 0.
+    var res;
+    var cardIDindx;
+    cardIDindx = cardClasses.indexOf("cardID") + 6;
+    var nextSpc = cardClasses.indexOf(' ', cardIDindx)
+    if (nextSpc = -1) {
+        nextSpc = cardClasses.length
+        //There's no more spaces in str.
+    }
+    res = cardClasses.substring(cardIDindx, nextSpc);
+    return res;
+}
 
-	var cardIDindx;
-	if (csName.includes("cardID")){
-		//Extract the classID of card
-		cardIDindx = csName.indexOf("cardID") + 6;
-		var nextSpc = csName.indexOf(' ',cardIDindx)
-		if (nextSpc = -1){
-			nextSpc = csName.length //There's no more spaces in str.
-		}
-		cardID = csName.substring(cardIDindx, nextSpc);
-	}
-	else{
-		return;
-	}
+function addCardTitle(csName) {
+    var cardID
+
+    var cardIDindx;
+    if (csName.includes("cardID")) {
+        cardID = getCardClassID(csName)
+    } else {
+        return;
+    }
     var cardInputElem = document.getElementById("cardTitleInput_" + cardID);
 
     var cardState = document.getElementById("card_" + cardID);
@@ -226,15 +221,11 @@ function addCardTitle(csName) {
     var cardBtnCancel = document.getElementById("cardTitleBtnCancel_" + cardID);
     var cardTitle = document.getElementById("cardTitleText_" + cardID);
 
-
-
     cardTitle.innerHTML = cardInputElem.value;
     cardInputElem.remove();
     cardBtn.remove();
     cardBtnCancel.remove();
-   //document.getElementById("card_0").appendChild(titleName);
-
-
+    //document.getElementById("card_0").appendChild(titleName);
 
 }
 
@@ -274,7 +265,6 @@ function closeEditor() {
     div.parentNode.removeChild(div);
     div1.parentNode.removeChild(div1);
 
-
 }
 
 /* DRAG EVENTS */
@@ -288,7 +278,6 @@ tc.setAttribute("ondragenter", "dragEnter(event)");
 var cardTrash = document.getElementById("deleteObj");
 cardTrash.setAttribute("ondrop", "drop(event)");
 cardTrash.setAttribute("ondragover", "dragOver(event)");
-
 
 function dragOver(dragEv) {
     cardTrash.setAttribute("class", "dragging");
@@ -305,40 +294,33 @@ function dragOver(dragEv) {
 function dragEnter(dragEv) {
     var targetClass = dragEv.target.className;
 
-    if (targetClass.includes ("droptarget")) {
+    if (targetClass.includes("droptarget")) {
         dragEv.target.style.border = "3px dotted red";
-	}
+    }
 }
 
 // WHEN CARD LEAVES COL DO THIS
 function dragLeave(dragEv) {
     var targetClass = dragEv.target.className;
 
-    if (targetClass.includes ("droptarget")) {
-    dragEv.target.style.border = "";
-  }
+    if (targetClass.includes("droptarget")) {
+        dragEv.target.style.border = "";
+    }
 
 }
 
 // WHEN DRAG ENDS
 function dragEnd(dragEv) {
-
-
-
-
 }
 
 function drag(dragEv) {
 
     dragEv.dataTransfer.setData("text", dragEv.target.id);
-
-
-
 }
 
 function drop(dragEv) {
-	console.log("Dropped")
-	console.log(dragEv.target.className);
+    console.log("Dropped")
+    console.log(dragEv.target.className);
     dragEv.preventDefault();
     var targetId = dragEv.target.id;
     var targetClass = dragEv.target.className;
@@ -347,23 +329,21 @@ function drop(dragEv) {
 
     var targetClass = dragEv.target.className;
 
-    if (targetClass.includes ("droptarget")) {
-    dragEv.target.style.border = "";
-  }
-
+    if (targetClass.includes("droptarget")) {
+        dragEv.target.style.border = "";
+    }
 
     //Always append the card to column, not to another card.
-    if (targetClass.includes ("column")) {
-    	dragEv.target.append(dropElement);
-    }
-    else if (targetClass.includes("trash")){
-    	dropElement.remove();
+    if (targetClass.includes("column")) {
+        var div = $("#" + targetId).closest('div[class*=columnBase]');
+        div.append(dropElement);
+    } else if (targetClass.includes("trash")) {
+        dropElement.remove();
 
-    }
-    else if (targetClass.includes("card")){
-    	//Card has nested div's.. Append card to the closest 'column' class
-    	var div = $("#" + targetId).closest('div[class*=column]');
-    	div.append(dropElement);
+    } else if (targetClass.includes("card")) {
+        //Card has nested div's.. Append card to the closest 'column' class
+        var div = $("#" + targetId).closest('div[class*=column]');
+        div.append(dropElement);
     }
 }
 
