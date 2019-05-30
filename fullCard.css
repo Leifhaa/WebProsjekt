@@ -92,6 +92,10 @@ input[type=date] {
     padding: 10px 10px 10px 0px;
 }
 
+.avatar {
+    color: black;
+}
+
 .avatar:active,
 .avatar:focus,
 .avatar:hover {
@@ -131,4 +135,20 @@ input[type=date] {
 .infoBox-button {
     text-align: center;
     float: right;
+}
+
+[type=radio],
+[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+[type=radio] + img {
+    cursor: pointer;
+}
+
+[type=checkbox] + img {
+    cursor: pointer;
 }

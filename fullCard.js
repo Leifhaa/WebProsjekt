@@ -8,3 +8,62 @@ window.onclick = function (event) {
 function changeColor(color) {
     document.getElementsByClassName('modal-content')[0].style.border = color;
 }
+
+function changeAvatarColor(color) {
+    document.getElementsByClassName('avatar')[0].style.color = color;
+}
+
+var allCards = [];
+
+function Card(title, desc, dateStart, dateEnd, color, persons) {
+    this.title = title;
+    this.desc = desc;
+    this.dateStart = dateStart;
+    this.dateEnd = dateEnd;
+    this.color = color;
+    this.persons = persons;
+}
+
+function addCard(title, desc, dateStart, dateEnd, color, persons) {
+    allCards.push(new Card(title, desc, dateStart, dateEnd, color, persons));
+}
+
+function pushData(form, name) {
+
+    var color = '';
+    if (document.getElementById('redRadio').checked == true) {
+        color = 'red';
+    } else if (document.getElementById('orangeRadio').checked == true) {
+        color = 'orange';
+    } else if (document.getElementById('greenRadio').checked == true) {
+        color = 'green';
+    } else if (document.getElementById('blueRadio').checked == true) {
+        color = 'blue';
+    } else if (document.getElementById('pinkRadio').checked == true) {
+        color = 'pink';
+    }
+
+    var persons = [];
+
+    if (document.getElementById('ava1').checked == true) {
+        persons.push('person1')
+    } 
+    if (document.getElementById('ava2').checked == true) {
+        persons.push('person2')
+    } 
+    if (document.getElementById('ava3').checked == true) {
+        persons.push('person3')
+    } 
+    if (document.getElementById('ava4').checked == true) {
+        persons.push('person4')
+    }
+
+    title = document.getElementById('titleInput').value;
+    desc = document.getElementById('descInput').value;
+    dateStart = document.getElementById('date-start').value;
+    dateEnd = document.getElementById('date-end').value;
+
+    addCard(title, desc, dateStart, dateEnd, color, persons);
+
+    console.log(allCards);
+}

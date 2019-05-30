@@ -25,24 +25,52 @@
                 <label for="title">
                     <b>Title</b>
                 </label>
-                <i class="fas fa-pencil-alt edit"></i>
-                <input type="text" name="title" placeholder="Enter title" required>
+                <input id="titleInput" type="text" name="title" placeholder="Enter title" required>
                 <label for="desc">
                     <b>Description</b>
                 </label>
-                <input type="text" name="desc" placeholder="Enter description">
+                <input id="descInput" type="text" name="desc" placeholder="Enter description">
 
-                <i class="fas fa-plus-square fa-2x pluscolor"></i>
-                <i class="fas fa-user-ninja fa-2x avatar"></i>
-                <i class="fas fa-user-astronaut fa-2x avatar"></i>
-                <i class="fas fa-user-ninja fa-2x avatar"></i>
-                <i class="fas fa-user-astronaut fa-2x avatar"></i>
+                <label>
+                    <i class="fas fa-plus-square fa-2x pluscolor"></i>
+                </label>
+                <label> 
+                    <input type="checkbox" id="ava1" name="avatars" value="small">   
+                    <i class="fas fa-user-ninja fa-2x avatar"></i>
+                </label>
+                <label>  
+                    <input type="checkbox" id="ava2" name="avatars" value="small">
+                    <i class="fas fa-user-astronaut fa-2x avatar"></i>
+                </label>
+                <label>
+                    <input type="checkbox" id="ava3" name="avatars" value="small">
+                    <i class="fas fa-user-ninja fa-2x avatar"></i>
+                </label>
+                <label>  
+                    <input type="checkbox" id="ava4" name="avatars" value="small">
+                    <i class="fas fa-user-astronaut fa-2x avatar"></i>
+                </label>
                 <br>
-                <i onclick="changeColor('5px solid red')" class="fas fa-square fa-2x red"></i>
-                <i onclick="changeColor('5px solid orange')" class="fas fa-square fa-2x orange"></i>
-                <i onclick="changeColor('5px solid green')" class="fas fa-square fa-2x green"></i>
-                <i onclick="changeColor('5px solid blue')" class="fas fa-square fa-2x blue"></i>
-                <i onclick="changeColor('5px solid pink')" class="fas fa-square fa-2x pink"></i>
+                <label>
+                    <input type="radio" id="redRadio" name="colorRadio" value="small">
+                    <i onclick="changeColor('5px solid red')" class="fas fa-square fa-2x red" required></i>
+                </label>
+                <label>
+                    <input type="radio" id="orangeRadio" name="colorRadio" value="small">
+                    <i onclick="changeColor('5px solid orange')" class="fas fa-square fa-2x orange"></i>
+                </label>
+                <label>
+                    <input type="radio" id="greenRadio" name="colorRadio" value="small">
+                    <i onclick="changeColor('5px solid green')" class="fas fa-square fa-2x green"></i>
+                </label>
+                <label>
+                    <input type="radio" id="blueRadio" name="colorRadio" value="small">
+                    <i onclick="changeColor('5px solid blue')" class="fas fa-square fa-2x blue"></i>
+                </label>
+                <label>
+                    <input type="radio" id="pinkRadio" name="colorRadio" value="small">
+                    <i onclick="changeColor('5px solid pink')" class="fas fa-square fa-2x pink"></i>
+                </label>
                 <br>
                 <i class="fas fa-calendar-alt fa-2x"></i>
                 From
@@ -50,7 +78,7 @@
                 to
                 <input type="date" name="date-end" id="date-end">
 
-                <button type="button" onclick="displayInfo()">Confirm</button>
+                <button type="button" onclick="pushData()">Confirm</button>
             </div>
         </form>
     </div>
