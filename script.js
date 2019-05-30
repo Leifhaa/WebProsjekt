@@ -190,8 +190,9 @@ function addCard() {
     cardID += 1;
 
 }
-var cardID
+
 function addCardTitle(csName) {
+	var cardID
 
 	var cardIDindx;
 	if (csName.includes("cardID")){
@@ -306,7 +307,7 @@ function dragEnter(dragEv) {
 
     if (targetClass.includes ("droptarget")) {
         dragEv.target.style.border = "3px dotted red";
-}
+	}
 }
 
 // WHEN CARD LEAVES COL DO THIS
@@ -339,6 +340,7 @@ function drop(dragEv) {
 	console.log("Dropped")
 	console.log(dragEv.target.className);
     dragEv.preventDefault();
+    var targetId = dragEv.target.id;
     var targetClass = dragEv.target.className;
     var dropElementText = dragEv.dataTransfer.getData("text");
     var dropElement = document.getElementById(dropElementText);
@@ -358,9 +360,10 @@ function drop(dragEv) {
     	dropElement.remove();
 
     }
-    else{
-    	//Duplicate parentNodes due to div 'deleteCard' causing multiple childs.
-    	dragEv.target.parentNode.parentNode.append(document.getElementById(dropElement));
+    else if (targetClass.includes("card")){
+    	//Card has nested div's.. Append card to the closest 'column' class
+    	var div = $("#" + targetId).closest('div[class*=column]');
+    	div.append(dropElement);
     }
 }
 
