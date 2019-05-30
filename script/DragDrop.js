@@ -4,6 +4,7 @@ var tc = document.getElementById("col_0");
 tc.setAttribute("ondrop", "drop(event)");
 tc.setAttribute("ondragover", "dragOver(event)");
 tc.setAttribute("ondragenter", "dragEnter(event)");
+tc.setAttribute("ondragend", "dragEnd(event)");
 
 // ADJUSTS TRASHCAN ICON
 var cardTrash = document.getElementById("deleteObj");
@@ -26,7 +27,8 @@ function dragEnter(dragEv) {
     var targetClass = dragEv.target.className;
 
     if (targetClass.includes("droptarget")) {
-        dragEv.target.style.border = "3px dotted red";
+        dragEv.target.style.border = "3px solid #4caf50";
+        dragEv.target.style.backgroundColor = "#f2f2f2";
     }
 }
 
@@ -34,14 +36,17 @@ function dragEnter(dragEv) {
 function dragLeave(dragEv) {
     var targetClass = dragEv.target.className;
 
+
     if (targetClass.includes("droptarget")) {
         dragEv.target.style.border = "";
+        dragEv.target.style.backgroundColor = "";
     }
 
 }
 
 // WHEN DRAG ENDS
 function dragEnd(dragEv) {
+    cardTrash.removeAttribute("class", "dragging");
 }
 
 function drag(dragEv) {
@@ -59,9 +64,11 @@ function drop(dragEv) {
     var dropElement = document.getElementById(dropElementText);
 
     var targetClass = dragEv.target.className;
+    cardTrash.removeAttribute("class", "dragging");
 
     if (targetClass.includes("droptarget")) {
         dragEv.target.style.border = "";
+        dragEv.target.style.backgroundColor = "";
     }
 
     //Always append the card to column, not to another card.
