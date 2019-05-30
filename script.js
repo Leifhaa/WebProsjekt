@@ -305,14 +305,17 @@ function drop(userInt) {
 	console.log(userInt.target.className);
     userInt.preventDefault();
     var targetClass = userInt.target.className;
-    var dropElement = userInt.dataTransfer.getData("text");
+    var dropElementText = userInt.dataTransfer.getData("text");
+    var dropElement = document.getElementById(dropElementText);
 
-    cardTrash.removeAttribute("class", "dragging");
 
     //Always append the card to column, not to another card.
     if (targetClass.includes ("column")) {
-    	userInt.target.append(document.getElementById(dropElement));
-
+    	userInt.target.append(dropElement);
+    }
+    else if (targetClass.includes("trash")){
+    	dropElement.remove();
+		
     }
     else{
     	//Duplicate parentNodes due to div 'deleteCard' causing multiple childs.
