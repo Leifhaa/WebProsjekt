@@ -161,6 +161,8 @@ header {
     margin-bottom: 10px;
 }
 
+
+
 .column {
 
 }
@@ -177,7 +179,7 @@ header {
 
 }
 
-.delColStyle {
+.closeEditorIcon {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -186,11 +188,24 @@ header {
     cursor: pointer;
 }
 
-.delColStyle:hover {
+.closeEditorIcon:hover {
+    color: #111;
+}
+
+.delColIcon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin-bottom: 10px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.delColIcon:hover {
     color: #c62828;
 }
 
-.delCardStyle {
+.delCardIcon {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -199,11 +214,48 @@ header {
     cursor: pointer;
 }
 
-.delCardStyle:hover {
+.editCardIcon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin-bottom: 10px;
+    color: #999;
+    cursor: pointer;
+}
+
+.editCardIcon:hover {
+    color: #4caf50;
+}
+
+#darkenPage {
+    position: absolute;
+    top: 0;
+    background-color: #111;
+    width: 100%;
+    height: 1000px;
+    z-index: 450;
+    opacity: 0.8;
+}
+
+#cardEditorCont {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 500;
+    width: 500px;
+    height: 500px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ccc;
+}
+
+.delCardIcon:hover {
     color: #c62828;
 }
 
-.cardStyle {
+.cardContent {
     position: relative;
     width: 260px;
     font-weight: 700;
@@ -212,8 +264,77 @@ header {
     background-color: #f5f5f5;
     align-self: flex-start;
     border-radius: 2px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #ccc;
 
+}
+
+.cardShake {
+    position: absolute;
+    left: -100px;
+}
+
+.cardContent:hover {
+    background-color: #000;
+}
+
+.cardContent input {
+    border: 2px solid #4a148c;
+    border-radius: 2px;
+    outline: none;
+    width: 215px;
+    margin-right: 20px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+
+.cardContentError input {
+    border: 2px solid #c62828;
+}
+
+.cardOkBtn {
+    width: 80px;
+    background-color: #29b6f6;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    margin-top: 10px;
+    padding: 5px;
+    font-weight: bold;
+    outline: none;
+    font-size: 14px;
+}
+
+
+
+.cardOkBtn:hover {
+    background-color: #4a148c;
+}
+
+.cardOkBtn:focus {
+    background-color: #0085c1;
+}
+
+.cardCancelBtn {
+    width: 80px;
+    background-color: #29b6f6;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    font-weight: bold;
+    outline: none;
+    font-size: 14px;
+}
+
+.cardCancelBtn:hover {
+    background-color: #4a148c;
+}
+
+.cardCancelBtn:focus {
+    background-color: #0085c1;
 }
 
 #del-card {
@@ -255,7 +376,7 @@ header {
     border-radius: 50%;
     height: 40px;
     width: 40px;
-    border: 3px solid #0085c1;
+    border: 3px solid #29b6f6;
     outline:none;
     cursor: pointer;
     color: #fff;
@@ -266,6 +387,7 @@ header {
 
 #addCardBtn.btnStyle:hover {
     background-color: #0085c1;
+    border: 3px solid #0085c1;
     transition: ease .5s;
 
 }
@@ -331,30 +453,6 @@ header {
     cursor: pointer;
 }
 
-#editor {
-    display: none;
-    font-weight: 700;
-    font-size: 15px;
-
-
-}
-
-#editor input {
-    text-align: left;
-    border: none;
-    font-weight: 700;
-    font-size: 15px;
-    background: none;
-    outline: none;
-    padding: 0;
-}
-
-#lolid {
-    width: 100px;
-    height: 50px;
-    background-color: #ff00cc;
-}
-
 #deleteObj {
     position: fixed;
     right: 0;
@@ -366,14 +464,14 @@ header {
     color: #ffffff;
     font-size: 40px;
     border: none;
-    transition: ease .5s;
+    transition: ease .2s;
 }
 
 #deleteObj.dragging {
     background: #c62828;
-    width: 120px;
-    height: 120px;
-    font-size: 60px;
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
 }
 
 
@@ -381,4 +479,69 @@ footer {
 
     height: 100px;
     width: 100%;
+}
+/* ANIMATION */
+
+.shake-horizontal {
+	-webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+/* KEYFRAMES */
+
+@-webkit-keyframes shake-horizontal {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  80% {
+    -webkit-transform: translateX(8px);
+            transform: translateX(8px);
+  }
+  90% {
+    -webkit-transform: translateX(-8px);
+            transform: translateX(-8px);
+  }
+}
+@keyframes shake-horizontal {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  80% {
+    -webkit-transform: translateX(8px);
+            transform: translateX(8px);
+  }
+  90% {
+    -webkit-transform: translateX(-8px);
+            transform: translateX(-8px);
+  }
 }
