@@ -6,18 +6,27 @@ window.onclick = function (event) {
 }
 
 function CreateEditCardForm(cardID) {
+	
+	//cardEditBody
 	var cardEditBody = document.createElement("div");
 	cardEditBody.setAttribute("id","card");
 	cardEditBody.setAttribute("class","modal");
 	
+
+	//ccard edit form
 	var infoForm = document.createElement("form");
 	infoForm.setAttribute("id","infoForm");
 	infoForm.setAttribute("class","modal-content animate");
 	cardEditBody.appendChild(infoForm);
 	
+	//Container card edit
 	var containerEditCard = document.createElement("div");
 	containerEditCard.setAttribute("class","containerEditCard");
 	infoForm.appendChild(containerEditCard);
+
+	test = document.getElementById("boardContainer")
+	test.appendChild(cardEditBody);
+	test.style.backgroundColor = "white";
 
 	//title Label
 	var titleLabel = document.createElement('Label');
@@ -34,25 +43,88 @@ function CreateEditCardForm(cardID) {
 	containerEditCard.appendChild(titleInput);
 
 
-	//DscriptionLabel
-	var titleLabel = document.createElement('Label');
-	titleLabel.setAttribute("for","editCardTitleInput");
-	titleLabel.innerHTML = "<b>Title</b>";
-	containerEditCard.appendChild(titleLabel);
+	//descriptionLabel
+	var DescLabel = document.createElement('Label');
+	DescLabel.setAttribute("for","editCardDescInput");
+	DescLabel.innerHTML = "<b>Description</b>";
+	containerEditCard.appendChild(DescLabel);
 
-	//Title input box
-	var titleInput = document.createElement("input")
-	titleInput.setAttribute("type","text");
-	titleInput.setAttribute("id","editCardDesInput");
-	titleInput.setAttribute("name","desc");
-	titleInput.setAttribute("placeholder","Enter description");
-	containerEditCard.appendChild(titleInput);
+	//Description input box
+	var descInput = document.createElement("input")
+	descInput.setAttribute("type","text");
+	descInput.setAttribute("id","editCardDescInput");
+	descInput.setAttribute("name","desc");
+	descInput.setAttribute("placeholder","Enter description");
+	containerEditCard.appendChild(descInput);
+
+
+	//budgetLabel
+	var BudgetLabel = document.createElement('Label');
+	BudgetLabel.setAttribute("for","editCardBudgetInput");
+	BudgetLabel.innerHTML = "<b>Budget</b>";
+	containerEditCard.appendChild(BudgetLabel);
+
+	//budget input box
+	var BudgetInput = document.createElement("input")
+	BudgetInput.setAttribute("type","text");
+	BudgetInput.setAttribute("id","editCardBudgetInput");
+	BudgetInput.setAttribute("name","budget");
+	BudgetInput.setAttribute("placeholder","Enter budget");
+	containerEditCard.appendChild(BudgetInput);
+
+	//Avatars
+	for (i = 0; i < 4; i ++){
+		var AvatarLabel = document.createElement('Label');
+		var Avatar = document.createElement('input');
+		Avatar.setAttribute("type","checkbox");
+		Avatar.setAttribute("id","ava" + i);
+		Avatar.setAttribute("name","avatars");
+		Avatar.setAttribute("value","small");
+		AvatarLabel.appendChild(Avatar);
+		if (i == 0){
+			AvatarLabel.innerHTML = "<i class='fas fa-user-ninja fa-2x avatar'></i>";
+		}
+		else if (i == 1){
+			AvatarLabel.innerHTML = "<i class='fas fa-user-astronaut fa-2x avatar'></i>";
+		}
+		else if (i == 2){
+			AvatarLabel.innerHTML = "<i class='fas fa-user-ninja fa-2x avatar'></i>";
+		}
+		else if (i == 3){
+			AvatarLabel.innerHTML = "<i class='fas fa-user-astronaut fa-2x avatar'></i>";
+		}
+		containerEditCard.appendChild(AvatarLabel);
+	}
+
 
 	
-	
-	test = document.getElementById("boardContainer")
-	test.appendChild(cardEditBody);
-	test.style.backgroundColor = "white";
+	//Card color
+	for (i = 0; i < 5; i ++){
+		var ColorLabel = document.createElement('Label');
+		var Color = document.createElement('input');
+		Color.setAttribute("type","radio");
+		Color.setAttribute("id","radio" + i);
+		Color.setAttribute("name","colorRadio");
+		Color.setAttribute("value","small");
+		ColorLabel.appendChild(Color);
+		if (i == 0){
+			ColorLabel.innerHTML = "<i onclick= \"changeColor('5px solid red') \" class='fas fa-square fa-2x red' required'></i>";
+		}
+		else if (i == 1){
+			ColorLabel.innerHTML = "<i onclick='changeColor('5px solid orange')' class='fas fa-square fa-2x orange'></i>";
+		}
+		else if (i == 2){
+			ColorLabel.innerHTML = "<i onclick='changeColor('5px solid green')' class='fas fa-square fa-2x green'></i>";
+		}
+		else if (i == 3){
+			ColorLabel.innerHTML = "<i onclick='changeColor('5px solid blue')' class='fas fa-square fa-2x blue></i>";
+		}
+		else if (i == 4){
+			ColorLabel.innerHTML = "<i onclick='changeColor('5px solid pink')' class='fas fa-square fa-2x pink></i>";
+		}
+		containerEditCard.appendChild(ColorLabel);
+	}
+
 }
 
 
