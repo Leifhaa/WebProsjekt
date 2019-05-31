@@ -5,7 +5,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" type="text/css" href="sideContainer.css">
+        <link rel="stylesheet" type="text/css" href="sideContent.css">
         <title>Dowo Board</title>
 
     </head>
@@ -36,22 +36,33 @@
 
         </div><!-- end boardContainer -->
 
-        <div id="sideContainer">
-            <div id="calendarContainer" class="squareContainer">
-                    <div id="calendarSquare" class="sideSquare" onclick="openCalendar()">
-                    <p class="sideSquareIcon">C</p>
+
+        <!-- start sideContent -->
+
+        <div id="calendarStatisticsContainer">
+            <div id="calendarSquare" class="squareContainer">
+                <div class="sideSquare" onclick="openCalendar()">
+                    <button id="goToCalendar">
+                        <i class="fas fa-calendar-alt"></i>
+                    </button>
                 </div>
             </div>
-            <div id="statisticsContainer" class="squareContainer">
-                <div id="statisticsSquare" class="sideSquare" onclick="openStatistics()">
-                    <p class="sideSquareIcon">S</p>
+            <div id="statisticsSquare" class="squareContainer">
+                <div class="sideSquare" onclick="openStatistics()">
+                    <button id="goToStatistics">
+                        <i class="fas fa-chart-pie"></i>
+                    </button>
                 </div>
             </div>
         </div>
 
-        <button id="deleteObj" class="trashcan">
-            <i class="fas fa-trash-alt"></i>
-        </button>
+        <div id="trashcanSquare">
+            <button id="deleteObj" class="trashcan">
+               <i class="fas fa-trash-alt"></i>
+            </button>
+        </div>
+
+        <!-- end sideContent -->
 
 
         <div id="editorWrapper"></div>
@@ -62,9 +73,10 @@
 
     <footer></footer>
 		<script src="script/TopBar.js"></script>
-        <script src="sideContainer.js"></script>
+        <script src="sideContent.js"></script>
 		<script src="script/Column.js"></script>
 		<script src="script/Card.js"></script>
-		<script src="script/DragDrop.js"></script>
+        <script src="script/DragDrop.js"></script>
+        <script src="sideContent.js"></script>
     </body>
 </html>

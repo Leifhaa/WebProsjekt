@@ -1,7 +1,7 @@
 function openCalendar() {
-    alert("click");
+    alert("Calendar");
 }
 
 function openStatistics() {
-    alert("click");
+    alert("Statistics");
 }
