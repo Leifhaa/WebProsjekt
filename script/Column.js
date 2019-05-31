@@ -19,15 +19,46 @@ addColumn()
 var addCol = document.getElementById("addColumnBtn");
 addCol.addEventListener("click", addColumn);
 
+function startDrag(){
+            $("").css('min-height', '300px');
+
+}
+
 function addColumn() {
     var testColName = prompt("Type the name of your column!");
     var div = document.createElement('div');
     div.setAttribute("class", "columnBase column droptarget colStyle");
 
 
+    $(div).sortable();
+    $(div).disableSelection();
+
     $(div).droppable( {
-        drop: drop
+        drop: drop,
+        hoverClass: 'colHovered',
+        activate: startDrag,
+        over: function(event, ui) {
+                   ui.helper.css("border", "2px solid green")
+               },
+        out: function(event, ui) {
+                          ui.helper.css("border", "2px solid red")
+                      }
     } );
+/*
+    $(div).animate( {
+        start: function(event, ui) {
+            $(ui.droppable).css('height', '300px');
+        },
+        stop: function(event, ui) {
+            $(ui.droppable).css('height', '100px');
+        }
+    });
+    */
+
+
+
+
+
     //div.setAttribute("ondrop", "drop(event)");
     //div.setAttribute("ondragover", "dragOver(event)");
     //div.setAttribute("ondragenter", "dragEnter(event)");
@@ -41,7 +72,7 @@ function addColumn() {
     console.log(colArr);
 
 	if (columnID == 0){
-	   div.innerHTML = "<div id='colName' class='column colTitle'>" + testColName + "</div><button id='addCardBtn' class='btnStyle'><i class='fas fa-plus'></i></button>";
+	   div.innerHTML = "<div id='colName' class='column colTitle'>" + testColName + "</div><button id='addCardBtn' class='btnStyle'><i class='fas fa-plus'></i></button><ol id='colOl0'></ol>";
     }
     div.setAttribute("id", "col_" + columnID);
 
@@ -57,6 +88,8 @@ function addColumn() {
     document.getElementById("col_" + columnID).appendChild(div1);
 
     columnID += 1;
+
+
 }
 
 // DELETE COL FUNCTION
