@@ -18,7 +18,7 @@ addCardBtn.addEventListener("click", addCard);
 
 function addCard() {
     //Card
-    var div = document.createElement("div");
+    var div = document.createElement("li");
     div.setAttribute("class", "card cardContent cardID" + cardID);
     //Dragging property
         $(div).draggable( {
@@ -28,7 +28,8 @@ function addCard() {
             snap: '#content',
             start: drag,
             stop: drop,
-            revert: RevertDrag
+            revert: RevertDrag,
+            revertDuration: 200
         });
 
 
@@ -90,7 +91,7 @@ function addCard() {
     div2.setAttribute("onclick", "editCard()");
     div2.innerHTML = "<i id = 'editCard_" + cardID + "' class=' far fa-edit card'></i>";
 
-    document.getElementById("col_0").appendChild(div);
+    document.getElementById("colOl0").appendChild(div);
 
     document.getElementById("card_" + cardID).appendChild(cardTitle);
     document.getElementById("card_" + cardID).appendChild(div2);
@@ -146,7 +147,7 @@ function addCardTitle(csName) {
     var cardBtnCancel = document.getElementById("cardTitleBtnCancel_" + cardID);
     var cardTitle = document.getElementById("cardTitleText_" + cardID);
 
-    cardTitle.innerHTML = cardInputElem.value;
+    cardTitle.innerHTML = "<div class='cardTitle'>" + cardInputElem.value + "</div>";
     cardInputElem.remove();
     cardBtn.remove();
     cardBtnCancel.remove();

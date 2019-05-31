@@ -72,6 +72,8 @@ function drop(dragEv, ui )  {
     var dropElementId = ($(ui.draggable).attr("id"));
     var dropElement = document.getElementById(dropElementId);
 
+
+
     if (targetClass.includes("droptarget")) {
         dragEv.target.style.border = "";
         dragEv.target.style.backgroundColor = "";
@@ -91,7 +93,11 @@ function drop(dragEv, ui )  {
     }
 
     $(this).append(ui.draggable);
-    $(ui.draggable).css({ "left": "0", "top": "0" });
+    $(ui.draggable).css({"left": "0", "top": "0"});
+
+
+
+
 
 }
 
