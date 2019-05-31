@@ -267,6 +267,7 @@ header {
     align-self: flex-start;
     border-radius: 2px;
     border-bottom: 1px solid #ccc;
+    cursor: default;
 
 }
 

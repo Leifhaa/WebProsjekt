@@ -24,14 +24,14 @@ function addCard() {
         $(div).draggable( {
             zIndex: 1,
             containment: 'document',
-            cursor: 'move',
+            cursor: 'grab',
             snap: '#content',
             start: drag,
             stop: drop,
             revert: RevertDrag
         });
 
-        
+
     //div.setAttribute("ondragstart", "drag(event)");
     div.setAttribute("id", "card_" + cardID);
     //div.setAttribute("ondragover", "dragOver(event)");
@@ -104,7 +104,7 @@ function addCard() {
 
 function getCardClassID(cardClasses) {
     //The classID of a cardClass where there's multiple classes.
-    //E.g a class has multiple classes: 'card',cardID0' 
+    //E.g a class has multiple classes: 'card',cardID0'
     //We want to retrieve the class cardID of this card, which is 0.
     var res;
     var cardIDindx;
