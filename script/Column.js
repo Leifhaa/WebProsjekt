@@ -24,10 +24,14 @@ function addColumn() {
     var div = document.createElement('div');
     div.setAttribute("class", "columnBase column droptarget colStyle");
 
-    div.setAttribute("ondrop", "drop(event)");
-    div.setAttribute("ondragover", "dragOver(event)");
-    div.setAttribute("ondragenter", "dragEnter(event)");
-    div.setAttribute("ondragleave", "dragLeave(event)");
+
+    $(div).droppable( {
+        drop: drop
+    } );
+    //div.setAttribute("ondrop", "drop(event)");
+    //div.setAttribute("ondragover", "dragOver(event)");
+    //div.setAttribute("ondragenter", "dragEnter(event)");
+    //div.setAttribute("ondragleave", "dragLeave(event)");
     div.innerHTML = "<div id = 'colTitle_" + columnID +"' class='column colTitle'>" + testColName + "</div>";
 
     colArr.push({

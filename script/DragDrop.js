@@ -1,10 +1,5 @@
 /* DRAG EVENTS */
 
-var tc = document.getElementById("col_0");
-tc.setAttribute("ondrop", "drop(event)");
-tc.setAttribute("ondragover", "dragOver(event)");
-tc.setAttribute("ondragenter", "dragEnter(event)");
-tc.setAttribute("ondragend", "dragEnd(event)");
 
 // ADJUSTS TRASHCAN ICON
 var cardTrash = document.getElementById("deleteObj");
@@ -51,20 +46,31 @@ function dragEnd(dragEv) {
 
 function drag(dragEv) {
 
-    dragEv.dataTransfer.setData("text", dragEv.target.id);
+    //dragEv.dataTransfer.setData("text", dragEv.target.id);
 }
 
-function drop(dragEv) {
+
+function RevertDrag(event) {
+	if (event == false){
+		//No event
+		return true;
+	}
+	var targetClass = event[0].className;
+	if (targetClass.includes("Column")){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
+function drop(dragEv, ui )  {
     console.log("Dropped")
     console.log(dragEv.target.className);
-    dragEv.preventDefault();
     var targetId = dragEv.target.id;
     var targetClass = dragEv.target.className;
-    var dropElementText = dragEv.dataTransfer.getData("text");
-    var dropElement = document.getElementById(dropElementText);
-
-    var targetClass = dragEv.target.className;
-    cardTrash.removeAttribute("class", "dragging");
+    var dropElementId = ($(ui.draggable).attr("id"));
+    var dropElement = document.getElementById(dropElementId);
 
     if (targetClass.includes("droptarget")) {
         dragEv.target.style.border = "";
@@ -83,6 +89,10 @@ function drop(dragEv) {
         var div = $("#" + targetId).closest('div[class*=column]');
         div.append(dropElement);
     }
+
+    $(this).append(ui.draggable);
+    $(ui.draggable).css({ "left": "0", "top": "0" });
+
 }
 
 function sendAjax() {

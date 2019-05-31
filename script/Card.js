@@ -20,9 +20,22 @@ function addCard() {
     //Card
     var div = document.createElement("div");
     div.setAttribute("class", "card cardContent cardID" + cardID);
-    div.setAttribute("draggable", true);
-    div.setAttribute("ondragstart", "drag(event)");
+    //Dragging property
+        $(div).draggable( {
+            containment: 'document',
+            cursor: 'move',
+            snap: '#content',
+            start: drag,
+            stop: drop,
+            revert: RevertDrag
+        });
+
+        
+    //div.setAttribute("ondragstart", "drag(event)");
     div.setAttribute("id", "card_" + cardID);
+    //div.setAttribute("ondragover", "dragOver(event)");
+    //div.setAttribute("ondragenter", "dragEnter(event)");
+    //div.setAttribute("ondragleave", "dragLeave(event)");'
     div.style.backgroundColor = "#E1E1E1";
 
     var cardTitle = document.createElement("div");
@@ -36,9 +49,6 @@ function addCard() {
     addCardTitle.setAttribute("id", "cardTitleInput_" + cardID);
     addCardTitle.setAttribute("onfocus", "this.value=''");
     addCardTitle.setAttribute("placeholder", "Name card");
-
-
-
 
     //CARD TITLE INPUT OK BUTTON
     var cardTitleBtn = document.createElement('button');
@@ -91,11 +101,9 @@ function addCard() {
 
 }
 
-
-
 function getCardClassID(cardClasses) {
     //The classID of a cardClass where there's multiple classes.
-    //E.g a class has multiple classes: 'card',cardID0'
+    //E.g a class has multiple classes: 'card',cardID0' 
     //We want to retrieve the class cardID of this card, which is 0.
     var res;
     var cardIDindx;
