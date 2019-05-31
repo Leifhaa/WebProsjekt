@@ -22,6 +22,7 @@ function addCard() {
     div.setAttribute("class", "card cardContent cardID" + cardID);
     //Dragging property
         $(div).draggable( {
+            zIndex: 1,
             containment: 'document',
             cursor: 'move',
             snap: '#content',
