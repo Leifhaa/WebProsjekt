@@ -69,29 +69,39 @@ function addCard() {
     // CREATES ID AND NAME IN cardArr
     cardArr.push({
         id: "card_" + cardID,
-        name: testCardName
+        columnID: 0,
+        rowID: 0,
+        name: "TitleCard" + cardID,
+        description: "",
+        startDate: null,
+        startTime: null,
+        stopDate: null,
+        stopTime: null,
+        color: "strColor",
+        cost: 100,
+        members: null
     });
+
+
+
+    //Create an object which belongs to the card div.
+    $(div).data("prop",cardArr[cardID]);
+    var card = $(div).data("prop");
+    console.dir(card);
+
 
     // PRINTS THE ARRAY
     console.log(cardArr);
 
-    // DELETE CARD BUTTON - NOT IN USE ATM
-    /*
-    var div1 = document.createElement("div");
-    div1.setAttribute("id", "del-card_" + cardID);
-    div1.setAttribute("class", "card delCardIcon cardID" + cardID);
-    div1.setAttribute("onclick", "delCard(this.id)");
-    div1.innerHTML = "<i class='far fa-edit'></i>";
-    */
 
     // EDIT CARD BUTTON
     var div2 = document.createElement("div");
     div2.setAttribute("id", "del-card_" + cardID);
     div2.setAttribute("class", "card editCardIcon cardID" + cardID);
-    div2.setAttribute("onclick", "editCard()");
+    div2.setAttribute("onclick", "CreateEditCardForm(this.id)");
     div2.innerHTML = "<i id = 'editCard_" + cardID + "' class=' far fa-edit card'></i>";
 
-    document.getElementById("colOl0").appendChild(div);
+    document.getElementById("col_0").appendChild(div);
 
     document.getElementById("card_" + cardID).appendChild(cardTitle);
     document.getElementById("card_" + cardID).appendChild(div2);

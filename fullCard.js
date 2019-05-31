@@ -7,7 +7,7 @@ window.onclick = function (event) {
 
 function CreateEditCardForm(cardID) {
 	//Get the object of the card.
-	var cardElem = $("#" + cardID).closest('div[class*=cardContent]');
+	var cardElem = $("#" + cardID).closest('li[class*=cardContent]');
     var cardData = $(cardElem).data("prop")
 
 	//cardEditBody
