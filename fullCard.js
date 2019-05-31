@@ -5,6 +5,57 @@ window.onclick = function (event) {
     }
 }
 
+function CreateEditCardForm(cardID) {
+	var cardEditBody = document.createElement("div");
+	cardEditBody.setAttribute("id","card");
+	cardEditBody.setAttribute("class","modal");
+	
+	var infoForm = document.createElement("form");
+	infoForm.setAttribute("id","infoForm");
+	infoForm.setAttribute("class","modal-content animate");
+	cardEditBody.appendChild(infoForm);
+	
+	var containerEditCard = document.createElement("div");
+	containerEditCard.setAttribute("class","containerEditCard");
+	infoForm.appendChild(containerEditCard);
+
+	//title Label
+	var titleLabel = document.createElement('Label');
+	titleLabel.setAttribute("for","editCardTitleInput");
+	titleLabel.innerHTML = "<b>Title</b>";
+	containerEditCard.appendChild(titleLabel);
+
+	//Title input box
+	var titleInput = document.createElement("input")
+	titleInput.setAttribute("type","text");
+	titleInput.setAttribute("id","editCardTitleInput");
+	titleInput.setAttribute("name","title");
+	titleInput.setAttribute("placeholder","Enter title");
+	containerEditCard.appendChild(titleInput);
+
+
+	//DscriptionLabel
+	var titleLabel = document.createElement('Label');
+	titleLabel.setAttribute("for","editCardTitleInput");
+	titleLabel.innerHTML = "<b>Title</b>";
+	containerEditCard.appendChild(titleLabel);
+
+	//Title input box
+	var titleInput = document.createElement("input")
+	titleInput.setAttribute("type","text");
+	titleInput.setAttribute("id","editCardDesInput");
+	titleInput.setAttribute("name","desc");
+	titleInput.setAttribute("placeholder","Enter description");
+	containerEditCard.appendChild(titleInput);
+
+	
+	
+	test = document.getElementById("boardContainer")
+	test.appendChild(cardEditBody);
+	test.style.backgroundColor = "white";
+}
+
+
 function changeColor(color) {
     document.getElementsByClassName('modal-content')[0].style.border = color;
 }
