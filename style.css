@@ -262,7 +262,7 @@ header {
     width: 260px;
     font-weight: 700;
     margin-bottom: 10px;
-    padding: 10px 5px; 10px 5px;
+    padding: 10px 5px 10px 5px;
     background-color: #f5f5f5;
     align-self: flex-start;
     border-radius: 2px;
@@ -457,27 +457,6 @@ header {
     font-weight: 700;
     font-size: 15px;
     cursor: pointer;
-}
-
-#deleteObj {
-    position: fixed;
-    right: 0;
-    bottom: 3%;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: #121212;
-    color: #ffffff;
-    font-size: 40px;
-    border: none;
-    transition: ease .2s;
-}
-
-#deleteObj.dragging {
-    background: #c62828;
-    width: 100px;
-    height: 100px;
-    font-size: 50px;
 }
 
 .dropzone {
