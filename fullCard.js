@@ -1,9 +1,10 @@
-var modal = document.getElementById('card');
-window.onclick = function (event) {
+//var modal = document.getElementById('card');
+/*window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
+*/
 
 function CreateEditCardForm(cardID) {
 	//Get the object of the card.
@@ -12,7 +13,7 @@ function CreateEditCardForm(cardID) {
 
 	//cardEditBody
 	var cardEditBody = document.createElement("div");
-	cardEditBody.setAttribute("id","card");
+	cardEditBody.setAttribute("id","cardEditBody");
 	cardEditBody.setAttribute("class","modal");
 	
 
@@ -43,7 +44,7 @@ function CreateEditCardForm(cardID) {
 	titleInput.setAttribute("id","editCardTitleInput");
 	titleInput.setAttribute("name","title");
 	titleInput.setAttribute("placeholder","Enter title");
-	titleInput.setAttribute("value",cardData.name);
+	titleInput.setAttribute("value",cardData.title);
 	containerEditCard.appendChild(titleInput);
 
 
@@ -59,6 +60,7 @@ function CreateEditCardForm(cardID) {
 	descInput.setAttribute("id","editCardDescInput");
 	descInput.setAttribute("name","desc");
 	descInput.setAttribute("placeholder","Enter description");
+	descInput.setAttribute("value",cardData.description);
 	containerEditCard.appendChild(descInput);
 
 
@@ -147,13 +149,20 @@ function CreateEditCardForm(cardID) {
 
 	//Push settings
 	var PushSettingButton = document.createElement('button');
-	PushSettingButton.setAttribute("onclick","pushData()");
 	PushSettingButton.setAttribute("id","BtnPushSettings")	
-	containerEditCard.appendChild(PushSettingButton);
+	PushSettingButton.setAttribute("onclick","pushData()");
+	cardEditBody.appendChild(PushSettingButton);
+
+
+	//Important: Store the ID of the card that is being edited.
+	$(cardEditBody).data("cardToEdit",cardElem);
+
+	//Important: Store the Data of the card that is being edited
+	$(cardEditBody).data("prop",cardData);
 
 }
 
-
+/*
 function changeColor(color) {
     document.getElementsByClassName('modal-content')[0].style.border = color;
 }
@@ -178,19 +187,20 @@ function Card(title, desc, dateStart, dateEnd, color, persons, id, budget) {
 function editCard(title, desc, dateStart, dateEnd, color, persons, id, budget) {
     allCards.push(new Card(title, desc, dateStart, dateEnd, color, persons, id, budget));
 }
+*/
 
 function pushData() {
 
     var color = '';
     if (document.getElementById('radio0').checked == true) {
         color = 'red';
-    } else if (document.getElementById('radio0').checked == true) {
+    } else if (document.getElementById('radio1').checked == true) {
         color = 'orange';
-    } else if (document.getElementById('radio0').checked == true) {
+    } else if (document.getElementById('radio2').checked == true) {
         color = 'green';
-    } else if (document.getElementById('radio0').checked == true) {
+    } else if (document.getElementById('radio3').checked == true) {
         color = 'blue';
-    } else if (document.getElementById('radio0').checked == true) {
+    } else if (document.getElementById('radio4').checked == true) {
         color = 'pink';
     }
 
@@ -216,7 +226,27 @@ function pushData() {
     dateEnd = document.getElementById('date-end').value;
     budget = document.getElementById('editCardBudgetInput').value;
 
-    //editCard(title, desc, dateStart, dateEnd, color, persons, id, budget);
+    //Edit the card's data
+     var editDiv = document.getElementById("cardEditBody"); //Retrieve div in editForm which contains what card we're editing.
 
-    console.log(allCards);
+	//Retrieve obj of the card we're editing.
+	var cardProps =  $(editDiv).data("prop")
+
+	//Retrieve div ID of the card we're editing.
+     var cardToEdit = $(editDiv).data("cardToEdit")[0]; 
+
+     //Edit the data properties from the original card
+     cardProps.title = this.title;
+     cardProps.description = this.desc;
+
+
+
+
+     //Replace the old obj of data properties with new obj that has updated values.
+     $(cardToEdit).data("prop",cardProps);
+    //console.log(allCards);
+    
+
+    //Delete the edit form
+    document.getElementById("cardEditBody").remove();
 }
