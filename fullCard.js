@@ -16,7 +16,7 @@ function CreateEditCardForm(cardID) {
 	cardEditBody.setAttribute("class","modal");
 	
 
-	//ccard edit form
+	//card edit form
 	var infoForm = document.createElement("form");
 	infoForm.setAttribute("id","infoForm");
 	infoForm.setAttribute("class","modal-content animate");
@@ -131,24 +131,25 @@ function CreateEditCardForm(cardID) {
 
 
 
-	//Calendar from dateEnd
+	//Calendar dateStart
 	var calendarFromDate = document.createElement('input');
 	calendarFromDate.setAttribute("type","date");	
 	calendarFromDate.setAttribute("name","date-start");
 	calendarFromDate.setAttribute("id","date-start");	
 	containerEditCard.appendChild(calendarFromDate);
 
-	//Calendar To DateStart
+	//Calendar dateEnd
 	var calendarFromDate = document.createElement('input');
 	calendarFromDate.setAttribute("type","date");	
 	calendarFromDate.setAttribute("name","date-end");
 	calendarFromDate.setAttribute("id","date-end");	
 	containerEditCard.appendChild(calendarFromDate);
 
-	//Calendar To DateStart
-	var calendarFromDate = document.createElement('button');
-	calendarFromDate.setAttribute("onclock","pushData()");	
-	containerEditCard.appendChild(calendarFromDate);
+	//Push settings
+	var PushSettingButton = document.createElement('button');
+	PushSettingButton.setAttribute("onclick","pushData()");
+	PushSettingButton.setAttribute("id","BtnPushSettings")	
+	containerEditCard.appendChild(PushSettingButton);
 
 }
 
@@ -181,20 +182,23 @@ function editCard(title, desc, dateStart, dateEnd, color, persons, id, budget) {
 function pushData() {
 
     var color = '';
-    if (document.getElementById('redRadio').checked == true) {
+    if (document.getElementById('radio0').checked == true) {
         color = 'red';
-    } else if (document.getElementById('orangeRadio').checked == true) {
+    } else if (document.getElementById('radio0').checked == true) {
         color = 'orange';
-    } else if (document.getElementById('greenRadio').checked == true) {
+    } else if (document.getElementById('radio0').checked == true) {
         color = 'green';
-    } else if (document.getElementById('blueRadio').checked == true) {
+    } else if (document.getElementById('radio0').checked == true) {
         color = 'blue';
-    } else if (document.getElementById('pinkRadio').checked == true) {
+    } else if (document.getElementById('radio0').checked == true) {
         color = 'pink';
     }
 
     var persons = [];
 
+    if (document.getElementById('ava0').checked == true) {
+        persons.push('person0')
+    } 
     if (document.getElementById('ava1').checked == true) {
         persons.push('person1')
     } 
@@ -203,19 +207,16 @@ function pushData() {
     } 
     if (document.getElementById('ava3').checked == true) {
         persons.push('person3')
-    } 
-    if (document.getElementById('ava4').checked == true) {
-        persons.push('person4')
     }
     
     id = new Date().getTime();
-    title = document.getElementById('titleInput').value;
-    desc = document.getElementById('descInput').value;
+    title = document.getElementById('editCardTitleInput').value;
+    desc = document.getElementById('editCardDescInput').value;
     dateStart = document.getElementById('date-start').value;
     dateEnd = document.getElementById('date-end').value;
-    budget = document.getElementById('budgetInput').value;
+    budget = document.getElementById('editCardBudgetInput').value;
 
-    editCard(title, desc, dateStart, dateEnd, color, persons, id, budget);
+    //editCard(title, desc, dateStart, dateEnd, color, persons, id, budget);
 
     console.log(allCards);
 }

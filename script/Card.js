@@ -73,6 +73,7 @@ function addCard() {
         rowID: 0,
         name: "TitleCard" + cardID,
         description: "",
+        persons: null,
         startDate: null,
         startTime: null,
         stopDate: null,
