@@ -11,6 +11,10 @@ function CreateEditCardForm(cardID) {
 	var cardElem = $("#" + cardID).closest('li[class*=cardContent]');
     var cardData = $(cardElem).data("prop")
 
+    //darkBg while editor is open
+    var cardEditBg = document.createElement("div");
+    cardEditBg.setAttribute("id","cardEditBg");
+
 	//cardEditBody
 	var cardEditBody = document.createElement("div");
 	cardEditBody.setAttribute("id","cardEditBody");
@@ -28,9 +32,12 @@ function CreateEditCardForm(cardID) {
 	containerEditCard.setAttribute("class","containerEditCard");
 	infoForm.appendChild(containerEditCard);
 
-	test = document.getElementById("boardContainer")
+	test = document.getElementById("boardContainer");
 	test.appendChild(cardEditBody);
-	test.style.backgroundColor = "white";
+
+    // APPENDS THE DARK BG TO body
+    test2 = document.body;
+    test2.appendChild(cardEditBg);
 
 	//title Label
 	var titleLabel = document.createElement('Label');
@@ -42,6 +49,7 @@ function CreateEditCardForm(cardID) {
 	var titleInput = document.createElement("input")
 	titleInput.setAttribute("type","text");
 	titleInput.setAttribute("id","editCardTitleInput");
+    titleInput.setAttribute("class", "editCardInputField")
 	titleInput.setAttribute("name","title");
 	titleInput.setAttribute("placeholder","Enter title");
 	titleInput.setAttribute("value",cardData.title);
@@ -55,9 +63,10 @@ function CreateEditCardForm(cardID) {
 	containerEditCard.appendChild(DescLabel);
 
 	//Description input box
-	var descInput = document.createElement("input")
+	var descInput = document.createElement("textarea")
 	descInput.setAttribute("type","text");
 	descInput.setAttribute("id","editCardDescInput");
+    descInput.setAttribute("class", "editCardTextArea");
 	descInput.setAttribute("name","desc");
 	descInput.setAttribute("placeholder","Enter description");
 	descInput.setAttribute("value",cardData.description);
@@ -74,6 +83,7 @@ function CreateEditCardForm(cardID) {
 	var BudgetInput = document.createElement("input")
 	BudgetInput.setAttribute("type","text");
 	BudgetInput.setAttribute("id","editCardBudgetInput");
+    BudgetInput.setAttribute("class", "editCardInputField")
 	BudgetInput.setAttribute("name","budget");
 	BudgetInput.setAttribute("placeholder","Enter budget");
 	BudgetInput.setAttribute("value",cardData.budget);
@@ -114,19 +124,19 @@ function CreateEditCardForm(cardID) {
 		Color.setAttribute("name","colorRadio");
 		Color.setAttribute("value","small");
 		if (i == 0){
-			ColorLabel.innerHTML = "<i onclick= \"changeColor('5px solid red') \" class='fas fa-square fa-2x red' required'></i>";
+			ColorLabel.innerHTML = "<i onclick= \"changeColor('5px solid red') \" class='fas fa-square fa-2x redRadio' required'></i>";
 		}
 		else if (i == 1){
-			ColorLabel.innerHTML = "<i onclick= \"changeColor('5px solid orange')\" class='fas fa-square fa-2x orange'></i>";
+			ColorLabel.innerHTML = "<i onclick= \"changeColor('5px solid orange')\" class='fas fa-square fa-2x orangeRadio'></i>";
 		}
 		else if (i == 2){
-			ColorLabel.innerHTML = "<i onclick= \"changeColor('5px solid green')\" class='fas fa-square fa-2x green'></i>";
+			ColorLabel.innerHTML = "<i onclick= \"changeColor('5px solid green')\" class='fas fa-square fa-2x greenRadio'></i>";
 		}
 		else if (i == 3){
-			ColorLabel.innerHTML = "<i onclick= \"changeColor('5px solid blue')\" class='fas fa-square fa-2x blue'></i>";
+			ColorLabel.innerHTML = "<i onclick= \"changeColor('5px solid blue')\" class='fas fa-square fa-2x blueRadio'></i>";
 		}
 		else if (i == 4){
-			ColorLabel.innerHTML = "<i onclick= \"changeColor('5px solid pink')\" class='fas fa-square fa-2x pink'></i>";
+			ColorLabel.innerHTML = "<i onclick= \"changeColor('5px solid pink')\" class='fas fa-square fa-2x pinkRadio'></i>";
 		}
 		containerEditCard.appendChild(ColorLabel);
 		ColorLabel.appendChild(Color);
@@ -262,4 +272,5 @@ function pushData() {
 
     //Delete the edit form
     document.getElementById("cardEditBody").remove();
+    document.getElementById("cardEditBg").remove();
 }

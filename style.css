@@ -123,20 +123,6 @@ header {
 
 }
 
-.containerEditCard {
-    position: absolute;
-    width: 400px;
-    height: 500px;
-    padding: 20px;
-    top: 50px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 900;
-    background-color: #ff00cc;
-}
-
 #test-column-holder {
     position: relative;
 
@@ -588,14 +574,141 @@ footer {
 
 }
 
+.containerEditCard {
+    z-index: 900;
+    position: absolute;
+    border-radius: 2px;
+    border-bottom: 1px solid #ccc;
+    width: 420px;
+    height: 460px;
+    padding: 20px;
+    top: 50px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 900;
+    background-color: #f5f5f5;
+    color: #111;
+}
+
+.editCardInputField {
+    border: 2px solid #4a148c;
+    border-radius: 2px;
+    outline: none;
+    width: 400px;
+    padding: 5px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+
+.editCardInputField:focus {
+    border: 2px solid #4caf50;
+}
+
+.editCardTextArea {
+    border: 2px solid #4a148c;
+    border-radius: 2px;
+    outline: none;
+    resize: none;
+    width: 400px;
+    height: 100px;
+    padding: 5px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 15px;
+
+}
+textarea:focus {
+    border: 2px solid #4caf50;
+}
+
+
 #BtnPushSettings {
     position: absolute;
-    z-index: 990;
-    background-color: #4CAF50;
+    left: 20px;
+    bottom: 10px;
+    background-color: #29b6f6;
     color: white;
-    padding: 14px 20px;
+    padding: 5px;
     margin: 8px 0;
     border: none;
+    border-radius: 2px;
+    outline: none;
     cursor: pointer;
-    width: 100px;
+    width: 80px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#BtnPushSettings:hover {
+    background-color: #4a148c;
+
+}
+
+#cardEditBg {
+    position: absolute;
+    top: 0;
+    opacity: .7;
+    background: #111;
+    width: 100%;
+    height: 1000px;
+    z-index: 850;
+}
+
+#date-start {
+    font-size: 14px;
+    outline: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border: 2px solid #4a148c;
+    margin-right: 15px;
+    margin-top: 10px;
+    padding: 5px;
+    width: 185px;
+    border-radius: 2px;
+}
+
+#date-start:focus {
+    border: 2px solid #4caf50;
+}
+
+#date-end {
+    font-size: 14px;
+    outline: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border: 2px solid #4a148c;
+    margin-top: 20px;
+    padding: 5px;
+    width: 185px;
+    border-radius: 2px;
+}
+
+#date-end:focus {
+    border: 2px solid #4caf50;
+}
+
+
+/* COLOR RADIOS ON EDIT CARD */
+
+.redRadio{
+    color: #e53935;
+}
+
+.orangeRadio{
+    color: #fb8c00;
+
+}
+
+.greenRadio {
+    color: #43a047;
+}
+
+.blueRadio {
+    color: #1e88e5;
+}
+
+.pinkRadio {
+    color: #d81b60;
 }
