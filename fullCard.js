@@ -15,14 +15,14 @@ function CreateEditCardForm(cardID) {
 	var cardEditBody = document.createElement("div");
 	cardEditBody.setAttribute("id","cardEditBody");
 	cardEditBody.setAttribute("class","modal");
-	
+
 
 	//card edit form
 	var infoForm = document.createElement("form");
 	infoForm.setAttribute("id","infoForm");
 	infoForm.setAttribute("class","modal-content animate");
 	cardEditBody.appendChild(infoForm);
-	
+
 	//Container card edit
 	var containerEditCard = document.createElement("div");
 	containerEditCard.setAttribute("class","containerEditCard");
@@ -104,7 +104,7 @@ function CreateEditCardForm(cardID) {
 	}
 
 
-	
+
 	//Card color
 	for (i = 0; i < 5; i ++){
 		var ColorLabel = document.createElement('Label');
@@ -136,25 +136,28 @@ function CreateEditCardForm(cardID) {
 
 	//Calendar dateStart
 	var calendarFromDate = document.createElement('input');
-	calendarFromDate.setAttribute("type","date");	
+	calendarFromDate.setAttribute("type","date");
 	calendarFromDate.setAttribute("name","date-start");
-	calendarFromDate.setAttribute("id","date-start");	
+	calendarFromDate.setAttribute("id","date-start");
 	calendarFromDate.setAttribute("value",cardData.dateStart);
 	containerEditCard.appendChild(calendarFromDate);
 
 	//Calendar dateEnd
 	var calendarToDate = document.createElement('input');
-	calendarToDate.setAttribute("type","date");	
+	calendarToDate.setAttribute("type","date");
 	calendarToDate.setAttribute("name","date-end");
-	calendarToDate.setAttribute("id","date-end");	
+	calendarToDate.setAttribute("id","date-end");
 	calendarToDate.setAttribute("value",cardData.dateEnd);
 	containerEditCard.appendChild(calendarToDate);
 
 	//Push settings
 	var PushSettingButton = document.createElement('button');
-	PushSettingButton.setAttribute("id","BtnPushSettings")	
+    PushSettingButton.setAttribute("type","Submit")
+    PushSettingButton.setAttribute("name","BtnPushSettings")
+	PushSettingButton.setAttribute("id","BtnPushSettings");
+    PushSettingButton.innerHTML = "Ok";
 	PushSettingButton.setAttribute("onclick","pushData()");
-	cardEditBody.appendChild(PushSettingButton);
+	containerEditCard.appendChild(PushSettingButton);
 
 
 	//Important: Store the ID of the card that is being edited.
@@ -211,17 +214,17 @@ function pushData() {
 
     if (document.getElementById('ava0').checked == true) {
         persons.push('person0')
-    } 
+    }
     if (document.getElementById('ava1').checked == true) {
         persons.push('person1')
-    } 
+    }
     if (document.getElementById('ava2').checked == true) {
         persons.push('person2')
-    } 
+    }
     if (document.getElementById('ava3').checked == true) {
         persons.push('person3')
     }
-    
+
     id = new Date().getTime();
     title = document.getElementById('editCardTitleInput').value;
     desc = document.getElementById('editCardDescInput').value;
@@ -236,7 +239,7 @@ function pushData() {
 	var cardProps =  $(editDiv).data("prop")
 
 	//Retrieve div ID of the card we're editing.
-     var cardToEdit = $(editDiv).data("cardToEdit")[0]; 
+     var cardToEdit = $(editDiv).data("cardToEdit")[0];
 
      //Edit the data properties from the original card
      cardProps.title = this.title;
