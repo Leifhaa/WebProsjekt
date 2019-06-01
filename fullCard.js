@@ -11,10 +11,6 @@ function CreateEditCardForm(cardID) {
 	var cardElem = $("#" + cardID).closest('li[class*=cardContent]');
     var cardData = $(cardElem).data("prop")
 
-    //darkBg while editor is open
-    var cardEditBg = document.createElement("div");
-    cardEditBg.setAttribute("id","cardEditBg");
-
 	//cardEditBody
 	var cardEditBody = document.createElement("div");
 	cardEditBody.setAttribute("id","cardEditBody");
@@ -32,12 +28,9 @@ function CreateEditCardForm(cardID) {
 	containerEditCard.setAttribute("class","containerEditCard");
 	infoForm.appendChild(containerEditCard);
 
-	test = document.getElementById("boardContainer");
+	test = document.getElementById("boardContainer")
 	test.appendChild(cardEditBody);
-
-    // APPENDS THE DARK BG TO body
-    test2 = document.body;
-    test2.appendChild(cardEditBg);
+	test.style.backgroundColor = "white";
 
 	//title Label
 	var titleLabel = document.createElement('Label');
@@ -49,7 +42,6 @@ function CreateEditCardForm(cardID) {
 	var titleInput = document.createElement("input")
 	titleInput.setAttribute("type","text");
 	titleInput.setAttribute("id","editCardTitleInput");
-    titleInput.setAttribute("class", "editCardInputField")
 	titleInput.setAttribute("name","title");
 	titleInput.setAttribute("placeholder","Enter title");
 	titleInput.setAttribute("value",cardData.title);
@@ -63,10 +55,9 @@ function CreateEditCardForm(cardID) {
 	containerEditCard.appendChild(DescLabel);
 
 	//Description input box
-	var descInput = document.createElement("textarea")
+	var descInput = document.createElement("input")
 	descInput.setAttribute("type","text");
 	descInput.setAttribute("id","editCardDescInput");
-    descInput.setAttribute("class", "editCardTextArea");
 	descInput.setAttribute("name","desc");
 	descInput.setAttribute("placeholder","Enter description");
 	descInput.setAttribute("value",cardData.description);
@@ -83,7 +74,6 @@ function CreateEditCardForm(cardID) {
 	var BudgetInput = document.createElement("input")
 	BudgetInput.setAttribute("type","text");
 	BudgetInput.setAttribute("id","editCardBudgetInput");
-    BudgetInput.setAttribute("class", "editCardInputField")
 	BudgetInput.setAttribute("name","budget");
 	BudgetInput.setAttribute("placeholder","Enter budget");
 	BudgetInput.setAttribute("value",cardData.budget);
@@ -111,6 +101,10 @@ function CreateEditCardForm(cardID) {
 		}
 		containerEditCard.appendChild(AvatarLabel);
 		AvatarLabel.appendChild(Avatar);
+	
+		if (cardData.persons != null && cardData.persons.includes("ava" + i)){
+			Avatar.checked = true;
+		}
 	}
 
 
@@ -124,22 +118,43 @@ function CreateEditCardForm(cardID) {
 		Color.setAttribute("name","colorRadio");
 		Color.setAttribute("value","small");
 		if (i == 0){
-			ColorLabel.innerHTML = "<i onclick= \"changeColor('5px solid red') \" class='fas fa-square fa-2x redRadio' required'></i>";
+			ColorLabel.innerHTML = "<i onclick= changeColor(\"red\") class='fas fa-square fa-2x red' required'></i>";
+			if (cardData.color == "red"){
+				Color.checked = true;
+			}
 		}
 		else if (i == 1){
-			ColorLabel.innerHTML = "<i onclick= \"changeColor('5px solid orange')\" class='fas fa-square fa-2x orangeRadio'></i>";
+			ColorLabel.innerHTML = "<i onclick= changeColor(\"orange\") class='fas fa-square fa-2x orange'></i>";
+			if (cardData.color == "orange"){
+				Color.checked = true;
+			}
 		}
 		else if (i == 2){
-			ColorLabel.innerHTML = "<i onclick= \"changeColor('5px solid green')\" class='fas fa-square fa-2x greenRadio'></i>";
+			ColorLabel.innerHTML = "<i onclick= changeColor(\"green\") class='fas fa-square fa-2x green'></i>";
+			if (cardData.color == "green"){
+				Color.checked = true;
+			}
 		}
 		else if (i == 3){
-			ColorLabel.innerHTML = "<i onclick= \"changeColor('5px solid blue')\" class='fas fa-square fa-2x blueRadio'></i>";
+			ColorLabel.innerHTML = "<i onclick= changeColor(\"blue\") class='fas fa-square fa-2x blue'></i>";
+			if (cardData.color == "blue"){
+				Color.checked = true;
+			}
 		}
 		else if (i == 4){
-			ColorLabel.innerHTML = "<i onclick= \"changeColor('5px solid pink')\" class='fas fa-square fa-2x pinkRadio'></i>";
+			ColorLabel.innerHTML = "<i onclick= changeColor(\"pink\") class='fas fa-square fa-2x pink'></i>";
+			if (cardData.color == "pink"){
+				Color.checked = true;
+			}
 		}
 		containerEditCard.appendChild(ColorLabel);
 		ColorLabel.appendChild(Color);
+
+		//Apply color
+	}
+	//Apply color
+	if (cardData.color != ""){
+		changeColor(cardData.color);
 	}
 
 
@@ -178,9 +193,10 @@ function CreateEditCardForm(cardID) {
 
 }
 
-/*
 function changeColor(color) {
-    document.getElementsByClassName('modal-content')[0].style.border = color;
+    var editElem = document.getElementById('cardEditBody');
+    editElem.style.border = "thick solid " + color;
+    //[0].style.border = color;
 }
 
 function changeAvatarColor(color) {
@@ -203,7 +219,7 @@ function Card(title, desc, dateStart, dateEnd, color, persons, id, budget) {
 function editCard(title, desc, dateStart, dateEnd, color, persons, id, budget) {
     allCards.push(new Card(title, desc, dateStart, dateEnd, color, persons, id, budget));
 }
-*/
+
 
 function pushData() {
 
@@ -223,16 +239,16 @@ function pushData() {
     var persons = [];
 
     if (document.getElementById('ava0').checked == true) {
-        persons.push('person0')
-    }
+        persons.push('ava0')
+    } 
     if (document.getElementById('ava1').checked == true) {
-        persons.push('person1')
-    }
+        persons.push('ava1')
+    } 
     if (document.getElementById('ava2').checked == true) {
-        persons.push('person2')
-    }
+        persons.push('ava2')
+    } 
     if (document.getElementById('ava3').checked == true) {
-        persons.push('person3')
+        persons.push('ava3')
     }
 
     id = new Date().getTime();
@@ -255,8 +271,8 @@ function pushData() {
      cardProps.title = this.title;
      cardProps.description = this.desc;
      cardProps.budget = this.budget;
-     cardProps.persons = this.persons;
-     cardProps.color = this.color;
+     cardProps.persons = persons;
+     cardProps.color = color;
      cardProps.dateStart = this.dateStart;
      cardProps.dateEnd = this.dateEnd;
 
@@ -272,5 +288,4 @@ function pushData() {
 
     //Delete the edit form
     document.getElementById("cardEditBody").remove();
-    document.getElementById("cardEditBg").remove();
 }
