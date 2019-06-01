@@ -123,6 +123,20 @@ header {
 
 }
 
+.containerEditCard {
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    padding: 20px;
+    top: 50px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 900;
+    background-color: #ff00cc;
+}
+
 #test-column-holder {
     position: relative;
 
@@ -570,13 +584,18 @@ footer {
   }
 }
 
+#cardEditBody {
+
+}
 
 #BtnPushSettings {
+    position: absolute;
+    z-index: 990;
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 100px;
 }
