@@ -76,6 +76,7 @@ function CreateEditCardForm(cardID) {
 	BudgetInput.setAttribute("id","editCardBudgetInput");
 	BudgetInput.setAttribute("name","budget");
 	BudgetInput.setAttribute("placeholder","Enter budget");
+	BudgetInput.setAttribute("value",cardData.budget);
 	containerEditCard.appendChild(BudgetInput);
 
 	//Avatars
@@ -138,14 +139,16 @@ function CreateEditCardForm(cardID) {
 	calendarFromDate.setAttribute("type","date");	
 	calendarFromDate.setAttribute("name","date-start");
 	calendarFromDate.setAttribute("id","date-start");	
+	calendarFromDate.setAttribute("value",cardData.dateStart);
 	containerEditCard.appendChild(calendarFromDate);
 
 	//Calendar dateEnd
-	var calendarFromDate = document.createElement('input');
-	calendarFromDate.setAttribute("type","date");	
-	calendarFromDate.setAttribute("name","date-end");
-	calendarFromDate.setAttribute("id","date-end");	
-	containerEditCard.appendChild(calendarFromDate);
+	var calendarToDate = document.createElement('input');
+	calendarToDate.setAttribute("type","date");	
+	calendarToDate.setAttribute("name","date-end");
+	calendarToDate.setAttribute("id","date-end");	
+	calendarToDate.setAttribute("value",cardData.dateEnd);
+	containerEditCard.appendChild(calendarToDate);
 
 	//Push settings
 	var PushSettingButton = document.createElement('button');
@@ -238,6 +241,12 @@ function pushData() {
      //Edit the data properties from the original card
      cardProps.title = this.title;
      cardProps.description = this.desc;
+     cardProps.budget = this.budget;
+     cardProps.persons = this.persons;
+     cardProps.color = this.color;
+     cardProps.dateStart = this.dateStart;
+     cardProps.dateEnd = this.dateEnd;
+
 
 
 
@@ -247,8 +256,6 @@ function pushData() {
 
      //Changes the title of the card ID that we're editing
      $(cardToEdit).find("div[class='cardTitle']")[0].innerHTML = this.title;
-     
-    
 
     //Delete the edit form
     document.getElementById("cardEditBody").remove();
