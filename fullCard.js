@@ -239,7 +239,6 @@ function pushData() {
     var persons = [];
 
     if (document.getElementById('ava0').checked == true) {
-<<<<<<< HEAD
         persons.push('ava0')
     } 
     if (document.getElementById('ava1').checked == true) {
@@ -248,16 +247,6 @@ function pushData() {
     if (document.getElementById('ava2').checked == true) {
         persons.push('ava2')
     } 
-=======
-        persons.push('person0')
-    }
-    if (document.getElementById('ava1').checked == true) {
-        persons.push('person1')
-    }
-    if (document.getElementById('ava2').checked == true) {
-        persons.push('person2')
-    }
->>>>>>> 308308348443e816beae69795959738a8f86fdc9
     if (document.getElementById('ava3').checked == true) {
         persons.push('ava3')
     }
