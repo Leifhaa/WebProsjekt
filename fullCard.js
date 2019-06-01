@@ -244,7 +244,10 @@ function pushData() {
 
      //Replace the old obj of data properties with new obj that has updated values.
      $(cardToEdit).data("prop",cardProps);
-    //console.log(allCards);
+
+     //Changes the title of the card ID that we're editing
+     $(cardToEdit).find("div[class='cardTitle']")[0].innerHTML = this.title;
+     
     
 
     //Delete the edit form

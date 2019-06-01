@@ -154,6 +154,10 @@ function addCardTitle(csName) {
         cardState.style.backgroundColor = "#f5f5f5";
     }
 
+
+    //Set the object property according to new title
+    $(cardState).data("prop").title = cardInputElem.value;
+
     var cardBtn = document.getElementById("cardTitleBtn_" + cardID);
     var cardBtnCancel = document.getElementById("cardTitleBtnCancel_" + cardID);
     var cardTitle = document.getElementById("cardTitleText_" + cardID);
