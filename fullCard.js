@@ -81,7 +81,7 @@ function CreateEditCardForm(cardID) {
     descInput.setAttribute("class", "editCardTextArea");
 	descInput.setAttribute("name","desc");
 	descInput.setAttribute("placeholder","Enter description");
-	descInput.setAttribute("value",cardData.description);
+	descInput.value = cardData.description
 	containerEditCard.appendChild(descInput);
 
 
@@ -308,7 +308,11 @@ function pushData() {
      //Changes the title of the card ID that we're editing
      $(cardToEdit).find("div[class='cardTitle']")[0].innerHTML = this.title;
 
-    //Delete the edit form
+    closeEditor();
+}
+
+function closeEditor(){
+	//Delete the edit form
     document.getElementById("cardEditBody").remove();
 	document.getElementById("cardEditBg").remove();
 }

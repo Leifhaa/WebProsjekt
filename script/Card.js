@@ -79,7 +79,7 @@ function addCard() {
         stopDate: null,
         stopTime: null,
         color: "strColor",
-        cost: 100,
+        budget: "",
         members: null
     });
 
