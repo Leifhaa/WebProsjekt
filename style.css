@@ -1,3 +1,7 @@
+html {
+    min-height: 100%;
+}
+
 body {
     background-color: #4a148c;
     background-image: linear-gradient(315deg, #4a148c 0%, #12005e 100%);
@@ -5,6 +9,8 @@ body {
     padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #111;
+    font-size: 62.5%;
+    height: 100%;
 }
 
 
@@ -17,8 +23,7 @@ header {
 }
 
 #siteWrap {
-
-
+    height: 100%;
 }
 /* SCROLL BAR STYLING */
 ::-webkit-scrollbar {
@@ -103,7 +108,7 @@ header {
 }
 #boardContainer {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     overflow: scroll;
     overflow-y: hidden;
     padding-bottom: 50px;
@@ -155,8 +160,18 @@ header {
     position: relative;
 }
 
+.fa-times {
+    font-size: 1.6em;
+}
+
+.fa-edit {
+    font-size: 1.6em;
+
+}
+
 .colTitle {
     position: relative;
+    font-size: 1.6em;
     font-weight: bold;
     margin-bottom: 10px;
     margin-left: 5px;
@@ -260,6 +275,7 @@ header {
 }
 
 .cardTitle {
+    font-size: 1.5em;
 
 }
 
@@ -279,7 +295,7 @@ header {
     width: 215px;
     margin-right: 20px;
     padding: 5px;
-    font-size: 15px;
+    font-size: 1.4em;
 }
 
 .cardContent input:focus {
@@ -302,7 +318,7 @@ header {
     padding: 5px;
     font-weight: bold;
     outline: none;
-    font-size: 14px;
+    font-size: 1.4em;
 }
 
 
@@ -326,7 +342,7 @@ header {
     padding: 5px;
     font-weight: bold;
     outline: none;
-    font-size: 14px;
+    font-size: 1.4em;
 }
 
 .cardCancelBtn:hover {
@@ -379,7 +395,7 @@ header {
     outline:none;
     cursor: pointer;
     color: #fff;
-    font-size: 16px;
+    font-size: 1.6em;
     transition: ease .5s;
 
 }
@@ -402,7 +418,7 @@ header {
     outline:none;
     cursor: pointer;
     color: #4a148c;
-    font-size: 16px;
+    font-size: 1.6em;
 
 }
 
@@ -424,7 +440,7 @@ header {
 #button-holder {
 
     color: #fff;
-    font-size: 14px;
+    font-size: 1.4em;
 
 }
 
@@ -448,7 +464,7 @@ header {
 
 #col-txt{
     font-weight: 700;
-    font-size: 15px;
+    font-size: 1.6em;
     cursor: pointer;
 }
 
@@ -561,6 +577,10 @@ footer {
 
 }
 
+.containerEditCard .fa-times {
+    font-size: 1.2em;
+}
+
 .containerEditCard {
     z-index: 900;
     position: absolute;
@@ -578,6 +598,7 @@ footer {
     background-color: #f5f5f5;
     color: #111;
     box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+    font-size: 1.5em;
 }
 
 .editCardInputField {
@@ -586,9 +607,10 @@ footer {
     outline: none;
     width: 400px;
     padding: 5px;
-    font-size: 15px;
+    font-size: 1.6em;
     margin-bottom: 20px;
     margin-top: 10px;
+    font-size: 1.0em;
 }
 
 
@@ -606,7 +628,7 @@ footer {
     padding: 5px;
     margin-bottom: 20px;
     margin-top: 10px;
-    font-size: 15px;
+    font-size: 1.0em;
 
 }
 textarea:focus {
@@ -628,7 +650,7 @@ textarea:focus {
     cursor: pointer;
     width: 80px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1.1em;
 }
 
 #BtnPushSettings:hover {
@@ -642,12 +664,12 @@ textarea:focus {
     opacity: .7;
     background: #111;
     width: 100%;
-    height: 1000px;
+    height: 100%;
     z-index: 850;
 }
 
 #date-start {
-    font-size: 14px;
+    font-size: 1em;
     outline: none;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     border: 2px solid #4a148c;
@@ -663,7 +685,7 @@ textarea:focus {
 }
 
 #date-end {
-    font-size: 14px;
+    font-size: 1em;
     outline: none;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     border: 2px solid #4a148c;

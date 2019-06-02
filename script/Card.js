@@ -102,7 +102,7 @@ function addCard() {
     div2.setAttribute("onclick", "CreateEditCardForm(this.id)");
     div2.innerHTML = "<i id = 'editCard_" + cardID + "' class=' far fa-edit card'></i>";
 
-    document.getElementById("col_0").appendChild(div);
+    document.getElementById("colOl0").appendChild(div);
 
     document.getElementById("card_" + cardID).appendChild(cardTitle);
     document.getElementById("card_" + cardID).appendChild(div2);
