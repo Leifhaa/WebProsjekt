@@ -182,19 +182,6 @@ header {
 
 }
 
-.closeEditorIcon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    margin-bottom: 10px;
-    color: #ccc;
-    cursor: pointer;
-}
-
-.closeEditorIcon:hover {
-    color: #111;
-}
-
 .delColIcon {
     position: absolute;
     top: 10px;
@@ -579,7 +566,7 @@ footer {
     position: absolute;
     border-radius: 2px;
     border-bottom: 1px solid #ccc;
-    width: 420px;
+    width: 415px;
     height: 460px;
     padding: 20px;
     top: 50px;
@@ -590,6 +577,7 @@ footer {
     z-index: 900;
     background-color: #f5f5f5;
     color: #111;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
 }
 
 .editCardInputField {
@@ -688,6 +676,22 @@ textarea:focus {
 #date-end:focus {
     border: 2px solid #4caf50;
 }
+
+
+.closeEditorIcon {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1050;
+    margin-bottom: 10px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.closeEditorIcon:hover {
+    color: #111;
+}
+
 
 
 /* COLOR RADIOS ON EDIT CARD */

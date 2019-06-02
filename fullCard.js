@@ -11,6 +11,10 @@ function CreateEditCardForm(cardID) {
 	var cardElem = $("#" + cardID).closest('li[class*=cardContent]');
     var cardData = $(cardElem).data("prop")
 
+	//darkBg while editor is open
+	var cardEditBg = document.createElement("div");
+	cardEditBg.setAttribute("id","cardEditBg");
+
 	//cardEditBody
 	var cardEditBody = document.createElement("div");
 	cardEditBody.setAttribute("id","cardEditBody");
@@ -30,7 +34,22 @@ function CreateEditCardForm(cardID) {
 
 	test = document.getElementById("boardContainer")
 	test.appendChild(cardEditBody);
-	test.style.backgroundColor = "white";
+
+	// APPENDS THE DARK BG TO body
+    test2 = document.body;
+    test2.appendChild(cardEditBg);
+
+	//Close button for editor
+	var editorCloseBtn = document.createElement("div");
+    editorCloseBtn.setAttribute("id", "editorCloseBtn");
+    editorCloseBtn.setAttribute("class", "closeEditorIcon");
+    editorCloseBtn.setAttribute("onclick", "closeEditor()");
+    editorCloseBtn.innerHTML = "<i class='fas fa-times'></i>";
+
+	test3 = document.getElementById("cardEditBody");
+	containerEditCard.appendChild(editorCloseBtn);
+
+
 
 	//title Label
 	var titleLabel = document.createElement('Label');
@@ -42,6 +61,7 @@ function CreateEditCardForm(cardID) {
 	var titleInput = document.createElement("input")
 	titleInput.setAttribute("type","text");
 	titleInput.setAttribute("id","editCardTitleInput");
+	titleInput.setAttribute("class", "editCardInputField");
 	titleInput.setAttribute("name","title");
 	titleInput.setAttribute("placeholder","Enter title");
 	titleInput.setAttribute("value",cardData.title);
@@ -55,9 +75,10 @@ function CreateEditCardForm(cardID) {
 	containerEditCard.appendChild(DescLabel);
 
 	//Description input box
-	var descInput = document.createElement("input")
+	var descInput = document.createElement("textarea")
 	descInput.setAttribute("type","text");
 	descInput.setAttribute("id","editCardDescInput");
+    descInput.setAttribute("class", "editCardTextArea");
 	descInput.setAttribute("name","desc");
 	descInput.setAttribute("placeholder","Enter description");
 	descInput.setAttribute("value",cardData.description);
@@ -74,6 +95,7 @@ function CreateEditCardForm(cardID) {
 	var BudgetInput = document.createElement("input")
 	BudgetInput.setAttribute("type","text");
 	BudgetInput.setAttribute("id","editCardBudgetInput");
+	BudgetInput.setAttribute("class", "editCardInputField");
 	BudgetInput.setAttribute("name","budget");
 	BudgetInput.setAttribute("placeholder","Enter budget");
 	BudgetInput.setAttribute("value",cardData.budget);
@@ -101,7 +123,7 @@ function CreateEditCardForm(cardID) {
 		}
 		containerEditCard.appendChild(AvatarLabel);
 		AvatarLabel.appendChild(Avatar);
-	
+
 		if (cardData.persons != null && cardData.persons.includes("ava" + i)){
 			Avatar.checked = true;
 		}
@@ -118,31 +140,31 @@ function CreateEditCardForm(cardID) {
 		Color.setAttribute("name","colorRadio");
 		Color.setAttribute("value","small");
 		if (i == 0){
-			ColorLabel.innerHTML = "<i onclick= changeColor(\"red\") class='fas fa-square fa-2x red' required'></i>";
+			ColorLabel.innerHTML = "<i onclick= changeColor(\"red\") class='fas fa-square fa-2x redRadio' required'></i>";
 			if (cardData.color == "red"){
 				Color.checked = true;
 			}
 		}
 		else if (i == 1){
-			ColorLabel.innerHTML = "<i onclick= changeColor(\"orange\") class='fas fa-square fa-2x orange'></i>";
+			ColorLabel.innerHTML = "<i onclick= changeColor(\"orange\") class='fas fa-square fa-2x orangeRadio'></i>";
 			if (cardData.color == "orange"){
 				Color.checked = true;
 			}
 		}
 		else if (i == 2){
-			ColorLabel.innerHTML = "<i onclick= changeColor(\"green\") class='fas fa-square fa-2x green'></i>";
+			ColorLabel.innerHTML = "<i onclick= changeColor(\"green\") class='fas fa-square fa-2x greenRadio'></i>";
 			if (cardData.color == "green"){
 				Color.checked = true;
 			}
 		}
 		else if (i == 3){
-			ColorLabel.innerHTML = "<i onclick= changeColor(\"blue\") class='fas fa-square fa-2x blue'></i>";
+			ColorLabel.innerHTML = "<i onclick= changeColor(\"blue\") class='fas fa-square fa-2x blueRadio'></i>";
 			if (cardData.color == "blue"){
 				Color.checked = true;
 			}
 		}
 		else if (i == 4){
-			ColorLabel.innerHTML = "<i onclick= changeColor(\"pink\") class='fas fa-square fa-2x pink'></i>";
+			ColorLabel.innerHTML = "<i onclick= changeColor(\"pink\") class='fas fa-square fa-2x pinkRadio'></i>";
 			if (cardData.color == "pink"){
 				Color.checked = true;
 			}
@@ -240,13 +262,13 @@ function pushData() {
 
     if (document.getElementById('ava0').checked == true) {
         persons.push('ava0')
-    } 
+    }
     if (document.getElementById('ava1').checked == true) {
         persons.push('ava1')
-    } 
+    }
     if (document.getElementById('ava2').checked == true) {
         persons.push('ava2')
-    } 
+    }
     if (document.getElementById('ava3').checked == true) {
         persons.push('ava3')
     }
@@ -288,4 +310,5 @@ function pushData() {
 
     //Delete the edit form
     document.getElementById("cardEditBody").remove();
+	document.getElementById("cardEditBg").remove();
 }
