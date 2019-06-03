@@ -71,6 +71,8 @@ function drop(dragEv, ui )  {
     var targetClass = dragEv.target.className;
     var dropElementId = ($(ui.draggable).attr("id"));
     var dropElement = document.getElementById(dropElementId);
+    dragEv.target.style.border = "";
+    dragEv.target.style.backgroundColor = "";
 
 
 

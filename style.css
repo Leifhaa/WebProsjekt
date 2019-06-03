@@ -283,10 +283,12 @@ header {
     position: absolute;
     left: -100px;
 }
-
+/*
 .cardContent:hover {
-    background-color: #000;
+    background-color: #E1E1E1;
 }
+
+*/
 
 .cardContent input {
     border: 2px solid #4a148c;
