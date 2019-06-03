@@ -77,7 +77,29 @@ function addColumn() {
     var orderList = document.createElement("ol");
     orderList.setAttribute("id","colOl" + columnID);
     orderList.setAttribute("class","sortOl");
+
+
+    $(orderList).sortable({
+
+        placeholder: 'sortableStyle'
+        // SLIDE ANIMATION
+        /*    start: function (e,ui){
+        $(ui.placeholder).slideUp(200);
+    },
+    change: function (e,ui){
+    $(ui.placeholder).hide().slideDown(200);
+    }*/
+
+    });
+
     div.appendChild(orderList);
+
+
+    //Add a orderList which only contains newlyCreatedCards.
+    var orderListNewCard = document.createElement("ol");
+    orderListNewCard.setAttribute("id","colOl" + columnID + "NewCard");
+    orderListNewCard.setAttribute("class","sortOlNewCard");
+    div.appendChild(orderListNewCard);
 
 
     // DELETE COL BUTTON
@@ -159,7 +181,7 @@ function createAddCardButton(ColumnId){
     columnToAddBtn.appendChild(btnElem);
 
     btnElem.addEventListener("click",function(){
-       addCard(ColumnOlId)
+       addCard(columnToAddBtn)
     });
 
 }

@@ -14,11 +14,13 @@ var Card1 = {
 
 
 
-function addCard(columnOlId) {
+function addCard(columnToAddCard) {
     //Card
     var div = document.createElement("li");
     div.setAttribute("class", "card cardContent cardID" + cardID);
     
+
+    /*
     // Sortable
     $(".sortOl").sortable({
 
@@ -29,7 +31,7 @@ function addCard(columnOlId) {
     },
     change: function (e,ui){
     $(ui.placeholder).hide().slideDown(200);
-    }*/
+    }
 
     });
 
@@ -46,13 +48,12 @@ function addCard(columnOlId) {
             revertDuration: 200
         });
 
+        */
 
 
-    //div.setAttribute("ondragstart", "drag(event)");
+
+
     div.setAttribute("id", "card_" + cardID);
-    //div.setAttribute("ondragover", "dragOver(event)");
-    //div.setAttribute("ondragenter", "dragEnter(event)");
-    //div.setAttribute("ondragleave", "dragLeave(event)");'
     div.style.backgroundColor = "#E1E1E1";
 
     var cardTitle = document.createElement("div");
@@ -117,7 +118,11 @@ function addCard(columnOlId) {
     div2.setAttribute("onclick", "CreateEditCardForm(this.id)");
     div2.innerHTML = "<i id = 'editCard_" + cardID + "' class=' far fa-edit card'></i>";
 
-    columnOlId.appendChild(div);
+
+
+    //Note: Do not put the new created card into list until the title is given.
+    var listNewCards = document.getElementsByClassName("sortOlNewCard")[0];
+    listNewCards.appendChild(div);
 
     document.getElementById("card_" + cardID).appendChild(cardTitle);
     document.getElementById("card_" + cardID).appendChild(div2);
@@ -173,6 +178,29 @@ function addCardTitle(csName) {
     //Set the object property according to new title
     $(cardState).data("prop").title = cardInputElem.value;
 
+
+    //Move the card from OL newlist to OL list of cards.
+    var columnToAddCard =  $(cardState).closest('div[class*=columnBase]')[0]
+    var ColumnOlId = $(columnToAddCard).find("ol[class*=sortable]")[0];
+    ColumnOlId.appendChild(cardState);
+
+
+
+    //Make the creadted card dragable
+     $(cardState).draggable( {
+        connectToSortable: '.sortOl',
+        zIndex: 1,
+        containment: 'document',
+        cursor: 'grab',
+        snap: '#content',
+        start: drag,
+        stop: drop,
+        revert: RevertDrag,
+        revertDuration: 200
+    });
+
+
+    //Remove all the adjustment elements (Like ok button etc.)
     var cardBtn = document.getElementById("cardTitleBtn_" + cardID);
     var cardBtnCancel = document.getElementById("cardTitleBtnCancel_" + cardID);
     var cardTitle = document.getElementById("cardTitleText_" + cardID);
