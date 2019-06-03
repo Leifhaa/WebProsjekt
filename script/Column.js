@@ -90,7 +90,10 @@ function addColumn() {
 
     document.getElementById("container").appendChild(div);
     document.getElementById("col_" + columnID).appendChild(div1);
-    createAddCardButton(div);
+
+    if (colArr.length == 1){
+     createAddCardButton(div);
+    }
 
     columnID += 1;
 
@@ -105,6 +108,9 @@ function delCol(delID) {
     if (indexOfColumn == 0 && colArr.length > 1){
         colArr.splice(indexOfColumn, 1);
         createAddCardButton(colArr[1]);
+    }
+    else if (colArr.length > 1) {
+        colArr.splice(indexOfColumn, 1);
     }
     deleteColumn.remove();
     console.log(colArr)
@@ -143,7 +149,8 @@ function createAddCardButton(ColumnId){
         return ; //Means there's no columns.
     }
     //Find the Ol of the column
-    var ColumnOlId = $(ColumnId).find('ol')[0];
+    
+    var ColumnOlId = $(columnToAddBtn).find('ol')[0];
 
     btnElem = document.createElement("button")
     btnElem.setAttribute("id","addCardBtn");
