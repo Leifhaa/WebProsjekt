@@ -81,7 +81,7 @@ function addColumn() {
 
     // DELETE COL BUTTON
     var div1 = document.createElement("div");
-    div1.setAttribute("id", "del_col" + columnID);
+    div1.setAttribute("id", "del_col_" + columnID);
     div1.setAttribute("class", "column delColIcon");
     div1.setAttribute("onclick", "delCol(this.id)");
     div1.innerHTML = "<i id = 'delColIcon_" + columnID + "' class='column colDelete fas fa-times'></i>";
@@ -98,12 +98,14 @@ function addColumn() {
 
 // DELETE COL FUNCTION
 function delCol(delID) {
+    delID = delID.replace("del_",'');
     var deleteColumn = document.getElementById(delID);
-    deleteColumn.parentNode.remove();
-    if (colArr.indexOf(delID) == 0 && colArr.length > 1){
+    var indexOfColumn = colArr.findIndex(i => i.id === delID);
+    if (indexOfColumn == 0 && colArr.length > 1){
+        colArr.splice(indexOfColumn, 1);
         createAddCardButton(colArr[1]);
     }
-    colArr.pop(columnID);
+    deleteColumn.remove();
     console.log(colArr)
 }
 
