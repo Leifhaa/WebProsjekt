@@ -13,10 +13,8 @@ var Card1 = {
 };
 
 
-var addCardBtn = document.getElementById("addCardBtn");
-addCardBtn.addEventListener("click", addCard);
 
-function addCard() {
+function addCard(columnOlId) {
     //Card
     var div = document.createElement("li");
     div.setAttribute("class", "card cardContent cardID" + cardID);
@@ -102,7 +100,7 @@ function addCard() {
     div2.setAttribute("onclick", "CreateEditCardForm(this.id)");
     div2.innerHTML = "<i id = 'editCard_" + cardID + "' class=' far fa-edit card'></i>";
 
-    document.getElementById("colOl0").appendChild(div);
+    columnOlId.appendChild(div);
 
     document.getElementById("card_" + cardID).appendChild(cardTitle);
     document.getElementById("card_" + cardID).appendChild(div2);

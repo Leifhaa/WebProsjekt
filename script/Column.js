@@ -28,6 +28,7 @@ function addColumn() {
     var testColName = prompt("Type the name of your column!");
     var div = document.createElement('div');
     div.setAttribute("class", "columnBase column droptarget colStyle");
+    div.setAttribute("id", "col_" + columnID);
 
 
     $(div).sortable();
@@ -71,10 +72,12 @@ function addColumn() {
     });
     console.log(colArr);
 
-	if (columnID == 0){
-	   div.innerHTML = "<div id='colName' class='column colTitle'>" + testColName + "</div><button id='addCardBtn' class='btnStyle'><i class='fas fa-plus'></i></button><ol id='colOl0'></ol>";
-    }
-    div.setAttribute("id", "col_" + columnID);
+
+    //Add a orderList
+    var orderList = document.createElement("ol");
+    orderList.setAttribute("id","colOl" + columnID);
+    div.appendChild(orderList);
+
 
     // DELETE COL BUTTON
     var div1 = document.createElement("div");
@@ -86,6 +89,7 @@ function addColumn() {
 
     document.getElementById("container").appendChild(div);
     document.getElementById("col_" + columnID).appendChild(div1);
+    createAddCardButton(div);
 
     columnID += 1;
 
@@ -96,6 +100,9 @@ function addColumn() {
 function delCol(delID) {
     var deleteColumn = document.getElementById(delID);
     deleteColumn.parentNode.remove();
+    if (colArr.indexOf(delID) == 0 && colArr.length > 1){
+        createAddCardButton(colArr[1]);
+    }
     colArr.pop(columnID);
     console.log(colArr)
 }
@@ -122,4 +129,27 @@ function doEdit() {
     colText.innerHTML = subject;
     colText.style.display = "inline";
     editorArea.style.display = "none";
+}
+
+function createAddCardButton(ColumnId){
+    //Add card button (Always set column array index 0 as the column where we can add new card)
+	if (colArr.length > 0){
+	    var columnToAddBtn = document.getElementById(colArr[0].id);
+    }
+    else{
+        return ; //Means there's no columns.
+    }   
+    //Find the Ol of the column 
+    var ColumnOlId = $(ColumnId).find('ol')[0];
+    
+    btnElem = document.createElement("button") 
+    btnElem.setAttribute("id","addCardBtn");
+    btnElem.setAttribute("class","btnStyle");
+    btnElem.innerHTML = ("<i class='fas fa-plus'></i>")
+    columnToAddBtn.appendChild(btnElem);
+
+    btnElem.addEventListener("click",function(){
+       addCard(ColumnOlId)
+    });
+
 }
