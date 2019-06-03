@@ -18,8 +18,24 @@ function addCard(columnOlId) {
     //Card
     var div = document.createElement("li");
     div.setAttribute("class", "card cardContent cardID" + cardID);
+
+    // Sortable
+    $("#colOl0").sortable({
+        revert: '100',
+        placeholder: 'sortableStyle'
+        // SLIDE ANIMATION
+        /*    start: function (e,ui){
+        $(ui.placeholder).slideUp(200);
+    },
+    change: function (e,ui){
+    $(ui.placeholder).hide().slideDown(200);
+    }*/
+
+    });
+
     //Dragging property
         $(div).draggable( {
+            connectToSortable: '#colOl0',
             zIndex: 1,
             containment: 'document',
             cursor: 'grab',
@@ -29,6 +45,7 @@ function addCard(columnOlId) {
             revert: RevertDrag,
             revertDuration: 200
         });
+
 
 
     //div.setAttribute("ondragstart", "drag(event)");

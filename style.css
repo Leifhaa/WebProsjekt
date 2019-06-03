@@ -716,6 +716,13 @@ textarea:focus {
     color: #111;
 }
 
+.sortableStyle {
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    border: 2px dotted #bbb;
+}
+
 
 
 /* COLOR RADIOS ON EDIT CARD */
