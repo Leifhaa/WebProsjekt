@@ -31,7 +31,7 @@ function addColumn() {
     div.setAttribute("id", "col_" + columnID);
 
 
-    $(div).sortable();
+    
     $(div).disableSelection();
 
     $(div).droppable( {
@@ -149,7 +149,7 @@ function createAddCardButton(ColumnId){
         return ; //Means there's no columns.
     }
     //Find the Ol of the column
-    
+
     var ColumnOlId = $(columnToAddBtn).find('ol')[0];
 
     btnElem = document.createElement("button")

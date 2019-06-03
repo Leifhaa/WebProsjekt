@@ -13,6 +13,36 @@ body {
     height: 100%;
 }
 
+#accessabilityCont {
+    position: relative;
+    width: 100%;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+    min-height: 30px;
+
+}
+
+#textAdjust {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #111;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.aA {
+    position: relative;
+    right: 10px;
+    color: #111;
+    background: none;
+    font-weight: bold;
+    outline: none;
+    font-size: .7em;
+    border: none;
+
+}
+
 
 header {
     position: relative;
@@ -723,6 +753,14 @@ textarea:focus {
     border: 2px dotted #bbb;
 }
 
+#colorChange {
+    position: absolute;
+    top: 7px;
+    right: 50px;
+    font-size: 1.4em;
+
+}
+
 
 
 /* COLOR RADIOS ON EDIT CARD */
@@ -746,4 +784,88 @@ textarea:focus {
 
 .pinkRadio {
     color: #d81b60;
+}
+
+
+/* SIDE CONTENT CSS */
+
+#calendarStatisticsContainer {
+    position: fixed;
+    right: 0;
+    top: 35%;
+    width: 55px;
+    height: 80px;
+    z-index: 5;
+}
+
+.squareContainer {
+    position: absolute;
+    right: 0;
+    width: 55px;
+    height: 40px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#calendarSquare {
+    position: absolute;
+    top: 0;
+    background-color: #29b6f6;
+
+}
+
+#statisticsSquare {
+    position: absolute;
+    bottom: 0;
+    background-color: #29b6f6;
+}
+
+#calendarSquare:hover, #statisticsSquare:hover {
+    width: 80px;
+    transition: all .5s;
+    background-color: #0085c1;
+}
+
+#goToCalendar, #goToStatistics {
+    position: absolute;
+    background: transparent;
+    color: #fff;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 2.5em;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+#trashcanSquare {
+    position: fixed;
+    right: 0em;
+    bottom: 10%;
+    background-color: #29b6f6;
+    min-width: 55px;
+    min-height: 40px;
+    overflow: hidden;
+    z-index: 5;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#deleteObj {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    background: none;
+    color: #fff;
+
+    border: none;
+    font-size: 2em;
+}
+
+#deleteObj.dragging {
+    background: #c62828;
+    transition: all .3s;
+    border: solid black 1px;
 }

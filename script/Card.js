@@ -18,10 +18,10 @@ function addCard(columnOlId) {
     //Card
     var div = document.createElement("li");
     div.setAttribute("class", "card cardContent cardID" + cardID);
-
+    
     // Sortable
     $(".sortOl").sortable({
-        revert: '100',
+
         placeholder: 'sortableStyle'
         // SLIDE ANIMATION
         /*    start: function (e,ui){
