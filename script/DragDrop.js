@@ -83,8 +83,9 @@ function drop(dragEv, ui )  {
 
     //Always append the card to column, not to another card.
     if (targetClass.includes("column")) {
-        var div = $("#" + targetId).closest('div[class*=columnBase]');
-        div.append(dropElement);
+        var div = $("#" + targetId).closest('div[class*=columnBase]')[0];
+        var childOlList = $(div).find('ol')[0];
+        childOlList.append(dropElement);
     } else if (targetClass.includes("trash")) {
         dropElement.remove();
 
