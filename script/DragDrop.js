@@ -85,7 +85,9 @@ function drop(dragEv, ui )  {
     if (targetClass.includes("column")) {
         var div = $("#" + targetId).closest('div[class*=columnBase]')[0];
         var childOlList = $(div).find('ol')[0];
-        childOlList.append(dropElement);
+        //childOlList.appendTo(dropElement);
+        childOlList.appendChild(dropElement);
+        //$(dropElement).appendTo(childOlList);
     } else if (targetClass.includes("trash")) {
         dropElement.remove();
 
@@ -95,7 +97,7 @@ function drop(dragEv, ui )  {
         div.append(dropElement);
     }
 
-    $(this).append(ui.draggable);
+    //$(this).append(ui.draggable);
     $(ui.draggable).css({"left": "0", "top": "0"});
 
 
