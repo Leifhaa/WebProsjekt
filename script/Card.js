@@ -19,40 +19,6 @@ function addCard(columnToAddCard) {
     var div = document.createElement("li");
     div.setAttribute("class", "card cardContent cardID" + cardID);
     
-
-    /*
-    // Sortable
-    $(".sortOl").sortable({
-
-        placeholder: 'sortableStyle'
-        // SLIDE ANIMATION
-        /*    start: function (e,ui){
-        $(ui.placeholder).slideUp(200);
-    },
-    change: function (e,ui){
-    $(ui.placeholder).hide().slideDown(200);
-    }
-
-    });
-
-    //Dragging property
-        $(div).draggable( {
-            connectToSortable: '.sortOl',
-            zIndex: 1,
-            containment: 'document',
-            cursor: 'grab',
-            snap: '#content',
-            start: drag,
-            stop: drop,
-            revert: RevertDrag,
-            revertDuration: 200
-        });
-
-        */
-
-
-
-
     div.setAttribute("id", "card_" + cardID);
     div.style.backgroundColor = "#E1E1E1";
 
@@ -117,6 +83,7 @@ function addCard(columnToAddCard) {
     div2.setAttribute("class", "card editCardIcon cardID" + cardID);
     div2.setAttribute("onclick", "CreateEditCardForm(this.id)");
     div2.innerHTML = "<i id = 'editCard_" + cardID + "' class=' far fa-edit card'></i>";
+    $(div2).hide();
 
 
 
@@ -186,7 +153,7 @@ function addCardTitle(csName) {
 
 
 
-    //Make the creadted card dragable
+    //Make the created card dragable
      $(cardState).draggable( {
         connectToSortable: '.sortOl',
         zIndex: 1,
@@ -209,7 +176,11 @@ function addCardTitle(csName) {
     cardInputElem.remove();
     cardBtn.remove();
     cardBtnCancel.remove();
-    //document.getElementById("card_0").appendChild(titleName);
+    
+    
+    //Make the card editable.
+    var editCardBtn = document.getElementById("del-card_" + cardID);
+    $(editCardBtn).show();
 
 }
 
