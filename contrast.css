@@ -3,8 +3,7 @@ html {
 }
 
 body {
-    background-color: #4a148c;
-    background-image: linear-gradient(315deg, #4a148c 0%, #12005e 100%);
+    background-color: #000;
     margin: 0;
     padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -16,8 +15,8 @@ body {
 #accessabilityCont {
     position: relative;
     width: 100%;
-    background-color: #f4f4f4;
-    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    border-bottom: 1px solid #000;
     min-height: 30px;
 
 
@@ -60,7 +59,8 @@ header {
     position: relative;
     height: 60px;
     width: 100%;
-    background-color: #ffffff;
+    background-color: #000;
+    border-bottom: 2px solid #fff;
     margin-bottom: 20px;
 }
 
@@ -98,7 +98,7 @@ header {
     font-size: 40px;
     letter-spacing: -2px;
     padding-top: 0px;
-    background-image: url(logotest.svg);
+    background-image: url(logotestwhite.svg);
     background-repeat: no-repeat;
 
 }
@@ -113,24 +113,7 @@ header {
     font-size: 25px;
     letter-spacing: -2px;
     padding-top: 0px;
-
-}
-
-#progressbar {
-    width: 100%;
-    height: 10px;
-    background-color: #f4f4f4;
-    margin-bottom: 20px;
-
-
-
-}
-
-#progress {
-    width: 70%;
-    height: 10px;
-    background-color: #FAD961;
-    background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
+    color: #fff;
 
 }
 
@@ -145,7 +128,7 @@ header {
     background-image: url("profile1.png");
     background-size: cover;
     border-radius: 50%;
-    border: 3px solid #4a148c;
+    border: 3px solid #fff;
 
 }
 #boardContainer {
@@ -218,6 +201,7 @@ header {
     margin-bottom: 10px;
     margin-left: 5px;
     cursor: default;
+    color: #fff;
     word-break: break-word;
     width: 240px;
 }
@@ -232,7 +216,7 @@ header {
     position: relative;
     width: 270px;
     min-height: 100px;
-    background-color: #ffffff;
+    background-color: #000;
     padding: 17px 17px 17px 17px;
     margin-left: 20px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.07);
@@ -268,7 +252,7 @@ header {
     top: 10px;
     right: 10px;
     margin-bottom: 10px;
-    color: #999;
+    color: #fff;
     cursor: pointer;
 }
 
@@ -296,7 +280,7 @@ header {
     z-index: 500;
     width: 500px;
     height: 500px;
-    background-color: #f5f5f5;
+    background-color: #000;
     border-bottom: 1px solid #ccc;
 }
 
@@ -306,19 +290,21 @@ header {
 
 .cardContent {
     position: relative;
-
+    border: 2px solid #fff;
     font-weight: 700;
     margin-bottom: 10px;
     padding: 10px 5px 10px 5px;
-    background-color: #f5f5f5;
+    background-color: #fff;
     align-self: flex-start;
     border-radius: 2px;
-    border-bottom: 1px solid #ccc;
+
 
 
 }
 
 .cardTitle {
+    font-size: 1.5em;
+    color: #fff;
     width: 230px;
     font-size: 1.5em;
     word-break: break-word;
@@ -336,6 +322,9 @@ header {
 
 */
 
+.cardContent {
+    background-color: #000;
+}
 .cardContent input {
     border: 2px solid #4a148c;
     border-radius: 2px;
@@ -358,8 +347,8 @@ header {
 
 .cardOkBtn {
     width: 80px;
-    background-color: #29b6f6;
-    color: #fff;
+    background-color: #ff0;
+    color: #000;
     border: none;
     border-radius: 2px;
     margin-top: 10px;
@@ -372,7 +361,7 @@ header {
 
 
 .cardOkBtn:hover {
-    background-color: #4a148c;
+    background-color: #ff6a2f;
 }
 
 .cardOkBtn:focus {
@@ -381,8 +370,8 @@ header {
 
 .cardCancelBtn {
     width: 80px;
-    background-color: #29b6f6;
-    color: #fff;
+    background-color: #ff0;
+    color: #000;
     border: none;
     border-radius: 2px;
     margin-left: 10px;
@@ -394,7 +383,7 @@ header {
 }
 
 .cardCancelBtn:hover {
-    background-color: #4a148c;
+    background-color: #ff6a2f;
 }
 
 .cardCancelBtn:focus {
@@ -433,31 +422,31 @@ header {
     position: absolute;
     bottom: -20px;
     left: 130px;
-    background-color: #29b6f6;
+    background-color: #ff0;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     border-radius: 50%;
     height: 40px;
     width: 40px;
-    border: 3px solid #29b6f6;
+    border: 3px solid #ff0;
     outline:none;
     cursor: pointer;
-    color: #fff;
+    color: #000;
     font-size: 1.6em;
     transition: ease .5s;
 
 }
 
 #addCardBtn.btnStyle:hover {
-    background-color: #0085c1;
-    border: 3px solid #0085c1;
+    background-color: #ff6a2f;
+    border: 3px solid #ff6a2f;
     transition: ease .5s;
 
 }
 
 #addColumnBtn.btnStyle {
-    background-color: #ffffff;
-    border: 3px solid #4a148c;
+    background: none;
+    border: 3px solid #fff;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     border-radius: 50%;
@@ -465,16 +454,16 @@ header {
     width: 40px;
     outline:none;
     cursor: pointer;
-    color: #4a148c;
+    color: #fff;
     font-size: 1.6em;
 
 }
 
 #addColumnBtn.btnStyle:hover {
-    background-color: #4a148c;
-    border: 3px solid #4a148c;
+    background-color: #ff0;
+    border: 3px solid #ff0;
     transition: ease .5s;
-    color: #ffffff;
+    color: #000;
 
 }
 
@@ -516,16 +505,8 @@ header {
     cursor: pointer;
 }
 
-.dropzone {
-}
-
-.draggable {
-    background-color: #ff00cc;
-    height: 200px;
-}
-
 .colHovered {
-    background-color: #e9e9e9;
+    background-color: #fff;
     border: 3px solid #4caf50;
 
 }

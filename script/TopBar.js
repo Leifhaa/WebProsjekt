@@ -26,8 +26,9 @@ function resizeFont(multiply) {
   document.body.style.fontSize = size;
 }
 */
-
+document.body.style.fontSize = "62.5%";
 function resizeText(multiply) {
+
     var bodyFontsize = document.body.style.fontSize;
 
     if(bodyFontsize === "62.5%") {
@@ -37,3 +38,11 @@ function resizeText(multiply) {
         document.body.style.fontSize = "62.5%";
     }
 }
+
+function changeStyle() {
+    alert("Change style");
+}
+
+function swapStyleSheet(sheet){
+       document.getElementById('pagestyle').setAttribute('href', sheet);
+   }
