@@ -76,6 +76,7 @@ function addColumn() {
     //Add a orderList
     var orderList = document.createElement("ol");
     orderList.setAttribute("id","colOl" + columnID);
+    orderList.setAttribute("class","sortOl");
     div.appendChild(orderList);
 
 
@@ -140,11 +141,11 @@ function createAddCardButton(ColumnId){
     }
     else{
         return ; //Means there's no columns.
-    }   
-    //Find the Ol of the column 
+    }
+    //Find the Ol of the column
     var ColumnOlId = $(ColumnId).find('ol')[0];
-    
-    btnElem = document.createElement("button") 
+
+    btnElem = document.createElement("button")
     btnElem.setAttribute("id","addCardBtn");
     btnElem.setAttribute("class","btnStyle");
     btnElem.innerHTML = ("<i class='fas fa-plus'></i>")

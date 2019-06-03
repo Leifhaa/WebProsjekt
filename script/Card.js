@@ -20,7 +20,7 @@ function addCard(columnOlId) {
     div.setAttribute("class", "card cardContent cardID" + cardID);
 
     // Sortable
-    $("#colOl0").sortable({
+    $(".sortOl").sortable({
         revert: '100',
         placeholder: 'sortableStyle'
         // SLIDE ANIMATION
@@ -35,7 +35,7 @@ function addCard(columnOlId) {
 
     //Dragging property
         $(div).draggable( {
-            connectToSortable: '#colOl0',
+            connectToSortable: '.sortOl',
             zIndex: 1,
             containment: 'document',
             cursor: 'grab',
