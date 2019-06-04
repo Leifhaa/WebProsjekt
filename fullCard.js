@@ -131,11 +131,51 @@ function CreateEditCardForm(cardID) {
 	cardEditorAvatar.innerHTML = "Users";
 	containerEditCard.appendChild(cardEditorAvatar);
 
+	/*
 	// Avatar container div
 	var cardEditorAvatarC = document.createElement('div');
 	cardEditorAvatarC.setAttribute("class", "editCardAvatar");
-	cardEditorAvatarC.innerHTML = "<select><option value='user1'>Walter White</option><option value='user2'>Jesse Pinkman</option><option value='user3'>Gustavo Fring</option><option value='user4'>Mike Ehrmantraut</option></select>";
 	cardEditorAvatar.appendChild(cardEditorAvatarC);
+	*/
+
+	var createUser = document.createElement('div');
+	createUser.setAttribute("id", "addUsersField");
+	cardEditorAvatar.appendChild(createUser);
+
+	var addUsersButton = document.createElement('button');
+	addUsersButton.setAttribute('id', 'addFormField')
+	addUsersButton.innerHTML = 'Add Users';
+	createUser.appendChild(addUsersButton);
+
+	var addUserInputDiv = document.createElement('div');
+	var addUsersInput = document.createElement('input');
+	addUsersInput.setAttribute('type', 'text');
+	addUsersInput.setAttribute('name', 'users[]');
+
+	$(document).ready(function() {
+
+		var max_fields = 6;
+		var wrapper = $('#addUsersField');
+		var add_button = $('#addFormField');
+
+		var x = 1;
+		$(add_button).click(function(e) {
+
+			e.preventDefault();
+			if (x < max_fields) {
+				x++;
+				$(wrapper).append('<div><input type="text" name="users[]"/><a href="#" class="delete">Delete</a></div>');
+			} else {
+				alert('User limit reached');
+			}
+		});
+
+		$(wrapper).on('click', '.delete', function(e) {
+			e.preventDefault();
+			$(this).parent('div').remove();
+			x--;
+		})
+	});
 
 	// Custom select
 
