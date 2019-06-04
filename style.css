@@ -54,12 +54,51 @@ body {
     display: none;
 }
 
+#colSilhouetteCont {
+    podition: relative;
+    width: 274px;
+    height: 134px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 2px;
+
+    font-size: 40px;
+    color: #fff;
+    border: 3px solid;
+    opacity: .2;
+    cursor: pointer;
+}
+
+#colSilhouette {
+    position: relative;
+    background-color: #ff00cc;
+}
+
+#colSilButton {
+    position: absolute;
+    left: 110px;
+    top: 45px;
+    background-color: #ffffff;
+    border: 3px solid #ffffff;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    outline:none;
+    cursor: pointer;
+    color: #fff;
+    font-size: .4em;
+    background: none;
+}
+
 header {
     position: relative;
     height: 60px;
     width: 100%;
     background-color: #ffffff;
     margin-bottom: 20px;
+
 }
 
 #siteWrap {
@@ -145,10 +184,19 @@ header {
     height: 100%;
     overflow: scroll;
     overflow-y: hidden;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 }
 
 #container {
+    min-height: 300px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: flex-start;
+    vertical-align: top;
+}
+
+#colContainer {
     min-height: 300px;
     display: inline-flex;
     flex-direction: row;
@@ -482,7 +530,7 @@ footer {
 
 /* DRAG STYLING */
 #makeMeDraggable { width: 300px; height: 300px; background: red; }
-#makeMeDraggable.ui-draggable-dragging { background: green; }
+
 
 #cardEditBody {
 
@@ -826,18 +874,19 @@ textarea:focus {
 #trashcanSquare {
     position: fixed;
     right: 0em;
-    bottom: 10%;
+    bottom: 45%;
     background-color: #29b6f6;
     min-width: 55px;
     min-height: 40px;
     overflow: hidden;
-    z-index: 5;
+    z-index: 100;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
 #deleteObj {
     position: absolute;
+    z-index: 90;
     width: 100%;
     height: 100%;
     bottom: 0;

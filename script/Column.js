@@ -13,8 +13,24 @@ var Card1 = {
     Text: "TextCard1"
 };
 
+// COLUMN SILHOUETTE CONTAINER
+var colSilhouetteC = document.createElement("div");
+    colSilhouetteC.setAttribute("id", "colSilhouetteCont");
+    colSilhouetteC.setAttribute("onclick", "addColumn()");
+    document.getElementById("newColContainer").appendChild(colSilhouetteC);
+
+var colSilhouette = document.createElement("div");
+    colSilhouette.setAttribute("id", "colSilhouette");
+    colSilhouetteC.appendChild(colSilhouette);
+
+var colSilButton = document.createElement("button");
+    colSilButton.setAttribute("id", "colSilButton");
+    colSilButton.setAttribute("class", "btnStyle")
+    colSilButton.innerHTML = "<i class='fas fa-plus'></i>";
+    colSilhouette.appendChild(colSilButton);
+
+
 /* ADD COLUMN */
-addColumn()
 
 var addCol = document.getElementById("addColumnBtn");
 addCol.addEventListener("click", addColumn);
@@ -110,7 +126,7 @@ function addColumn() {
     div1.innerHTML = "<i id = 'delColIcon_" + columnID + "' class='column colDelete fas fa-times'></i>";
 
 
-    document.getElementById("container").appendChild(div);
+    document.getElementById("colContainer").appendChild(div);
     document.getElementById("col_" + columnID).appendChild(div1);
 
     if (colArr.length == 1){
