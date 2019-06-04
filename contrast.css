@@ -122,6 +122,21 @@ header {
 
 }
 
+#timeDate {
+    position: absolute;
+    width: 12em;
+    height: 2.2em;
+    right: 6em;
+    bottom: 20%;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: right;
+    color: #fff;
+    margin-right: 1em;
+    padding-right: 1.3em;
+    border-right: solid #fff 1px;
+}
+
 #profile {
     position: absolute;
     right: 0;
