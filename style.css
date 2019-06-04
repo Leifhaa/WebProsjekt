@@ -1046,7 +1046,7 @@ textarea:focus {
     position: fixed;
     right: 0;
     top: 20%;
-    width: 100px;
+    width: 200px;
     height: 100px;
     background-color: #ff00cc;
 }

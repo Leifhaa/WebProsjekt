@@ -1,13 +1,7 @@
 /* DRAG EVENTS */
 
 
-// ADJUSTS TRASHCAN ICON
-var cardTrash = document.getElementById("deleteObj");
-cardTrash.setAttribute("ondrop", "drop(event)");
-cardTrash.setAttribute("ondragover", "dragOver(event)");
-
 function dragOver(dragEv) {
-    cardTrash.setAttribute("class", "dragging");
 
     dragEv.preventDefault();
     if (dragEv.target.getAttribute("draggable") == "true")
@@ -66,8 +60,8 @@ function RevertDrag(event) {
 
 function drop(dragEv, ui )  {
     console.log("Dropped")
-    console.log(dragEv.target.className);
     var targetId = dragEv.target.id;
+    console.log(dragEv.target.id);
     var targetClass = dragEv.target.className;
     var dropElementId = ($(ui.draggable).attr("id"));
     var dropElement = document.getElementById(dropElementId);
@@ -88,7 +82,7 @@ function drop(dragEv, ui )  {
         //childOlList.appendTo(dropElement);
         childOlList.appendChild(dropElement);
         //$(dropElement).appendTo(childOlList);
-    } else if (targetClass.includes("trash")) {
+    } else if (targetId.includes("trash")) {
         dropElement.remove();
 
     } else if (targetClass.includes("card")) {
@@ -96,15 +90,12 @@ function drop(dragEv, ui )  {
         var div = $("#" + targetId).closest('div[class*=column]');
         div.append(dropElement);
     }
+    
 
     //$(this).append(ui.draggable);
     $(ui.draggable).css({"left": "0", "top": "0"});
-
-
-
-
-
 }
+
 
 function sendAjax() {
     var xhr = new XMLHttpRequest;
