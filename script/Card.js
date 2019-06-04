@@ -22,9 +22,10 @@ function addCard(columnToAddCard) {
     div.setAttribute("id", "card_" + cardID);
     div.style.backgroundColor = "#E1E1E1";
 
+    //CARD TITLE OF A CREATED CARD.
     var cardTitle = document.createElement("div");
     cardTitle.setAttribute("id", "cardTitleText_" + cardID);
-    cardTitle.setAttribute("class", "card cardID" + cardID);
+    cardTitle.setAttribute("class", "card cardID" + cardID + " noselect");
 
     // CARD TITLE INPUT
     var addCardTitle = document.createElement('input');
