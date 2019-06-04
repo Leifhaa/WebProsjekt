@@ -146,8 +146,7 @@ function CreateEditCardForm(cardID) {
 	addUsersButton.setAttribute('id', 'addFormField')
 	addUsersButton.innerHTML = 'Add Users';
 	createUser.appendChild(addUsersButton);
-
-	var addUserInputDiv = document.createElement('div');
+	
 	var addUsersInput = document.createElement('input');
 	addUsersInput.setAttribute('type', 'text');
 	addUsersInput.setAttribute('name', 'users[]');
