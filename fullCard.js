@@ -29,6 +29,7 @@ function CreateEditCardForm(cardID) {
 
 	//Container card edit
 	var containerEditCard = document.createElement("div");
+	containerEditCard.setAttribute("id","containerEditCard");
 	containerEditCard.setAttribute("class","containerEditCard");
 	infoForm.appendChild(containerEditCard);
 
@@ -390,8 +391,8 @@ document.addEventListener("click", closeAllSelect);
 }
 
 function changeColor(color) {
-    var editElem = document.getElementById('cardEditBody');
-    editElem.style.border = "thick solid " + color;
+    var editElem = document.getElementById('containerEditCard');
+    editElem.style.border = "7px solid " + color;
     //[0].style.border = color;
 
 	// WHEN COLOR SELECTED, CHANGE BORDER TO INDICATE SELECTION
@@ -474,6 +475,7 @@ function pushData() {
      $(cardToEdit).find("div[class='cardTitle']")[0].innerHTML = this.title;
 
     closeEditor();
+    displayCardSummary(cardToEdit);
 }
 
 function closeEditor(){

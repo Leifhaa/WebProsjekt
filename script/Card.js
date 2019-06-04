@@ -211,11 +211,11 @@ function editCard() {
 
 }
 
-function displayCardSummary(cardID){
+function displayCardSummary(cardElem){
     //View a small summary of the card details / miniature details
 
     //Display the card in it's real color.
-    var cardColor = $(cardID).data("prop").color;
-    cardID.style.border = "3px solid " + cardColor;
+    var cardColor = $(cardElem).data("prop").color;
+    cardElem.style.border = "3px solid " + cardColor;
 
 }
