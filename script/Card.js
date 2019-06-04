@@ -210,3 +210,12 @@ function editCard() {
     document.getElementById("cardEditorCont").appendChild(editorCloseBtn);
 
 }
+
+function displayCardSummary(cardID){
+    //View a small summary of the card details / miniature details
+
+    //Display the card in it's real color.
+    var cardColor = $(cardID).data("prop").color;
+    cardID.style.border = "3px solid " + cardColor;
+
+}

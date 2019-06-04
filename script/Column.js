@@ -39,10 +39,10 @@ function addColumn() {
         hoverClass: 'colHovered',
         activate: startDrag,
         over: function(event, ui) {
-                   ui.helper.css("border", "2px solid green")
+                   //ui.helper.css("border", "2px solid green")
                },
         out: function(event, ui) {
-                          ui.helper.css("border", "2px solid red")
+                         // ui.helper.css("border", "2px solid red")
                       }
     } );
 /*

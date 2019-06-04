@@ -22,8 +22,8 @@ function dragEnter(dragEv) {
     var targetClass = dragEv.target.className;
 
     if (targetClass.includes("droptarget")) {
-        dragEv.target.style.border = "3px solid #4caf50";
-        dragEv.target.style.backgroundColor = "#f2f2f2";
+        //dragEv.target.style.border = "3px solid #4caf50";
+        //dragEv.target.style.backgroundColor = "#f2f2f2";
     }
 }
 
@@ -71,14 +71,14 @@ function drop(dragEv, ui )  {
     var targetClass = dragEv.target.className;
     var dropElementId = ($(ui.draggable).attr("id"));
     var dropElement = document.getElementById(dropElementId);
-    dragEv.target.style.border = "";
-    dragEv.target.style.backgroundColor = "";
+    //dragEv.target.style.border = "";
+    //dragEv.target.style.backgroundColor = "";
 
 
 
     if (targetClass.includes("droptarget")) {
-        dragEv.target.style.border = "";
-        dragEv.target.style.backgroundColor = "";
+        //dragEv.target.style.border = "";
+        //dragEv.target.style.backgroundColor = "";
     }
 
     //Always append the card to column, not to another card.
