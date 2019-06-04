@@ -13,11 +13,30 @@ var Card1 = {
     Text: "TextCard1"
 };
 
+// COLUMN SILHOUETTE CONTAINER
+var colSilhouetteC = document.createElement("div");
+    colSilhouetteC.setAttribute("id", "colSilhouetteCont");
+    colSilhouetteC.setAttribute("onclick", "addColumn()");
+    document.getElementById("newColContainer").appendChild(colSilhouetteC);
+
+var colSilhouette = document.createElement("div");
+    colSilhouette.setAttribute("id", "colSilhouette");
+    colSilhouetteC.appendChild(colSilhouette);
+
+var colSilButton = document.createElement("button");
+    colSilButton.setAttribute("id", "colSilButton");
+    colSilButton.setAttribute("class", "btnStyle")
+    colSilButton.innerHTML = "<i class='fas fa-plus'></i>";
+    colSilhouette.appendChild(colSilButton);
+
+
 /* ADD COLUMN */
-addColumn()
+function newBoard() {
+    alert("New Board?");
+}
 
 var addCol = document.getElementById("addColumnBtn");
-addCol.addEventListener("click", addColumn);
+addCol.addEventListener("click", newBoard);
 
 function startDrag(){
             $("").css('min-height', '300px');
@@ -39,10 +58,10 @@ function addColumn() {
         hoverClass: 'colHovered',
         activate: startDrag,
         over: function(event, ui) {
-                   ui.helper.css("border", "2px solid green")
+                   //ui.helper.css("border", "2px solid green")
                },
         out: function(event, ui) {
-                          ui.helper.css("border", "2px solid red")
+                         // ui.helper.css("border", "2px solid red")
                       }
     } );
 /*
@@ -110,7 +129,7 @@ function addColumn() {
     div1.innerHTML = "<i id = 'delColIcon_" + columnID + "' class='column colDelete fas fa-times'></i>";
 
 
-    document.getElementById("container").appendChild(div);
+    document.getElementById("colContainer").appendChild(div);
     document.getElementById("col_" + columnID).appendChild(div1);
 
     if (colArr.length == 1){
@@ -130,6 +149,9 @@ function delCol(delID) {
     if (indexOfColumn == 0 && colArr.length > 1){
         colArr.splice(indexOfColumn, 1);
         createAddCardButton(colArr[1]);
+    }
+    else if (indexOfColumn == 0 && colArr.length == 1){
+        colArr.splice(indexOfColumn, 1);
     }
     else if (colArr.length > 1) {
         colArr.splice(indexOfColumn, 1);
