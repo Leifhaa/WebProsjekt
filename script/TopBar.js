@@ -43,3 +43,45 @@ function resizeText(multiply) {
 function swapStyleSheet(sheet){
        document.getElementById('pagestyle').setAttribute('href', sheet);
    }
+
+
+
+// NEW Board
+
+function newBoard() {
+
+    //darkBg while new board question is open
+    var qBg = document.createElement("div");
+    qBg.setAttribute("id","cardEditBg");
+
+    // APPENDS THE DARK BG TO body
+    test2 = document.body;
+
+
+    //new question container
+	var qCont = document.createElement("div");
+	qCont.setAttribute("id","messageCont");
+	qCont.setAttribute("class","containerMessage bounceIn");
+
+    var qText = document.createElement("div");
+    qText.setAttribute("id","qMessage");
+    qText.innerHTML = "Do you really want to create a new board?"
+
+    var qButtonOk = document.createElement("button");
+    qButtonOk.setAttribute("id","qButtonOk");
+    qButtonOk.innerHTML = "Confirm";
+
+    var qButtonCancel = document.createElement("button");
+    qButtonCancel.setAttribute("id","qButtonCancels");
+    qButtonCancel.innerHTML = "Cancel";
+
+
+    test2.appendChild(qBg);
+    test2.appendChild(qCont);
+    qCont.appendChild(qText);
+    qCont.appendChild(qButtonOk)
+    qCont.appendChild(qButtonCancel)
+
+
+
+}

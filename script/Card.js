@@ -17,8 +17,8 @@ var Card1 = {
 function addCard(columnToAddCard) {
     //Card
     var div = document.createElement("li");
-    div.setAttribute("class", "card cardContent cardID" + cardID);
-    
+    div.setAttribute("class", "card cardContent animated bounceIn 1s cardID" + cardID);
+
     div.setAttribute("id", "card_" + cardID);
     div.style.backgroundColor = "#E1E1E1";
 
@@ -176,8 +176,8 @@ function addCardTitle(csName) {
     cardInputElem.remove();
     cardBtn.remove();
     cardBtnCancel.remove();
-    
-    
+
+
     //Make the card editable.
     var editCardBtn = document.getElementById("del-card_" + cardID);
     $(editCardBtn).show();

@@ -21,16 +21,18 @@ function CreateEditCardForm(cardID) {
 	cardEditBody.setAttribute("class","modal");
 
 
+
 	//card edit form
 	var infoForm = document.createElement("form");
 	infoForm.setAttribute("id","infoForm");
 	infoForm.setAttribute("class","modal-content animate");
+
 	cardEditBody.appendChild(infoForm);
 
 	//Container card edit
 	var containerEditCard = document.createElement("div");
 	containerEditCard.setAttribute("id","containerEditCard");
-	containerEditCard.setAttribute("class","containerEditCard");
+	containerEditCard.setAttribute("class","containerEditCard animated bounceInDown");
 	infoForm.appendChild(containerEditCard);
 
 	test = document.getElementById("boardContainer")
@@ -483,4 +485,3 @@ function closeEditor(){
     document.getElementById("cardEditBody").remove();
 	document.getElementById("cardEditBg").remove();
 }
-

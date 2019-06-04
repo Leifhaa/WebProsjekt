@@ -18,6 +18,7 @@ var colSilhouetteC = document.createElement("div");
     colSilhouetteC.setAttribute("id", "colSilhouetteCont");
     colSilhouetteC.setAttribute("onclick", "addColumn()");
     document.getElementById("newColContainer").appendChild(colSilhouetteC);
+    colSilhouetteC.setAttribute("class","newcol animated fadeInUp");
 
 var colSilhouette = document.createElement("div");
     colSilhouette.setAttribute("id", "colSilhouette");
@@ -38,9 +39,7 @@ var colSilButton = document.createElement("button");
 
 
 /* ADD COLUMN */
-function newBoard() {
-    alert("New Board?");
-}
+
 
 var addCol = document.getElementById("addColumnBtn");
 addCol.addEventListener("click", newBoard);
@@ -52,7 +51,7 @@ function startDrag(){
 
 function addColumn() {
     var div = document.createElement('div');
-    div.setAttribute("class", "columnBase column droptarget colStyle");
+    div.setAttribute("class", "columnBase column droptarget colStyle animated fadeInUp");
     div.setAttribute("id", "col_" + columnID);
 
 
