@@ -68,7 +68,7 @@ function addCard(columnToAddCard) {
 
 
     //Create an object which belongs to the card div.
-    $(div).data("prop",cardArr[cardID]);
+    $(div).data("prop",cardArr[cardArr.length - 1]);
     var card = $(div).data("prop");
     console.dir(card);
 
