@@ -131,6 +131,9 @@ function delCol(delID) {
         colArr.splice(indexOfColumn, 1);
         createAddCardButton(colArr[1]);
     }
+    else if (indexOfColumn == 0 && colArr.length == 1){
+        colArr.splice(indexOfColumn, 1);
+    }
     else if (colArr.length > 1) {
         colArr.splice(indexOfColumn, 1);
     }
