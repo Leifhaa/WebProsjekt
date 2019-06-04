@@ -50,12 +50,19 @@ function CreateEditCardForm(cardID) {
 	containerEditCard.appendChild(editorCloseBtn);
 
 
-
+	/*
 	//title Label
 	var titleLabel = document.createElement('Label');
 	titleLabel.setAttribute("for","editCardTitleInput");
-	titleLabel.innerHTML = "<b>Title</b>";
+	titleLabel.innerHTML = "Title";
 	containerEditCard.appendChild(titleLabel);
+	*/
+
+	//Title div
+	var cardEditorTitle = document.createElement('div');
+	cardEditorTitle.setAttribute("class", "editCardItemCont");
+	cardEditorTitle.innerHTML = "Title";
+	containerEditCard.appendChild(cardEditorTitle);
 
 	//Title input box
 	var titleInput = document.createElement("input")
@@ -65,14 +72,23 @@ function CreateEditCardForm(cardID) {
 	titleInput.setAttribute("name","title");
 	titleInput.setAttribute("placeholder","Enter title");
 	titleInput.setAttribute("value",cardData.title);
-	containerEditCard.appendChild(titleInput);
+	cardEditorTitle.appendChild(titleInput);
 
-
+	/*
 	//descriptionLabel
 	var DescLabel = document.createElement('Label');
 	DescLabel.setAttribute("for","editCardDescInput");
-	DescLabel.innerHTML = "<b>Description</b>";
+	DescLabel.innerHTML = "Description";
 	containerEditCard.appendChild(DescLabel);
+	*/
+
+	//Description div
+	var cardEditorDesc = document.createElement('div');
+	cardEditorDesc.setAttribute("class", "editCardItemCont");
+	cardEditorDesc.innerHTML = "Description";
+	containerEditCard.appendChild(cardEditorDesc);
+
+
 
 	//Description input box
 	var descInput = document.createElement("textarea")
@@ -82,28 +98,123 @@ function CreateEditCardForm(cardID) {
 	descInput.setAttribute("name","desc");
 	descInput.setAttribute("placeholder","Enter description");
 	descInput.value = cardData.description
-	containerEditCard.appendChild(descInput);
+	cardEditorDesc.appendChild(descInput);
 
-
+	/*
 	//budgetLabel
 	var BudgetLabel = document.createElement('Label');
 	BudgetLabel.setAttribute("for","editCardBudgetInput");
-	BudgetLabel.innerHTML = "<b>Budget</b>";
+	BudgetLabel.innerHTML = "Budget";
 	containerEditCard.appendChild(BudgetLabel);
+	*/
+	//Budget div
+	var cardEditorBudget = document.createElement('div');
+	cardEditorBudget.setAttribute("class", "editCardItemCont");
+	cardEditorBudget.innerHTML = "Budget";
+	containerEditCard.appendChild(cardEditorBudget);
 
 	//budget input box
-	var BudgetInput = document.createElement("input")
-	BudgetInput.setAttribute("type","text");
-	BudgetInput.setAttribute("id","editCardBudgetInput");
-	BudgetInput.setAttribute("class", "editCardInputField");
-	BudgetInput.setAttribute("name","budget");
-	BudgetInput.setAttribute("placeholder","Enter budget");
-	BudgetInput.setAttribute("value",cardData.budget);
-	containerEditCard.appendChild(BudgetInput);
+	var budgetInput = document.createElement("input")
+	budgetInput.setAttribute("type","text");
+	budgetInput.setAttribute("id","editCardBudgetInput");
+	budgetInput.setAttribute("class", "editCardInputField");
+	budgetInput.setAttribute("name","budget");
+	budgetInput.setAttribute("placeholder","Enter budget");
+	budgetInput.setAttribute("value",cardData.budget);
+	cardEditorBudget.appendChild(budgetInput);
 
 	//Avatars
+
+	// Avatar div
+	var cardEditorAvatar = document.createElement('div');
+	cardEditorAvatar.setAttribute("class", "editCardItemCont");
+	cardEditorAvatar.innerHTML = "Users";
+	containerEditCard.appendChild(cardEditorAvatar);
+
+	// Avatar container div
+	var cardEditorAvatarC = document.createElement('div');
+	cardEditorAvatarC.setAttribute("class", "editCardAvatar");
+	cardEditorAvatarC.innerHTML = "<select><option value='user1'>Walter White</option><option value='user2'>Jesse Pinkman</option><option value='user3'>Gustavo Fring</option><option value='user4'>Mike Ehrmantraut</option></select>";
+	cardEditorAvatar.appendChild(cardEditorAvatarC);
+
+	// Custom select
+
+	var x, i, j, selElmnt, a, b, c;
+/*look for any elements with the class "custom-select":*/
+x = document.getElementsByClassName("editCardAvatar");
+for (i = 0; i < x.length; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  /*for each element, create a new DIV that will act as the selected item:*/
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  /*for each element, create a new DIV that will contain the option list:*/
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < selElmnt.length; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < s.length; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            for (k = 0; k < y.length; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      /*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+}
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  for (i = 0; i < y.length; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < x.length; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
+
+	/* AVATAR LABELS COMMENTED OUT
 	for (i = 0; i < 4; i ++){
-		var AvatarLabel = document.createElement('Label');
+		var AvatarLabel = document.createElement('label');
 		var Avatar = document.createElement('input');
 		Avatar.setAttribute("type","checkbox");
 		Avatar.setAttribute("id","ava" + i);
@@ -121,7 +232,9 @@ function CreateEditCardForm(cardID) {
 		else if (i == 3){
 			AvatarLabel.innerHTML = "<i class='fas fa-user-astronaut fa-2x avatar'></i>";
 		}
-		containerEditCard.appendChild(AvatarLabel);
+
+
+		cardEditorAvatarC.appendChild(AvatarLabel);
 		AvatarLabel.appendChild(Avatar);
 
 		if (cardData.persons != null && cardData.persons.includes("ava" + i)){
@@ -129,9 +242,23 @@ function CreateEditCardForm(cardID) {
 		}
 	}
 
+	*/
+
 
 
 	//Card color
+
+	// Color div
+	var cardEditorColor = document.createElement('div');
+	cardEditorColor.setAttribute("class", "editCardItemCont");
+	cardEditorColor.innerHTML = "Color";
+	containerEditCard.appendChild(cardEditorColor);
+
+	// Color container div
+	var cardEditorColorC = document.createElement('div');
+	cardEditorColorC.setAttribute("class", "editCardColor");
+	cardEditorColor.appendChild(cardEditorColorC);
+
 	for (i = 0; i < 5; i ++){
 		var ColorLabel = document.createElement('Label');
 		var Color = document.createElement('input');
@@ -169,7 +296,7 @@ function CreateEditCardForm(cardID) {
 				Color.checked = true;
 			}
 		}
-		containerEditCard.appendChild(ColorLabel);
+		cardEditorColorC.appendChild(ColorLabel);
 		ColorLabel.appendChild(Color);
 
 		//Apply color
@@ -177,9 +304,19 @@ function CreateEditCardForm(cardID) {
 	//Apply color
 	if (cardData.color != ""){
 		changeColor(cardData.color);
+
 	}
 
+	// Calendar container div
+	var cardEditorCal = document.createElement('div');
+	cardEditorCal.setAttribute("class", "editCardItemCont");
+	cardEditorCal.innerHTML = "Calendar";
+	containerEditCard.appendChild(cardEditorCal);
 
+	// Cal dateinput container div
+	var cardEditorDateC = document.createElement('div');
+	cardEditorDateC.setAttribute("class", "editCardDate");
+	cardEditorCal.appendChild(cardEditorDateC);
 
 	//Calendar dateStart
 	var calendarFromDate = document.createElement('input');
@@ -187,7 +324,7 @@ function CreateEditCardForm(cardID) {
 	calendarFromDate.setAttribute("name","date-start");
 	calendarFromDate.setAttribute("id","date-start");
 	calendarFromDate.setAttribute("value",cardData.dateStart);
-	containerEditCard.appendChild(calendarFromDate);
+	cardEditorDateC.appendChild(calendarFromDate);
 
 	//Calendar dateEnd
 	var calendarToDate = document.createElement('input');
@@ -195,7 +332,7 @@ function CreateEditCardForm(cardID) {
 	calendarToDate.setAttribute("name","date-end");
 	calendarToDate.setAttribute("id","date-end");
 	calendarToDate.setAttribute("value",cardData.dateEnd);
-	containerEditCard.appendChild(calendarToDate);
+	cardEditorDateC.appendChild(calendarToDate);
 
 	//Push settings
 	var PushSettingButton = document.createElement('button');
@@ -219,6 +356,10 @@ function changeColor(color) {
     var editElem = document.getElementById('cardEditBody');
     editElem.style.border = "thick solid " + color;
     //[0].style.border = color;
+
+	// WHEN COLOR SELECTED, CHANGE BORDER TO INDICATE SELECTION
+	//$(".fa-square").css("border", "#ff00cc");
+
 }
 
 function changeAvatarColor(color) {

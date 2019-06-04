@@ -19,8 +19,6 @@ body {
     background-color: #f4f4f4;
     border-bottom: 1px solid #ccc;
     min-height: 30px;
-
-
 }
 
 #textAdjust {
@@ -42,7 +40,6 @@ body {
     font-size: .7em;
     border: none;
     cursor: pointer;
-
 }
 
 #colorChange {
@@ -51,10 +48,7 @@ body {
     right: 55px;
     font-size: 1.4em;
     cursor: pointer;
-
 }
-
-
 
 header {
     position: relative;
@@ -100,7 +94,6 @@ header {
     padding-top: 0px;
     background-image: url(logotest.svg);
     background-repeat: no-repeat;
-
 }
 
 #logoText {
@@ -113,7 +106,6 @@ header {
     font-size: 25px;
     letter-spacing: -2px;
     padding-top: 0px;
-
 }
 
 #progressbar {
@@ -121,9 +113,6 @@ header {
     height: 10px;
     background-color: #f4f4f4;
     margin-bottom: 20px;
-
-
-
 }
 
 #progress {
@@ -131,7 +120,6 @@ header {
     height: 10px;
     background-color: #FAD961;
     background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
-
 }
 
 #profile {
@@ -146,16 +134,14 @@ header {
     background-size: cover;
     border-radius: 50%;
     border: 3px solid #4a148c;
-
 }
+
 #boardContainer {
     width: 100%;
     height: 100%;
     overflow: scroll;
     overflow-y: hidden;
     padding-bottom: 50px;
-
-
 }
 
 #container {
@@ -165,33 +151,11 @@ header {
     align-items: flex-start;
     align-content: flex-start;
     vertical-align: top;
-
-
-
-}
-
-#test-column-holder {
-    position: relative;
-
 }
 
 #editor-holder {
     margin-left: 20px;
     margin-bottom: 10px;
-}
-
-#test-column {
-    width: 270px;
-    min-height: 100px;
-    background-color: #ffffff;
-    padding: 20px 20px 10px 20px;
-    margin: auto;
-
-    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-    border-radius: 2px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-
 }
 
 #startCol {
@@ -208,7 +172,6 @@ header {
 
 .fa-edit {
     font-size: 1.6em;
-
 }
 
 .colTitle {
@@ -221,8 +184,6 @@ header {
     word-break: break-word;
     width: 240px;
 }
-
-
 
 .column {
 
@@ -238,7 +199,6 @@ header {
     box-shadow: 0 1px 2px rgba(0,0,0,0.07);
     border-radius: 2px;
     border: 3px solid #ffffff;
-
 }
 
 .delColIcon {
@@ -306,7 +266,6 @@ header {
 
 .cardContent {
     position: relative;
-
     font-weight: 700;
     margin-bottom: 10px;
     padding: 10px 5px 10px 5px;
@@ -314,33 +273,24 @@ header {
     align-self: flex-start;
     border-radius: 2px;
     border-bottom: 1px solid #ccc;
-
-
 }
 
 .cardTitle {
     width: 230px;
     font-size: 1.5em;
     word-break: break-word;
-
 }
 
 .cardShake {
     position: absolute;
     left: -100px;
 }
-/*
-.cardContent:hover {
-    background-color: #E1E1E1;
-}
-
-*/
 
 .cardContent input {
     border: 2px solid #4a148c;
     border-radius: 2px;
     outline: none;
-    width: 215px;
+    width: 245px;
     margin-right: 20px;
     padding: 5px;
     font-size: 1.4em;
@@ -350,7 +300,6 @@ header {
     border: 2px solid #4caf50;
 
 }
-
 
 .cardContentError input {
     border: 2px solid #c62828;
@@ -368,8 +317,6 @@ header {
     outline: none;
     font-size: 1.4em;
 }
-
-
 
 .cardOkBtn:hover {
     background-color: #4a148c;
@@ -424,11 +371,6 @@ header {
     cursor: pointer;
 }
 
-#addCardBtn {
-
-
-}
-
 #addCardBtn.btnStyle {
     position: absolute;
     bottom: -20px;
@@ -445,14 +387,12 @@ header {
     color: #fff;
     font-size: 1.6em;
     transition: ease .5s;
-
 }
 
 #addCardBtn.btnStyle:hover {
     background-color: #0085c1;
     border: 3px solid #0085c1;
     transition: ease .5s;
-
 }
 
 #addColumnBtn.btnStyle {
@@ -467,7 +407,6 @@ header {
     cursor: pointer;
     color: #4a148c;
     font-size: 1.6em;
-
 }
 
 #addColumnBtn.btnStyle:hover {
@@ -475,28 +414,19 @@ header {
     border: 3px solid #4a148c;
     transition: ease .5s;
     color: #ffffff;
-
 }
 
 #addColumnBtn {
     position: absolute;
     right: 10px;
     top: 10px;
-
 }
 
 #button-holder {
-
     color: #fff;
     font-size: 1.4em;
-
 }
 
-#idgen {
-    width: 100px;
-    height: 100px;
-    background-color: #ff00cc;
-}
 
 #button-holder button {
     background-color: Transparent;
@@ -514,9 +444,6 @@ header {
     font-weight: 700;
     font-size: 1.6em;
     cursor: pointer;
-}
-
-.dropzone {
 }
 
 .draggable {
@@ -553,74 +480,6 @@ footer {
 #makeMeDraggable { width: 300px; height: 300px; background: red; }
 #makeMeDraggable.ui-draggable-dragging { background: green; }
 
-
-
-/* ANIMATION */
-
-.shake-horizontal {
-	-webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-	        animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-}
-
-/* KEYFRAMES */
-
-@-webkit-keyframes shake-horizontal {
-  0%,
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  10%,
-  30%,
-  50%,
-  70% {
-    -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
-  }
-  20%,
-  40%,
-  60% {
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px);
-  }
-  80% {
-    -webkit-transform: translateX(8px);
-            transform: translateX(8px);
-  }
-  90% {
-    -webkit-transform: translateX(-8px);
-            transform: translateX(-8px);
-  }
-}
-@keyframes shake-horizontal {
-  0%,
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  10%,
-  30%,
-  50%,
-  70% {
-    -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
-  }
-  20%,
-  40%,
-  60% {
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px);
-  }
-  80% {
-    -webkit-transform: translateX(8px);
-            transform: translateX(8px);
-  }
-  90% {
-    -webkit-transform: translateX(-8px);
-            transform: translateX(-8px);
-  }
-}
-
 #cardEditBody {
 
 }
@@ -634,10 +493,9 @@ footer {
     position: absolute;
     border-radius: 2px;
     border-bottom: 1px solid #ccc;
-    min-width: 415px;
-    height: 460px;
+    width: 415px;
     padding: 20px;
-    top: 50px;
+    top: 20px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -649,6 +507,119 @@ footer {
     font-size: 1.5em;
 }
 
+.editCardTitleCont {
+    background: #ff00cc;
+}
+
+.editCardItemCont {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.editCardDescCont {
+    background: #ff0;
+}
+
+.editCardBudgetCont {
+    background: #ffcc00;
+}
+
+.editCardAvatarCont {
+    background: #ccff00;
+}
+
+.editCardAvatar {
+    position: relative;
+    margin-top: 10px;
+}
+
+.editCardAvatar select{
+    display: none;
+}
+
+.select-selected{
+    background-color: #4a148c;
+    border-radius: 2px;
+}
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+.select-items {
+  position: absolute;
+  background-color: #29b6f6;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.editCardColorCont {
+    background: #330fcc;
+}
+
+.editCardColor {
+
+}
+
+.editCardColor input[type=radio] {
+    display: none;
+}
+
+.editCardColor label {
+  display: inline-block;
+  background-color: #ddd;
+  padding: 4px 11px;
+  font-family: Arial;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.editCardColor input[type="radio"]:checked+label {
+  background-color: #bbb;
+  border: 3px solid #ff00cc;
+}
+
+.editCardCalCont {
+    background: #99ffcc;
+}
+
+.editCardDate {
+    margin-top: 10px;
+}
+
 .editCardInputField {
     border: 2px solid #4a148c;
     border-radius: 2px;
@@ -656,7 +627,7 @@ footer {
     width: 400px;
     padding: 5px;
     font-size: 1.6em;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-top: 10px;
     font-size: 1.0em;
 }
@@ -672,9 +643,9 @@ footer {
     outline: none;
     resize: none;
     width: 400px;
-    height: 100px;
+    height: 60px;
     padding: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-top: 10px;
     font-size: 1.0em;
 
@@ -685,13 +656,9 @@ textarea:focus {
 
 
 #BtnPushSettings {
-    position: absolute;
-    left: 20px;
-    bottom: 10px;
     background-color: #29b6f6;
     color: white;
     padding: 5px;
-    margin: 8px 0;
     border: none;
     border-radius: 2px;
     outline: none;
@@ -722,7 +689,6 @@ textarea:focus {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     border: 2px solid #4a148c;
     margin-right: 15px;
-    margin-top: 10px;
     padding: 5px;
     width: 185px;
     border-radius: 2px;
@@ -737,7 +703,6 @@ textarea:focus {
     outline: none;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     border: 2px solid #4a148c;
-    margin-top: 20px;
     padding: 5px;
     width: 185px;
     border-radius: 2px;
@@ -776,23 +741,29 @@ textarea:focus {
 
 .redRadio{
     color: #e53935;
+    margin-right: 10px;
 }
+
 
 .orangeRadio{
     color: #fb8c00;
+    margin-right: 10px;
 
 }
 
 .greenRadio {
     color: #43a047;
+    margin-right: 10px;
 }
 
 .blueRadio {
     color: #1e88e5;
+    margin-right: 10px;
 }
 
 .pinkRadio {
     color: #d81b60;
+    margin-right: 10px;
 }
 
 
@@ -877,4 +848,70 @@ textarea:focus {
     background: #c62828;
     transition: all .3s;
     border: solid black 1px;
+}
+
+/* ANIMATION */
+
+.shake-horizontal {
+	-webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+/* KEYFRAMES */
+
+@-webkit-keyframes shake-horizontal {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  80% {
+    -webkit-transform: translateX(8px);
+            transform: translateX(8px);
+  }
+  90% {
+    -webkit-transform: translateX(-8px);
+            transform: translateX(-8px);
+  }
+}
+@keyframes shake-horizontal {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  80% {
+    -webkit-transform: translateX(8px);
+            transform: translateX(8px);
+  }
+  90% {
+    -webkit-transform: translateX(-8px);
+            transform: translateX(-8px);
+  }
 }
