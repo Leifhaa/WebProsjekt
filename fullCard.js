@@ -146,7 +146,7 @@ function CreateEditCardForm(cardID) {
 	addUsersButton.setAttribute('id', 'addFormField')
 	addUsersButton.innerHTML = 'Add Users';
 	createUser.appendChild(addUsersButton);
-	
+
 	var addUsersInput = document.createElement('input');
 	addUsersInput.setAttribute('type', 'text');
 	addUsersInput.setAttribute('name', 'users[]');
@@ -163,7 +163,7 @@ function CreateEditCardForm(cardID) {
 			e.preventDefault();
 			if (x < max_fields) {
 				x++;
-				$(wrapper).append('<div><input type="text" name="users[]"/><a href="#" class="delete">Delete</a></div>');
+				$(wrapper).append('<div><input type="text" name="users[]"/><a href="#" class="delete"><i class="fas fa-times"></i></a></div>');
 			} else {
 				alert('User limit reached');
 			}

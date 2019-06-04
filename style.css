@@ -66,12 +66,20 @@ body {
     border: 3px solid;
     opacity: .2;
     cursor: pointer;
+    transition: ease .5s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+}
+
+#colSilhouetteCont:hover {
+    opacity: .4;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+
 }
 
 #colSilText {
     position: relative;
     top: 20px;
-    font-size: .5em;
+    font-size: .4em;
     text-align: center;
 
 
@@ -600,6 +608,57 @@ footer {
     display: none;
 }
 
+#addUsersField input{
+    border: 2px solid #4a148c;
+    border-radius: 2px;
+    outline: none;
+    width: 200px;
+    padding: 5px;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 1.0em;
+}
+
+#addUsersField input:focus{
+    border: 2px solid #4caf50;
+}
+
+
+
+#addUsersField .delete{
+    margin-left: 10px;
+    color: #ccc;
+    text-decoration: none;
+}
+
+#addUsersField .delete:hover{
+    margin-left: 10px;
+    color: #c62828;
+    text-decoration: none;
+}
+
+#addFormField{
+    background-color: #29b6f6;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 10px;
+
+}
+
+#addFormField:hover {
+    background-color: #4a148c;
+}
+
 .select-selected{
     background-color: #4a148c;
     border-radius: 2px;
@@ -785,7 +844,7 @@ textarea:focus {
 }
 
 .closeEditorIcon:hover {
-    color: #111;
+    color: #c62828;
 }
 
 .sortableStyle {
