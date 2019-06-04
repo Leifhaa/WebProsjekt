@@ -31,9 +31,12 @@ var colSilButton = document.createElement("button");
 
 
 /* ADD COLUMN */
+function newBoard() {
+    alert("New Board?");
+}
 
 var addCol = document.getElementById("addColumnBtn");
-addCol.addEventListener("click", addColumn);
+addCol.addEventListener("click", newBoard);
 
 function startDrag(){
             $("").css('min-height', '300px');
