@@ -152,7 +152,6 @@ function CreateEditCardForm(cardID) {
 	addUsersInput.setAttribute('name', 'users[]');
 
 	$(document).ready(function() {
-
 		var max_fields = 6;
 		var wrapper = $('#addUsersField');
 		var add_button = $('#addFormField');
@@ -378,10 +377,9 @@ document.addEventListener("click", closeAllSelect);
     PushSettingButton.setAttribute("type","Submit")
     PushSettingButton.setAttribute("name","BtnPushSettings")
 	PushSettingButton.setAttribute("id","BtnPushSettings");
-    PushSettingButton.innerHTML = "Ok";
+    PushSettingButton.innerHTML = "Confirm";
 	PushSettingButton.setAttribute("onclick","pushData()");
 	containerEditCard.appendChild(PushSettingButton);
-
 
 	//Important: Store the ID of the card that is being edited.
 	$(cardEditBody).data("cardToEdit",cardElem);
@@ -440,19 +438,6 @@ function pushData() {
 
     var persons = [];
 
-    if (document.getElementById('ava0').checked == true) {
-        persons.push('ava0')
-    }
-    if (document.getElementById('ava1').checked == true) {
-        persons.push('ava1')
-    }
-    if (document.getElementById('ava2').checked == true) {
-        persons.push('ava2')
-    }
-    if (document.getElementById('ava3').checked == true) {
-        persons.push('ava3')
-    }
-
     id = new Date().getTime();
     title = document.getElementById('editCardTitleInput').value;
     desc = document.getElementById('editCardDescInput').value;
@@ -496,3 +481,4 @@ function closeEditor(){
     document.getElementById("cardEditBody").remove();
 	document.getElementById("cardEditBg").remove();
 }
+
