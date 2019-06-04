@@ -55,13 +55,12 @@ body {
 }
 
 #colSilhouetteCont {
-    podition: relative;
+    position: relative;
     width: 274px;
     height: 134px;
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 2px;
-
     font-size: 40px;
     color: #fff;
     border: 3px solid;
@@ -69,15 +68,25 @@ body {
     cursor: pointer;
 }
 
+#colSilText {
+    position: relative;
+    top: 20px;
+    font-size: .5em;
+    text-align: center;
+
+
+}
+
+
+
 #colSilhouette {
     position: relative;
-    background-color: #ff00cc;
 }
 
 #colSilButton {
     position: absolute;
-    left: 110px;
-    top: 45px;
+    left: 115px;
+    top: 60px;
     background-color: #ffffff;
     border: 3px solid #ffffff;
     background-repeat: no-repeat;
@@ -839,6 +848,7 @@ textarea:focus {
     border-bottom-left-radius: 10px;
 }
 
+
 #calendarSquare {
     position: absolute;
     top: 0;
@@ -909,6 +919,8 @@ textarea:focus {
 	-webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 	        animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
+
+
 
 /* KEYFRAMES */
 

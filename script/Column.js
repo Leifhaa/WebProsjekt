@@ -23,11 +23,18 @@ var colSilhouette = document.createElement("div");
     colSilhouette.setAttribute("id", "colSilhouette");
     colSilhouetteC.appendChild(colSilhouette);
 
+var colSilText = document.createElement("div");
+    colSilText.setAttribute("id", "colSilText");
+    colSilText.innerHTML = "Add new column"
+    colSilhouette.appendChild(colSilText);
+
 var colSilButton = document.createElement("button");
     colSilButton.setAttribute("id", "colSilButton");
     colSilButton.setAttribute("class", "btnStyle")
     colSilButton.innerHTML = "<i class='fas fa-plus'></i>";
     colSilhouette.appendChild(colSilButton);
+
+
 
 
 /* ADD COLUMN */
@@ -50,7 +57,7 @@ function addColumn() {
     div.setAttribute("id", "col_" + columnID);
 
 
-    
+
     $(div).disableSelection();
 
     $(div).droppable( {
