@@ -1039,3 +1039,14 @@ textarea:focus {
             transform: translateX(-8px);
   }
 }
+
+/* TRASH CAN */
+
+#trashcanButton {
+    position: fixed;
+    right: 0;
+    bottom: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: #ff00cc;
+}
