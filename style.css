@@ -56,7 +56,7 @@ body {
 
 #colSilhouetteCont {
     position: relative;
-    width: 274px;
+    width: 304px;
     height: 134px;
     margin-left: 20px;
     margin-right: 20px;
@@ -93,7 +93,7 @@ body {
 
 #colSilButton {
     position: absolute;
-    left: 115px;
+    left: 125px;
     top: 60px;
     background-color: #ffffff;
     border: 3px solid #ffffff;
@@ -191,10 +191,10 @@ header {
     font-size: 17px;
     font-weight: bold;
     text-align: right;
-    color: #444;
+    color: #4a148c;
     margin-right: 1em;
     padding-right: 1.3em;
-    border-right: solid #888 1px;
+    border-right: solid #ccc 1px;
 }
 
 #profile {
@@ -369,6 +369,65 @@ header {
     position: absolute;
     left: -100px;
 }
+
+.colStyle input {
+    border: 2px solid #4a148c;
+    border-radius: 2px;
+    outline: none;
+    width: 260px;
+    margin-right: 20px;
+    padding: 5px;
+    font-size: 1.4em;
+}
+
+.colStyle input:focus {
+    border: 2px solid #4caf50;
+
+}
+
+.colOkBtn {
+    width: 80px;
+    background-color: #29b6f6;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    margin-top: 10px;
+    padding: 5px;
+    font-weight: bold;
+    outline: none;
+    font-size: 1.4em;
+}
+
+.colOkBtn:hover {
+    background-color: #4a148c;
+}
+
+.colOkBtn:focus {
+    background-color: #0085c1;
+}
+
+.colCancelBtn {
+    width: 80px;
+    background-color: #29b6f6;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    font-weight: bold;
+    outline: none;
+    font-size: 1.4em;
+}
+
+.colCancelBtn:hover {
+    background-color: #4a148c;
+}
+
+.colCancelBtn:focus {
+    background-color: #0085c1;
+}
+
 
 .cardContent input {
     border: 2px solid #4a148c;

@@ -51,11 +51,9 @@ function startDrag(){
 }
 
 function addColumn() {
-    var testColName = prompt("Type the name of your column!");
     var div = document.createElement('div');
     div.setAttribute("class", "columnBase column droptarget colStyle");
     div.setAttribute("id", "col_" + columnID);
-
 
 
     $(div).disableSelection();
@@ -81,7 +79,27 @@ function addColumn() {
         }
     });
     */
+    // CARD TITLE INPUT
+    var addColTitle = document.createElement('input');
+    addColTitle.type = "text";
+    addColTitle.setAttribute("class", "column colID" + columnID);
+    addColTitle.setAttribute("id", "colTitleInput_" + columnID);
+    addColTitle.setAttribute("onfocus", "this.value=''");
+    addColTitle.setAttribute("placeholder", "Name column");
 
+    //CARD TITLE INPUT OK BUTTON
+    var colTitleBtn = document.createElement('button');
+    colTitleBtn.setAttribute("class", "column colOkBtn colID" + columnID);
+    colTitleBtn.setAttribute("id", "colTitleBtn_" + columnID)
+    colTitleBtn.setAttribute("onclick", "addColTitle(this)");
+    colTitleBtn.innerHTML = "Ok";
+
+    //CARD TITLE INPUT CANCEL BUTTON
+    var colTitleBtnCancel = document.createElement('button');
+    colTitleBtnCancel.setAttribute("class", "column colCancelBtn cardID" + columnID);
+    colTitleBtnCancel.setAttribute("id", "colTitleBtnCancel_" + columnID)
+    colTitleBtnCancel.setAttribute("onclick", "delCard(this.id)");
+    colTitleBtnCancel.innerHTML = "Cancel";
 
 
 
@@ -90,7 +108,8 @@ function addColumn() {
     //div.setAttribute("ondragover", "dragOver(event)");
     //div.setAttribute("ondragenter", "dragEnter(event)");
     //div.setAttribute("ondragleave", "dragLeave(event)");
-    div.innerHTML = "<div id = 'colTitle_" + columnID +"' class='column colTitle'>" + testColName + "</div>";
+        div.innerHTML = "<div id = 'colTitle_" + columnID +"' class='column colTitle'></div>";
+
 
     colArr.push({
         id: "col_" + columnID,
@@ -139,12 +158,31 @@ function addColumn() {
     document.getElementById("colContainer").appendChild(div);
     document.getElementById("col_" + columnID).appendChild(div1);
 
+    document.getElementById("col_" + columnID).appendChild(addColTitle);
+    document.getElementById("col_" + columnID).appendChild(colTitleBtn);
+    document.getElementById("col_" + columnID).appendChild(colTitleBtnCancel);
+
     if (colArr.length == 1){
      createAddCardButton(div);
     }
 
     columnID += 1;
 
+
+}
+
+function addColTitle(csName) {
+    var columnToAddTitle =  $(csName).closest('div[class*=columnBase]')[0];
+    var columnToAddTitle2 = $(columnToAddTitle).find('input[id^=colTitleInput_]')[0];
+    var colTitleValue = columnToAddTitle2.value;
+
+    var columnToAddCancel3 = $(columnToAddTitle).find('button[id^=colTitleBtnCancel_]')[0];
+    var test = $(columnToAddTitle).children('div[class*=colTitle]')[0];
+    test.innerHTML = colTitleValue;
+
+    csName.remove();
+    columnToAddTitle2.remove();
+    columnToAddCancel3.remove();
 
 }
 
@@ -165,30 +203,6 @@ function delCol(delID) {
     }
     deleteColumn.remove();
     console.log(colArr)
-}
-
-/* EDIT COLUMN TEXT */
-
-function toggleEditor() {
-    var colText = document.getElementById("col-txt");
-    var theEditor = document.getElementById("tf");
-    var editorArea = document.getElementById("editor");
-    var subject = colText.innerHTML;
-
-    theEditor.value = subject;
-    colText.style.display = "none";
-    editorArea.style.display = "inline";
-}
-
-function doEdit() {
-    var colText = document.getElementById('col-txt');
-    var theEditor = document.getElementById('tf');
-    var editorArea = document.getElementById("editor");
-    var subject = theEditor.value;
-
-    colText.innerHTML = subject;
-    colText.style.display = "inline";
-    editorArea.style.display = "none";
 }
 
 function createAddCardButton(ColumnId){
