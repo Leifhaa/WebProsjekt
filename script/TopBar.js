@@ -39,9 +39,6 @@ function resizeText(multiply) {
     }
 }
 
-function changeStyle() {
-    alert("Change style");
-}
 
 function swapStyleSheet(sheet){
        document.getElementById('pagestyle').setAttribute('href', sheet);

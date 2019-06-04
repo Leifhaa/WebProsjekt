@@ -50,6 +50,10 @@ body {
     cursor: pointer;
 }
 
+#colorChangeContrast {
+    display: none;
+}
+
 header {
     position: relative;
     height: 60px;

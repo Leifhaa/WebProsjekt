@@ -45,6 +45,11 @@ body {
 }
 
 #colorChange {
+    display: none;
+
+}
+
+#colorChangeContrast {
     position: absolute;
     top: 7px;
     right: 55px;
