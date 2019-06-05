@@ -304,12 +304,66 @@ header {
     width: 34px;
     height: 34px;
     background-color: #ffffff;
-    background-image: url("profile1.png");
+    background-image: url("profile2.png");
     background-size: cover;
     border-radius: 50%;
     border: 3px solid #4a148c;
 }
+.dropbtn {
+  background: none;
+  width: 34px;
+  height: 34px;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  outline: none;
+  opacity: 0;
+  transition: ease .5s;
+}
 
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #4a148c;
+  opacity: 1;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: -30px;
+  background-color: #f1f1f1;
+  min-width: 100px;
+  overflow: auto;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  font-size: 14px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+    background-color: #29b6f6;
+    color: #fff;
+}
+
+.show {display: block;}
 #boardContainer {
     width: 100%;
     height: 100%;
