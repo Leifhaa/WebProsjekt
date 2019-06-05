@@ -401,7 +401,7 @@ document.addEventListener("click", closeAllSelect);
     DeleteCardButton.setAttribute("name","BtnDeleteCard")
 	DeleteCardButton.setAttribute("id","BtnDeleteCard");
     DeleteCardButton.innerHTML = "Delete";
-	DeleteCardButton.setAttribute("onclick","delCard()");
+	DeleteCardButton.setAttribute("onclick","delCardfromEdit()");
 	containerEditCard.appendChild(DeleteCardButton);
 
 	//Important: Store the ID of the card that is being edited.
@@ -412,7 +412,7 @@ document.addEventListener("click", closeAllSelect);
 
 }
 
-function delCard() {
+function delCardfromEdit() {
 	alert("Will implement function");
 }
 
