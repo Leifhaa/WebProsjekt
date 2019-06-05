@@ -125,11 +125,6 @@ function addColumn() {
     orderList.setAttribute("class","sortOl");
 
 
-    $(orderList).sortable({
-        containment: "document",
-        items: "> li",
-        connectWith: '.cardContent'
-    });
 
     div.appendChild(orderList);
 
@@ -163,6 +158,14 @@ function addColumn() {
 
     columnID += 1;
 
+
+    $(".columnBase").sortable({
+        containment: "document",
+        helper: 'clone',
+        //connectToSortable: "li"
+        items: "> li",
+        connectWith: '.columnBase'
+    });
 
 }
 

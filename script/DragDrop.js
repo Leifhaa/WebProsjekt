@@ -1,5 +1,5 @@
 /* DRAG EVENTS */
-
+var cnter = 0;
 
 function dragOver(dragEv) {
 
@@ -11,15 +11,6 @@ function dragOver(dragEv) {
 
 }
 
-// WHEN CARD ENTERS COL DO THIS
-function dragEnter(dragEv) {
-    var targetClass = dragEv.target.className;
-
-    if (targetClass.includes("droptarget")) {
-        //dragEv.target.style.border = "3px solid #4caf50";
-        //dragEv.target.style.backgroundColor = "#f2f2f2";
-    }
-}
 
 // WHEN CARD LEAVES COL DO THIS
 function dragLeave(dragEv) {
@@ -70,17 +61,18 @@ function drop(dragEv, ui )  {
 
     //Always append the card to column, not to another card.
     if (dropColumnQueryRes.length > 0) {
-    	var dropColumn = dropColumnQueryRes[0];
-        var childOlList = $(dropColumn).find('ol')[0];
-        childOlList.appendChild(dropElement);
-        console.log("Dropped on a column!" + childOlList.id);
-        $(ui.draggable).css({"left": "0", "top": "0"});
+    	//var dropColumn = dropColumnQueryRes[0];
+        //dropColumn.appendChild(dropElement);
+        cnter = cnter + 1
+        //console.log("Dropped on a column!" + dropColumn.id + " and cnter is now " + cnter);
+        //$(ui.draggable).css({"left": "0", "top": "0"});
 
     } else if (targetId.includes("trash")) {
         dropElement.remove();
     }
 
 }
+
 
 var trashcanButton = document.getElementById("trashcanButton");
 

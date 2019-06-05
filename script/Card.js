@@ -147,25 +147,24 @@ function addCardTitle(csName) {
     $(cardState).data("prop").title = cardInputElem.value;
 
 
-    //Move the card from OL newlist to OL list of cards.
+    //Move the card from OL newlist to column div.
     var columnToAddCard =  $(cardState).closest('div[class*=columnBase]')[0]
-    var ColumnOlId = $(columnToAddCard).find("ol[class*=sortable]")[0];
-    ColumnOlId.appendChild(cardState);
+    columnToAddCard.appendChild(cardState);
 
 
 
     //Make the created card dragable
-     $(cardState).draggable( {
-        connectToSortable: '.sortOl',
-        zIndex: 1,
-        containment: 'document',
-        cursor: 'grab',
-        snap: '#content',
-        start: drag,
+     //$(cardState).draggable( {
+        //connectToSortable: '.sortOl',
+     //   zIndex: 1,
+     //   containment: 'document',
+     //   cursor: 'grab',
+        //snap: '#content',
+        //start: drag,
         //drop: drop,
-        revert: RevertDrag,
-        revertDuration: 200
-    });
+    //    revert: RevertDrag,
+    //    revertDuration: 200
+    //});
 
 
     //Remove all the adjustment elements (Like ok button etc.)
