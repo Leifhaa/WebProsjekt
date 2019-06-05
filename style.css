@@ -268,7 +268,7 @@ header {
 }
 
 #container {
-    min-height: 300px;
+    min-height: 500px;
     display: inline-flex;
     flex-direction: row;
     align-items: flex-start;
@@ -277,7 +277,7 @@ header {
 }
 
 #colContainer {
-    min-height: 300px;
+    min-height: 500px;
     display: inline-flex;
     flex-direction: row;
     align-items: flex-start;
@@ -1196,13 +1196,21 @@ textarea:focus {
     position: fixed;
     right: 0;
     top: 45%;
-    width: 200px;
+    width: 180px;
     height: 100px;
-    background-color: #29b6f6;
+    background-color: #000;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     font-size: 70px;
     color: #fff;
+    transition: ease .4s;
+    opacity: .5;
+}
+
+#trashcanButton.trashHovered {
+    background-color: #c62828;
+    opacity: 1;
+
 }
 
 #trashcanButton .fa-trash-alt {
@@ -1222,4 +1230,3 @@ textarea:focus {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
-

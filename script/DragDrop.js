@@ -77,12 +77,26 @@ function drop(dragEv, ui )  {
 
     } else if (targetId.includes("trash")) {
         dropElement.remove();
-    }    
+    }
 
     //$(this).append(ui.draggable);
     $(ui.draggable).css({"left": "0", "top": "0"});
 }
 
+var trashcanButton = document.getElementById("trashcanButton");
+
+
+$(trashcanButton).droppable( {
+    drop: drop,
+    hoverClass: 'trashHovered',
+    activate: startDrag,
+    over: function(event, ui) {
+               //ui.helper.css("border", "2px solid green")
+           },
+    out: function(event, ui) {
+                     // ui.helper.css("border", "2px solid red")
+                  }
+} );
 
 function sendAjax() {
     var xhr = new XMLHttpRequest;
