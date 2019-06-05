@@ -164,6 +164,8 @@ function addColumn() {
         helper: 'clone',
         //connectToSortable: "li"
         items: "> li",
+        revert:200,
+        cursor:'grab',
         connectWith: '.columnBase'
     });
 
