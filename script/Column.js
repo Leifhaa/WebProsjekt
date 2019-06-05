@@ -51,7 +51,7 @@ function startDrag(){
 
 function addColumn() {
     var div = document.createElement('div');
-    div.setAttribute("class", "columnBase column droptarget colStyle animated fadeInUp");
+    div.setAttribute("class", "columnBase column droptarget colStyle");
     div.setAttribute("id", "col_" + columnID);
 
 
