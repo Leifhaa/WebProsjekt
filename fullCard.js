@@ -118,6 +118,7 @@ function CreateEditCardForm(cardID) {
 	BudgetLabel.innerHTML = "Budget";
 	containerEditCard.appendChild(BudgetLabel);
 	*/
+	/*
 	//Budget div
 	var cardEditorBudget = document.createElement('div');
 	cardEditorBudget.setAttribute("class", "editCardItemCont");
@@ -133,6 +134,7 @@ function CreateEditCardForm(cardID) {
 	budgetInput.setAttribute("placeholder","Enter budget");
 	budgetInput.setAttribute("value",cardData.budget);
 	cardEditorBudget.appendChild(budgetInput);
+	*/
 
 	//Avatars
 
@@ -299,7 +301,7 @@ document.addEventListener("click", closeAllSelect);
 
 	// Color div
 	var cardEditorColor = document.createElement('div');
-	cardEditorColor.setAttribute("class", "editCardItemCont");
+	cardEditorColor.setAttribute("class", "editCardItemCont colors");
 	cardEditorColor.innerHTML = "Color";
 	containerEditCard.appendChild(cardEditorColor);
 
@@ -392,12 +394,26 @@ document.addEventListener("click", closeAllSelect);
 	PushSettingButton.setAttribute("onclick","pushData()");
 	containerEditCard.appendChild(PushSettingButton);
 
+
+	//Delete card
+	var DeleteCardButton = document.createElement('button');
+    DeleteCardButton.setAttribute("type","Submit")
+    DeleteCardButton.setAttribute("name","BtnDeleteCard")
+	DeleteCardButton.setAttribute("id","BtnDeleteCard");
+    DeleteCardButton.innerHTML = "Delete";
+	DeleteCardButton.setAttribute("onclick","delCard()");
+	containerEditCard.appendChild(DeleteCardButton);
+
 	//Important: Store the ID of the card that is being edited.
 	$(cardEditBody).data("cardToEdit",cardElem);
 
 	//Important: Store the Data of the card that is being edited
 	$(cardEditBody).data("prop",cardData);
 
+}
+
+function delCard() {
+	alert("Will implement function");
 }
 
 function changeColor(color) {
@@ -416,7 +432,7 @@ function changeAvatarColor(color) {
 
 var allCards = [];
 
-function Card(title, desc, dateStart, dateEnd, color, persons, id, budget) {
+function Card(title, desc, dateStart, dateEnd, color, persons, id) {
     this.title = title;
     this.desc = desc;
     this.dateStart = dateStart;
@@ -424,11 +440,10 @@ function Card(title, desc, dateStart, dateEnd, color, persons, id, budget) {
     this.color = color;
     this.persons = persons;
     this.id = id;
-    this.budget = budget;
 }
 
-function editCard(title, desc, dateStart, dateEnd, color, persons, id, budget) {
-    allCards.push(new Card(title, desc, dateStart, dateEnd, color, persons, id, budget));
+function editCard(title, desc, dateStart, dateEnd, color, persons, id) {
+    allCards.push(new Card(title, desc, dateStart, dateEnd, color, persons, id));
 }
 
 
@@ -454,7 +469,7 @@ function pushData() {
     desc = document.getElementById('editCardDescInput').value;
     dateStart = document.getElementById('date-start').value;
     dateEnd = document.getElementById('date-end').value;
-    budget = document.getElementById('editCardBudgetInput').value;
+
 
     //Edit the card's data
      var editDiv = document.getElementById("cardEditBody"); //Retrieve div in editForm which contains what card we're editing.
@@ -468,7 +483,7 @@ function pushData() {
      //Edit the data properties from the original card
      cardProps.title = this.title;
      cardProps.description = this.desc;
-     cardProps.budget = this.budget;
+
      cardProps.persons = persons;
      cardProps.color = color;
      cardProps.dateStart = this.dateStart;

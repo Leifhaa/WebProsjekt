@@ -1584,7 +1584,7 @@
   }
 
   to {
-    opacity: 1;
+    opacity: .2;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
@@ -1598,7 +1598,7 @@
   }
 
   to {
-    opacity: 1;
+    opacity: .2;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }

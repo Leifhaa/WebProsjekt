@@ -154,7 +154,7 @@ body {
 #colSilhouetteCont {
     position: relative;
     width: 304px;
-    height: 134px;
+    height: 124px;
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 2px;
@@ -170,7 +170,7 @@ body {
 }
 
 #colSilhouetteCont:hover {
-    opacity: .4;
+    opacity: .6;
     box-shadow: 0 1px 2px rgba(0,0,0,0.07);
 
 }
@@ -428,9 +428,9 @@ header {
 .colStyle {
     position: relative;
     width: 270px;
-    min-height: 80px;
+    min-height: 90px;
     background-color: #ffffff;
-    padding: 17px 17px 7px 17px;
+    padding: 17px 17px 17px 17px;
     margin-left: 20px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.07);
     border-radius: 2px;
@@ -767,7 +767,7 @@ header {
 }
 
 .column ol {
-    margin: 0;
+    margin-top: 0;
     padding: 0;
 }
 
@@ -841,6 +841,9 @@ footer {
     font-weight: bold;
 }
 
+.editCardItemCont.colors {
+    height: 60px;
+}
 .editCardDescCont {
     background: #ff0;
 }
@@ -961,10 +964,18 @@ footer {
 }
 
 .editCardColorCont {
+    position: relative;
     background: #330fcc;
 }
 
 .editCardColor {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 310px;
+
 
 }
 
@@ -1043,6 +1054,27 @@ textarea:focus {
 }
 
 #BtnPushSettings:hover {
+    background-color: #4a148c;
+
+}
+
+#BtnDeleteCard {
+    background-color: #29b6f6;
+    color: white;
+    margin-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#BtnDeleteCard:hover {
     background-color: #4a148c;
 
 }
@@ -1328,8 +1360,7 @@ textarea:focus {
 }
 
 .sortOl {
-    margin-top: 10px;
-    padding-top: 10px;
+
 }
 
 
