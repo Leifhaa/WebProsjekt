@@ -1,226 +1,11 @@
-html {
-    min-height: 100%;
-}
+/* IMPORTED FONTS */
 
-body {
-    background-color: #4a148c;
-    background-image: linear-gradient(315deg, #4a148c 0%, #12005e 100%);
-    margin: 0;
-    padding: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #111;
-    font-size: 62.5%;
-    height: 100%;
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Roboto+Slab&display=swap');
 
-#messageCont {
-    position: absolute;
-    top: 130px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 400px;
-    height: 190px;
-    background-color: #fff;
-    z-index: 5000;
-    border-radius: 2px;
-    font-weight: bold;
-}
-
-#messageCont button {
-    background-color: #29b6f6;
-    color: white;
-    padding: 5px;
-    border: none;
-    border-radius: 2px;
-    outline: none;
-    cursor: pointer;
-    width: 80px;
-    font-weight: bold;
-    font-size: 1.6em;
-
-    margin-top: 20px;
-
-}
-
-#messageCont button:hover {
-    background-color: #4a148c;
-}
-
-
-.containerMessage {
-    z-index: 860;
-}
-
-#qButtonCancel {
-    margin-left: 20px;
-}
-
-#qMessage {
-    margin-top: 100px;
-    text-align: center;
-    font-size: 1.8em;
-    color: #4a148c;
-}
-
-#qBtnCont {
-    position: absolute;
-    top: 120px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 180px;
-
-
-}
-
-#qIcon {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 40px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 4px solid #4a148c;
-    color: #4a148c;
-}
-
-#qIcon .fa-exclamation {
-    position: relative;
-    top: 8px;
-    left: 23px;
-}
-
-#editCont {
-    height: 100%;
-}
-
-#accessabilityCont {
-    position: relative;
-    width: 100%;
-    background-color: #f4f4f4;
-    border-bottom: 1px solid #ccc;
-    min-height: 30px;
-}
-
-#textAdjust {
-    position: absolute;
-    right: 0;
-    top: 0;
-    color: #111;
-    font-weight: bold;
-    font-size: 12px;
-}
-
-.aA {
-    position: relative;
-    top: 5px;
-    right: 10px;
-    color: #111;
-    background: none;
-    font-weight: bold;
-    outline: none;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-.aA:hover {
-    color: #c62828;
-}
-
-#colorChange {
-    position: absolute;
-    top: 7px;
-    right: 55px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-#colorChange:hover {
-    color: #c62828;
-}
-
-#colorChangeContrast {
-    display: none;
-}
-
-#colSilhouetteCont {
-    position: relative;
-    width: 304px;
-    height: 124px;
-    margin-left: 20px;
-    margin-right: 20px;
-    border-radius: 2px;
-    font-size: 40px;
-    color: #fff;
-    border: 3px solid;
-    opacity: .2;
-    cursor: pointer;
-    transition: ease .5s;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-    animation-duration: .4s;
-    animation-fill-mode: none;
-}
-
-#colSilhouetteCont:hover {
-    opacity: .6;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-
-}
-
-#colSilText {
-    position: relative;
-    top: 20px;
-    font-size: .4em;
-    text-align: center;
-
-
-}
-
-
-
-#colSilhouette {
-    position: relative;
-}
-
-#colSilButton {
-    position: absolute;
-    left: 125px;
-    top: 60px;
-    background-color: #ffffff;
-    border: 3px solid #ffffff;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    outline:none;
-    cursor: pointer;
-    color: #fff;
-    font-size: .4em;
-    background: none;
-}
-
-header {
-    position: relative;
-    height: 60px;
-    width: 100%;
-    background-color: #ffffff;
-    margin-bottom: 20px;
-
-}
-
-#siteWrap {
-    height: 100%;
-}
 /* SCROLL BAR STYLING */
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -241,58 +26,67 @@ header {
     background: none;
 }
 
+
+/* FONTS
+
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Slab', serif;
+font-family: 'Open Sans', sans-serif;
+
+*/
+
+html {
+    min-height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #4a148c;
+    background-image: linear-gradient(315deg, #4a148c 0%, #12005e 100%);
+    color: #111;
+    font-size: 62.5%;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+/* HEADER */
+header {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 10px rgba(0,0,0,.4);
+}
+
 #logo {
     position: absolute;
     top: 20px;
     left: 20px;
-    width: 20px;
+    width: 200px;
     height: 20px;
-    font-weight: 700;
-    font-size: 40px;
-    letter-spacing: -2px;
     padding-top: 0px;
-    background-image: url(logotest.svg);
+    background-image: url(dowologofinal3.svg);
     background-repeat: no-repeat;
-}
-
-#logoText {
-    position: absolute;
-    top: 15px;
-    left: 40px;
-    width: 250px;
-    height: 40px;
-    font-weight: 700;
-    font-size: 25px;
     letter-spacing: -2px;
-    padding-top: 0px;
-}
-
-#progressbar {
-    width: 100%;
-    height: 10px;
-    background-color: #f4f4f4;
-    margin-bottom: 20px;
-}
-
-#progress {
-    width: 70%;
-    height: 10px;
-    background-color: #FAD961;
-    background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
+    font-size: 40px;
+    font-weight: 700;
 }
 
 #timeDate {
     position: absolute;
-    width: 240px;
     right: 100px;
     top: 10px;
-    font-size: 17px;
-    font-weight: bold;
-    text-align: right;
-    color: #4a148c;
+    width: 240px;
     padding-right: 10px;
     margin-right: 10px;
     border-right: solid #ccc 1px;
+    color: #4a148c;
+    text-align: right;
+    font-size: 1.4em;
+    font-weight: bold;
 }
 
 #profile {
@@ -302,59 +96,59 @@ header {
     margin-right: 60px;
     width: 34px;
     height: 34px;
+    border-radius: 50%;
+    border: 3px solid #4a148c;
     background-color: #ffffff;
     background-image: url("profile2.png");
     background-size: cover;
-    border-radius: 50%;
-    border: 3px solid #4a148c;
 }
 .dropbtn {
-  background: none;
-  width: 34px;
-  height: 34px;
-  color: white;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  border-radius: 50%;
-  outline: none;
-  opacity: 0;
-  transition: ease .5s;
+    background: none;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    opacity: 0;
+    color: white;
+    font-size: 16px;
+    transition: ease .5s;
 }
 
 .dropbtn:hover, .dropbtn:focus {
-  background-color: #4a148c;
-  opacity: 1;
+    background-color: #4a148c;
+    opacity: 1;
 }
 
 .dropdown {
-  position: relative;
-  display: inline-block;
+    display: inline-block;
+    position: relative;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  top: 40px;
-  left: -30px;
-  background-color: #f1f1f1;
-  min-width: 100px;
-  overflow: auto;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-  border-radius: 2px;
-  z-index: 1;
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: -30px;
+    min-width: 100px;
+    overflow: auto;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+    border-radius: 2px;
+    background-color: #f1f1f1;
+    z-index: 1;
 }
 
 .dropdown-content a {
-  color: black;
-  font-size: 14px;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
-  text-decoration: none;
-  display: block;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
 }
 
 .dropdown a:hover {
@@ -362,44 +156,38 @@ header {
     color: #fff;
 }
 
-.show {display: block;}
-#boardContainer {
-    width: 100%;
+.show {
+    display: block;
+}
+
+#siteWrap {
     height: 100%;
-    overflow: scroll;
-    overflow-y: hidden;
-    padding-bottom: 20px;
+}
+
+#boardContainer {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: flex-start;
+    vertical-align: top;
+    min-height: 500px;
 }
 
 #container {
-    min-height: 500px;
-    display: inline-flex;
-    flex-direction: row;
-    align-items: flex-start;
-    align-content: flex-start;
-    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+    overflow: scroll;
+    overflow-y: hidden;
 }
 
 #colContainer {
-    min-height: 500px;
     display: inline-flex;
     flex-direction: row;
     align-items: flex-start;
     align-content: flex-start;
     vertical-align: top;
-}
-
-#editor-holder {
-    margin-left: 20px;
-    margin-bottom: 10px;
-}
-
-#startCol {
-    position: relative;
-}
-
-#col1 {
-    position: relative;
+    min-height: 500px;
 }
 
 .fa-times {
@@ -412,34 +200,29 @@ header {
 
 .colTitle {
     position: relative;
-    font-size: 1.6em;
-    font-weight: bold;
+    width: 240px;
     margin-left: 5px;
     margin-bottom: 10px;
     cursor: default;
     word-break: break-word;
-    width: 240px;
+    font-size: 1.6em;
+    font-weight: bold;
+    font-family: 'Roboto Slab', serif;
 }
 
-.column {
-
-}
-
-.colStyle {
+.columnBox {
     position: relative;
     width: 270px;
     min-height: 90px;
-    background-color: #ffffff;
     padding: 17px 17px 17px 17px;
     margin-left: 20px;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
     border-radius: 2px;
     border: 3px solid #ffffff;
-
-
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
 }
 
-.colStyle.animated {
+.columnBox.animated {
     animation-duration: .4s;
 }
 
@@ -447,19 +230,7 @@ header {
     animation-duration: .6s;
 }
 
-.delColIcon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    margin-bottom: 10px;
-    color: #ccc;
-    cursor: pointer;
-}
-
-.delColIcon:hover {
-    color: #c62828;
-}
-
+/*
 .delCardIcon {
     position: absolute;
     top: 10px;
@@ -481,15 +252,16 @@ header {
 .editCardIcon:hover {
     color: #4caf50;
 }
+*/
 
 #darkenPage {
     position: absolute;
     top: 0;
-    background-color: #111;
     width: 100%;
-    height: 1000px;
-    z-index: 450;
+    height: 100%;
+    background-color: #111;
     opacity: 0.8;
+    z-index: 450;
 }
 
 #cardEditorCont {
@@ -497,28 +269,24 @@ header {
     top: 50px;
     left: 0;
     right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 500;
     width: 500px;
     height: 500px;
-    background-color: #f5f5f5;
+    margin-left: auto;
+    margin-right: auto;
     border-bottom: 1px solid #ccc;
-}
-
-.delCardIcon:hover {
-    color: #c62828;
+    background-color: #f5f5f5;
+    z-index: 500;
 }
 
 .cardContent {
     position: relative;
-    font-weight: 700;
+    align-self: flex-start;
     margin-bottom: 10px;
     padding: 10px 5px 10px 5px;
-    background-color: #f5f5f5;
-    align-self: flex-start;
     border-radius: 2px;
     border-bottom: 1px solid #ccc;
+    background-color: #f5f5f5;
+    font-weight: bold;
 }
 
 .cardTitle {
@@ -532,72 +300,29 @@ header {
     left: -100px;
 }
 
-.colStyle input {
-    border: 2px solid #4a148c;
-    border-radius: 2px;
-    outline: none;
+.columnBox input {
     width: 260px;
     margin-right: 20px;
     padding: 5px;
+    border: 2px solid #4a148c;
+    border-radius: 2px;
+    outline: none;
     font-size: 1.4em;
 }
 
-.colStyle input:focus {
+.columnBox input:focus {
     border: 2px solid #4caf50;
 
-}
-
-.colOkBtn {
-    width: 80px;
-    background-color: #29b6f6;
-    color: #fff;
-    border: none;
-    border-radius: 2px;
-    margin-top: 10px;
-    padding: 5px;
-    font-weight: bold;
-    outline: none;
-    font-size: 1.4em;
-}
-
-.colOkBtn:hover {
-    background-color: #4a148c;
-}
-
-.colOkBtn:focus {
-    background-color: #0085c1;
-}
-
-.colCancelBtn {
-    width: 80px;
-    background-color: #29b6f6;
-    color: #fff;
-    border: none;
-    border-radius: 2px;
-    margin-left: 10px;
-    margin-top: 10px;
-    padding: 5px;
-    font-weight: bold;
-    outline: none;
-    font-size: 1.4em;
-}
-
-.colCancelBtn:hover {
-    background-color: #4a148c;
-}
-
-.colCancelBtn:focus {
-    background-color: #0085c1;
 }
 
 
 .cardContent input {
     border: 2px solid #4a148c;
     border-radius: 2px;
-    outline: none;
     width: 245px;
     margin-right: 20px;
     padding: 5px;
+    outline: none;
     font-size: 1.4em;
 }
 
@@ -610,83 +335,29 @@ header {
     border: 2px solid #c62828;
 }
 
-.cardOkBtn {
-    width: 80px;
-    background-color: #29b6f6;
-    color: #fff;
-    border: none;
-    border-radius: 2px;
-    margin-top: 10px;
-    padding: 5px;
-    font-weight: bold;
-    outline: none;
-    font-size: 1.4em;
-}
-
-.cardOkBtn:hover {
-    background-color: #4a148c;
-}
-
-.cardOkBtn:focus {
-    background-color: #0085c1;
-}
-
-.cardCancelBtn {
-    width: 80px;
-    background-color: #29b6f6;
-    color: #fff;
-    border: none;
-    border-radius: 2px;
-    margin-left: 10px;
-    margin-top: 10px;
-    padding: 5px;
-    font-weight: bold;
-    outline: none;
-    font-size: 1.4em;
-}
-
-.cardCancelBtn:hover {
-    background-color: #4a148c;
-}
-
-.cardCancelBtn:focus {
-    background-color: #0085c1;
-}
-
-#del-card {
-    background: #cccccc;
+.crossIcon {
+    position: relative;
     width: 20px;
     height: 20px;
-    position: relative;
     cursor: pointer;
+    color: #ccc;
 }
 
-#del-col {
-    background: #cccccc;
-    width: 20px;
-    height: 20px;
-    position: relative;
-    cursor: pointer;
+.crossIcon:hover {
+    color: #c62828;
 }
 
-.colDelete {
-    width: 20px;
-    height: 20px;
-    position: relative;
-    cursor: pointer;
-}
-
-#addCardBtn.btnStyle {
+#addCardBtn.btnPlus {
     position: absolute;
     bottom: -20px;
     left: 130px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid #29b6f6;
     background-color: #29b6f6;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    border: 3px solid #29b6f6;
     outline:none;
     cursor: pointer;
     color: #fff;
@@ -694,27 +365,27 @@ header {
     transition: ease .5s;
 }
 
-#addCardBtn.btnStyle:hover {
-    background-color: #0085c1;
+#addCardBtn.btnPlus:hover {
     border: 3px solid #0085c1;
+    background-color: #0085c1;
     transition: ease .5s;
 }
 
-#addColumnBtn.btnStyle {
-    background-color: #ffffff;
-    border: 3px solid #4a148c;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    border-radius: 50%;
+#addColumnBtn.btnPlus {
     height: 40px;
     width: 40px;
+    border-radius: 50%;
+    border: 3px solid #4a148c;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
     outline:none;
     cursor: pointer;
     color: #4a148c;
     font-size: 16px;
 }
 
-#addColumnBtn.btnStyle:hover {
+#addColumnBtn.btnPlus:hover {
     background-color: #4a148c;
     border: 3px solid #4a148c;
     transition: ease .5s;
@@ -727,30 +398,6 @@ header {
     top: 10px;
 }
 
-#button-holder {
-    color: #fff;
-    font-size: 1.4em;
-}
-
-
-#button-holder button {
-    background-color: Transparent;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    height: 20px;
-    width: 20px;
-    border: none;
-    outline:none;
-    cursor: pointer;
-    color: #ffffff;
-}
-
-#col-txt{
-    font-weight: 700;
-    font-size: 1.6em;
-    cursor: pointer;
-}
-
 .draggable {
     background-color: #ff00cc;
     height: 200px;
@@ -759,7 +406,6 @@ header {
 .colHovered {
     background-color: #e9e9e9;
     border: 3px solid #4caf50;
-
 }
 
 .column li {
@@ -775,55 +421,26 @@ header {
     height: 300px;
 }
 
-footer {
-
-    height: 100px;
-    width: 100%;
-}
-
-/* DRAG STYLING */
-#makeMeDraggable { width: 300px; height: 300px; background: red; }
-
-
-#cardEditBody {
-
-}
-
 .containerEditCard .fa-times {
     font-size: 1.2em;
 }
 
 .containerEditCard {
-    z-index: 900;
     position: absolute;
-    border-radius: 2px;
-    border-bottom: 1px solid #ccc;
-    width: 415px;
-    padding: 20px;
     top: 20px;
     left: 0;
     right: 0;
+    width: 415px;
+    padding: 20px;
     margin-left: auto;
     margin-right: auto;
-    z-index: 900;
+    border-radius: 2px;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
     background-color: #f5f5f5;
     color: #111;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
     font-size: 1.5em;
-}
-
-.newColContainer.animated {
-    opacity: .2;
-    animation-fill-mode: none;
-}
-
-.newcol.animated {
-    animation-fill-mode: none;
-}
-
-.colSilhouetteCont.animated {
-    animation-fill-mode: none;
-
+    z-index: 900;
 }
 
 .containerEditCard.animated {
@@ -835,10 +452,11 @@ footer {
 }
 
 .editCardItemCont {
-    border-bottom: 1px solid #ccc;
     margin-bottom: 20px;
     padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
     font-weight: bold;
+    font-family: 'Roboto Slab', serif;
 }
 
 .editCardItemCont.colors {
@@ -846,14 +464,6 @@ footer {
 }
 .editCardDescCont {
     background: #ff0;
-}
-
-.editCardBudgetCont {
-    background: #ffcc00;
-}
-
-.editCardAvatarCont {
-    background: #ccff00;
 }
 
 .editCardAvatar {
@@ -866,15 +476,14 @@ footer {
 }
 
 #addUsersField input{
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     border: 2px solid #4a148c;
     border-radius: 2px;
     outline: none;
-    width: 200px;
-    padding: 5px;
     font-size: 1.6em;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    font-size: 1.0em;
 }
 
 #addUsersField input:focus{
@@ -896,71 +505,24 @@ footer {
 }
 
 #addFormField{
-    background-color: #29b6f6;
-    color: white;
+    margin-top: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
+    background-color: #29b6f6;
     border: none;
     border-radius: 2px;
     outline: none;
     cursor: pointer;
+    color: white;
     font-weight: bold;
     font-size: 1.1em;
-    margin-top: 10px;
 
 }
 
 #addFormField:hover {
     background-color: #4a148c;
-}
-
-.select-selected{
-    background-color: #4a148c;
-    border-radius: 2px;
-}
-
-.select-selected:after {
-  position: absolute;
-  content: "";
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
-}
-
-.select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
-  top: 7px;
-}
-
-.select-items div,.select-selected {
-  color: #ffffff;
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
-  user-select: none;
-}
-
-.select-items {
-  position: absolute;
-  background-color: #29b6f6;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-
-.select-hide {
-  display: none;
-}
-
-.select-items div:hover, .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .editCardColorCont {
@@ -972,11 +534,9 @@ footer {
     position: absolute;
     left: 0;
     right: 0;
+    width: 310px;
     margin-left: auto;
     margin-right: auto;
-    width: 310px;
-
-
 }
 
 .editCardColor input[type=radio] {
@@ -984,15 +544,10 @@ footer {
 }
 
 .editCardColor label {
-  display: inline-block;
-  padding: 4px 11px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.editCardColor input[type="radio"]:checked+label {
-  background-color: #bbb;
-  border: 3px solid #ff00cc;
+    display: inline-block;
+    padding: 4px 11px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 .editCardCalCont {
@@ -1004,32 +559,30 @@ footer {
 }
 
 .editCardInputField {
+    width: 400px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     border: 2px solid #4a148c;
     border-radius: 2px;
     outline: none;
-    width: 400px;
-    padding: 5px;
     font-size: 1.6em;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    font-size: 1.0em;
 }
-
 
 .editCardInputField:focus {
     border: 2px solid #4caf50;
 }
 
 .editCardTextArea {
-    border: 2px solid #4a148c;
-    border-radius: 2px;
-    outline: none;
-    resize: none;
     width: 400px;
     height: 40px;
     padding: 5px;
     margin-bottom: 10px;
     margin-top: 10px;
+    border: 2px solid #4a148c;
+    border-radius: 2px;
+    outline: none;
+    resize: none;
     font-size: 1.0em;
 
 }
@@ -1037,111 +590,43 @@ textarea:focus {
     border: 2px solid #4caf50;
 }
 
-
-#BtnPushSettings {
-    background-color: #29b6f6;
-    color: white;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: none;
-    border-radius: 2px;
-    outline: none;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1.1em;
-}
-
-#BtnPushSettings:hover {
-    background-color: #4a148c;
-
-}
-
-#BtnDeleteCard {
-    background-color: #29b6f6;
-    color: white;
-    margin-left: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: none;
-    border-radius: 2px;
-    outline: none;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1.1em;
-}
-
-#BtnDeleteCard:hover {
-    background-color: #4a148c;
-
-}
-
 #cardEditBg {
     position: absolute;
     top: 0;
-    opacity: .7;
-    background: #111;
     width: 100%;
     height: 100%;
+    opacity: .7;
+    background: #111;
     z-index: 850;
 }
 
-#date-start {
-    font-size: 1em;
-    outline: none;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    border: 2px solid #4a148c;
+#dateStart {
+    width: 185px;
     margin-right: 15px;
     padding: 5px;
-    width: 185px;
-    border-radius: 2px;
-}
-
-#date-start:focus {
-    border: 2px solid #4caf50;
-}
-
-#date-end {
-    font-size: 1em;
-    outline: none;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     border: 2px solid #4a148c;
-    padding: 5px;
-    width: 185px;
     border-radius: 2px;
+    outline: none;
+    font-size: 1em;
+
 }
 
-#date-end:focus {
+#dateStart:focus {
     border: 2px solid #4caf50;
 }
 
-
-.closeEditorIcon {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    z-index: 1050;
-    margin-bottom: 10px;
-    color: #ccc;
-    cursor: pointer;
-}
-
-.closeEditorIcon:hover {
-    color: #c62828;
-}
-
-.sortableStyle {
-    padding: 20px;
-    margin-bottom: 10px;
+#dateEnd {
+    width: 185px;
+    padding: 5px;
+    outline: none;
+    border: 2px solid #4a148c;
     border-radius: 2px;
-    border: 2px dotted #bbb;
+    font-size: 1em;
 }
 
-
-
+#dateEnd:focus {
+    border: 2px solid #4caf50;
+}
 
 /* COLOR RADIOS ON EDIT CARD */
 
@@ -1172,159 +657,13 @@ textarea:focus {
     margin-right: 10px;
 }
 
-
-/* SIDE CONTENT CSS */
-
-#calendarStatisticsContainer {
-    position: fixed;
-    right: 0;
-    top: 35%;
-    width: 55px;
-    height: 80px;
-    z-index: 5;
-}
-
-.squareContainer {
-    position: absolute;
-    right: 0;
-    width: 55px;
-    height: 40px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-
-#calendarSquare {
-    position: absolute;
-    top: 0;
-    background-color: #29b6f6;
-
-}
-
-#statisticsSquare {
-    position: absolute;
-    bottom: 0;
-    background-color: #29b6f6;
-}
-
-#calendarSquare:hover, #statisticsSquare:hover {
-    width: 80px;
-    transition: all .5s;
-    background-color: #0085c1;
-}
-
-#goToCalendar, #goToStatistics {
-    position: absolute;
-    background: transparent;
-    color: #fff;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    font-size: 2.5em;
-    border: none;
-    cursor: pointer;
-    outline: none;
-}
-
-#trashcanSquare {
-    position: fixed;
-    right: 0em;
-    bottom: 45%;
-    background-color: #29b6f6;
-    min-width: 55px;
-    min-height: 40px;
-    overflow: hidden;
-    z-index: 100;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-#deleteObj {
-    position: absolute;
-    z-index: 90;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    background: none;
-    color: #fff;
-
-    border: none;
-    font-size: 2em;
-}
-
 .dragging {
+    border: solid black 1px;
     background: #c62828;
     transition: all .3s;
-    border: solid black 1px;
+
 }
 
-/* ANIMATION */
-
-.shake-horizontal {
-	-webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-	        animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-}
-
-
-
-/* KEYFRAMES */
-
-@-webkit-keyframes shake-horizontal {
-  0%,
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  10%,
-  30%,
-  50%,
-  70% {
-    -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
-  }
-  20%,
-  40%,
-  60% {
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px);
-  }
-  80% {
-    -webkit-transform: translateX(8px);
-            transform: translateX(8px);
-  }
-  90% {
-    -webkit-transform: translateX(-8px);
-            transform: translateX(-8px);
-  }
-}
-@keyframes shake-horizontal {
-  0%,
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  10%,
-  30%,
-  50%,
-  70% {
-    -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
-  }
-  20%,
-  40%,
-  60% {
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px);
-  }
-  80% {
-    -webkit-transform: translateX(8px);
-            transform: translateX(8px);
-  }
-  90% {
-    -webkit-transform: translateX(-8px);
-            transform: translateX(-8px);
-  }
-}
 
 /* TRASH CAN */
 
@@ -1359,9 +698,6 @@ textarea:focus {
     display: none;
 }
 
-.sortOl {
-
-}
 
 
 
@@ -1374,4 +710,196 @@ textarea:focus {
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+}
+
+
+
+
+/* DIALOGUE BOX */
+
+#dialogueBox {
+    position: absolute;
+    top: 130px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 190px;
+    border-radius: 2px;
+    background-color: #fff;
+    font-weight: bold;
+    z-index: 5000;
+}
+
+#qButtonCancel {
+    margin-left: 20px;
+}
+
+#qMessage {
+    margin-top: 100px;
+    color: #4a148c;
+    text-align: center;
+    font-size: 1.8em;
+    font-family: 'Roboto Slab', serif;
+}
+
+#qBtnCont {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+}
+
+#qIcon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid #4a148c;
+    color: #4a148c;
+    font-size: 40px;
+}
+
+#qIcon .fa-exclamation {
+    position: relative;
+    top: 3px;
+    left: 23px;
+}
+
+/* ACCESSABILITY */
+
+#accessabilityCont {
+    position: relative;
+    width: 100%;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+    min-height: 30px;
+}
+
+#textAdjust {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #111;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.aA {
+    position: relative;
+    top: 5px;
+    right: 10px;
+    color: #111;
+    background: none;
+    font-weight: bold;
+    outline: none;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto Slab', serif;
+}
+
+.aA:hover {
+    color: #c62828;
+}
+
+#colorChange {
+    position: absolute;
+    top: 7px;
+    right: 55px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#colorChange:hover {
+    color: #c62828;
+}
+
+#colorChangeContrast {
+    display: none;
+}
+
+
+/* BUTTONS */
+
+.btn {
+    width: 80px;
+    background-color: #29b6f6;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    margin-top: 10px;
+    padding: 5px;
+    font-weight: bold;
+    outline: none;
+    font-size: 1.4em;
+}
+
+.btn:hover {
+    background-color: #4a148c;
+}
+
+/* NEW COLUMN */
+
+#newColCont {
+    position: relative;
+    width: 304px;
+    height: 124px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 2px;
+    font-size: 40px;
+    color: #fff;
+    border: 3px solid;
+    opacity: .2;
+    cursor: pointer;
+    transition: ease .5s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+    animation-duration: .4s;
+    animation-fill-mode: none;
+}
+
+#newColCont:hover {
+    opacity: .6;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+}
+
+#newColText {
+    position: relative;
+    top: 20px;
+    font-size: .4em;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+}
+
+
+
+#newCol {
+    position: relative;
+}
+
+#newColButton {
+    position: absolute;
+    left: 125px;
+    top: 60px;
+    height: 40px;
+    width: 40px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background: none;
+    outline:none;
+    cursor: pointer;
+    color: #fff;
+    font-size: .4em;
 }

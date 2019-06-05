@@ -15,23 +15,23 @@ var Card1 = {
 
 // COLUMN SILHOUETTE CONTAINER
 var colSilhouetteC = document.createElement("div");
-    colSilhouetteC.setAttribute("id", "colSilhouetteCont");
+    colSilhouetteC.setAttribute("id", "newColCont");
     colSilhouetteC.setAttribute("onclick", "addColumn()");
     document.getElementById("newColContainer").appendChild(colSilhouetteC);
     colSilhouetteC.setAttribute("class","newcol animated fadeInUp");
 
 var colSilhouette = document.createElement("div");
-    colSilhouette.setAttribute("id", "colSilhouette");
+    colSilhouette.setAttribute("id", "newCol");
     colSilhouetteC.appendChild(colSilhouette);
 
 var colSilText = document.createElement("div");
-    colSilText.setAttribute("id", "colSilText");
+    colSilText.setAttribute("id", "newColText");
     colSilText.innerHTML = "Add new column"
     colSilhouette.appendChild(colSilText);
 
 var colSilButton = document.createElement("button");
-    colSilButton.setAttribute("id", "colSilButton");
-    colSilButton.setAttribute("class", "btnStyle")
+    colSilButton.setAttribute("id", "newColButton");
+    colSilButton.setAttribute("class", "btnPlus")
     colSilButton.innerHTML = "<i class='fas fa-plus'></i>";
     colSilhouette.appendChild(colSilButton);
 
@@ -51,7 +51,7 @@ function startDrag(){
 
 function addColumn() {
     var div = document.createElement('div');
-    div.setAttribute("class", "columnBase column droptarget colStyle");
+    div.setAttribute("class", "columnBase column droptarget columnBox");
     div.setAttribute("id", "col_" + columnID);
 
 
@@ -86,14 +86,14 @@ function addColumn() {
 
     //CARD TITLE INPUT OK BUTTON
     var colTitleBtn = document.createElement('button');
-    colTitleBtn.setAttribute("class", "column colOkBtn colID" + columnID);
+    colTitleBtn.setAttribute("class", "column btn colID" + columnID);
     colTitleBtn.setAttribute("id", "colTitleBtn_" + columnID)
     colTitleBtn.setAttribute("onclick", "addColTitle(this)");
     colTitleBtn.innerHTML = "Ok";
 
     //CARD TITLE INPUT CANCEL BUTTON
     var colTitleBtnCancel = document.createElement('button');
-    colTitleBtnCancel.setAttribute("class", "column colCancelBtn cardID" + columnID);
+    colTitleBtnCancel.setAttribute("class", "column btn cardID" + columnID);
     colTitleBtnCancel.setAttribute("id", "colTitleBtnCancel_" + columnID)
     colTitleBtnCancel.setAttribute("onclick", "delCard(this.id)");
     colTitleBtnCancel.innerHTML = "Cancel";
@@ -139,10 +139,10 @@ function addColumn() {
     // DELETE COL BUTTON
     var div1 = document.createElement("div");
     div1.setAttribute("id", "del_col_" + columnID);
-    div1.setAttribute("class", "column delColIcon");
+    div1.setAttribute("class", "column crossIcon");
     div1.classList.add("hidden");
     div1.setAttribute("onclick", "delCol(this.id)");
-    div1.innerHTML = "<i id = 'delColIcon_" + columnID + "' class='column colDelete fas fa-times'></i>";
+    div1.innerHTML = "<i id = 'delColIcon_" + columnID + "' class='column fas fa-times'></i>";
 
 
     document.getElementById("colContainer").appendChild(div);
@@ -178,7 +178,7 @@ function addColTitle(csName) {
 
     var columnToAddCancel3 = $(columnToAddTitle).find('button[id^=colTitleBtnCancel_]')[0];
     var test = $(columnToAddTitle).children('div[class*=colTitle]')[0];
-    var colX = $(columnToAddTitle).children('div[class*=delColIcon]')[0];
+    var colX = $(columnToAddTitle).children('div[class*=crossIcon]')[0];
     var colTitleHidden = $(columnToAddTitle).children('div[class*=colTitle]')[0];
     test.innerHTML = colTitleValue;
 
@@ -223,7 +223,7 @@ function createAddCardButton(ColumnId){
 
     btnElem = document.createElement("button")
     btnElem.setAttribute("id","addCardBtn");
-    btnElem.setAttribute("class","btnStyle");
+    btnElem.setAttribute("class","btnPlus");
     btnElem.innerHTML = ("<i class='fas fa-plus'></i>")
     columnToAddBtn.appendChild(btnElem);
 

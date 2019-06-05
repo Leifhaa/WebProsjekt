@@ -1,6 +1,6 @@
 var addColBtn1 = document.createElement("button");
 addColBtn1.setAttribute("id", "addColumnBtn");
-addColBtn1.setAttribute("class", "btnStyle");
+addColBtn1.setAttribute("class", "btnPlus");
 addColBtn1.innerHTML = "<i class='column fas fa-plus'></i>";
 document.getElementById("head").appendChild(addColBtn1);
 
@@ -60,8 +60,8 @@ function newBoard() {
 
     //new question container
 	var qCont = document.createElement("div");
-	qCont.setAttribute("id","messageCont");
-	qCont.setAttribute("class","containerMessage bounceIn");
+	qCont.setAttribute("id","dialogueBox");
+	qCont.setAttribute("class","bounceIn");
 
     var qIcon = document.createElement("div");
     qIcon.setAttribute("id", "qIcon");
@@ -76,11 +76,14 @@ function newBoard() {
 
     var qButtonOk = document.createElement("button");
     qButtonOk.setAttribute("id","qButtonOk");
-    qButtonOk.setAttribute("onclick", "window.location.href = 'board.html'")
+    qButtonOk.setAttribute("class", "btn");
+    qButtonOk.setAttribute("onclick", "window.location.href = 'board.html'");
+
     qButtonOk.innerHTML = "Confirm";
 
     var qButtonCancel = document.createElement("button");
     qButtonCancel.setAttribute("id","qButtonCancel");
+    qButtonCancel.setAttribute("class", "btn");
     qButtonCancel.setAttribute("onclick", "qClose()");
     qButtonCancel.innerHTML = "Cancel";
 
@@ -96,7 +99,7 @@ function newBoard() {
 
     function qClose() {
         var elem = document.querySelector('#cardEditBg');
-        var elem1 = document.querySelector('#messageCont');
+        var elem1 = document.querySelector('#dialogueBox');
         elem.parentNode.removeChild(elem);
         elem1.parentNode.removeChild(elem1);
     }

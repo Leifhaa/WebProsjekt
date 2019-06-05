@@ -37,14 +37,14 @@ function addCard(columnToAddCard) {
 
     //CARD TITLE INPUT OK BUTTON
     var cardTitleBtn = document.createElement('button');
-    cardTitleBtn.setAttribute("class", "card cardOkBtn cardID" + cardID);
+    cardTitleBtn.setAttribute("class", "card btn cardID" + cardID);
     cardTitleBtn.setAttribute("id", "cardTitleBtn_" + cardID)
     cardTitleBtn.setAttribute("onclick", "addCardTitle(this.className)");
     cardTitleBtn.innerHTML = "Ok";
 
     //CARD TITLE INPUT CANCEL BUTTON
     var cardTitleBtnCancel = document.createElement('button');
-    cardTitleBtnCancel.setAttribute("class", "card cardCancelBtn cardID" + cardID);
+    cardTitleBtnCancel.setAttribute("class", "card btn cardID" + cardID);
     cardTitleBtnCancel.setAttribute("id", "cardTitleBtnCancel_" + cardID)
     cardTitleBtnCancel.setAttribute("onclick", "delCard(this.id)");
     cardTitleBtnCancel.innerHTML = "Cancel";
@@ -80,7 +80,7 @@ function addCard(columnToAddCard) {
 
     // EDIT CARD BUTTON
     var div2 = document.createElement("div");
-    div2.setAttribute("id", "del-card_" + cardID);
+    div2.setAttribute("id", "delCard_" + cardID);
     div2.setAttribute("class", "card editCardIcon cardID" + cardID);
     div2.setAttribute("onclick", "CreateEditCardForm(this.id)");
     div2.innerHTML = "<i id = 'editCard_" + cardID + "' class=' far fa-edit card'></i>";
@@ -179,7 +179,7 @@ function addCardTitle(csName) {
 
 
     //Make the card editable.
-    var editCardBtn = document.getElementById("del-card_" + cardID);
+    var editCardBtn = document.getElementById("delCard_" + cardID);
     $(editCardBtn).show();
 
 }

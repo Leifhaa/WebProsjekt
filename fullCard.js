@@ -53,7 +53,7 @@ function CreateEditCardForm(cardID) {
 	//Close button for editor
 	var editorCloseBtn = document.createElement("div");
     editorCloseBtn.setAttribute("id", "editorCloseBtn");
-    editorCloseBtn.setAttribute("class", "closeEditorIcon");
+    editorCloseBtn.setAttribute("class", "crossIcon");
     editorCloseBtn.setAttribute("onclick", "closeEditor()");
     editorCloseBtn.innerHTML = "<i class='fas fa-times'></i>";
 
@@ -373,7 +373,7 @@ document.addEventListener("click", closeAllSelect);
 	var calendarFromDate = document.createElement('input');
 	calendarFromDate.setAttribute("type","date");
 	calendarFromDate.setAttribute("name","date-start");
-	calendarFromDate.setAttribute("id","date-start");
+	calendarFromDate.setAttribute("id","dateStart");
 	calendarFromDate.setAttribute("value",cardData.dateStart);
 	cardEditorDateC.appendChild(calendarFromDate);
 
@@ -381,7 +381,7 @@ document.addEventListener("click", closeAllSelect);
 	var calendarToDate = document.createElement('input');
 	calendarToDate.setAttribute("type","date");
 	calendarToDate.setAttribute("name","date-end");
-	calendarToDate.setAttribute("id","date-end");
+	calendarToDate.setAttribute("id","dateEnd");
 	calendarToDate.setAttribute("value",cardData.dateEnd);
 	cardEditorDateC.appendChild(calendarToDate);
 
@@ -390,6 +390,7 @@ document.addEventListener("click", closeAllSelect);
     PushSettingButton.setAttribute("type","Submit")
     PushSettingButton.setAttribute("name","BtnPushSettings")
 	PushSettingButton.setAttribute("id","BtnPushSettings");
+	PushSettingButton.setAttribute("class","btn");
     PushSettingButton.innerHTML = "Confirm";
 	PushSettingButton.setAttribute("onclick","pushData()");
 	containerEditCard.appendChild(PushSettingButton);
@@ -400,6 +401,7 @@ document.addEventListener("click", closeAllSelect);
     DeleteCardButton.setAttribute("type","Submit")
     DeleteCardButton.setAttribute("name","BtnDeleteCard")
 	DeleteCardButton.setAttribute("id","BtnDeleteCard");
+	DeleteCardButton.setAttribute("class","btn");
     DeleteCardButton.innerHTML = "Delete";
 	DeleteCardButton.setAttribute("onclick","delCardfromEdit()");
 	containerEditCard.appendChild(DeleteCardButton);
@@ -467,8 +469,8 @@ function pushData() {
     id = new Date().getTime();
     title = document.getElementById('editCardTitleInput').value;
     desc = document.getElementById('editCardDescInput').value;
-    dateStart = document.getElementById('date-start').value;
-    dateEnd = document.getElementById('date-end').value;
+    dateStart = document.getElementById('dateStart').value;
+    dateEnd = document.getElementById('dateEnd').value;
 
 
     //Edit the card's data
