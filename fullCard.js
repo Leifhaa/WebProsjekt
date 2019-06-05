@@ -53,7 +53,7 @@ function CreateEditCardForm(cardID) {
 	//Close button for editor
 	var editorCloseBtn = document.createElement("div");
     editorCloseBtn.setAttribute("id", "editorCloseBtn");
-    editorCloseBtn.setAttribute("class", "crossIcon");
+    editorCloseBtn.setAttribute("class", "crossIcon crossEdit");
     editorCloseBtn.setAttribute("onclick", "closeEditor()");
     editorCloseBtn.innerHTML = "<i class='fas fa-times'></i>";
 

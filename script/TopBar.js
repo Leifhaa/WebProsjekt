@@ -83,7 +83,7 @@ function newBoard() {
 
     var qButtonCancel = document.createElement("button");
     qButtonCancel.setAttribute("id","qButtonCancel");
-    qButtonCancel.setAttribute("class", "btn");
+    qButtonCancel.setAttribute("class", "btn cancel");
     qButtonCancel.setAttribute("onclick", "qClose()");
     qButtonCancel.innerHTML = "Cancel";
 
