@@ -73,14 +73,13 @@ function drop(dragEv, ui )  {
     	var dropColumn = dropColumnQueryRes[0];
         var childOlList = $(dropColumn).find('ol')[0];
         childOlList.appendChild(dropElement);
-        console.log("Dropped on a column!");
+        console.log("Dropped on a column!" + childOlList.id);
+        $(ui.draggable).css({"left": "0", "top": "0"});
 
     } else if (targetId.includes("trash")) {
         dropElement.remove();
     }
 
-    //$(this).append(ui.draggable);
-    $(ui.draggable).css({"left": "0", "top": "0"});
 }
 
 var trashcanButton = document.getElementById("trashcanButton");

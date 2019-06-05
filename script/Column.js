@@ -71,16 +71,11 @@ function addColumn() {
                          // ui.helper.css("border", "2px solid red")
                       }
     } );
-/*
-    $(div).animate( {
-        start: function(event, ui) {
-            $(ui.droppable).css('height', '300px');
-        },
-        stop: function(event, ui) {
-            $(ui.droppable).css('height', '100px');
-        }
-    });
-    */
+
+
+
+
+
     // CARD TITLE INPUT
     var addColTitle = document.createElement('input');
     addColTitle.type = "text";
@@ -104,12 +99,6 @@ function addColumn() {
     colTitleBtnCancel.innerHTML = "Cancel";
 
 
-
-
-    //div.setAttribute("ondrop", "drop(event)");
-    //div.setAttribute("ondragover", "dragOver(event)");
-    //div.setAttribute("ondragenter", "dragEnter(event)");
-    //div.setAttribute("ondragleave", "dragLeave(event)");
 
     // TEST TITLE Col
     colTitleCont = document.createElement("div");
@@ -137,16 +126,9 @@ function addColumn() {
 
 
     $(orderList).sortable({
-
-       // placeholder: 'sortableStyle'
-        // SLIDE ANIMATION
-        /*    start: function (e,ui){
-        $(ui.placeholder).slideUp(200);
-    },
-    change: function (e,ui){
-    $(ui.placeholder).hide().slideDown(200);
-    }*/
-
+        containment: "document",
+        items: "> li",
+        connectWith: '.cardContent'
     });
 
     div.appendChild(orderList);

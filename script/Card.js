@@ -162,7 +162,7 @@ function addCardTitle(csName) {
         cursor: 'grab',
         snap: '#content',
         start: drag,
-        drop: drop,
+        //drop: drop,
         revert: RevertDrag,
         revertDuration: 200
     });
