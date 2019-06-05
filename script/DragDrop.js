@@ -65,32 +65,19 @@ function drop(dragEv, ui )  {
     var targetClass = dragEv.target.className;
     var dropElementId = ($(ui.draggable).attr("id"));
     var dropElement = document.getElementById(dropElementId);
-    //dragEv.target.style.border = "";
-    //dragEv.target.style.backgroundColor = "";
+    var dropColumnQueryRes = $("#" + targetId).closest('div[class*=columnBase]')
 
-
-
-    if (targetClass.includes("droptarget")) {
-        //dragEv.target.style.border = "";
-        //dragEv.target.style.backgroundColor = "";
-    }
 
     //Always append the card to column, not to another card.
-    if (targetClass.includes("column")) {
-        var div = $("#" + targetId).closest('div[class*=columnBase]')[0];
-        var childOlList = $(div).find('ol')[0];
-        //childOlList.appendTo(dropElement);
+    if (dropColumnQueryRes.length > 0) {
+    	var dropColumn = dropColumnQueryRes[0];
+        var childOlList = $(dropColumn).find('ol')[0];
         childOlList.appendChild(dropElement);
-        //$(dropElement).appendTo(childOlList);
+        console.log("Dropped on a column!");
+
     } else if (targetId.includes("trash")) {
         dropElement.remove();
-
-    } else if (targetClass.includes("card")) {
-        //Card has nested div's.. Append card to the closest 'column' class
-        var div = $("#" + targetId).closest('div[class*=column]');
-        div.append(dropElement);
-    }
-    
+    }    
 
     //$(this).append(ui.draggable);
     $(ui.draggable).css({"left": "0", "top": "0"});
