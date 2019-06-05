@@ -107,7 +107,17 @@ function addColumn() {
     //div.setAttribute("ondragover", "dragOver(event)");
     //div.setAttribute("ondragenter", "dragEnter(event)");
     //div.setAttribute("ondragleave", "dragLeave(event)");
-        div.innerHTML = "<div id = 'colTitle_" + columnID +"' class='column colTitle'></div>";
+
+    // TEST TITLE Col
+    colTitleCont = document.createElement("div");
+    colTitleCont.setAttribute("id", "colTilte_" + columnID);
+    colTitleCont.setAttribute("class", "column colTitle");
+    colTitleCont.classList.add("hidden");
+
+    div.appendChild(colTitleCont);
+
+
+    //    div.innerHTML = "<div id = 'colTitle_" + columnID +"' class='column colTitle hidden'></div>";
 
 
     colArr.push({
@@ -181,12 +191,14 @@ function addColTitle(csName) {
     var columnToAddCancel3 = $(columnToAddTitle).find('button[id^=colTitleBtnCancel_]')[0];
     var test = $(columnToAddTitle).children('div[class*=colTitle]')[0];
     var colX = $(columnToAddTitle).children('div[class*=delColIcon]')[0];
+    var colTitleHidden = $(columnToAddTitle).children('div[class*=colTitle]')[0];
     test.innerHTML = colTitleValue;
 
     csName.remove();
     columnToAddTitle2.remove();
     columnToAddCancel3.remove();
     colX.classList.remove("hidden");
+    colTitleHidden.classList.remove("hidden");
 
 }
 

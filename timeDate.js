@@ -1,6 +1,6 @@
 function timeDate() {
     var currentTime = new Date();
-    
+
     var day;
     switch (currentTime.getDay()) {
         case 0: day = "Sunday"; break;
@@ -34,7 +34,7 @@ function timeDate() {
         case 11: mm = "December";
     }
     var yyyy = currentTime.getFullYear();
-    var fullDate = day +" "+ dd +" "+ mm +" "+ yyyy;
+    var fullDate = day +" "+ dd +" "+ mm +" "+ yyyy + "</br>";
 
     var h = currentTime.getHours();
     h = (h < 10 ? "0" : "") + h;
