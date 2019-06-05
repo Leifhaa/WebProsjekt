@@ -11,6 +11,11 @@ function CreateEditCardForm(cardID) {
 	var cardElem = $("#" + cardID).closest('li[class*=cardContent]');
     var cardData = $(cardElem).data("prop")
 
+
+	// holds darkBg and cardEdit body together
+	var editCont = document.createElement("div");
+	editCont.setAttribute("id", "editCont");
+
 	//darkBg while editor is open
 	var cardEditBg = document.createElement("div");
 	cardEditBg.setAttribute("id","cardEditBg");
@@ -35,12 +40,15 @@ function CreateEditCardForm(cardID) {
 	containerEditCard.setAttribute("class","containerEditCard animated bounceInDown");
 	infoForm.appendChild(containerEditCard);
 
-	test = document.getElementById("boardContainer")
-	test.appendChild(cardEditBody);
 
-	// APPENDS THE DARK BG TO body
+
+
+	// APPENDS DARK BG AND EDITOR CONTAINER
     test2 = document.body;
-    test2.appendChild(cardEditBg);
+    test2.appendChild(editCont);
+
+	editCont.appendChild(cardEditBg);
+	editCont.appendChild(cardEditBody);
 
 	//Close button for editor
 	var editorCloseBtn = document.createElement("div");

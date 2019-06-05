@@ -150,6 +150,7 @@ function addColumn() {
     var div1 = document.createElement("div");
     div1.setAttribute("id", "del_col_" + columnID);
     div1.setAttribute("class", "column delColIcon");
+    div1.classList.add("hidden");
     div1.setAttribute("onclick", "delCol(this.id)");
     div1.innerHTML = "<i id = 'delColIcon_" + columnID + "' class='column colDelete fas fa-times'></i>";
 
@@ -170,6 +171,8 @@ function addColumn() {
 
 }
 
+var div1;
+
 function addColTitle(csName) {
     var columnToAddTitle =  $(csName).closest('div[class*=columnBase]')[0];
     var columnToAddTitle2 = $(columnToAddTitle).find('input[id^=colTitleInput_]')[0];
@@ -177,11 +180,13 @@ function addColTitle(csName) {
 
     var columnToAddCancel3 = $(columnToAddTitle).find('button[id^=colTitleBtnCancel_]')[0];
     var test = $(columnToAddTitle).children('div[class*=colTitle]')[0];
+    var colX = $(columnToAddTitle).children('div[class*=delColIcon]')[0];
     test.innerHTML = colTitleValue;
 
     csName.remove();
     columnToAddTitle2.remove();
     columnToAddCancel3.remove();
+    colX.classList.remove("hidden");
 
 }
 
