@@ -59,6 +59,9 @@ function addColumn() {
 
     $(div).droppable( {
         drop: drop,
+        classes: {
+            "ui-droppable-hover": "highlight"
+          },
         hoverClass: 'colHovered',
         activate: startDrag,
         over: function(event, ui) {
@@ -135,7 +138,7 @@ function addColumn() {
 
     $(orderList).sortable({
 
-        placeholder: 'sortableStyle'
+       // placeholder: 'sortableStyle'
         // SLIDE ANIMATION
         /*    start: function (e,ui){
         $(ui.placeholder).slideUp(200);
