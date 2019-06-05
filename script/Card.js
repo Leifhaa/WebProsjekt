@@ -44,7 +44,7 @@ function addCard(columnToAddCard) {
 
     //CARD TITLE INPUT CANCEL BUTTON
     var cardTitleBtnCancel = document.createElement('button');
-    cardTitleBtnCancel.setAttribute("class", "card btn cardID" + cardID);
+    cardTitleBtnCancel.setAttribute("class", "card btn cancel cardID" + cardID);
     cardTitleBtnCancel.setAttribute("id", "cardTitleBtnCancel_" + cardID)
     cardTitleBtnCancel.setAttribute("onclick", "delCard(this.id)");
     cardTitleBtnCancel.innerHTML = "Cancel";

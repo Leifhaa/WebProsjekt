@@ -93,7 +93,7 @@ function addColumn() {
 
     //CARD TITLE INPUT CANCEL BUTTON
     var colTitleBtnCancel = document.createElement('button');
-    colTitleBtnCancel.setAttribute("class", "column btn cardID" + columnID);
+    colTitleBtnCancel.setAttribute("class", "column btn cancel cardID" + columnID);
     colTitleBtnCancel.setAttribute("id", "colTitleBtnCancel_" + columnID)
     colTitleBtnCancel.setAttribute("onclick", "delCard(this.id)");
     colTitleBtnCancel.innerHTML = "Cancel";
@@ -139,7 +139,7 @@ function addColumn() {
     // DELETE COL BUTTON
     var div1 = document.createElement("div");
     div1.setAttribute("id", "del_col_" + columnID);
-    div1.setAttribute("class", "column crossIcon");
+    div1.setAttribute("class", "column crossIcon crossCol");
     div1.classList.add("hidden");
     div1.setAttribute("onclick", "delCol(this.id)");
     div1.innerHTML = "<i id = 'delColIcon_" + columnID + "' class='column fas fa-times'></i>";
