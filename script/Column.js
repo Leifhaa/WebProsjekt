@@ -55,6 +55,8 @@ function addColumn() {
     div.setAttribute("id", "col_" + columnID);
 
 
+
+
     $(div).disableSelection();
 
     $(div).droppable( {

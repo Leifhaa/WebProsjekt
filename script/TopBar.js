@@ -52,7 +52,7 @@ function newBoard() {
 
     //darkBg while new board question is open
     var qBg = document.createElement("div");
-    qBg.setAttribute("id","cardEditBg");
+    qBg.setAttribute("id","darkenPage");
 
     // APPENDS THE DARK BG TO body
     test2 = document.body;
@@ -98,7 +98,7 @@ function newBoard() {
 }
 
     function qClose() {
-        var elem = document.querySelector('#cardEditBg');
+        var elem = document.querySelector('#darkenPage');
         var elem1 = document.querySelector('#dialogueBox');
         elem.parentNode.removeChild(elem);
         elem1.parentNode.removeChild(elem1);

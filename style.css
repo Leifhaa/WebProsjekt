@@ -1,10 +1,23 @@
-/* IMPORTED FONTS */
+/*------------------------------------------------
+> > > TABLE OF CONTENTS:
+--------------------------------------------------
+1.0 - Setup
+2.0 - Header / Logo / Profile dropdown
+3.0 - Column
+4.0 - Card
+5.0 - Card editor
+6.0 - Dialogue box
+7.0 - Accessability
+8.0 - Buttons / Icons
+9.0 - Call to action
+------------------------------------------------*/
 
+/*------------------------------------------------
+1.0 - Setup
+------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Roboto+Slab&display=swap');
-
-/* SCROLL BAR STYLING */
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -26,15 +39,6 @@
     background: none;
 }
 
-
-/* FONTS
-
-font-family: 'Roboto', sans-serif;
-font-family: 'Roboto Slab', serif;
-font-family: 'Open Sans', sans-serif;
-
-*/
-
 html {
     min-height: 100%;
 }
@@ -51,7 +55,50 @@ body {
 
 }
 
-/* HEADER */
+#siteWrap {
+    height: 100%;
+}
+
+#boardContainer {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: flex-start;
+    vertical-align: top;
+    min-height: 500px;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+    overflow: scroll;
+    overflow-y: hidden;
+}
+
+#colContainer {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: flex-start;
+    vertical-align: top;
+    min-height: 500px;
+}
+
+/* Disable text from being selectable (in e.g cardTitle of a card) */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+/*------------------------------------------------
+2.0 - Header / Logo / Profile dropdown
+------------------------------------------------*/
 header {
     position: relative;
     width: 100%;
@@ -68,7 +115,7 @@ header {
     width: 200px;
     height: 20px;
     padding-top: 0px;
-    background-image: url(dowologofinal3.svg);
+    background-image: url(images/logo.svg);
     background-repeat: no-repeat;
     letter-spacing: -2px;
     font-size: 40px;
@@ -99,7 +146,7 @@ header {
     border-radius: 50%;
     border: 3px solid #4a148c;
     background-color: #ffffff;
-    background-image: url("profile2.png");
+    background-image: url("images/profilepic.png");
     background-size: cover;
 }
 .dropbtn {
@@ -160,56 +207,9 @@ header {
     display: block;
 }
 
-#siteWrap {
-    height: 100%;
-}
-
-#boardContainer {
-    display: inline-flex;
-    flex-direction: row;
-    align-items: flex-start;
-    align-content: flex-start;
-    vertical-align: top;
-    min-height: 500px;
-}
-
-#container {
-    width: 100%;
-    height: 100%;
-    padding-bottom: 20px;
-    overflow: scroll;
-    overflow-y: hidden;
-}
-
-#colContainer {
-    display: inline-flex;
-    flex-direction: row;
-    align-items: flex-start;
-    align-content: flex-start;
-    vertical-align: top;
-    min-height: 500px;
-}
-
-.fa-times {
-    font-size: 16px;
-}
-
-.fa-edit {
-    font-size: 1.6em;
-}
-
-.colTitle {
-    position: relative;
-    width: 240px;
-    margin-left: 5px;
-    margin-bottom: 10px;
-    cursor: default;
-    word-break: break-word;
-    font-size: 1.6em;
-    font-weight: bold;
-    font-family: 'Roboto Slab', serif;
-}
-
+/*------------------------------------------------
+3.0 - Column
+------------------------------------------------*/
 .columnBox {
     position: relative;
     width: 270px;
@@ -226,31 +226,106 @@ header {
     animation-duration: .4s;
 }
 
-.card.animated {
-    animation-duration: .6s;
-}
-
-/*
-.delCardIcon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+.colTitle {
+    position: relative;
+    width: 240px;
+    margin-left: 5px;
     margin-bottom: 10px;
-    color: #999;
+    cursor: default;
+    word-break: break-word;
+    font-size: 1.6em;
+    font-weight: bold;
+    font-family: 'Roboto Slab', serif;
+}
+
+.columnBox input {
+    width: 260px;
+    margin-right: 20px;
+    padding: 5px;
+    border: 2px solid #4a148c;
+    border-radius: 2px;
+    outline: none;
+    font-size: 1.4em;
+}
+
+.columnBox input:focus {
+    border: 2px solid #4caf50;
+
+}
+
+.colHovered {
+    background-color: #cfcfcf;
+    border: 3px solid #66bb6a;
+}
+
+.column li {
+    list-style-type: none;
+}
+
+.column ol {
+    margin-top: 0;
+    padding: 0;
+}
+
+.colExtends {
+    height: 300px;
+}
+
+#newColCont {
+    position: relative;
+    width: 304px;
+    height: 124px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 2px;
+    font-size: 40px;
+    color: #fff;
+    border: 3px solid;
+    opacity: .2;
     cursor: pointer;
+    transition: ease .5s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+    animation-duration: .4s;
+    animation-fill-mode: none;
 }
-*/
 
-#darkenPage {
+#newColCont:hover {
+    opacity: .6;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+}
+
+#newColText {
+    position: relative;
+    top: 20px;
+    font-size: .4em;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+}
+
+#newCol {
+    position: relative;
+}
+
+#newColButton {
     position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #111;
-    opacity: 0.8;
-    z-index: 450;
+    left: 126px;
+    top: 60px;
+    height: 40px;
+    width: 40px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background: none;
+    outline:none;
+    cursor: pointer;
+    color: #fff;
+    font-size: .4em;
 }
 
+/*------------------------------------------------
+4.0 - Card
+------------------------------------------------*/
 #cardEditorCont {
     position: absolute;
     top: 50px;
@@ -276,33 +351,6 @@ header {
     font-weight: bold;
 }
 
-.cardTitle {
-    width: 230px;
-    font-size: 1.5em;
-    word-break: break-word;
-}
-
-.cardShake {
-    position: absolute;
-    left: -100px;
-}
-
-.columnBox input {
-    width: 260px;
-    margin-right: 20px;
-    padding: 5px;
-    border: 2px solid #4a148c;
-    border-radius: 2px;
-    outline: none;
-    font-size: 1.4em;
-}
-
-.columnBox input:focus {
-    border: 2px solid #4caf50;
-
-}
-
-
 .cardContent input {
     border: 2px solid #4a148c;
     border-radius: 2px;
@@ -322,28 +370,427 @@ header {
     border: 2px solid #c62828;
 }
 
-.crossIcon {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    color: #ccc;
+.cardTitle {
+    width: 230px;
+    font-size: 1.5em;
+    word-break: break-word;
 }
 
-.crossIcon:hover {
+.card.animated {
+    animation-duration: .6s;
+}
+
+/*------------------------------------------------
+5.0 - Card editor
+------------------------------------------------*/
+.containerEditCard {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    width: 415px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+    background-color: #f5f5f5;
+    color: #111;
+    font-size: 1.6em;
+    z-index: 900;
+}
+
+.containerEditCard.animated {
+    animation-duration: .9s;
+}
+
+.containerEditCard .fa-times {
+    font-size: 1.2em;
+}
+
+.editCardTitleCont {
+    background: #ff00cc;
+}
+
+.editCardItemCont {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    font-family: 'Roboto Slab', serif;
+}
+
+.editCardItemCont.colors {
+    height: 60px;
+}
+.editCardDescCont {
+    background: #ff0;
+}
+
+.editCardAvatar {
+    position: relative;
+    margin-top: 10px;
+}
+
+.editCardAvatar select{
+    display: none;
+}
+
+#addUsersField input{
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 2px solid #4a148c;
+    border-radius: 2px;
+    outline: none;
+    font-size: 1.6em;
+}
+
+#addUsersField input:focus{
+    border: 2px solid #4caf50;
+}
+
+#addUsersField button {
+    font-size: 1em;
+}
+
+#addUsersField .delete{
+    margin-left: 10px;
+    color: #ccc;
+    text-decoration: none;
+}
+
+#addUsersField .delete:hover{
+    margin-left: 10px;
+    color: #c62828;
+    text-decoration: none;
+}
+
+#addFormField{
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #29b6f6;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#addFormField:hover {
+    background-color: #4a148c;
+}
+
+.editCardColorCont {
+    position: relative;
+    background: #330fcc;
+}
+
+.editCardColor {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 310px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.editCardColor input[type=radio] {
+    display: none;
+}
+
+.editCardColor label {
+    display: inline-block;
+    padding: 4px 11px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.editCardCalCont {
+    background: #99ffcc;
+}
+
+.editCardDate {
+    margin-top: 10px;
+}
+
+.editCardInputField {
+    width: 400px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 2px solid #4a148c;
+    border-radius: 2px;
+    outline: none;
+    font-size: 1em;
+
+}
+
+.editCardInputField:focus {
+    border: 2px solid #4caf50;
+
+}
+
+.editCardTextArea {
+    width: 400px;
+    height: 40px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 2px solid #4a148c;
+    border-radius: 2px;
+    outline: none;
+    resize: none;
+    font-size: 1.0em;
+
+}
+textarea:focus {
+    border: 2px solid #4caf50;
+}
+
+#dateStart {
+    width: 185px;
+    margin-right: 15px;
+    padding: 5px;
+    border: 2px solid #4a148c;
+    border-radius: 2px;
+    outline: none;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#dateStart:focus {
+    border: 2px solid #4caf50;
+}
+
+#dateEnd {
+    width: 185px;
+    padding: 5px;
+    outline: none;
+    border: 2px solid #4a148c;
+    border-radius: 2px;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#dateEnd:focus {
+    border: 2px solid #4caf50;
+}
+
+.redRadio{
+    color: #e53935;
+    margin-right: 10px;
+}
+
+
+.orangeRadio{
+    color: #fb8c00;
+    margin-right: 10px;
+
+}
+
+.greenRadio {
+    color: #43a047;
+    margin-right: 10px;
+}
+
+.blueRadio {
+    color: #1e88e5;
+    margin-right: 10px;
+}
+
+.pinkRadio {
+    color: #d81b60;
+    margin-right: 10px;
+}
+
+/*------------------------------------------------
+6.0 - Dialogue box
+------------------------------------------------*/
+#dialogueBox {
+    position: absolute;
+    top: 130px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 210px;
+    border-radius: 2px;
+    background-color: #fff;
+    font-weight: bold;
+    z-index: 5000;
+}
+
+#qMessage {
+    margin-top: 100px;
+    color: #4a148c;
+    text-align: center;
+    font-size: 1.8em;
+    font-family: 'Roboto Slab', serif;
+}
+
+#qBtnCont {
+    position: absolute;
+    top: 160px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 220px;
+}
+
+/*------------------------------------------------
+7.0 - Accessability
+------------------------------------------------*/
+#accessabilityCont {
+    position: relative;
+    width: 100%;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+    min-height: 30px;
+}
+
+#textAdjust {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #111;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.aA {
+    position: relative;
+    top: 5px;
+    right: 10px;
+    color: #111;
+    background: none;
+    font-weight: bold;
+    outline: none;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto Slab', serif;
+}
+
+.aA:hover {
     color: #c62828;
 }
 
-.crossIcon.crossCol {
+#colorChange {
     position: absolute;
-    top: 10px;
-    right: 0;
+    top: 7px;
+    right: 55px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-.crossIcon.crossEdit {
+#colorChange:hover {
+    color: #c62828;
+}
+
+#colorChangeContrast {
+    display: none;
+}
+
+/*------------------------------------------------
+8.0 - Buttons / Icons
+------------------------------------------------*/
+.btn {
+    width: 100px;
+    background-color: #29b6f6;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    margin-top: 10px;
+    padding: 5px;
+    font-weight: bold;
+    outline: none;
+    font-size: 1.4em;
+}
+
+.btn.cancel {
+    margin-left: 10px;
+}
+
+.btn:hover {
+    background-color: #4a148c;
+}
+
+.editCardIcon {
     position: absolute;
     top: 10px;
     right: 10px;
+    margin-bottom: 10px;
+    color: #999;
+    cursor: pointer;
+}
+
+.editCardIcon:hover {
+    color: #4caf50;
+}
+
+#qIcon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid #4a148c;
+    color: #4a148c;
+    font-size: 40px;
+}
+
+#qIcon .fa-exclamation {
+    position: relative;
+    top: 3px;
+    left: 23px;
+}
+
+#trashcanButton {
+    position: fixed;
+    right: 0;
+    top: 70%;
+    width: 180px;
+    height: 100px;
+    background-color: #000;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 70px;
+    color: #fff;
+    transition: ease .4s;
+    opacity: .2;
+}
+
+#trashcanButton.trashHovered {
+    background-color: #c62828;
+    opacity: 1;
+}
+
+#trashcanButton .fa-trash-alt {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+#BtnPushSettings {
+    font-size: 1em;
+}
+
+#BtnDeleteCard {
+    font-size: 1em;
+    margin-left: 10px;
 }
 
 #addCardBtn.btnPlus {
@@ -397,263 +844,49 @@ header {
     top: 10px;
 }
 
-.draggable {
-    background-color: #ff00cc;
-    height: 200px;
-}
-
-.colHovered {
-    background-color: #e9e9e9;
-    border: 3px solid #4caf50;
-}
-
-.column li {
-    list-style-type: none;
-}
-
-.column ol {
-    margin-top: 0;
-    padding: 0;
-}
-
-.colExtends {
-    height: 300px;
-}
-
-.containerEditCard .fa-times {
-    font-size: 1.2em;
-}
-
-.containerEditCard {
-    position: absolute;
-    top: 20px;
-    left: 0;
-    right: 0;
-    width: 415px;
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 2px;
-    border-bottom: 1px solid #ccc;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-    background-color: #f5f5f5;
-    color: #111;
-    font-size: 1.5em;
-    z-index: 900;
-}
-
-.containerEditCard.animated {
-    animation-duration: .9s;
-}
-
-.editCardTitleCont {
-    background: #ff00cc;
-}
-
-.editCardItemCont {
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-    font-weight: bold;
-    font-family: 'Roboto Slab', serif;
-}
-
-.editCardItemCont.colors {
-    height: 60px;
-}
-.editCardDescCont {
-    background: #ff0;
-}
-
-.editCardAvatar {
+.crossIcon {
     position: relative;
-    margin-top: 10px;
-}
-
-.editCardAvatar select{
-    display: none;
-}
-
-#addUsersField input{
-    width: 200px;
-    padding: 5px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    border: 2px solid #4a148c;
-    border-radius: 2px;
-    outline: none;
-    font-size: 1.6em;
-}
-
-#addUsersField input:focus{
-    border: 2px solid #4caf50;
-}
-
-
-
-#addUsersField .delete{
-    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
     color: #ccc;
-    text-decoration: none;
 }
 
-#addUsersField .delete:hover{
-    margin-left: 10px;
+.crossIcon:hover {
     color: #c62828;
-    text-decoration: none;
 }
 
-#addFormField{
-    margin-top: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: #29b6f6;
-    border: none;
-    border-radius: 2px;
-    outline: none;
-    cursor: pointer;
-    color: white;
-    font-weight: bold;
-    font-size: 1.1em;
-
-}
-
-#addFormField:hover {
-    background-color: #4a148c;
-}
-
-.editCardColorCont {
-    position: relative;
-    background: #330fcc;
-}
-
-.editCardColor {
+.crossIcon.crossCol {
     position: absolute;
-    left: 0;
+    top: 10px;
     right: 0;
-    width: 310px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.editCardColor input[type=radio] {
-    display: none;
+.crossIcon.crossEdit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
-.editCardColor label {
-    display: inline-block;
-    padding: 4px 11px;
-    cursor: pointer;
+.fa-times {
     font-size: 16px;
 }
 
-.editCardCalCont {
-    background: #99ffcc;
-}
-
-.editCardDate {
-    margin-top: 10px;
-}
-
-.editCardInputField {
-    width: 400px;
-    padding: 5px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    border: 2px solid #4a148c;
-    border-radius: 2px;
-    outline: none;
+.fa-edit {
     font-size: 1.6em;
 }
 
-.editCardInputField:focus {
-    border: 2px solid #4caf50;
-}
-
-.editCardTextArea {
-    width: 400px;
-    height: 40px;
-    padding: 5px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    border: 2px solid #4a148c;
-    border-radius: 2px;
-    outline: none;
-    resize: none;
-    font-size: 1.0em;
-
-}
-textarea:focus {
-    border: 2px solid #4caf50;
-}
-
-#cardEditBg {
+/*------------------------------------------------
+9.0 - Call to action
+------------------------------------------------*/
+#darkenPage {
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
+    background-color: #111;
     opacity: .7;
-    background: #111;
-    z-index: 850;
-}
-
-#dateStart {
-    width: 185px;
-    margin-right: 15px;
-    padding: 5px;
-    border: 2px solid #4a148c;
-    border-radius: 2px;
-    outline: none;
-    font-size: 1em;
-
-}
-
-#dateStart:focus {
-    border: 2px solid #4caf50;
-}
-
-#dateEnd {
-    width: 185px;
-    padding: 5px;
-    outline: none;
-    border: 2px solid #4a148c;
-    border-radius: 2px;
-    font-size: 1em;
-}
-
-#dateEnd:focus {
-    border: 2px solid #4caf50;
-}
-
-/* COLOR RADIOS ON EDIT CARD */
-
-.redRadio{
-    color: #e53935;
-    margin-right: 10px;
-}
-
-
-.orangeRadio{
-    color: #fb8c00;
-    margin-right: 10px;
-
-}
-
-.greenRadio {
-    color: #43a047;
-    margin-right: 10px;
-}
-
-.blueRadio {
-    color: #1e88e5;
-    margin-right: 10px;
-}
-
-.pinkRadio {
-    color: #d81b60;
-    margin-right: 10px;
+    z-index: 450;
 }
 
 .dragging {
@@ -663,257 +896,11 @@ textarea:focus {
 
 }
 
-
-/* TRASH CAN */
-
-#trashcanButton {
-    position: fixed;
-    right: 0;
-    top: 45%;
-    width: 180px;
-    height: 100px;
-    background-color: #000;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    font-size: 70px;
-    color: #fff;
-    transition: ease .4s;
-    opacity: .2;
-}
-
-#trashcanButton.trashHovered {
-    background-color: #c62828;
-    opacity: 1;
-
-}
-
-#trashcanButton .fa-trash-alt {
-    margin-left: 20px;
-    margin-top: 15px;
-
-}
-
 .hidden {
     display: none;
 }
 
-
-
-
-/* Disable text from being selectable (in e.g cardTitle of a card) */
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-}
-
-
-
-
-/* DIALOGUE BOX */
-
-#dialogueBox {
+.cardShake {
     position: absolute;
-    top: 130px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 400px;
-    height: 190px;
-    border-radius: 2px;
-    background-color: #fff;
-    font-weight: bold;
-    z-index: 5000;
-}
-
-
-
-#qMessage {
-    margin-top: 100px;
-    color: #4a148c;
-    text-align: center;
-    font-size: 1.8em;
-    font-family: 'Roboto Slab', serif;
-}
-
-#qBtnCont {
-    position: absolute;
-    top: 120px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 180px;
-}
-
-#qIcon {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 4px solid #4a148c;
-    color: #4a148c;
-    font-size: 40px;
-}
-
-#qIcon .fa-exclamation {
-    position: relative;
-    top: 3px;
-    left: 23px;
-}
-
-/* ACCESSABILITY */
-
-#accessabilityCont {
-    position: relative;
-    width: 100%;
-    background-color: #f4f4f4;
-    border-bottom: 1px solid #ccc;
-    min-height: 30px;
-}
-
-#textAdjust {
-    position: absolute;
-    right: 0;
-    top: 0;
-    color: #111;
-    font-weight: bold;
-    font-size: 12px;
-}
-
-.aA {
-    position: relative;
-    top: 5px;
-    right: 10px;
-    color: #111;
-    background: none;
-    font-weight: bold;
-    outline: none;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Roboto Slab', serif;
-}
-
-.aA:hover {
-    color: #c62828;
-}
-
-#colorChange {
-    position: absolute;
-    top: 7px;
-    right: 55px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-#colorChange:hover {
-    color: #c62828;
-}
-
-#colorChangeContrast {
-    display: none;
-}
-
-
-/* BUTTONS */
-
-.btn {
-    width: 80px;
-    background-color: #29b6f6;
-    color: #fff;
-    border: none;
-    border-radius: 2px;
-    margin-top: 10px;
-    padding: 5px;
-    font-weight: bold;
-    outline: none;
-    font-size: 1.4em;
-}
-
-.btn.cancel {
-    margin-left: 10px;
-}
-
-.btn:hover {
-    background-color: #4a148c;
-}
-
-.editCardIcon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    margin-bottom: 10px;
-    color: #999;
-    cursor: pointer;
-}
-
-.editCardIcon:hover {
-    color: #4caf50;
-}
-
-/* NEW COLUMN */
-
-#newColCont {
-    position: relative;
-    width: 304px;
-    height: 124px;
-    margin-left: 20px;
-    margin-right: 20px;
-    border-radius: 2px;
-    font-size: 40px;
-    color: #fff;
-    border: 3px solid;
-    opacity: .2;
-    cursor: pointer;
-    transition: ease .5s;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-    animation-duration: .4s;
-    animation-fill-mode: none;
-}
-
-#newColCont:hover {
-    opacity: .6;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-}
-
-#newColText {
-    position: relative;
-    top: 20px;
-    font-size: .4em;
-    text-align: center;
-    font-family: 'Roboto Slab', serif;
-}
-
-
-
-#newCol {
-    position: relative;
-}
-
-#newColButton {
-    position: absolute;
-    left: 125px;
-    top: 60px;
-    height: 40px;
-    width: 40px;
-    border: 3px solid #ffffff;
-    border-radius: 50%;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background: none;
-    outline:none;
-    cursor: pointer;
-    color: #fff;
-    font-size: .4em;
+    left: -100px;
 }

@@ -18,7 +18,7 @@ function CreateEditCardForm(cardID) {
 
 	//darkBg while editor is open
 	var cardEditBg = document.createElement("div");
-	cardEditBg.setAttribute("id","cardEditBg");
+	cardEditBg.setAttribute("id","darkenPage");
 
 	//cardEditBody
 	var cardEditBody = document.createElement("div");
@@ -508,5 +508,5 @@ function pushData() {
 function closeEditor(){
 	//Delete the edit form
     document.getElementById("cardEditBody").remove();
-	document.getElementById("cardEditBg").remove();
+	document.getElementById("darkenPage").remove();
 }
