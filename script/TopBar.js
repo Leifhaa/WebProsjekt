@@ -63,25 +63,40 @@ function newBoard() {
 	qCont.setAttribute("id","messageCont");
 	qCont.setAttribute("class","containerMessage bounceIn");
 
+    var qIcon = document.createElement("div");
+    qIcon.setAttribute("id", "qIcon");
+    qIcon.innerHTML = "<i class='fas fa-exclamation'></i>"
+
     var qText = document.createElement("div");
     qText.setAttribute("id","qMessage");
     qText.innerHTML = "Do you really want to create a new board?"
 
+    var qBtnCont = document.createElement("div");
+    qBtnCont.setAttribute("id","qBtnCont");
+
     var qButtonOk = document.createElement("button");
     qButtonOk.setAttribute("id","qButtonOk");
+    qButtonOk.setAttribute("onclick", "window.location.href = 'board.html'")
     qButtonOk.innerHTML = "Confirm";
 
     var qButtonCancel = document.createElement("button");
-    qButtonCancel.setAttribute("id","qButtonCancels");
+    qButtonCancel.setAttribute("id","qButtonCancel");
+    qButtonCancel.setAttribute("onclick", "qClose()");
     qButtonCancel.innerHTML = "Cancel";
-
 
     test2.appendChild(qBg);
     test2.appendChild(qCont);
+    qCont.appendChild(qIcon);
     qCont.appendChild(qText);
-    qCont.appendChild(qButtonOk)
-    qCont.appendChild(qButtonCancel)
-
-
+    qCont.appendChild(qBtnCont);
+    qBtnCont.appendChild(qButtonOk);
+    qBtnCont.appendChild(qButtonCancel);
 
 }
+
+    function qClose() {
+        var elem = document.querySelector('#cardEditBg');
+        var elem1 = document.querySelector('#messageCont');
+        elem.parentNode.removeChild(elem);
+        elem1.parentNode.removeChild(elem1);
+    }
