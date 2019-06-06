@@ -223,7 +223,7 @@ function displayCardSummary(cardElem){
     var persons = $(cardElem).data("prop").persons;
 
     //First delete previous nameInitialContainer (if we edit a card, we want to delete previous container to apply new changes)
-    var oldNameInitialContainer = $(cardElem).find('div[class=nameInitialsContainer]');
+    var oldNameInitialContainer = $(cardElem).find('div[class*=nameInitialsContainer]');
     if (oldNameInitialContainer.length > 0){
         //Means that an old nameInitialsContainer exists
         oldNameInitialContainer[0].remove();
