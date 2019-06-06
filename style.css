@@ -15,8 +15,9 @@
 /*------------------------------------------------
 1.0 - Setup
 ------------------------------------------------*/
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Roboto+Slab&display=swap');
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -761,7 +762,7 @@ textarea:focus {
 #trashcanButton {
     position: fixed;
     right: 0;
-    bottom: 5%;
+    top: 40%;
     width: 180px;
     height: 100px;
     background-color: #000;
@@ -908,7 +909,6 @@ textarea:focus {
 10.0 - NEW EDITS - USERS ON CARD
 ------------------------------------------------*/
 .nameInitialsContainer {
-    border-top: 2px dashed #ccc;
     width: 250px;
     margin-top: 10px;
     margin-right: 10px;
@@ -923,13 +923,14 @@ textarea:focus {
     border-radius: 50%;
     min-width: 30px;
     min-height: 30px;
-    border: 3px solid #ccc;
+    border: 3px solid #999;
     margin-left: 10px;
 
 }
 
 .nameInitials p {
-    line-height: 30px;
+    position: absolute;
+    bottom: 9px;
     border-radius: 50%;
     margin: 0;
     min-height: 30px;
@@ -944,20 +945,10 @@ textarea:focus {
 /* EDITS */
 
 .cardDateEndContainer {
-    border-top: 2px dashed #ccc;
-
-    margin-top: 10px;
-	color: #111;
-    margin-right: 10px;
-
-
+	color: #ff00cc;
+	
 }
 
 .cardDateEndContainer p {
-    position: relative;
-    text-align: right;
-    left: 0;
-    color: #111;
-    font-size: 16px;
-
+	
 }

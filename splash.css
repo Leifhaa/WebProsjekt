@@ -12,7 +12,7 @@ body {
     padding: 0;
 }
 
-.splashContainer {
+.container {
 	max-width: 1005px;
 	margin: 0 auto;
 	padding: 2em 1em;
@@ -79,7 +79,7 @@ footer {
 	padding-top: 30px;
 }
 
-.info {
+.hero {
 	text-align: center;
 	color: #fff;
 }
@@ -107,17 +107,17 @@ footer {
 		font-size: 1.5em;
 		padding: 0;
 		margin: 0 0 3em 0;
-		color: #555;
+		color: #111;
 }
 
-.info h1 {
+.hero h1 {
 	font-size: 2.5em;
 	font-weight: 700;
 	font-family: 'Roboto Slab', serif;
 	
 }
 
-.info p {
+.hero p {
 	font-size: 1.5em;
 	font-weight: 600;
 	max-width: 600px;
@@ -126,7 +126,7 @@ footer {
 
 }
 
-.info p:before {
+.hero p:before {
 	content: "";
 	display: block;
 	width: 120px;
@@ -135,7 +135,7 @@ footer {
 	border: 2px solid #29b6f6;
 }
 
-.info a {
+.hero a {
 	background: #29b6f6;
 	padding: 1em 3em;
 	border-radius: 2px;
@@ -144,7 +144,7 @@ footer {
 	font-weight: bold;
 }
 
-.splashImg {
+figure {
 	text-align: center;
 	background-image: url(images/splash.svg);
 	background-repeat: no-repeat;	
@@ -154,7 +154,16 @@ footer {
 	padding: 0;
 }
 
-.splashImgBox {
+
+figure img {
+	margin: 3em auto 0;
+	width: 300px;
+	height: 300px;
+	background-color: #111;
+	
+}
+
+.device {
 	margin: auto;
 }
 
@@ -196,26 +205,26 @@ footer {
 		flex-flow: row;
 	}
 	
-	.info {
+	.hero {
 		text-align: left;
 	}
 	
-	.info h1 {
+	.hero h1 {
 		font-size: 4em;
 	}
 	
-	.info p:before {
+	.hero p:before {
 		margin: 1em 0;
 		
 	}
 	
-	.info p {
+	.hero p {
 		font-size: 1.5em;
 		padding: 0;
 		margin: 0 0 3em 0;
 	}
 	
-	.info a {
+	.hero a {
 		background: #29b6f6;
 	}
 	
