@@ -1,51 +1,30 @@
 function timeDate() {
-    var currentTime = new Date();
+    var sysTime = new Date();
 
-    var day;
-    switch (currentTime.getDay()) {
-        case 0: day = "Sunday"; break;
-        case 1: day = "Monday"; break;
-        case 2: day = "Tuesday"; break;
-        case 3: day = "Wednesday"; break;
-        case 4: day = "Thursday"; break;
-        case 5: day = "Friday"; break;
-        case 6: day = "Saturday";
-    }
+    var day = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     var dd;
-    switch (currentTime.getDay()) {
-        case 1: dd = currentTime.getDay() + "st"; break;
-        case 2: dd = currentTime.getDay() + "nd"; break;
-        case 3: dd = currentTime.getDay() + "rd"; break;
-        default: dd = currentTime.getDay() + "th"; break;
+    switch (sysTime.getDate()) {
+        case 1: dd = sysTime.getDate() + "st"; break;
+        case 2: dd = sysTime.getDate() + "nd"; break;
+        case 3: dd = sysTime.getDate() + "rd"; break;
+        default: dd = sysTime.getDate() + "th"; break;
     }
-    var mm;
-    switch (currentTime.getMonth()) {
-        case 0: mm = "January"; break;
-        case 1: mm = "February"; break;
-        case 2: mm = "March"; break;
-        case 3: mm = "April"; break;
-        case 4: mm = "May"; break;
-        case 5: mm = "June"; break;
-        case 6: mm = "July"; break;
-        case 7: mm = "August"; break;
-        case 8: mm = "September"; break;
-        case 9: mm = "October"; break;
-        case 10: mm = "November"; break;
-        case 11: mm = "December";
-    }
-    var yyyy = currentTime.getFullYear();
-    var fullDate = day +" "+ dd +" "+ mm +" "+ yyyy + "</br>";
+    var mm = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var yyyy = sysTime.getFullYear();
 
-    var h = currentTime.getHours();
+    var fullDate = day[sysTime.getDay()] +" "+ dd +" "+ mm[sysTime.getMonth()] +" "+ yyyy + "</br>";
+
+    var h = sysTime.getHours();
     h = (h < 10 ? "0" : "") + h;
-    var m = currentTime.getMinutes();
+    var m = sysTime.getMinutes();
     m = (m < 10 ? "0" : "") + m;
-    var s = currentTime.getSeconds();
+    var s = sysTime.getSeconds();
     s = (s < 10 ? "0" : "") + s;
+    
     var fullTime = h +":"+ m +":"+ s;
 
-    var currentTimeString = fullDate +" "+ fullTime ;
-    $("#timeDate").html(currentTimeString);
+    var sysTimeString = fullDate +" "+ fullTime ;
+    $("#timeDate").html(sysTimeString);
 }
 
 $(document).ready(function () {
