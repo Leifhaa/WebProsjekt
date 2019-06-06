@@ -106,7 +106,7 @@ function addColumn() {
     div1.setAttribute("id", "del_col_" + columnID);
     div1.setAttribute("class", "column crossIcon crossCol");
     div1.classList.add("hidden");
-    div1.setAttribute("onclick", "delCol(this)");
+    div1.setAttribute("onclick", "delDialogue(this)");
     div1.innerHTML = "<i id = 'delColIcon_" + columnID + "' class='column fas fa-times'></i>";
 
 
@@ -236,10 +236,18 @@ function delDialogue(delElement) {
     var qButtonOk = document.createElement("button");
     qButtonOk.setAttribute("id","qButtonOk");
     qButtonOk.setAttribute("class", "btn");
-    $(qButtonOk).click(function () {
-        closeEditor();  
-        qClose();
-    });
+    if (delElement.id.includes("containerEditCard")){
+            $(qButtonOk).click(function () {
+            closeEditor();  
+            qClose();
+        });
+    }
+    else if (delElement.id.includes("del_col_")){
+            $(qButtonOk).click(function () {
+            delCol(delElement);  
+            qClose();
+        });
+    }
 
     qButtonOk.innerHTML = "Confirm";
 
