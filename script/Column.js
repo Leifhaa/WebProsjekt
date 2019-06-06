@@ -38,7 +38,6 @@ addCol.addEventListener("click", newBoard);
 
 function startDrag(){
             $("").css('min-height', '300px');
-
 }
 
 function addColumn() {
