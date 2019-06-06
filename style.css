@@ -15,9 +15,8 @@
 /*------------------------------------------------
 1.0 - Setup
 ------------------------------------------------*/
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -762,7 +761,7 @@ textarea:focus {
 #trashcanButton {
     position: fixed;
     right: 0;
-    top: 40%;
+    bottom: 5%;
     width: 180px;
     height: 100px;
     background-color: #000;
@@ -910,7 +909,6 @@ textarea:focus {
 ------------------------------------------------*/
 .nameInitialsContainer {
     border-top: 2px dashed #ccc;
-    padding-top: 10px;
     width: 250px;
     margin-top: 10px;
     margin-right: 10px;
@@ -950,8 +948,8 @@ textarea:focus {
 
     margin-top: 10px;
 	color: #111;
-    font-size: 1.6em;
     margin-right: 10px;
+
 
 }
 
@@ -960,5 +958,6 @@ textarea:focus {
     text-align: right;
     left: 0;
     color: #111;
+    font-size: 16px;
 
 }
