@@ -52,7 +52,7 @@ function addColumn() {
         classes: {
             "ui-droppable-hover": "highlight"
           },
-        hoverClass: 'colHovered',
+        //hoverClass: 'colHovered',
         activate: startDrag,
         over: function(event, ui) {
                    //ui.helper.css("border", "2px solid green")
@@ -121,6 +121,7 @@ function addColumn() {
     div1.setAttribute("onclick", "delCol(this)");
     div1.innerHTML = "<i id = 'delColIcon_" + columnID + "' class='column fas fa-times'></i>";
 
+
     document.getElementById("colContainer").appendChild(div);
     document.getElementById("col_" + columnID).appendChild(div1);
 
@@ -141,8 +142,15 @@ function addColumn() {
         items: "> li",
         revert:200,
         cursor:'grab',
-        connectWith: '.columnBase'
+        connectWith: '.columnBase',
+        over : function(){
+         $(this).addClass('colHovered');
+         },
+         out : function(){
+              $(this).removeClass('colHovered');
+         }
     });
+
 }
 
 var div1;
