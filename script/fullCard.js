@@ -145,31 +145,31 @@ function CreateEditCardForm(cardID) {
 		Color.setAttribute("name","colorRadio");
 		Color.setAttribute("value","small");
 		if (i == 0){
-			ColorLabel.innerHTML = "<i onclick= changeColor(\"red\") class='fas fa-square fa-2x redRadio' required'></i>";
+			ColorLabel.innerHTML = "<i onclick= changeColor(\"#F44336\") class='fas fa-square fa-2x redRadio' required'></i>";
 			if (cardData.color == "red"){
 				Color.checked = true;
 			}
 		}
 		else if (i == 1){
-			ColorLabel.innerHTML = "<i onclick= changeColor(\"orange\") class='fas fa-square fa-2x orangeRadio'></i>";
+			ColorLabel.innerHTML = "<i onclick= changeColor(\"#FF9800\") class='fas fa-square fa-2x orangeRadio'></i>";
 			if (cardData.color == "orange"){
 				Color.checked = true;
 			}
 		}
 		else if (i == 2){
-			ColorLabel.innerHTML = "<i onclick= changeColor(\"green\") class='fas fa-square fa-2x greenRadio'></i>";
+			ColorLabel.innerHTML = "<i onclick= changeColor(\"#4CAF50\") class='fas fa-square fa-2x greenRadio'></i>";
 			if (cardData.color == "green"){
 				Color.checked = true;
 			}
 		}
 		else if (i == 3){
-			ColorLabel.innerHTML = "<i onclick= changeColor(\"blue\") class='fas fa-square fa-2x blueRadio'></i>";
+			ColorLabel.innerHTML = "<i onclick= changeColor(\"#2196F3\") class='fas fa-square fa-2x blueRadio'></i>";
 			if (cardData.color == "blue"){
 				Color.checked = true;
 			}
 		}
 		else if (i == 4){
-			ColorLabel.innerHTML = "<i onclick= changeColor(\"pink\") class='fas fa-square fa-2x pinkRadio'></i>";
+			ColorLabel.innerHTML = "<i onclick= changeColor(\"#E91E63\") class='fas fa-square fa-2x pinkRadio'></i>";
 			if (cardData.color == "pink"){
 				Color.checked = true;
 			}

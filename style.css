@@ -585,29 +585,29 @@ textarea:focus {
 }
 
 .redRadio{
-    color: #e53935;
+    color: #F44336;
     margin-right: 10px;
 }
 
 
 .orangeRadio{
-    color: #fb8c00;
+    color: #FF9800;
     margin-right: 10px;
 
 }
 
 .greenRadio {
-    color: #43a047;
+    color: #4CAF50;
     margin-right: 10px;
 }
 
 .blueRadio {
-    color: #1e88e5;
+    color: #2196F3;
     margin-right: 10px;
 }
 
 .pinkRadio {
-    color: #d81b60;
+    color: #E91E63;
     margin-right: 10px;
 }
 
