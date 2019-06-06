@@ -78,7 +78,7 @@ function addColumn() {
 
 
 
-    // CARD TITLE INPUT
+    //COL TITLE INPUT
     var addColTitle = document.createElement('input');
     addColTitle.type = "text";
     addColTitle.setAttribute("class", "column colID" + columnID);
@@ -86,18 +86,18 @@ function addColumn() {
     addColTitle.setAttribute("onfocus", "this.value=''");
     addColTitle.setAttribute("placeholder", "Name column");
 
-    //CARD TITLE INPUT OK BUTTON
+    //COL TITLE INPUT OK BUTTON
     var colTitleBtn = document.createElement('button');
     colTitleBtn.setAttribute("class", "column btn colID" + columnID);
     colTitleBtn.setAttribute("id", "colTitleBtn_" + columnID)
     colTitleBtn.setAttribute("onclick", "addColTitle(this)");
     colTitleBtn.innerHTML = "Ok";
 
-    //CARD TITLE INPUT CANCEL BUTTON
+    //COL TITLE INPUT CANCEL BUTTON
     var colTitleBtnCancel = document.createElement('button');
     colTitleBtnCancel.setAttribute("class", "column btn cancel cardID" + columnID);
     colTitleBtnCancel.setAttribute("id", "colTitleBtnCancel_" + columnID)
-    colTitleBtnCancel.setAttribute("onclick", "delCard(this.id)");
+    colTitleBtnCancel.setAttribute("onclick", "delCol(this)");
     colTitleBtnCancel.innerHTML = "Cancel";
 
 
@@ -143,7 +143,7 @@ function addColumn() {
     div1.setAttribute("id", "del_col_" + columnID);
     div1.setAttribute("class", "column crossIcon crossCol");
     div1.classList.add("hidden");
-    div1.setAttribute("onclick", "delCol(this.id)");
+    div1.setAttribute("onclick", "delCol(this)");
     div1.innerHTML = "<i id = 'delColIcon_" + columnID + "' class='column fas fa-times'></i>";
 
 
@@ -195,10 +195,14 @@ function addColTitle(csName) {
 }
 
 // DELETE COL FUNCTION
-function delCol(delID) {
-    delID = delID.replace("del_",'');
-    var deleteColumn = document.getElementById(delID);
-    var indexOfColumn = colArr.findIndex(i => i.id === delID);
+function delCol(elementClicked) {
+    //Figure which columnID we're dealing with according to arr 
+    var columnIdDeleted = elementClicked.id.replace(/\D/g,'');
+    columnIdDeleted = 'col_' + columnIdDeleted
+
+    //Find out which column element we're dealing with.
+    var deleteColumn = $(elementClicked).closest('div[class*=columnBase]')[0];
+    var indexOfColumn = colArr.findIndex(i => i.id === columnIdDeleted);
     if (indexOfColumn == 0 && colArr.length > 1){
         colArr.splice(indexOfColumn, 1);
         createAddCardButton(colArr[1]);
