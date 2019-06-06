@@ -67,7 +67,7 @@ function addCard(columnToAddCard) {
         startTime: null,
         stopDate: null,
         stopTime: null,
-        color: "strColor",
+        color: "",
         budget: "",
         members: null
     });
@@ -219,7 +219,12 @@ function displayCardSummary(cardElem){
 
     //Display the card in it's real color.
     var cardColor = $(cardElem).data("prop").color;
-    cardElem.style.border = "3px solid " + cardColor;
+    if (cardColor != ''){
+        cardElem.style.border = "3px solid " + cardColor;
+    }else{
+        cardElem.style.border = ""
+    }
+
 
 
     //Container for name initials

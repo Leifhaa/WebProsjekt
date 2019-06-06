@@ -241,9 +241,19 @@ function delCardfromEdit() {
 	alert("Will implement function");
 }
 
-function changeColor(color) {
-    var editElem = document.getElementById('containerEditCard');
-    editElem.style.border = "7px solid " + color;
+function changeColor(newColor) {
+
+	var oldBorderColor = document.getElementById('containerEditCard').style.border;
+	var editCardBorder = document.getElementById('containerEditCard');
+	
+
+	if (oldBorderColor.includes(newColor)){
+		//User wants to disable the color as he has clicked same color twice.
+		editCardBorder.style.border = ''
+	}
+	else{
+    	editCardBorder.style.border = "7px solid " + newColor;
+    }
 }
 
 function changeAvatarColor(color) {
@@ -266,19 +276,28 @@ function editCard(title, desc, dateStart, dateEnd, color, persons, id) {
     allCards.push(new Card(title, desc, dateStart, dateEnd, color, persons, id));
 }
 
-function pushData() {
-    var color = '';
-    if (document.getElementById('radio0').checked == true) {
+function GetCheckedColor(){
+	var color = '';
+	var oldBorderColor = document.getElementById('containerEditCard').style.border;
+
+    if (oldBorderColor.includes("red")) {
         color = 'red';
-    } else if (document.getElementById('radio1').checked == true) {
+    } else if (oldBorderColor.includes("orange")) {
         color = 'orange';
-    } else if (document.getElementById('radio2').checked == true) {
+    } else if (oldBorderColor.includes("green")) {
         color = 'green';
-    } else if (document.getElementById('radio3').checked == true) {
+    } else if (oldBorderColor.includes("blue")) {
         color = 'blue';
-    } else if (document.getElementById('radio4').checked == true) {
+    } else if (oldBorderColor.includes("pink")) {
         color = 'pink';
     }
+    return color
+}
+
+
+
+function pushData() {
+    var color = GetCheckedColor();
 
 	//Adding user's.
     var persons = [];
@@ -307,13 +326,11 @@ function pushData() {
      var cardToEdit = $(editDiv).data("cardToEdit")[0];
 
      //Edit the data properties from the original card
+     cardProps.color = color
      cardProps.title = this.title;
      cardProps.description = this.desc;
 
      cardProps.persons = persons;
-     if (color != ''){
-     	cardProps.color = color;
-     }
      cardProps.dateStart = this.dateStart;
      cardProps.dateEnd = this.dateEnd;
 
