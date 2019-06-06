@@ -142,7 +142,10 @@ footer {
 
 figure {
 	text-align: center;
-	
+	background-image: url(images/splash.svg);
+	background-repeat: no-repeat;	
+	width: 500px;
+	height: 500px;
 }
 
 figure img {
