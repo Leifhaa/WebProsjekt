@@ -22,7 +22,11 @@ body {
 .sloganContainer {
 	margin: 0 auto;
 	color: #4a148c;
-	
+}
+
+.footerCont {
+	width: 100%;
+	background: #fff;
 }
 
 header {
@@ -81,11 +85,11 @@ footer {
 
 .slogan {
 	text-align: center;
-	width: 500px;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 	padding-left: 10px;
 	padding-right: 10px;
+	width: 330px;
 }
 
 .slogan h1 {
@@ -200,7 +204,7 @@ figure img {
 	}
 	
 	.hero p {
-		font-size: 1.3em;
+		font-size: 1.5em;
 		padding: 0;
 		margin: 0 0 3em 0;
 	}
@@ -214,4 +218,83 @@ figure img {
 		margin: 0;
 	}
 }
+
+
+/* IMPLEMENTED CSS */
+
+.btn {
+    width: 100px;
+    background-color: #29b6f6;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    margin-top: 10px;
+    padding: 5px;
+    font-weight: bold;
+    outline: none;
+    font-size: 1.4em;
+}
+
+.btn.cancel {
+    margin-left: 10px;
+}
+
+.btn:hover {
+    background-color: #4a148c;
+}
+
+/*------------------------------------------------
+7.0 - Accessability
+------------------------------------------------*/
+#accessabilityCont {
+    position: relative;
+    width: 100%;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+    min-height: 30px;
+}
+
+#textAdjust {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #111;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.aA {
+    position: relative;
+    top: 5px;
+    right: 10px;
+    color: #111;
+    background: none;
+    font-weight: bold;
+    outline: none;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto Slab', serif;
+}
+
+.aA:hover {
+    color: #c62828;
+}
+
+#colorChange {
+    position: absolute;
+    top: 7px;
+    right: 55px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#colorChange:hover {
+    color: #c62828;
+}
+
+#colorChangeContrast {
+    display: none;
+}
+
 

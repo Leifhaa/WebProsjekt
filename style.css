@@ -909,8 +909,9 @@ textarea:focus {
 10.0 - NEW EDITS - USERS ON CARD
 ------------------------------------------------*/
 .nameInitialsContainer {
-    width: 260px;
+    width: 250px;
     margin-top: 10px;
+    margin-right: 10px;
     display: flex;
     align-items: flex-end;
     align-content: flex-end;

@@ -232,7 +232,7 @@ function displayCardSummary(cardElem){
     //Build a new nameInitialsContainer
     if (persons.length > 0){
         var initialsContainer = document.createElement("div");
-        initialsContainer.setAttribute("class", "nameInitialsContainer");
+        initialsContainer.setAttribute("class", "nameInitialsContainer noselect");
         cardElem.appendChild(initialsContainer);
 
         //Apply name initials to each card.
