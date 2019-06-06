@@ -74,14 +74,14 @@ var trashcanButton = document.getElementById("trashcanButton");
 $(trashcanButton).droppable( {
     drop: drop,
     hoverClass: 'trashHovered',
-    activate: startDrag,
+    //activate: startDrag,
     over: function(event, ui) {
                //ui.helper.css("border", "2px solid green")
            },
     out: function(event, ui) {
-                     // ui.helper.css("border", "2px solid red")
-                  }
-} );
+                // ui.helper.css("border", "2px solid red")
+            }
+});
 
 function sendAjax() {
     var xhr = new XMLHttpRequest;
