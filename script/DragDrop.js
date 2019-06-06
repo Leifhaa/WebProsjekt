@@ -2,26 +2,21 @@
 var cnter = 0;
 
 function dragOver(dragEv) {
-
     dragEv.preventDefault();
     if (dragEv.target.getAttribute("draggable") == "true")
         dragEv.dataTransfer.dropEffect = "none";
     else
         dragEv.dataTransfer.dropEffect = "all";
-
 }
-
 
 // WHEN CARD LEAVES COL DO THIS
 function dragLeave(dragEv) {
     var targetClass = dragEv.target.className;
 
-
     if (targetClass.includes("droptarget")) {
         dragEv.target.style.border = "";
         dragEv.target.style.backgroundColor = "";
     }
-
 }
 
 // WHEN DRAG ENDS
@@ -30,10 +25,8 @@ function dragEnd(dragEv) {
 }
 
 function drag(dragEv) {
-
     //dragEv.dataTransfer.setData("text", dragEv.target.id);
 }
-
 
 function RevertDrag(event) {
 	if (event == false){
@@ -58,18 +51,12 @@ function drop(dragEv, ui )  {
     var dropElement = document.getElementById(dropElementId);
     var dropColumnQueryRes = $("#" + targetId).closest('div[class*=columnBase]')
 
-
  	if (targetId.includes("trash")) {
-    	
     	//Save the setting of revert option (for sortable columns)
-    	
     }
-
 }
 
-
 var trashcanButton = document.getElementById("trashcanButton");
-
 
 $(trashcanButton).droppable( {
     drop: drop,
@@ -97,8 +84,7 @@ function sendAjax() {
 
     xhr.onload = function() {
         console.log('DONE: ', xhr.status);
-    }
-    ;
+    };
 
     /*xhr.send();
 				*/
@@ -122,7 +108,6 @@ function sendAjax() {
                     }
                 }
 				*/
-
 }
 
 //sendAjax()

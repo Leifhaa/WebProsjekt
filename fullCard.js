@@ -3,8 +3,7 @@ function CreateEditCardForm(cardID) {
 	var cardElem = $("#" + cardID).closest('li[class*=cardContent]');
     var cardData = $(cardElem).data("prop")
 
-
-	// holds darkBg and cardEdit body together
+	//holds darkBg and cardEdit body together
 	var editCont = document.createElement("div");
 	editCont.setAttribute("id", "editCont");
 
@@ -16,8 +15,6 @@ function CreateEditCardForm(cardID) {
 	var cardEditBody = document.createElement("div");
 	cardEditBody.setAttribute("id","cardEditBody");
 	cardEditBody.setAttribute("class","modal");
-
-
 
 	//card edit form
 	var infoForm = document.createElement("form");
@@ -31,7 +28,6 @@ function CreateEditCardForm(cardID) {
 	containerEditCard.setAttribute("id","containerEditCard");
 	containerEditCard.setAttribute("class","containerEditCard animated bounceInDown");
 	infoForm.appendChild(containerEditCard);
-
 
 	// APPENDS DARK BG AND EDITOR CONTAINER
     test2 = document.body;
@@ -66,14 +62,11 @@ function CreateEditCardForm(cardID) {
 	titleInput.setAttribute("value",cardData.title);
 	cardEditorTitle.appendChild(titleInput);
 
-
 	//Description div
 	var cardEditorDesc = document.createElement('div');
 	cardEditorDesc.setAttribute("class", "editCardItemCont");
 	cardEditorDesc.innerHTML = "Description";
 	containerEditCard.appendChild(cardEditorDesc);
-
-
 
 	//Description input box
 	var descInput = document.createElement("textarea")
@@ -84,7 +77,6 @@ function CreateEditCardForm(cardID) {
 	descInput.setAttribute("placeholder","Enter description");
 	descInput.value = cardData.description
 	cardEditorDesc.appendChild(descInput);
-
 
 	// users div
 	var cardEditorAvatar = document.createElement('div');
@@ -105,12 +97,10 @@ function CreateEditCardForm(cardID) {
 	addUsersInput.setAttribute('type', 'text');
 	addUsersInput.setAttribute('name', 'users[]');
 
-
 	//Create add user button and append already existing users.
 	for (i = 0; i < cardData.persons.length; i++){
 		addExistingUser(cardData.persons[i]);
 	}
-
 
 	$(document).ready(function() {
 		var max_fields = 6;
@@ -134,7 +124,6 @@ function CreateEditCardForm(cardID) {
 			x--;
 		})
 	});
-
 
 	// Color div
 	var cardEditorColor = document.createElement('div');
@@ -192,7 +181,6 @@ function CreateEditCardForm(cardID) {
 	//Apply color
 	if (cardData.color != ""){
 		changeColor(cardData.color);
-
 	}
 
 	// Calendar container div
@@ -232,7 +220,6 @@ function CreateEditCardForm(cardID) {
 	PushSettingButton.setAttribute("onclick","pushData()");
 	containerEditCard.appendChild(PushSettingButton);
 
-
 	//Delete card
 	var DeleteCardButton = document.createElement('button');
     DeleteCardButton.setAttribute("type","Submit")
@@ -248,7 +235,6 @@ function CreateEditCardForm(cardID) {
 
 	//Important: Store the Data of the card that is being edited
 	$(cardEditBody).data("prop",cardData);
-
 }
 
 function delCardfromEdit() {
@@ -258,7 +244,6 @@ function delCardfromEdit() {
 function changeColor(color) {
     var editElem = document.getElementById('containerEditCard');
     editElem.style.border = "7px solid " + color;
-
 }
 
 function changeAvatarColor(color) {
@@ -281,9 +266,7 @@ function editCard(title, desc, dateStart, dateEnd, color, persons, id) {
     allCards.push(new Card(title, desc, dateStart, dateEnd, color, persons, id));
 }
 
-
 function pushData() {
-
     var color = '';
     if (document.getElementById('radio0').checked == true) {
         color = 'red';
@@ -297,7 +280,6 @@ function pushData() {
         color = 'pink';
     }
 
-
 	//Adding user's.
     var persons = [];
     var addUserContainer = document.getElementById('addUsersField');
@@ -309,13 +291,11 @@ function pushData() {
     	}
     }
 
-
     id = new Date().getTime();
     title = document.getElementById('editCardTitleInput').value;
     desc = document.getElementById('editCardDescInput').value;
     dateStart = document.getElementById('dateStart').value;
     dateEnd = document.getElementById('dateEnd').value;
-
 
     //Edit the card's data
      var editDiv = document.getElementById("cardEditBody"); //Retrieve div in editForm which contains what card we're editing.
@@ -337,7 +317,6 @@ function pushData() {
      cardProps.dateStart = this.dateStart;
      cardProps.dateEnd = this.dateEnd;
 
-
      //Replace the old obj of data properties with new obj that has updated values.
      $(cardToEdit).data("prop",cardProps);
 
@@ -353,7 +332,6 @@ function closeEditor(){
     document.getElementById("cardEditBody").remove();
 	document.getElementById("darkenPage").remove();
 }
-
 
 function addExistingUser(userName){
 	//e.preventDefault();
