@@ -192,7 +192,12 @@ function addCardTitle(csName) {
 // DELETE CARD FUNCTION
 function delCard(cardID) {
     var deleteCard = document.getElementById(cardID);
-    deleteCard.parentNode.remove();
+    if (deleteCard.className.includes("cardContent")){
+        deleteCard.remove();
+    }
+    else{
+        deleteCard.parentNode.remove();    
+    }
     cardArr.pop(delId);
 }
 

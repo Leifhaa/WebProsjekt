@@ -240,7 +240,8 @@ function CreateEditCardForm(cardID) {
 function delCardfromEdit() {
 	var editDiv = document.getElementById("cardEditBody");
 	var cardToEdit = $(editDiv).data("cardToEdit")[0]
-	delCard(cardElem);
+	closeEditor();
+	delCard(cardToEdit.id);
 }
 
 function changeColor(newColor) {
