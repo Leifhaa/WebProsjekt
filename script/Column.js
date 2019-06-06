@@ -228,8 +228,12 @@ function delDialogue(delElement) {
 
     var qText = document.createElement("div");
     qText.setAttribute("id","qMessage");
-    qText.innerHTML = "Do you want to delete the card and its contents?"
-
+    if (delElement.id.includes("containerEditCard")){
+        qText.innerHTML = "Do you want to delete the card and its contents?"
+    }
+    else if (delElement.id.includes("del_col_")){
+        qText.innerHTML = "Do you want to delete the column and its contents?"
+    }
     var qBtnCont = document.createElement("div");
     qBtnCont.setAttribute("id","qBtnCont");
 
@@ -238,7 +242,7 @@ function delDialogue(delElement) {
     qButtonOk.setAttribute("class", "btn");
     if (delElement.id.includes("containerEditCard")){
             $(qButtonOk).click(function () {
-            closeEditor();  
+            closeEditor(1);  
             qClose();
         });
     }

@@ -1,6 +1,7 @@
 function CreateEditCardForm(cardID) {
 	//Get the object of the card.
 	var cardElem = $("#" + cardID).closest('li[class*=cardContent]');
+	var cardElemReal = cardElem[0];
     var cardData = $(cardElem).data("prop")
 
 	//holds darkBg and cardEdit body together
@@ -244,6 +245,7 @@ function delCardfromEdit() {
 	delCard(cardToEdit.id);
 }
 
+
 function changeColor(newColor) {
 
 	var oldBorderColor = document.getElementById('containerEditCard').style.border;
@@ -347,8 +349,16 @@ function pushData() {
     displayCardSummary(cardToEdit);
 }
 
-function closeEditor(){
+function closeEditor(deleteEditedCard = 0){
 	//Delete the edit form
+	if (deleteEditedCard == 1){
+		var editDiv = document.getElementById("cardEditBody"); //Retrieve div in editForm which contains what card we're editing.
+
+		//Retrieve div ID of the card we're editing.
+     	var cardToEdit = $(editDiv).data("cardToEdit")[0];
+
+     	cardToEdit.remove();
+	}
     document.getElementById("cardEditBody").remove();
 	document.getElementById("darkenPage").remove();
 }
