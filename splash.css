@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Roboto+Slab&display=swap');
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #4a148c;
+    background-image: linear-gradient(315deg, #4a148c 0%, #12005e 100%);
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+	max-width: 1005px;
+	margin: 0 auto;
+	padding: 2em 1em;
+	color: #4a148c;
+}
+
+.sloganContainer {
+	margin: 0 auto;
+	color: #4a148c;
+	
+}
+
+header {
+	text-align: center;
+}
+
+.logo {
+	background-image: url(images/logo.svg);
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 20px;
+	
+}
+
+nav {
+	margin: 2em auto 0;
+	max-width: 600px;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+nav ul li {
+	list-style: none;
+}
+
+nav ul li a {
+	font-size: 1.25em;
+	color: #4a148c;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+
+main {
+	display: flex;
+	flex-flow: column;
+}
+
+footer {
+	display: flex;
+	flex-flow: row;
+	background-color: #fff;
+	border-top: 1px solid #ccc;
+	padding: 20px;	
+}
+
+.hero {
+	text-align: center;
+	color: #fff;
+}
+
+.slogan {
+	text-align: center;
+	width: 500px;
+	margin: 0;
+	padding: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.slogan h1 {
+	font-family: 'Roboto Slab', serif;
+	font-size: 2.5em;
+	color: #111;
+}
+
+.slogan i {
+	font-size: 50px;
+}
+
+.slogan p {
+		font-size: 1.5em;
+		padding: 0;
+		margin: 0 0 3em 0;
+		color: #111;
+}
+
+.hero h1 {
+	font-size: 2.5em;
+	font-weight: 700;
+	font-family: 'Roboto Slab', serif;
+	
+}
+
+.hero p {
+	font-size: 1.5em;
+	font-weight: 600;
+	max-width: 600px;
+	line-height: 1.8em;
+	margin: 3em auto;
+}
+
+.hero p:before {
+	content: "";
+	display: block;
+	width: 120px;
+	border: 2px solid #29b6f6;
+}
+
+.hero a {
+	background: #29b6f6;
+	padding: 1em 3em;
+	border-radius: 2px;
+	text-decoration: none;
+	font-size: 1.37em;
+	font-weight: 700;
+}
+
+figure {
+	text-align: center;
+	
+}
+
+figure img {
+	margin: 3em auto 0;
+	width: 300px;
+	height: 300px;
+	background-color: #111;
+	
+}
+
+@media screen and (min-width: 820px) {
+	header {
+		display: flex;
+		justify-content: space-between;
+		flex-flow: wrap;
+		align-items: center;
+	}
+	
+	nav {
+		margin: 0;
+	}
+	
+	nav ul {
+		margin: 0;
+		padding: 0;
+		display: flex;
+	}
+	
+	nav ul li {
+		list-style: none;
+		padding: 0.5em 2em;
+	}
+	
+	nav ul li a {
+		font-size: 1.37em;
+		color: #fff;
+		font-weight: 700;
+		text-decoration: none;
+	}
+	
+	.highlight {
+		border: 3px solid #ffdb37;
+	}
+	
+	main {
+		flex-flow: row;
+	}
+	
+	.hero {
+		text-align: left;
+	}
+	
+	.hero h1 {
+		font-size: 4em;
+	}
+	
+	.hero p:before {
+		margin: 1em 0;
+	}
+	
+	.hero p {
+		font-size: 1.3em;
+		padding: 0;
+		margin: 0 0 3em 0;
+	}
+	
+	.hero a {
+		background: #29b6f6;
+	}
+	
+	.figure img {
+		width: 300px;
+		margin: 0;
+	}
+}
+
