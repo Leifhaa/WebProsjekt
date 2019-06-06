@@ -909,6 +909,8 @@ textarea:focus {
 10.0 - NEW EDITS - USERS ON CARD
 ------------------------------------------------*/
 .nameInitialsContainer {
+    border-top: 2px solid #999;
+    padding-top: 10px;
     width: 250px;
     margin-top: 10px;
     margin-right: 10px;
@@ -923,14 +925,13 @@ textarea:focus {
     border-radius: 50%;
     min-width: 30px;
     min-height: 30px;
-    border: 3px solid #999;
+    border: 3px solid #ccc;
     margin-left: 10px;
 
 }
 
 .nameInitials p {
-    position: absolute;
-    bottom: 9px;
+    line-height: 30px;
     border-radius: 50%;
     margin: 0;
     min-height: 30px;
@@ -945,10 +946,18 @@ textarea:focus {
 /* EDITS */
 
 .cardDateEndContainer {
-	color: #ff00cc;
-	
+    border-top: 2px solid #ccc;
+    padding-top: 10px;
+    margin-top: 10px;
+	color: #999;
+    font-size: 1.6em;
+    margin-right: 10px;
+
 }
 
 .cardDateEndContainer p {
-	
+    position: relative;
+    text-align: right;
+    left: 0;
+
 }
