@@ -239,7 +239,7 @@ function displayCardSummary(cardElem){
         for (i = 0; i < persons.length; i++){
             var initials = document.createElement("div");
             initials.setAttribute("class", "nameInitials");
-            initials.innerHTML = ConvertNameToInitials(persons[i]);
+            initials.innerHTML = "<p>" + ConvertNameToInitials(persons[i]) + "</p>";
             initialsContainer.appendChild(initials);
         }
     }
