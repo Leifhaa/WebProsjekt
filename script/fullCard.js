@@ -227,7 +227,7 @@ function CreateEditCardForm(cardID) {
 	DeleteCardButton.setAttribute("id","BtnDeleteCard");
 	DeleteCardButton.setAttribute("class","btn");
     DeleteCardButton.innerHTML = "Delete";
-	DeleteCardButton.setAttribute("onclick","delCardfromEdit(cardElem)");
+	DeleteCardButton.setAttribute("onclick","delCardfromEdit()");
 	containerEditCard.appendChild(DeleteCardButton);
 
 	//Important: Store the ID of the card that is being edited.
@@ -237,10 +237,10 @@ function CreateEditCardForm(cardID) {
 	$(cardEditBody).data("prop",cardData);
 }
 
-function delCardfromEdit(cardElem) {
-	alert("Hello");
-	delCard(cardElem)
-
+function delCardfromEdit() {
+	var editDiv = document.getElementById("cardEditBody");
+	var cardToEdit = $(editDiv).data("cardToEdit")[0]
+	delCard(cardElem);
 }
 
 function changeColor(newColor) {
