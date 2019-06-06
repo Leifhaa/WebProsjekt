@@ -12,7 +12,7 @@ body {
     padding: 0;
 }
 
-.container {
+.splashContainer {
 	max-width: 1005px;
 	margin: 0 auto;
 	padding: 2em 1em;
@@ -79,7 +79,7 @@ footer {
 	padding-top: 30px;
 }
 
-.hero {
+.info {
 	text-align: center;
 	color: #fff;
 }
@@ -107,26 +107,27 @@ footer {
 		font-size: 1.5em;
 		padding: 0;
 		margin: 0 0 3em 0;
-		color: #111;
+		color: #999;
 }
 
-.hero h1 {
+.info h1 {
 	font-size: 2.5em;
 	font-weight: 700;
 	font-family: 'Roboto Slab', serif;
 	
 }
 
-.hero p {
+.info p {
 	font-size: 1.5em;
 	font-weight: 600;
 	max-width: 600px;
 	line-height: 1.8em;
 	margin: 3em auto;
+	color: #fff;
 
 }
 
-.hero p:before {
+.info p:before {
 	content: "";
 	display: block;
 	width: 120px;
@@ -135,7 +136,7 @@ footer {
 	border: 2px solid #29b6f6;
 }
 
-.hero a {
+.info a {
 	background: #29b6f6;
 	padding: 1em 3em;
 	border-radius: 2px;
@@ -144,7 +145,7 @@ footer {
 	font-weight: bold;
 }
 
-figure {
+.splashImgBox {
 	text-align: center;
 	background-image: url(images/splash.svg);
 	background-repeat: no-repeat;	
@@ -152,20 +153,17 @@ figure {
 	height: 400px;
 	margin: 0;
 	padding: 0;
+	margin: auto;
 }
 
 
-figure img {
+.splashImg {
 	margin: 3em auto 0;
 	width: 300px;
 	height: 300px;
-	background-color: #111;
 	
 }
 
-.device {
-	margin: auto;
-}
 
 @media screen and (min-width: 820px) {
 	header {
@@ -205,30 +203,31 @@ figure img {
 		flex-flow: row;
 	}
 	
-	.hero {
+	.info {
 		text-align: left;
 	}
 	
-	.hero h1 {
+	.info h1 {
 		font-size: 4em;
 	}
 	
-	.hero p:before {
+	.info p:before {
 		margin: 1em 0;
 		
 	}
 	
-	.hero p {
+	.info p {
 		font-size: 1.5em;
 		padding: 0;
 		margin: 0 0 3em 0;
+		color: #fff;
 	}
 	
-	.hero a {
+	.info a {
 		background: #29b6f6;
 	}
 	
-	.figure img {
+	.splashImg {
 		width: 300px;
 		margin: 0;
 	}

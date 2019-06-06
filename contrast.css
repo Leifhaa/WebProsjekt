@@ -766,7 +766,7 @@ textarea:focus {
 #trashcanButton {
     position: fixed;
     right: 0;
-    top: 40%;
+    bottom: 10%;
     width: 180px;
     height: 100px;
     border: 3px solid #fff;
