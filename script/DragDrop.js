@@ -53,6 +53,7 @@ function drop(dragEv, ui )  {
 
  	if (targetId.includes("trash")) {
     	//Save the setting of revert option (for sortable columns)
+    	$(dropElement).remove();
     }
 }
 

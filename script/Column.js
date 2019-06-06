@@ -137,7 +137,7 @@ function addColumn() {
 
     $(".columnBase").sortable({
         containment: "document",
-        helper: 'clone',
+        //helper: 'clone',
         //connectToSortable: "li"
         items: "> li",
         revert:200,
