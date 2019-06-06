@@ -27,8 +27,8 @@ function resizeFont(multiply) {
 }
 */
 document.body.style.fontSize = "62.5%";
-function resizeText(multiply) {
 
+function resizeText(multiply) {
     var bodyFontsize = document.body.style.fontSize;
 
     if(bodyFontsize === "62.5%") {
@@ -39,24 +39,18 @@ function resizeText(multiply) {
     }
 }
 
-
 function swapStyleSheet(sheet){
-       document.getElementById('pagestyle').setAttribute('href', sheet);
-   }
-
-
+    document.getElementById('pagestyle').setAttribute('href', sheet);
+}
 
 // NEW Board
-
 function newBoard() {
-
     //darkBg while new board question is open
     var qBg = document.createElement("div");
     qBg.setAttribute("id","darkenPage");
 
     // APPENDS THE DARK BG TO body
     test2 = document.body;
-
 
     //new question container
 	var qCont = document.createElement("div");
@@ -94,21 +88,18 @@ function newBoard() {
     qCont.appendChild(qBtnCont);
     qBtnCont.appendChild(qButtonOk);
     qBtnCont.appendChild(qButtonCancel);
-
 }
 
-    function qClose() {
-        var elem = document.querySelector('#darkenPage');
-        var elem1 = document.querySelector('#dialogueBox');
-        elem.parentNode.removeChild(elem);
-        elem1.parentNode.removeChild(elem1);
-    }
-
+function qClose() {
+    var elem = document.querySelector('#darkenPage');
+    var elem1 = document.querySelector('#dialogueBox');
+    elem.parentNode.removeChild(elem);
+    elem1.parentNode.removeChild(elem1);
+}
 
 function endSession() {
   document.getElementById("dropDown").classList.toggle("show");
 }
-
 
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
