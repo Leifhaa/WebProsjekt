@@ -304,7 +304,9 @@ function pushData() {
     var addUserInputBoxes = $(addUserContainer).find('input[id*=inputUsernameText]')
     for (i = 0; i < addUserInputBoxes.length; i++){
     	var usernameInputVal = addUserInputBoxes[i].value;
-    	persons.push(usernameInputVal);
+    	if (usernameInputVal != ''){
+    		persons.push(usernameInputVal);
+    	}
     }
 
 
