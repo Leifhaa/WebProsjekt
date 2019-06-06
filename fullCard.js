@@ -360,7 +360,7 @@ function addExistingUser(userName){
 	var wrapper = $('#addUsersField');
 	//if (x < max_fields) {
 		//x++;
-		$(wrapper).append('<div class "usernameAdd"><input value = ' + userName + ' type="text" id = "inputUsernameText" name="users[]"/><a href="#" class="delete"><i class="fas fa-times"></i></a></div>');
+		$(wrapper).append('<div class "usernameAdd"><input value = "' + userName + '"" type="text" id = "inputUsernameText" name="users[]"/><a href="#" class="delete"><i class="fas fa-times"></i></a></div>');
 	//} else {
 	//	alert('User limit reached');
 }

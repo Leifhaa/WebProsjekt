@@ -229,8 +229,6 @@ function displayCardSummary(cardElem){
         oldNameInitialContainer[0].remove();
     }
 
-
-
     //Build a new nameInitialsContainer
     if (persons.length > 0){
         var initialsContainer = document.createElement("div");
@@ -241,17 +239,14 @@ function displayCardSummary(cardElem){
         for (i = 0; i < persons.length; i++){
             var initials = document.createElement("div");
             initials.setAttribute("class", "nameInitials");
-            initials.innerHTML = persons[i];
+            initials.innerHTML = ConvertNameToInitials(persons[i]);
             initialsContainer.appendChild(initials);
         }
     }
+}
 
-    //Apply name initials to each card.
-    /*
-    for (i = 0; i < cardElem.persons.length; i++){
-        var initials = document.createElement("div");
-        initials.setAttribute("class", "nameInitials");
-        initials
-    }*/
-
+function ConvertNameToInitials (name) {
+    var initials = name.match(/\b\w/g) || [];
+    initials = ((initials.shift() || '') + (initials.pop() || '')).toUpperCase();
+    return initials
 }
