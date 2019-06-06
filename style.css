@@ -929,8 +929,6 @@ textarea:focus {
 }
 
 .nameInitials p {
-    position: absolute;
-    bottom: 9px;
     border-radius: 50%;
     margin: 0;
     min-height: 30px;
@@ -939,6 +937,7 @@ textarea:focus {
     font-size: 14px;
     font-weight: 700;
     color: #999;
+    line-height: 30px;
 }
 
 
@@ -946,9 +945,9 @@ textarea:focus {
 
 .cardDateEndContainer {
 	color: #ff00cc;
-	
+
 }
 
 .cardDateEndContainer p {
-	
+
 }
