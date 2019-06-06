@@ -227,7 +227,7 @@ function CreateEditCardForm(cardID) {
 	DeleteCardButton.setAttribute("id","BtnDeleteCard");
 	DeleteCardButton.setAttribute("class","btn");
     DeleteCardButton.innerHTML = "Delete";
-	DeleteCardButton.setAttribute("onclick","delCardfromEdit()");
+	DeleteCardButton.setAttribute("onclick","delCardfromEdit(cardElem)");
 	containerEditCard.appendChild(DeleteCardButton);
 
 	//Important: Store the ID of the card that is being edited.
@@ -237,15 +237,17 @@ function CreateEditCardForm(cardID) {
 	$(cardEditBody).data("prop",cardData);
 }
 
-function delCardfromEdit() {
-	alert("Will implement function");
+function delCardfromEdit(cardElem) {
+	alert("Hello");
+	delCard(cardElem)
+
 }
 
 function changeColor(newColor) {
 
 	var oldBorderColor = document.getElementById('containerEditCard').style.border;
 	var editCardBorder = document.getElementById('containerEditCard');
-	
+
 
 	if (oldBorderColor.includes(newColor)){
 		//User wants to disable the color as he has clicked same color twice.
