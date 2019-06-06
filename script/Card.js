@@ -56,7 +56,7 @@ function addCard(columnToAddCard) {
         rowID: 0,
         name: "TitleCard" + cardID,
         description: "",
-        persons: null,
+        persons: [],
         startDate: null,
         startTime: null,
         stopDate: null,

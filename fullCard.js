@@ -1,11 +1,3 @@
-//var modal = document.getElementById('card');
-/*window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-*/
-
 function CreateEditCardForm(cardID) {
 	//Get the object of the card.
 	var cardElem = $("#" + cardID).closest('li[class*=cardContent]');
@@ -41,8 +33,6 @@ function CreateEditCardForm(cardID) {
 	infoForm.appendChild(containerEditCard);
 
 
-
-
 	// APPENDS DARK BG AND EDITOR CONTAINER
     test2 = document.body;
     test2.appendChild(editCont);
@@ -60,15 +50,6 @@ function CreateEditCardForm(cardID) {
 	test3 = document.getElementById("cardEditBody");
 	containerEditCard.appendChild(editorCloseBtn);
 
-
-	/*
-	//title Label
-	var titleLabel = document.createElement('Label');
-	titleLabel.setAttribute("for","editCardTitleInput");
-	titleLabel.innerHTML = "Title";
-	containerEditCard.appendChild(titleLabel);
-	*/
-
 	//Title div
 	var cardEditorTitle = document.createElement('div');
 	cardEditorTitle.setAttribute("class", "editCardItemCont");
@@ -85,13 +66,6 @@ function CreateEditCardForm(cardID) {
 	titleInput.setAttribute("value",cardData.title);
 	cardEditorTitle.appendChild(titleInput);
 
-	/*
-	//descriptionLabel
-	var DescLabel = document.createElement('Label');
-	DescLabel.setAttribute("for","editCardDescInput");
-	DescLabel.innerHTML = "Description";
-	containerEditCard.appendChild(DescLabel);
-	*/
 
 	//Description div
 	var cardEditorDesc = document.createElement('div');
@@ -111,45 +85,12 @@ function CreateEditCardForm(cardID) {
 	descInput.value = cardData.description
 	cardEditorDesc.appendChild(descInput);
 
-	/*
-	//budgetLabel
-	var BudgetLabel = document.createElement('Label');
-	BudgetLabel.setAttribute("for","editCardBudgetInput");
-	BudgetLabel.innerHTML = "Budget";
-	containerEditCard.appendChild(BudgetLabel);
-	*/
-	/*
-	//Budget div
-	var cardEditorBudget = document.createElement('div');
-	cardEditorBudget.setAttribute("class", "editCardItemCont");
-	cardEditorBudget.innerHTML = "Budget";
-	containerEditCard.appendChild(cardEditorBudget);
 
-	//budget input box
-	var budgetInput = document.createElement("input")
-	budgetInput.setAttribute("type","text");
-	budgetInput.setAttribute("id","editCardBudgetInput");
-	budgetInput.setAttribute("class", "editCardInputField");
-	budgetInput.setAttribute("name","budget");
-	budgetInput.setAttribute("placeholder","Enter budget");
-	budgetInput.setAttribute("value",cardData.budget);
-	cardEditorBudget.appendChild(budgetInput);
-	*/
-
-	//Avatars
-
-	// Avatar div
+	// users div
 	var cardEditorAvatar = document.createElement('div');
 	cardEditorAvatar.setAttribute("class", "editCardItemCont");
 	cardEditorAvatar.innerHTML = "Users";
 	containerEditCard.appendChild(cardEditorAvatar);
-
-	/*
-	// Avatar container div
-	var cardEditorAvatarC = document.createElement('div');
-	cardEditorAvatarC.setAttribute("class", "editCardAvatar");
-	cardEditorAvatar.appendChild(cardEditorAvatarC);
-	*/
 
 	var createUser = document.createElement('div');
 	createUser.setAttribute("id", "addUsersField");
@@ -164,6 +105,13 @@ function CreateEditCardForm(cardID) {
 	addUsersInput.setAttribute('type', 'text');
 	addUsersInput.setAttribute('name', 'users[]');
 
+
+	//Create add user button and append already existing users.
+	for (i = 0; i < cardData.persons.length; i++){
+		addExistingUser(cardData.persons[i]);
+	}
+
+
 	$(document).ready(function() {
 		var max_fields = 6;
 		var wrapper = $('#addUsersField');
@@ -171,14 +119,13 @@ function CreateEditCardForm(cardID) {
 
 		var x = 1;
 		$(add_button).click(function(e) {
-
 			e.preventDefault();
-			if (x < max_fields) {
-				x++;
-				$(wrapper).append('<div><input type="text" name="users[]"/><a href="#" class="delete"><i class="fas fa-times"></i></a></div>');
-			} else {
-				alert('User limit reached');
-			}
+			//if (x < max_fields) {
+			//	x++;
+				$(wrapper).append('<div class "usernameAdd"><input type="text" id = "inputUsernameText" name="users[]"/><a href="#" class="delete"><i class="fas fa-times"></i></a></div>');
+			//} else {
+			//	alert('User limit reached');
+			//}
 		});
 
 		$(wrapper).on('click', '.delete', function(e) {
@@ -188,116 +135,6 @@ function CreateEditCardForm(cardID) {
 		})
 	});
 
-	// Custom select
-
-	var x, i, j, selElmnt, a, b, c;
-/*look for any elements with the class "custom-select":*/
-x = document.getElementsByClassName("editCardAvatar");
-for (i = 0; i < x.length; i++) {
-  selElmnt = x[i].getElementsByTagName("select")[0];
-  /*for each element, create a new DIV that will act as the selected item:*/
-  a = document.createElement("DIV");
-  a.setAttribute("class", "select-selected");
-  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-  x[i].appendChild(a);
-  /*for each element, create a new DIV that will contain the option list:*/
-  b = document.createElement("DIV");
-  b.setAttribute("class", "select-items select-hide");
-  for (j = 1; j < selElmnt.length; j++) {
-    /*for each option in the original select element,
-    create a new DIV that will act as an option item:*/
-    c = document.createElement("DIV");
-    c.innerHTML = selElmnt.options[j].innerHTML;
-    c.addEventListener("click", function(e) {
-        /*when an item is clicked, update the original select box,
-        and the selected item:*/
-        var y, i, k, s, h;
-        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-        h = this.parentNode.previousSibling;
-        for (i = 0; i < s.length; i++) {
-          if (s.options[i].innerHTML == this.innerHTML) {
-            s.selectedIndex = i;
-            h.innerHTML = this.innerHTML;
-            y = this.parentNode.getElementsByClassName("same-as-selected");
-            for (k = 0; k < y.length; k++) {
-              y[k].removeAttribute("class");
-            }
-            this.setAttribute("class", "same-as-selected");
-            break;
-          }
-        }
-        h.click();
-    });
-    b.appendChild(c);
-  }
-  x[i].appendChild(b);
-  a.addEventListener("click", function(e) {
-      /*when the select box is clicked, close any other select boxes,
-      and open/close the current select box:*/
-      e.stopPropagation();
-      closeAllSelect(this);
-      this.nextSibling.classList.toggle("select-hide");
-      this.classList.toggle("select-arrow-active");
-    });
-}
-function closeAllSelect(elmnt) {
-  /*a function that will close all select boxes in the document,
-  except the current select box:*/
-  var x, y, i, arrNo = [];
-  x = document.getElementsByClassName("select-items");
-  y = document.getElementsByClassName("select-selected");
-  for (i = 0; i < y.length; i++) {
-    if (elmnt == y[i]) {
-      arrNo.push(i)
-    } else {
-      y[i].classList.remove("select-arrow-active");
-    }
-  }
-  for (i = 0; i < x.length; i++) {
-    if (arrNo.indexOf(i)) {
-      x[i].classList.add("select-hide");
-    }
-  }
-}
-/*if the user clicks anywhere outside the select box,
-then close all select boxes:*/
-document.addEventListener("click", closeAllSelect);
-
-	/* AVATAR LABELS COMMENTED OUT
-	for (i = 0; i < 4; i ++){
-		var AvatarLabel = document.createElement('label');
-		var Avatar = document.createElement('input');
-		Avatar.setAttribute("type","checkbox");
-		Avatar.setAttribute("id","ava" + i);
-		Avatar.setAttribute("name","avatars");
-		Avatar.setAttribute("value","small");
-		if (i == 0){
-			AvatarLabel.innerHTML = "<i class='fas fa-user-ninja fa-2x avatar'></i>";
-		}
-		else if (i == 1){
-			AvatarLabel.innerHTML = "<i class='fas fa-user-astronaut fa-2x avatar'></i>";
-		}
-		else if (i == 2){
-			AvatarLabel.innerHTML = "<i class='fas fa-user-ninja fa-2x avatar'></i>";
-		}
-		else if (i == 3){
-			AvatarLabel.innerHTML = "<i class='fas fa-user-astronaut fa-2x avatar'></i>";
-		}
-
-
-		cardEditorAvatarC.appendChild(AvatarLabel);
-		AvatarLabel.appendChild(Avatar);
-
-		if (cardData.persons != null && cardData.persons.includes("ava" + i)){
-			Avatar.checked = true;
-		}
-	}
-
-	*/
-
-
-
-	//Card color
 
 	// Color div
 	var cardEditorColor = document.createElement('div');
@@ -421,10 +258,6 @@ function delCardfromEdit() {
 function changeColor(color) {
     var editElem = document.getElementById('containerEditCard');
     editElem.style.border = "7px solid " + color;
-    //[0].style.border = color;
-
-	// WHEN COLOR SELECTED, CHANGE BORDER TO INDICATE SELECTION
-	//$(".fa-square").css("border", "#ff00cc");
 
 }
 
@@ -464,7 +297,16 @@ function pushData() {
         color = 'pink';
     }
 
+
+	//Adding user's.
     var persons = [];
+    var addUserContainer = document.getElementById('addUsersField');
+    var addUserInputBoxes = $(addUserContainer).find('input[id*=inputUsernameText]')
+    for (i = 0; i < addUserInputBoxes.length; i++){
+    	var usernameInputVal = addUserInputBoxes[i].value;
+    	persons.push(usernameInputVal);
+    }
+
 
     id = new Date().getTime();
     title = document.getElementById('editCardTitleInput').value;
@@ -492,9 +334,6 @@ function pushData() {
      cardProps.dateEnd = this.dateEnd;
 
 
-
-
-
      //Replace the old obj of data properties with new obj that has updated values.
      $(cardToEdit).data("prop",cardProps);
 
@@ -509,4 +348,15 @@ function closeEditor(){
 	//Delete the edit form
     document.getElementById("cardEditBody").remove();
 	document.getElementById("darkenPage").remove();
+}
+
+
+function addExistingUser(userName){
+	//e.preventDefault();
+	var wrapper = $('#addUsersField');
+	//if (x < max_fields) {
+		//x++;
+		$(wrapper).append('<div class "usernameAdd"><input value = ' + userName + ' type="text" id = "inputUsernameText" name="users[]"/><a href="#" class="delete"><i class="fas fa-times"></i></a></div>');
+	//} else {
+	//	alert('User limit reached');
 }

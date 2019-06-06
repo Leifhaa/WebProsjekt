@@ -59,16 +59,10 @@ function drop(dragEv, ui )  {
     var dropColumnQueryRes = $("#" + targetId).closest('div[class*=columnBase]')
 
 
-    //Always append the card to column, not to another card.
-    if (dropColumnQueryRes.length > 0) {
-    	//var dropColumn = dropColumnQueryRes[0];
-        //dropColumn.appendChild(dropElement);
-        cnter = cnter + 1
-        //console.log("Dropped on a column!" + dropColumn.id + " and cnter is now " + cnter);
-        //$(ui.draggable).css({"left": "0", "top": "0"});
-
-    } else if (targetId.includes("trash")) {
-        dropElement.remove();
+ 	if (targetId.includes("trash")) {
+    	
+    	//Save the setting of revert option (for sortable columns)
+    	
     }
 
 }
