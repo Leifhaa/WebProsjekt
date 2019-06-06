@@ -17,7 +17,7 @@ function CreateEditCardForm(cardID) {
 	cardEditBody.setAttribute("class","modal");
 
 	//card edit form
-	var infoForm = document.createElement("form");
+	var infoForm = document.createElement("div");
 	infoForm.setAttribute("id","infoForm");
 	infoForm.setAttribute("class","modal-content animate");
 
