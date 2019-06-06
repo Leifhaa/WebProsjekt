@@ -1,12 +1,9 @@
-//Adds a start column to the board
-
-
 // GENERATING ID FOR COLS
 var colArr = [];
 var columnID = 0;
 var testColName = "Test Col";
 
-//Test card
+// Test card
 var Card1 = {
     ID: "1",
     Title: "TitleCard1",
@@ -35,12 +32,7 @@ var colSilButton = document.createElement("button");
     colSilButton.innerHTML = "<i class='fas fa-plus'></i>";
     colSilhouette.appendChild(colSilButton);
 
-
-
-
-/* ADD COLUMN */
-
-
+// ADD COLUMN
 var addCol = document.getElementById("addColumnBtn");
 addCol.addEventListener("click", newBoard);
 
@@ -53,9 +45,6 @@ function addColumn() {
     var div = document.createElement('div');
     div.setAttribute("class", "columnBase column droptarget columnBox");
     div.setAttribute("id", "col_" + columnID);
-
-
-
 
     $(div).disableSelection();
 
@@ -72,11 +61,7 @@ function addColumn() {
         out: function(event, ui) {
                          // ui.helper.css("border", "2px solid red")
                       }
-    } );
-
-
-
-
+    });
 
     //COL TITLE INPUT
     var addColTitle = document.createElement('input');
@@ -100,8 +85,6 @@ function addColumn() {
     colTitleBtnCancel.setAttribute("onclick", "delCol(this)");
     colTitleBtnCancel.innerHTML = "Cancel";
 
-
-
     // TEST TITLE Col
     colTitleCont = document.createElement("div");
     colTitleCont.setAttribute("id", "colTilte_" + columnID);
@@ -110,9 +93,7 @@ function addColumn() {
 
     div.appendChild(colTitleCont);
 
-
     //    div.innerHTML = "<div id = 'colTitle_" + columnID +"' class='column colTitle hidden'></div>";
-
 
     colArr.push({
         id: "col_" + columnID,
@@ -120,23 +101,18 @@ function addColumn() {
     });
     console.log(colArr);
 
-
     //Add a orderList
     var orderList = document.createElement("ol");
     orderList.setAttribute("id","colOl" + columnID);
     orderList.setAttribute("class","sortOl");
 
-
-
     div.appendChild(orderList);
-
 
     //Add a orderList which only contains newlyCreatedCards.
     var orderListNewCard = document.createElement("ol");
     orderListNewCard.setAttribute("id","colOl" + columnID + "NewCard");
     orderListNewCard.setAttribute("class","sortOlNewCard");
     div.appendChild(orderListNewCard);
-
 
     // DELETE COL BUTTON
     var div1 = document.createElement("div");
@@ -145,7 +121,6 @@ function addColumn() {
     div1.classList.add("hidden");
     div1.setAttribute("onclick", "delCol(this)");
     div1.innerHTML = "<i id = 'delColIcon_" + columnID + "' class='column fas fa-times'></i>";
-
 
     document.getElementById("colContainer").appendChild(div);
     document.getElementById("col_" + columnID).appendChild(div1);
@@ -160,7 +135,6 @@ function addColumn() {
 
     columnID += 1;
 
-
     $(".columnBase").sortable({
         containment: "document",
         helper: 'clone',
@@ -170,7 +144,6 @@ function addColumn() {
         cursor:'grab',
         connectWith: '.columnBase'
     });
-
 }
 
 var div1;
@@ -191,7 +164,6 @@ function addColTitle(csName) {
     columnToAddCancel3.remove();
     colX.classList.remove("hidden");
     colTitleHidden.classList.remove("hidden");
-
 }
 
 // DELETE COL FUNCTION
@@ -238,5 +210,4 @@ function createAddCardButton(ColumnId){
     btnElem.addEventListener("click",function(){
        addCard(columnToAddBtn)
     });
-
 }
