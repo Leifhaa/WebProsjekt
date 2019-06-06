@@ -909,7 +909,7 @@ textarea:focus {
 10.0 - NEW EDITS - USERS ON CARD
 ------------------------------------------------*/
 .nameInitialsContainer {
-    border-top: 2px solid #999;
+    border-top: 2px dashed #ccc;
     padding-top: 10px;
     width: 250px;
     margin-top: 10px;
@@ -946,10 +946,10 @@ textarea:focus {
 /* EDITS */
 
 .cardDateEndContainer {
-    border-top: 2px solid #ccc;
-    padding-top: 10px;
+    border-top: 2px dashed #ccc;
+
     margin-top: 10px;
-	color: #999;
+	color: #111;
     font-size: 1.6em;
     margin-right: 10px;
 
@@ -959,5 +959,6 @@ textarea:focus {
     position: relative;
     text-align: right;
     left: 0;
+    color: #111;
 
 }
