@@ -238,7 +238,7 @@ function CreateEditCardForm(cardID) {
 }
 
 function delCardfromEdit() {
-	
+
 }
 
 function changeColor(color) {
