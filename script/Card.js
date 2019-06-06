@@ -265,11 +265,11 @@ function displayCardSummary(cardElem){
 
     if (endDate != ''){
         var endDateElem = document.createElement("div");
-        endDateElem.setAttribute("class", "cardDateEndContainer");
+        endDateElem.setAttribute("class", "cardDateEndContainer noselect");
         var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         var mS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
         var mydate = new Date(endDate);
-        
+
         endDateElem.innerHTML = "<p>" + days[mydate.getDay()] + " " + mydate.getDate() + " " + mS[mydate.getMonth()] + "</p>";
         cardElem.appendChild(endDateElem);
     }

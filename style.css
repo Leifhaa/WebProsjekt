@@ -940,3 +940,15 @@ textarea:focus {
     font-weight: 700;
     color: #999;
 }
+
+
+/* EDITS */
+
+.cardDateEndContainer {
+	color: #ff00cc;
+	
+}
+
+.cardDateEndContainer p {
+	
+}
