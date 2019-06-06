@@ -20,13 +20,15 @@ function addCard(columnToAddCard) {
     if (multipleNewCards.length > 0){
         return; //Not possible to add multiple 'new cards'
     }
-  
+
     //Card
     var div = document.createElement("li");
     div.setAttribute("class", "card cardContent cardID" + cardID);
 
     div.setAttribute("id", "card_" + cardID);
-    div.style.backgroundColor = "#E1E1E1";
+    //div.style.backgroundColor = "#E1E1E1";
+
+    //div.classList.add("cardBg");
 
     //CARD TITLE OF A CREATED CARD.
     var cardTitle = document.createElement("div");

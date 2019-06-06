@@ -58,7 +58,7 @@ body {
 }
 
 #siteWrap {
-    height: 100%;
+    height: 85vh;
 }
 
 #boardContainer {
@@ -259,7 +259,7 @@ header {
 }
 
 .colHovered {
-    background-color: #cfcfcf;
+    background: none;
     border: 3px solid #ff0;
 }
 
@@ -351,8 +351,6 @@ header {
     margin-bottom: 10px;
     padding: 10px 5px 10px 5px;
     border-radius: 2px;
-    border-bottom: 1px solid #ccc;
-    background-color: #fff;
     font-weight: bold;
 }
 
@@ -690,20 +688,21 @@ textarea:focus {
 }
 
 #colorChange {
-    position: absolute;
+	display: none;
+   
+}
+
+#colorChangeContrast:hover {
+    color: #ff6a2f;
+}
+
+#colorChangeContrast {
+     position: absolute;
     top: 7px;
     right: 55px;
     font-size: 16px;
     cursor: pointer;
     color: #ff0;
-}
-
-#colorChange:hover {
-    color: #ff6a2f;
-}
-
-#colorChangeContrast {
-    display: none;
 }
 
 /*------------------------------------------------
@@ -740,7 +739,7 @@ textarea:focus {
 }
 
 .editCardIcon:hover {
-    color: #ff6a2f;
+    color: #4caf50;
 }
 
 #qIcon {
