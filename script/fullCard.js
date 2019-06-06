@@ -227,7 +227,7 @@ function CreateEditCardForm(cardID) {
 	DeleteCardButton.setAttribute("id","BtnDeleteCard");
 	DeleteCardButton.setAttribute("class","btn");
     DeleteCardButton.innerHTML = "Delete";
-	DeleteCardButton.setAttribute("onclick","delCardfromEdit()");
+	DeleteCardButton.setAttribute("onclick","delDialogue()");
 	containerEditCard.appendChild(DeleteCardButton);
 
 	//Important: Store the ID of the card that is being edited.

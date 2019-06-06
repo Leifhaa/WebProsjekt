@@ -163,7 +163,7 @@ function addColTitle(csName) {
 
 // DELETE COL FUNCTION
 function delCol(elementClicked) {
-    //Figure which columnID we're dealing with according to arr 
+    //Figure which columnID we're dealing with according to arr
     var columnIdDeleted = elementClicked.id.replace(/\D/g,'');
     columnIdDeleted = 'col_' + columnIdDeleted
 
@@ -205,4 +205,52 @@ function createAddCardButton(ColumnId){
     btnElem.addEventListener("click",function(){
        addCard(columnToAddBtn)
     });
+}
+
+// Delete dialogue
+
+function delDialogue() {
+    //darkBg while new board question is open
+    var qBg = document.createElement("div");
+    qBg.setAttribute("id","darkenPage");
+
+    // APPENDS THE DARK BG TO body
+    test2 = document.body;
+
+    //new question container
+	var qCont = document.createElement("div");
+	qCont.setAttribute("id","dialogueBox");
+	qCont.setAttribute("class","bounceIn");
+
+    var qIcon = document.createElement("div");
+    qIcon.setAttribute("id", "qIcon");
+    qIcon.innerHTML = "<i class='fas fa-exclamation'></i>"
+
+    var qText = document.createElement("div");
+    qText.setAttribute("id","qMessage");
+    qText.innerHTML = "Do you want to delete the card and its contents?"
+
+    var qBtnCont = document.createElement("div");
+    qBtnCont.setAttribute("id","qBtnCont");
+
+    var qButtonOk = document.createElement("button");
+    qButtonOk.setAttribute("id","qButtonOk");
+    qButtonOk.setAttribute("class", "btn");
+    qButtonOk.setAttribute("onclick", "");
+
+    qButtonOk.innerHTML = "Confirm";
+
+    var qButtonCancel = document.createElement("button");
+    qButtonCancel.setAttribute("id","qButtonCancel");
+    qButtonCancel.setAttribute("class", "btn cancel");
+    qButtonCancel.setAttribute("onclick", "qClose()");
+    qButtonCancel.innerHTML = "Cancel";
+
+    test2.appendChild(qBg);
+    test2.appendChild(qCont);
+    qCont.appendChild(qIcon);
+    qCont.appendChild(qText);
+    qCont.appendChild(qBtnCont);
+    qBtnCont.appendChild(qButtonOk);
+    qBtnCont.appendChild(qButtonCancel);
 }

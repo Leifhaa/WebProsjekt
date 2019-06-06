@@ -1642,6 +1642,25 @@
   animation-name: fadeInUp2;
 }
 
+@keyframes fadeInUp3 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: .5;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp3 {
+  -webkit-animation-name: fadeInUp3;
+  animation-name: fadeInUp3;
+}
+
 @-webkit-keyframes fadeInUpBig {
   from {
     opacity: 0;
