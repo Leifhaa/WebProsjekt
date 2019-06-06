@@ -1,78 +1,28 @@
-html {
-    min-height: 100%;
-}
+/*------------------------------------------------
+ CONTRAST CSS
+------------------------------------------------*/
 
-body {
-    background-color: #000;
-    margin: 0;
-    padding: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #111;
-    font-size: 62.5%;
-    height: 100%;
-}
+/*------------------------------------------------
+> > > TABLE OF CONTENTS:
+--------------------------------------------------
+1.0 - Setup
+2.0 - Header / Logo / Profile dropdown
+3.0 - Column
+4.0 - Card
+5.0 - Card editor
+6.0 - Dialogue box
+7.0 - Accessability
+8.0 - Buttons / Icons
+9.0 - Call to action
+------------------------------------------------*/
 
-#accessabilityCont {
-    position: relative;
-    width: 100%;
-    background-color: #fff;
-    border-bottom: 1px solid #000;
-    min-height: 30px;
+/*------------------------------------------------
+1.0 - Setup
+------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Roboto+Slab&display=swap');
 
-
-}
-
-#textAdjust {
-    position: absolute;
-    right: 0;
-    top: 0;
-    color: #111;
-    font-weight: bold;
-    font-size: 2em;
-}
-
-.aA {
-    position: relative;
-    right: 10px;
-    color: #111;
-    background: none;
-    font-weight: bold;
-    outline: none;
-    font-size: .7em;
-    border: none;
-    cursor: pointer;
-
-}
-
-#colorChange {
-    display: none;
-
-}
-
-#colorChangeContrast {
-    position: absolute;
-    top: 7px;
-    right: 55px;
-    font-size: 1.4em;
-    cursor: pointer;
-
-}
-
-
-
-header {
-    position: relative;
-    height: 60px;
-    width: 100%;
-    background-color: #000;
-    border-bottom: 2px solid #fff;
-    margin-bottom: 20px;
-}
-
-#siteWrap {
-    height: 100%;
-}
-/* SCROLL BAR STYLING */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -82,59 +32,111 @@ header {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #29b6f6;
+  background: #ff0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0288d1;
+  background: #ff6a2f;
 }
 
 ::-webkit-scrollbar-corner {
     background: none;
 }
 
+html {
+    min-height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+	background-color: #111;
+    color: #111;
+    font-size: 62.5%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#siteWrap {
+    height: 100%;
+}
+
+#boardContainer {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: flex-start;
+    vertical-align: top;
+    min-height: 500px;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+    overflow: scroll;
+    overflow-y: hidden;
+}
+
+#colContainer {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: flex-start;
+    vertical-align: top;
+    min-height: 500px;
+}
+
+/* Disable text from being selectable (in e.g cardTitle of a card) */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+/*------------------------------------------------
+2.0 - Header / Logo / Profile dropdown
+------------------------------------------------*/
+header {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    background-color: #111;
+    border-bottom: 1px solid #fff;
+    box-shadow: 0px 2px 10px rgba(0,0,0,.4);
+}
+
 #logo {
     position: absolute;
     top: 20px;
     left: 20px;
-    width: 20px;
+    width: 200px;
     height: 20px;
-    font-weight: 700;
-    font-size: 40px;
-    letter-spacing: -2px;
     padding-top: 0px;
-    background-image: url(logotestwhite.svg);
+    background-image: url(images/logocontrast.svg);
     background-repeat: no-repeat;
-
-}
-
-#logoText {
-    position: absolute;
-    top: 15px;
-    left: 40px;
-    width: 250px;
-    height: 40px;
-    font-weight: 700;
-    font-size: 25px;
     letter-spacing: -2px;
-    padding-top: 0px;
-    color: #fff;
-
+    font-size: 40px;
+    font-weight: 700;
 }
 
 #timeDate {
     position: absolute;
-    width: 12em;
-    height: 2.2em;
-    right: 6em;
-    bottom: 20%;
-    font-size: 17px;
-    font-weight: bold;
-    text-align: right;
-    color: #fff;
-    margin-right: 1em;
-    padding-right: 1.3em;
+    right: 100px;
+    top: 10px;
+    width: 240px;
+    padding-right: 10px;
+    margin-right: 10px;
     border-right: solid #fff 1px;
+    color: #fff;
+    text-align: right;
+    font-size: 1.4em;
+    font-weight: bold;
 }
 
 #profile {
@@ -144,214 +146,223 @@ header {
     margin-right: 60px;
     width: 34px;
     height: 34px;
-    background-color: #ffffff;
-    background-image: url("profile1.png");
-    background-size: cover;
     border-radius: 50%;
-    border: 3px solid #fff;
+    border: 3px solid #ff0;
 
+    background-image: url("images/profilepic.png");
+    background-size: cover;
 }
-#boardContainer {
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
-    overflow-y: hidden;
-    padding-bottom: 50px;
-
-
-}
-
-#container {
-    min-height: 300px;
-    display: inline-flex;
-    flex-direction: row;
-    align-items: flex-start;
-    align-content: flex-start;
-    vertical-align: top;
-
-
-
+.dropbtn {
+    background: none;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    opacity: 0;
+    color: #111;
+    font-size: 16px;
+    transition: ease .5s;
 }
 
-#test-column-holder {
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #ff0;
+    opacity: 1;
+}
+
+.dropdown {
+    display: inline-block;
     position: relative;
-
 }
 
-#editor-holder {
-    margin-left: 20px;
-    margin-bottom: 10px;
-}
-
-#test-column {
-    width: 270px;
-    min-height: 100px;
-    background-color: #ffffff;
-    padding: 20px 20px 10px 20px;
-    margin: auto;
-
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: -30px;
+    min-width: 100px;
+    overflow: auto;
     box-shadow: 0 1px 2px rgba(0,0,0,0.07);
     border-radius: 2px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-
+    background-color: #fff;
+    z-index: 1;
 }
 
-#startCol {
+.dropdown-content a {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.dropdown a:hover {
+    background-color: #ff6a2f;
+    color: #111;
+}
+
+.show {
+    display: block;
+}
+
+/*------------------------------------------------
+3.0 - Column
+------------------------------------------------*/
+.columnBox {
     position: relative;
+    width: 270px;
+    min-height: 90px;
+    padding: 17px 17px 17px 17px;
+    margin-left: 20px;
+    border-radius: 2px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
 }
 
-#col1 {
-    position: relative;
-}
-
-.fa-times {
-    font-size: 1.6em;
-}
-
-.fa-edit {
-    font-size: 1.6em;
-
+.columnBox.animated {
+    animation-duration: .4s;
 }
 
 .colTitle {
     position: relative;
+    width: 240px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    cursor: default;
+    word-break: break-word;
     font-size: 1.6em;
     font-weight: bold;
-    margin-bottom: 10px;
-    margin-left: 5px;
-    cursor: default;
+    font-family: 'Roboto Slab', serif;
     color: #fff;
-    word-break: break-word;
-    width: 240px;
 }
 
-
-
-.column {
-
-}
-
-.colStyle {
-    position: relative;
-    width: 270px;
-    min-height: 100px;
-    background-color: #000;
-    padding: 17px 17px 17px 17px;
-    margin-left: 20px;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+.columnBox input {
+    width: 260px;
+    margin-right: 20px;
+    padding: 5px;
+    border: 2px solid #ff6a2f;
+    color: #fff;
     border-radius: 2px;
-    border: 3px solid #ffffff;
+    background: none;
+    outline: none;
+    font-size: 1.4em;
+}
+
+.columnBox input:focus {
+    border: 2px solid #4caf50;
 
 }
 
-.delColIcon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    margin-bottom: 10px;
-    color: #ccc;
-    cursor: pointer;
+.colHovered {
+    background-color: #cfcfcf;
+    border: 3px solid #ff0;
 }
 
-.delColIcon:hover {
-    color: #c62828;
+.column li {
+    list-style-type: none;
 }
 
-.delCardIcon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    margin-bottom: 10px;
-    color: #999;
-    cursor: pointer;
+.column ol {
+    margin-top: 0;
+    padding: 0;
 }
 
-.editCardIcon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    margin-bottom: 10px;
+.colExtends {
+    height: 300px;
+}
+
+#newColCont {
+    position: relative;
+    width: 304px;
+    height: 124px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 2px;
+    font-size: 40px;
     color: #fff;
+    border: 3px solid;
+    opacity: .2;
     cursor: pointer;
+    transition: ease .5s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+    animation-duration: .4s;
+    animation-fill-mode: none;
 }
 
-.editCardIcon:hover {
-    color: #4caf50;
+#newColCont:hover {
+    opacity: .6;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
 }
 
-#darkenPage {
+#newColText {
+    position: relative;
+    top: 20px;
+    font-size: .4em;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+}
+
+#newCol {
+    position: relative;
+}
+
+#newColButton {
     position: absolute;
-    top: 0;
-    background-color: #111;
-    width: 100%;
-    height: 1000px;
-    z-index: 450;
-    opacity: 0.8;
+    left: 126px;
+    top: 60px;
+    height: 40px;
+    width: 40px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background: none;
+    outline:none;
+    cursor: pointer;
+    color: #fff;
+    font-size: .4em;
 }
 
+/*------------------------------------------------
+4.0 - Card
+------------------------------------------------*/
 #cardEditorCont {
     position: absolute;
     top: 50px;
     left: 0;
     right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 500;
     width: 500px;
     height: 500px;
-    background-color: #000;
+    margin-left: auto;
+    margin-right: auto;
     border-bottom: 1px solid #ccc;
-}
-
-.delCardIcon:hover {
-    color: #c62828;
+    background-color: #ffffff;
+    z-index: 500;
 }
 
 .cardContent {
     position: relative;
-    border: 2px solid #fff;
-    font-weight: 700;
+    align-self: flex-start;
     margin-bottom: 10px;
     padding: 10px 5px 10px 5px;
+    border-radius: 2px;
+    border-bottom: 1px solid #ccc;
     background-color: #fff;
-    align-self: flex-start;
-    border-radius: 2px;
-
-
-
+    font-weight: bold;
 }
 
-.cardTitle {
-    font-size: 1.5em;
-    color: #fff;
-    width: 230px;
-    font-size: 1.5em;
-    word-break: break-word;
-
-}
-
-.cardShake {
-    position: absolute;
-    left: -100px;
-}
-/*
-.cardContent:hover {
-    background-color: #E1E1E1;
-}
-
-*/
-
-.cardContent {
-    background-color: #000;
-}
 .cardContent input {
-    border: 2px solid #4a148c;
+    border: 2px solid #ff6a2f;
     border-radius: 2px;
-    outline: none;
-    width: 215px;
+    width: 245px;
     margin-right: 20px;
     padding: 5px;
+    outline: none;
     font-size: 1.4em;
 }
 
@@ -360,323 +371,188 @@ header {
 
 }
 
-
 .cardContentError input {
     border: 2px solid #c62828;
 }
 
-.cardOkBtn {
-    width: 80px;
-    background-color: #ff0;
-    color: #000;
-    border: none;
-    border-radius: 2px;
-    margin-top: 10px;
-    padding: 5px;
-    font-weight: bold;
-    outline: none;
-    font-size: 1.4em;
+.cardTitle {
+    width: 230px;
+    font-size: 1.5em;
+    word-break: break-word;
 }
 
-
-
-.cardOkBtn:hover {
-    background-color: #ff6a2f;
+.card.animated {
+    animation-duration: .6s;
 }
 
-.cardOkBtn:focus {
-    background-color: #0085c1;
-}
-
-.cardCancelBtn {
-    width: 80px;
-    background-color: #ff0;
-    color: #000;
-    border: none;
-    border-radius: 2px;
-    margin-left: 10px;
-    margin-top: 10px;
-    padding: 5px;
-    font-weight: bold;
-    outline: none;
-    font-size: 1.4em;
-}
-
-.cardCancelBtn:hover {
-    background-color: #ff6a2f;
-}
-
-.cardCancelBtn:focus {
-    background-color: #0085c1;
-}
-
-#del-card {
-    background: #cccccc;
-    width: 20px;
-    height: 20px;
-    position: relative;
-    cursor: pointer;
-}
-
-#del-col {
-    background: #cccccc;
-    width: 20px;
-    height: 20px;
-    position: relative;
-    cursor: pointer;
-}
-
-.colDelete {
-    width: 20px;
-    height: 20px;
-    position: relative;
-    cursor: pointer;
-}
-
-#addCardBtn {
-
-
-}
-
-#addCardBtn.btnStyle {
+/*------------------------------------------------
+5.0 - Card editor
+------------------------------------------------*/
+.containerEditCard {
     position: absolute;
-    bottom: -20px;
-    left: 130px;
-    background-color: #ff0;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    border: 3px solid #ff0;
-    outline:none;
-    cursor: pointer;
-    color: #000;
-    font-size: 1.6em;
-    transition: ease .5s;
-
-}
-
-#addCardBtn.btnStyle:hover {
-    background-color: #ff6a2f;
-    border: 3px solid #ff6a2f;
-    transition: ease .5s;
-
-}
-
-#addColumnBtn.btnStyle {
-    background: none;
-    border: 3px solid #fff;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    outline:none;
-    cursor: pointer;
-    color: #fff;
-    font-size: 1.6em;
-
-}
-
-#addColumnBtn.btnStyle:hover {
-    background-color: #ff0;
-    border: 3px solid #ff0;
-    transition: ease .5s;
-    color: #000;
-
-}
-
-#addColumnBtn {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-
-}
-
-#button-holder {
-
-    color: #fff;
-    font-size: 1.4em;
-
-}
-
-#idgen {
-    width: 100px;
-    height: 100px;
-    background-color: #ff00cc;
-}
-
-#button-holder button {
-    background-color: Transparent;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    height: 20px;
-    width: 20px;
-    border: none;
-    outline:none;
-    cursor: pointer;
-    color: #ffffff;
-}
-
-#col-txt{
-    font-weight: 700;
-    font-size: 1.6em;
-    cursor: pointer;
-}
-
-.colHovered {
+    top: 20px;
+    left: 0;
+    right: 0;
+    width: 415px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
     background-color: #fff;
-    border: 3px solid #4caf50;
-
+    color: #111;
+    font-size: 1.6em;
+    z-index: 900;
 }
 
-.column li {
-    list-style-type: none;
-}
-
-.column ol {
-    margin: 0;
-    padding: 0;
-}
-
-.colExtends {
-    height: 300px;
-}
-
-footer {
-
-    height: 100px;
-    width: 100%;
-}
-
-/* DRAG STYLING */
-#makeMeDraggable { width: 300px; height: 300px; background: red; }
-#makeMeDraggable.ui-draggable-dragging { background: green; }
-
-
-
-/* ANIMATION */
-
-.shake-horizontal {
-	-webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-	        animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-}
-
-/* KEYFRAMES */
-
-@-webkit-keyframes shake-horizontal {
-  0%,
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  10%,
-  30%,
-  50%,
-  70% {
-    -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
-  }
-  20%,
-  40%,
-  60% {
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px);
-  }
-  80% {
-    -webkit-transform: translateX(8px);
-            transform: translateX(8px);
-  }
-  90% {
-    -webkit-transform: translateX(-8px);
-            transform: translateX(-8px);
-  }
-}
-@keyframes shake-horizontal {
-  0%,
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  10%,
-  30%,
-  50%,
-  70% {
-    -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
-  }
-  20%,
-  40%,
-  60% {
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px);
-  }
-  80% {
-    -webkit-transform: translateX(8px);
-            transform: translateX(8px);
-  }
-  90% {
-    -webkit-transform: translateX(-8px);
-            transform: translateX(-8px);
-  }
-}
-
-#cardEditBody {
-
+.containerEditCard.animated {
+    animation-duration: .9s;
 }
 
 .containerEditCard .fa-times {
     font-size: 1.2em;
 }
 
-.containerEditCard {
-    z-index: 900;
-    position: absolute;
-    border-radius: 2px;
+.editCardTitleCont {
+    background: #ff00cc;
+}
+
+.editCardItemCont {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #ccc;
-    min-width: 415px;
-    height: 460px;
-    padding: 20px;
-    top: 50px;
+    font-weight: bold;
+    font-family: 'Roboto Slab', serif;
+}
+
+.editCardItemCont.colors {
+    height: 60px;
+}
+.editCardDescCont {
+    background: #ff0;
+}
+
+.editCardAvatar {
+    position: relative;
+    margin-top: 10px;
+}
+
+.editCardAvatar select{
+    display: none;
+}
+
+#addUsersField input{
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 2px solid #ff6a2f;
+    border-radius: 2px;
+    outline: none;
+    font-size: 1em;
+}
+
+#addUsersField input:focus{
+    border: 2px solid #ff6a2f;
+}
+
+#addUsersField button {
+    font-size: 1em;
+}
+
+#addUsersField .delete{
+    margin-left: 10px;
+    color: #ff6a2f;
+    text-decoration: none;
+}
+
+#addUsersField .delete:hover{
+    margin-left: 10px;
+    color: #c62828;
+    text-decoration: none;
+}
+
+#addFormField{
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ff0;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    color: #111;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#addFormField:hover {
+    background-color: #ff6a2f;
+}
+
+.editCardColorCont {
+    position: relative;
+    background: #330fcc;
+}
+
+.editCardColor {
+    position: absolute;
     left: 0;
     right: 0;
+    width: 310px;
     margin-left: auto;
     margin-right: auto;
-    z-index: 900;
-    background-color: #f5f5f5;
-    color: #111;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-    font-size: 1.5em;
+}
+
+.editCardColor input[type=radio] {
+    display: none;
+}
+
+.editCardColor label {
+    display: inline-block;
+    padding: 4px 11px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.editCardCalCont {
+    background: #99ffcc;
+}
+
+.editCardDate {
+    margin-top: 10px;
 }
 
 .editCardInputField {
-    border: 2px solid #4a148c;
-    border-radius: 2px;
-    outline: none;
     width: 400px;
     padding: 5px;
-    font-size: 1.6em;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-top: 10px;
-    font-size: 1.0em;
-}
+    border: 2px solid #ff6a2f;
+    border-radius: 2px;
+    outline: none;
+    font-size: 1em;
 
+}
 
 .editCardInputField:focus {
     border: 2px solid #4caf50;
+
 }
 
 .editCardTextArea {
-    border: 2px solid #4a148c;
+    width: 400px;
+    height: 40px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 2px solid #ff6a2f;
     border-radius: 2px;
     outline: none;
     resize: none;
-    width: 400px;
-    height: 100px;
-    padding: 5px;
-    margin-bottom: 20px;
-    margin-top: 10px;
     font-size: 1.0em;
 
 }
@@ -684,198 +560,389 @@ textarea:focus {
     border: 2px solid #4caf50;
 }
 
-
-#BtnPushSettings {
-    position: absolute;
-    left: 20px;
-    bottom: 10px;
-    background-color: #29b6f6;
-    color: white;
-    padding: 5px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 2px;
-    outline: none;
-    cursor: pointer;
-    width: 80px;
-    font-weight: bold;
-    font-size: 1.1em;
-}
-
-#BtnPushSettings:hover {
-    background-color: #4a148c;
-
-}
-
-#cardEditBg {
-    position: absolute;
-    top: 0;
-    opacity: .7;
-    background: #111;
-    width: 100%;
-    height: 100%;
-    z-index: 850;
-}
-
-#date-start {
-    font-size: 1em;
-    outline: none;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    border: 2px solid #4a148c;
+#dateStart {
+    width: 185px;
     margin-right: 15px;
-    margin-top: 10px;
     padding: 5px;
-    width: 185px;
+    border: 2px solid #ff6a2f;
     border-radius: 2px;
-}
-
-#date-start:focus {
-    border: 2px solid #4caf50;
-}
-
-#date-end {
-    font-size: 1em;
     outline: none;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    border: 2px solid #4a148c;
-    margin-top: 20px;
-    padding: 5px;
-    width: 185px;
-    border-radius: 2px;
+    font-size: .8em;
+    font-family: 'Open Sans', sans-serif;
 }
 
-#date-end:focus {
+#dateStart:focus {
     border: 2px solid #4caf50;
 }
 
-
-.closeEditorIcon {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    z-index: 1050;
-    margin-bottom: 10px;
-    color: #ccc;
-    cursor: pointer;
-}
-
-.closeEditorIcon:hover {
-    color: #111;
-}
-
-.sortableStyle {
-    padding: 20px;
-    margin-bottom: 10px;
+#dateEnd {
+    width: 185px;
+    padding: 5px;
+    outline: none;
+    border: 2px solid #ff6a2f;
     border-radius: 2px;
-    border: 2px dotted #bbb;
+    font-size: .8em;
+    font-family: 'Open Sans', sans-serif;
 }
 
-
-
-
-/* COLOR RADIOS ON EDIT CARD */
+#dateEnd:focus {
+    border: 2px solid #4caf50;
+}
 
 .redRadio{
     color: #e53935;
+    margin-right: 10px;
 }
+
 
 .orangeRadio{
     color: #fb8c00;
+    margin-right: 10px;
 
 }
 
 .greenRadio {
     color: #43a047;
+    margin-right: 10px;
 }
 
 .blueRadio {
     color: #1e88e5;
+    margin-right: 10px;
 }
 
 .pinkRadio {
     color: #d81b60;
+    margin-right: 10px;
 }
 
-
-/* SIDE CONTENT CSS */
-
-#calendarStatisticsContainer {
-    position: fixed;
+/*------------------------------------------------
+6.0 - Dialogue box
+------------------------------------------------*/
+#dialogueBox {
+    position: absolute;
+    top: 130px;
+    left: 0;
     right: 0;
-    top: 35%;
-    width: 55px;
-    height: 80px;
-    z-index: 5;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 210px;
+    border-radius: 2px;
+    background-color: #fff;
+    font-weight: bold;
+    z-index: 5000;
 }
 
-.squareContainer {
+#qMessage {
+    margin-top: 100px;
+    color: #4a148c;
+    text-align: center;
+    font-size: 1.8em;
+    font-family: 'Roboto Slab', serif;
+}
+
+#qBtnCont {
     position: absolute;
+    top: 160px;
+    left: 0;
     right: 0;
-    width: 55px;
-    height: 40px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 220px;
 }
 
-#calendarSquare {
-    position: absolute;
-    top: 0;
-    background-color: #29b6f6;
-
-}
-
-#statisticsSquare {
-    position: absolute;
-    bottom: 0;
-    background-color: #29b6f6;
-}
-
-#calendarSquare:hover, #statisticsSquare:hover {
-    width: 80px;
-    transition: all .5s;
-    background-color: #0085c1;
-}
-
-#goToCalendar, #goToStatistics {
-    position: absolute;
-    background: transparent;
-    color: #fff;
-    bottom: 0;
+/*------------------------------------------------
+7.0 - Accessability
+------------------------------------------------*/
+#accessabilityCont {
+    position: relative;
     width: 100%;
-    height: 100%;
-    font-size: 2.5em;
+    border-bottom: 1px solid #fff;
+    min-height: 30px;
+}
+
+#textAdjust {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #111;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.aA {
+    position: relative;
+    top: 5px;
+    right: 10px;
+    color: #ff0;
+    background: none;
+    font-weight: bold;
+    outline: none;
+    font-size: 16px;
     border: none;
     cursor: pointer;
-    outline: none;
+    font-family: 'Roboto Slab', serif;
 }
 
-#trashcanSquare {
+.aA:hover {
+    color: #ff6a2f;
+}
+
+#colorChange {
+    position: absolute;
+    top: 7px;
+    right: 55px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #ff0;
+}
+
+#colorChange:hover {
+    color: #ff6a2f;
+}
+
+#colorChangeContrast {
+    display: none;
+}
+
+/*------------------------------------------------
+8.0 - Buttons / Icons
+------------------------------------------------*/
+.btn {
+    width: 100px;
+    background-color: #ff0;
+    color: #111;
+    border: none;
+    border-radius: 2px;
+    margin-top: 10px;
+    padding: 5px;
+    font-weight: bold;
+    outline: none;
+    font-size: 1.4em;
+}
+
+.btn.cancel {
+    margin-left: 10px;
+}
+
+.btn:hover {
+    background-color: #ff6a2f;
+}
+
+.editCardIcon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin-bottom: 10px;
+    color: #ff6a2f;
+    cursor: pointer;
+}
+
+.editCardIcon:hover {
+    color: #ff6a2f;
+}
+
+#qIcon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid #4a148c;
+    color: #4a148c;
+    font-size: 40px;
+}
+
+#qIcon .fa-exclamation {
+    position: relative;
+    top: 3px;
+    left: 23px;
+}
+
+#trashcanButton {
     position: fixed;
-    right: 0em;
-    bottom: 10%;
-    background-color: #29b6f6;
-    min-width: 55px;
-    min-height: 40px;
-    overflow: hidden;
-    z-index: 5;
+    right: 0;
+    top: 40%;
+    width: 180px;
+    height: 100px;
+    border: 3px solid #fff;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    font-size: 70px;
+    color: #fff;
+    transition: ease .4s;
+    opacity: .2;
 }
 
-#deleteObj {
+#trashcanButton.trashHovered {
+    background-color: #ff6a2f;
+    border: 3px solid #ff6a2f;
+    opacity: 1;
+}
+
+#trashcanButton .fa-trash-alt {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+#BtnPushSettings {
+    font-size: 1em;
+}
+
+#BtnDeleteCard {
+    font-size: 1em;
+    margin-left: 10px;
+}
+
+#addCardBtn.btnPlus {
     position: absolute;
+    bottom: -20px;
+    left: 130px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid #ff0;
+    background-color: #ff0;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    outline:none;
+    cursor: pointer;
+    color: #111;
+    font-size: 16px;
+    transition: ease .5s;
+}
+
+#addCardBtn.btnPlus:hover {
+    border: 3px solid #ff6a2f;
+    background-color: #ff6a2f;
+    transition: ease .5s;
+}
+
+#addColumnBtn.btnPlus {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 3px solid #ff0;
+    background: none;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    outline:none;
+    cursor: pointer;
+    color: #ff0;
+    font-size: 16px;
+}
+
+#addColumnBtn.btnPlus:hover {
+    background-color: #ff0;
+    border: 3px solid #ff0;
+    transition: ease .5s;
+    color: #111;
+}
+
+#addColumnBtn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.crossIcon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    color: #ff6a2f;
+}
+
+.crossIcon:hover {
+    color: #c62828;
+}
+
+.crossIcon.crossCol {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
+.crossIcon.crossEdit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.fa-times {
+    font-size: 16px;
+}
+
+.fa-edit {
+    font-size: 1.6em;
+}
+
+/*------------------------------------------------
+9.0 - Call to action
+------------------------------------------------*/
+#darkenPage {
+    position: absolute;
+    top: 0;
     width: 100%;
     height: 100%;
-    bottom: 0;
-    background: none;
-    color: #fff;
-
-    border: none;
-    font-size: 2em;
+    background-color: #111;
+    opacity: .7;
+    z-index: 450;
 }
 
-#deleteObj.dragging {
-    background: #c62828;
-    transition: all .3s;
+.dragging {
     border: solid black 1px;
+    background: #111;
+    transition: all .3s;
+}
+
+.hidden {
+    display: none;
+}
+
+.cardShake {
+    position: absolute;
+    left: -100px;
+}
+
+
+/*------------------------------------------------
+10.0 - NEW EDITS - USERS ON CARD
+------------------------------------------------*/
+.nameInitialsContainer {
+    width: 250px;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    align-items: flex-end;
+    align-content: flex-end;
+    justify-content: flex-end;
+}
+
+.nameInitials {
+    background-color: none;
+    border-radius: 50%;
+    min-width: 30px;
+    min-height: 30px;
+    border: 3px solid #999;
+    margin-left: 10px;
+
+}
+
+.nameInitials p {
+    position: absolute;
+    bottom: 9px;
+    border-radius: 50%;
+    margin: 0;
+    min-height: 30px;
+    min-width: 30px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #999;
 }
