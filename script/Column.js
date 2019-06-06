@@ -23,7 +23,7 @@ var colSilhouette = document.createElement("div");
 
 var colSilText = document.createElement("div");
     colSilText.setAttribute("id", "newColText");
-    colSilText.innerHTML = "Add new column"
+    colSilText.innerHTML = "Add new column";
     colSilhouette.appendChild(colSilText);
 
 var colSilButton = document.createElement("button");

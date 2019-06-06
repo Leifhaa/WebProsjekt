@@ -4,7 +4,7 @@ addColBtn1.setAttribute("class", "btnPlus");
 addColBtn1.innerHTML = "<i class='column fas fa-plus'></i>";
 document.getElementById("head").appendChild(addColBtn1);
 
-/*
+/* 
 function smallA(){
     var body = document.getElementsByTagName("BODY")[0];
     body.style.fontSize = "62.5%";

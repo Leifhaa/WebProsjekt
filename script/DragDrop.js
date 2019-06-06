@@ -92,7 +92,7 @@ function sendAjax() {
     jsonSend = JSON.stringify(Card1);
     console.log(jsonSend);
     xhr.send(jsonSend);
-
+    
     /**
 				 * Outputs the following:
 				 *
