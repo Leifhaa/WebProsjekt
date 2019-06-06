@@ -209,7 +209,7 @@ function createAddCardButton(ColumnId){
 
 // Delete dialogue
 
-function delDialogue() {
+function delDialogue(delElement) {
     //darkBg while new board question is open
     var qBg = document.createElement("div");
     qBg.setAttribute("id","darkenPage");
@@ -236,7 +236,10 @@ function delDialogue() {
     var qButtonOk = document.createElement("button");
     qButtonOk.setAttribute("id","qButtonOk");
     qButtonOk.setAttribute("class", "btn");
-    qButtonOk.setAttribute("onclick", "");
+    $(qButtonOk).click(function () {
+        closeEditor();  
+        qClose();
+    });
 
     qButtonOk.innerHTML = "Confirm";
 
@@ -254,3 +257,8 @@ function delDialogue() {
     qBtnCont.appendChild(qButtonOk);
     qBtnCont.appendChild(qButtonCancel);
 }
+
+function KillForm(formElement){
+    $(formElement).remove();
+}
+
