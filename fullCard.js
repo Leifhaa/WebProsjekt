@@ -329,7 +329,9 @@ function pushData() {
      cardProps.description = this.desc;
 
      cardProps.persons = persons;
-     cardProps.color = color;
+     if (color != ''){
+     	cardProps.color = color;
+     }
      cardProps.dateStart = this.dateStart;
      cardProps.dateEnd = this.dateEnd;
 
