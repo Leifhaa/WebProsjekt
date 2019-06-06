@@ -253,6 +253,25 @@ function displayCardSummary(cardElem){
             initialsContainer.appendChild(initials);
         }
     }
+
+
+    //Add end date
+    var endDate = $(cardElem).data("prop").dateEnd;
+    var dateEndContainer = $(cardElem).find('div[class*=cardDateEndContainer]');
+    if (dateEndContainer.length > 0){
+        //Means that an old nameInitialsContainer exists
+        dateEndContainer[0].remove();
+    }
+
+    if (endDate != null){
+        var endDateElem = document.createElement("div");
+        endDateElem.setAttribute("class", "cardDateEndContainer");
+        var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        var mS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+        var mydate = new Date(endDate);
+        endDateElem.innerHTML = "<p>" + mydate.getDay() + "." + mS[mydate.getMonth()] + "</p>";
+        cardElem.appendChild(endDateElem);
+    }
 }
 
 function ConvertNameToInitials (name) {
