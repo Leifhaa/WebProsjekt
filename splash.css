@@ -34,7 +34,7 @@ header {
 }
 
 .logo {
-	background-image: url(images/logo.svg);
+	background-image: url(images/logowhite.svg);
     background-repeat: no-repeat;
     width: 200px;
     height: 20px;
@@ -75,7 +75,7 @@ footer {
 	flex-flow: row;
 	background-color: #fff;
 	border-top: 1px solid #ccc;
-	padding: 20px;	
+	padding-top: 30px;
 }
 
 .hero {
@@ -145,8 +145,11 @@ figure {
 	background-image: url(images/splash.svg);
 	background-repeat: no-repeat;	
 	width: 500px;
-	height: 500px;
+	height: 400px;
+	margin: 0;
+	padding: 0;
 }
+
 
 figure img {
 	margin: 3em auto 0;

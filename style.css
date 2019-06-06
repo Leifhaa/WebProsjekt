@@ -445,7 +445,7 @@ header {
     border: 2px solid #4a148c;
     border-radius: 2px;
     outline: none;
-    font-size: 1.6em;
+    font-size: 1em;
 }
 
 #addUsersField input:focus{
@@ -562,7 +562,7 @@ textarea:focus {
     border: 2px solid #4a148c;
     border-radius: 2px;
     outline: none;
-    font-size: 1em;
+    font-size: .8em;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -576,7 +576,7 @@ textarea:focus {
     outline: none;
     border: 2px solid #4a148c;
     border-radius: 2px;
-    font-size: 1em;
+    font-size: .8em;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -762,7 +762,7 @@ textarea:focus {
 #trashcanButton {
     position: fixed;
     right: 0;
-    top: 20%;
+    top: 40%;
     width: 180px;
     height: 100px;
     background-color: #000;
@@ -923,9 +923,8 @@ textarea:focus {
     border-radius: 50%;
     min-width: 30px;
     min-height: 30px;
-    border: 3px solid #4a148c;
+    border: 3px solid #999;
     margin-left: 10px;
-    background-color: #fff;
 
 }
 
@@ -939,4 +938,5 @@ textarea:focus {
     text-align: center;
     font-size: 14px;
     font-weight: 700;
+    color: #999;
 }
