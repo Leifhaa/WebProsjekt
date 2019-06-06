@@ -916,6 +916,7 @@ textarea:focus {
     align-items: flex-end;
     align-content: flex-end;
     justify-content: flex-end;
+    border-top: 3px solid #ccc;
 }
 
 .nameInitials {
@@ -923,8 +924,9 @@ textarea:focus {
     border-radius: 50%;
     min-width: 30px;
     min-height: 30px;
-    border: 3px solid #999;
+    border: 3px solid #ccc;
     margin-left: 10px;
+
 
 }
 
@@ -936,7 +938,7 @@ textarea:focus {
     text-align: center;
     font-size: 14px;
     font-weight: 700;
-    color: #999;
+    color: #4a148c;
     line-height: 30px;
 }
 
@@ -944,10 +946,12 @@ textarea:focus {
 /* EDITS */
 
 .cardDateEndContainer {
-	color: #ff00cc;
+
 
 }
 
 .cardDateEndContainer p {
+    text-align: right;
+    color: #4a148c;
 
 }
