@@ -87,10 +87,7 @@ function addCard(columnToAddCard) {
     $(div2).hide();
 
 
-
-    //Note: Do not put the new created card into list until the title is given.
-    var listNewCards = document.getElementsByClassName("sortOlNewCard")[0];
-    listNewCards.appendChild(div);
+    columnToAddCard.appendChild(div);
 
     document.getElementById("card_" + cardID).appendChild(cardTitle);
     document.getElementById("card_" + cardID).appendChild(div2);

@@ -100,18 +100,6 @@ function addColumn() {
     });
     console.log(colArr);
 
-    //Add a orderList
-    var orderList = document.createElement("ol");
-    orderList.setAttribute("id","colOl" + columnID);
-    orderList.setAttribute("class","sortOl");
-
-    div.appendChild(orderList);
-
-    //Add a orderList which only contains newlyCreatedCards.
-    var orderListNewCard = document.createElement("ol");
-    orderListNewCard.setAttribute("id","colOl" + columnID + "NewCard");
-    orderListNewCard.setAttribute("class","sortOlNewCard");
-    div.appendChild(orderListNewCard);
 
     // DELETE COL BUTTON
     var div1 = document.createElement("div");
