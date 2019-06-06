@@ -634,7 +634,7 @@ textarea:focus {
 
 #qMessage {
     margin-top: 100px;
-    color: #4a148c;
+    color: #111;
     text-align: center;
     font-size: 1.8em;
     font-family: 'Roboto Slab', serif;
@@ -752,8 +752,8 @@ textarea:focus {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: 4px solid #4a148c;
-    color: #4a148c;
+    border: 4px solid #ff6a2f;
+    color: #ff6a2f;
     font-size: 40px;
 }
 
