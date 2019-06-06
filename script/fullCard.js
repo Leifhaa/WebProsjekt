@@ -110,12 +110,12 @@ function CreateEditCardForm(cardID) {
 		var x = 1;
 		$(add_button).click(function(e) {
 			e.preventDefault();
-			//if (x < max_fields) {
-			//	x++;
+			if (x < max_fields) {
+				x++;
 				$(wrapper).append('<div class "usernameAdd"><input type="text" id = "inputUsernameText" name="users[]"/><a href="#" class="delete"><i class="fas fa-times"></i></a></div>');
-			//} else {
-			//	alert('User limit reached');
-			//}
+			} else {
+				alert('User limit reached');
+			}
 		});
 
 		$(wrapper).on('click', '.delete', function(e) {
