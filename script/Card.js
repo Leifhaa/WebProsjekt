@@ -263,7 +263,7 @@ function displayCardSummary(cardElem){
         dateEndContainer[0].remove();
     }
 
-    if (endDate != null){
+    if (endDate != ''){
         var endDateElem = document.createElement("div");
         endDateElem.setAttribute("class", "cardDateEndContainer");
         var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
