@@ -132,7 +132,7 @@ function addColumn() {
         cursor:'grab',
         connectWith: '.columnBase',
         over : function(){
-         $(this).addClass('colHovered');
+            $(this).addClass('colHovered');
          },
          out : function(){
               $(this).removeClass('colHovered');

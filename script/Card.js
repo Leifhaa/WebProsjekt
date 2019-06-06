@@ -15,6 +15,12 @@ var Card1 = {
 
 
 function addCard(columnToAddCard) {
+    //Don't allow a user to add multiple cards
+    var multipleNewCards = $(columnToAddCard).find('input[class*=cardTitleInput]')
+    if (multipleNewCards.length > 0){
+        return; //Not possible to add multiple 'new cards'
+    }
+  
     //Card
     var div = document.createElement("li");
     div.setAttribute("class", "card cardContent cardID" + cardID);
@@ -30,7 +36,7 @@ function addCard(columnToAddCard) {
     // CARD TITLE INPUT
     var addCardTitle = document.createElement('input');
     addCardTitle.type = "text";
-    addCardTitle.setAttribute("class", "card cardID" + cardID);
+    addCardTitle.setAttribute("class", "cardTitleInput card cardID" + cardID);
     addCardTitle.setAttribute("id", "cardTitleInput_" + cardID);
     addCardTitle.setAttribute("onfocus", "this.value=''");
     addCardTitle.setAttribute("placeholder", "Name card");
