@@ -53,13 +53,7 @@ function addColumn() {
             "ui-droppable-hover": "highlight"
           },
         //hoverClass: 'colHovered',
-        activate: startDrag,
-        over: function(event, ui) {
-                   //ui.helper.css("border", "2px solid green")
-               },
-        out: function(event, ui) {
-                         // ui.helper.css("border", "2px solid red")
-                      }
+        activate: startDrag
     });
 
     //COL TITLE INPUT
@@ -91,8 +85,6 @@ function addColumn() {
     colTitleCont.classList.add("hidden");
 
     div.appendChild(colTitleCont);
-
-    //    div.innerHTML = "<div id = 'colTitle_" + columnID +"' class='column colTitle hidden'></div>";
 
     colArr.push({
         id: "col_" + columnID,
@@ -242,13 +234,13 @@ function delDialogue(delElement) {
     qButtonOk.setAttribute("class", "btn");
     if (delElement.id.includes("containerEditCard")){
             $(qButtonOk).click(function () {
-            closeEditor(1);  
+            closeEditor(1);
             qClose();
         });
     }
     else if (delElement.id.includes("del_col_")){
             $(qButtonOk).click(function () {
-            delCol(delElement);  
+            delCol(delElement);
             qClose();
         });
     }
@@ -273,4 +265,3 @@ function delDialogue(delElement) {
 function KillForm(formElement){
     $(formElement).remove();
 }
-

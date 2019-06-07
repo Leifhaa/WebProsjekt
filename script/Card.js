@@ -26,9 +26,6 @@ function addCard(columnToAddCard) {
     div.setAttribute("class", "card cardContent cardID" + cardID);
 
     div.setAttribute("id", "card_" + cardID);
-    //div.style.backgroundColor = "#E1E1E1";
-
-    //div.classList.add("cardBg");
 
     //CARD TITLE OF A CREATED CARD.
     var cardTitle = document.createElement("div");
@@ -73,7 +70,6 @@ function addCard(columnToAddCard) {
         budget: "",
         members: null
     });
-
 
 
     //Create an object which belongs to the card div.
@@ -138,7 +134,6 @@ function addCardTitle(csName) {
 
     if (cardInputElem.value.length == 0) {
 
-        //alert("You must add a card name");
         cardState.setAttribute("class", "cardContent cardContentError shake-horizontal");
         return false;
 
@@ -155,21 +150,6 @@ function addCardTitle(csName) {
     //Move the card from OL newlist to column div.
     var columnToAddCard =  $(cardState).closest('div[class*=columnBase]')[0]
     columnToAddCard.appendChild(cardState);
-
-
-
-    //Make the created card dragable
-     //$(cardState).draggable( {
-        //connectToSortable: '.sortOl',
-     //   zIndex: 1,
-     //   containment: 'document',
-     //   cursor: 'grab',
-        //snap: '#content',
-        //start: drag,
-        //drop: drop,
-    //    revert: RevertDrag,
-    //    revertDuration: 200
-    //});
 
 
     //Remove all the adjustment elements (Like ok button etc.)

@@ -1,33 +1,6 @@
 /* DRAG EVENTS */
 var cnter = 0;
 
-function dragOver(dragEv) {
-    dragEv.preventDefault();
-    if (dragEv.target.getAttribute("draggable") == "true")
-        dragEv.dataTransfer.dropEffect = "none";
-    else
-        dragEv.dataTransfer.dropEffect = "all";
-}
-
-// WHEN CARD LEAVES COL DO THIS
-function dragLeave(dragEv) {
-    var targetClass = dragEv.target.className;
-
-    if (targetClass.includes("droptarget")) {
-        dragEv.target.style.border = "";
-        dragEv.target.style.backgroundColor = "";
-    }
-}
-
-// WHEN DRAG ENDS
-function dragEnd(dragEv) {
-    cardTrash.removeAttribute("class", "dragging");
-}
-
-function drag(dragEv) {
-    //dragEv.dataTransfer.setData("text", dragEv.target.id);
-}
-
 function RevertDrag(event) {
 	if (event == false){
 		//No event
@@ -43,9 +16,7 @@ function RevertDrag(event) {
 }
 
 function drop(dragEv, ui )  {
-    console.log("Dropped")
     var targetId = dragEv.target.id;
-    console.log(dragEv.target.id);
     var targetClass = dragEv.target.className;
     var dropElementId = ($(ui.draggable).attr("id"));
     var dropElement = document.getElementById(dropElementId);
@@ -87,28 +58,9 @@ function sendAjax() {
         console.log('DONE: ', xhr.status);
     };
 
-    /*xhr.send();
-				*/
     xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
     jsonSend = JSON.stringify(Card1);
     console.log(jsonSend);
     xhr.send(jsonSend);
-    
-    /**
-				 * Outputs the following:
-				 *
-				 * UNSENT: 0
-				 * OPENED: 0
-				 * LOADING: 200
-				 * DONE: 200
-				 */
 
-    /*xhr.onreadystatechange = function(){
-                    if(xhr.readyState==4 && xhr.status == 200){
-                        console.log(xhr.responseText);
-                    }
-                }
-				*/
 }
-
-//sendAjax()
