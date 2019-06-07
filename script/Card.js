@@ -196,7 +196,7 @@ function delCard(cardID) {
         deleteCard.remove();
     }
     else{
-        deleteCard.parentNode.remove();    
+        deleteCard.parentNode.remove();
     }
     cardArr.pop(delId);
 }
@@ -275,7 +275,7 @@ function displayCardSummary(cardElem){
         var mS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
         var mydate = new Date(endDate);
 
-        endDateElem.innerHTML = "<p>" + days[mydate.getDay()] + " " + mydate.getDate() + " " + mS[mydate.getMonth()] + "</p>";
+        endDateElem.innerHTML = "<p> Ends on: " + days[mydate.getDay()] + " " + mydate.getDate() + " " + mS[mydate.getMonth()] + "</p>";
         cardElem.appendChild(endDateElem);
     }
 }
