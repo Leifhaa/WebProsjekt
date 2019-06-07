@@ -7,13 +7,14 @@
 --------------------------------------------------
 1.0 - Setup
 2.0 - Header / Logo / Profile dropdown
-3.0 - Column
-4.0 - Card
-5.0 - Card editor
-6.0 - Dialogue box
-7.0 - Accessability
-8.0 - Buttons / Icons
-9.0 - Call to action
+3.0 - Index (Splash screen) / End session
+4.0 - Column
+5.0 - Card
+6.0 - Card editor
+7.0 - Dialogue box
+8.0 - Accessability
+9.0 - Buttons / Icons
+10.0 - Call to action
 ------------------------------------------------*/
 
 /*------------------------------------------------
@@ -136,13 +137,12 @@ header {
     color: #fff;
     text-align: right;
     font-size: 1.4em;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 #profile {
     position: absolute;
     right: 0;
-    margin-top: 10px;
     margin-right: 60px;
     width: 34px;
     height: 34px;
@@ -211,12 +211,186 @@ header {
 }
 
 /*------------------------------------------------
-3.0 - Column
+9.0 - Index
+------------------------------------------------*/
+.splashContainer {
+	max-width: 1005px;
+	margin: 0 auto;
+	padding: 2em 1em;
+	color: #fff;
+}
+
+.sloganContainer {
+	margin: 0 auto;
+	color: #ff6a2f;
+}
+
+.footerCont {
+	width: 100%;
+	background: #000;
+}
+
+header {
+	text-align: center;
+}
+
+.logo {
+	background-image: url(images/logowhite.svg);
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 20px;
+    margin-left: 10px;
+	
+}
+
+main {
+	display: flex;
+	flex-flow: column;
+}
+
+footer {
+	display: flex;
+	flex-flow: row;
+	background-color: #000;
+	border-top: 1px solid #fff;
+	padding-top: 30px;
+}
+
+.info {
+	text-align: center;
+	color: #fff;
+}
+
+.slogan {
+	text-align: center;
+	margin: 0 auto;
+	padding: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 330px;
+}
+
+.slogan h1 {
+	font-family: 'Roboto Slab', serif;
+	font-size: 2.5em;
+	color: #fff;
+}
+
+.slogan i {
+	font-size: 50px;
+}
+
+.slogan p {
+		font-size: 1.5em;
+		padding: 0;
+		margin: 0 0 3em 0;
+		color: #fff;
+}
+
+.info h1 {
+	font-size: 2.5em;
+	font-weight: 500;
+	font-family: 'Roboto Slab', serif;
+	
+}
+
+.info p {
+	font-size: 1.5em;
+	max-width: 600px;
+	line-height: 1.8em;
+	margin: 3em auto;
+	color: #fff;
+
+}
+
+.info p:before {
+	content: "";
+	display: block;
+	width: 120px;
+	margin: auto;
+	
+	border: 2px solid #ff0;
+}
+
+.info a {
+	background: #ff6a2f;
+	padding: 1em 3em;
+	border-radius: 2px;
+	text-decoration: none;
+	font-size: 1.5em;
+	font-weight: 700;
+	color: #fff;
+}
+
+.splashImgBox {
+	text-align: center;
+	background-image: url(images/splash.svg);
+	background-repeat: no-repeat;	
+	width: 500px;
+	height: 400px;
+	margin: 0;
+	padding: 0;
+	margin: auto;
+}
+
+
+.splashImg {
+	margin: 3em auto 0;
+	width: 300px;
+	height: 300px;
+	
+}
+
+
+@media screen and (min-width: 820px) {
+	header {
+		display: flex;
+		justify-content: space-between;
+		flex-flow: wrap;
+		align-items: center;
+	}
+	
+	main {
+		flex-flow: row;
+	}
+	
+	.info {
+		text-align: left;
+	}
+	
+	.info h1 {
+		font-size: 4em;
+	}
+	
+	.info p:before {
+		margin: 1em 0;
+		
+	}
+	
+	.info p {
+		font-size: 1.5em;
+		padding: 0;
+		margin: 0 0 3em 0;
+		color: #fff;
+	}
+	
+	.info a {
+		background: #ff6a2f;
+	}
+	
+	.splashImg {
+		width: 300px;
+		margin: 0;
+	}
+}
+
+/*------------------------------------------------
+3.0 - Index (Splash Screen) / End session
 ------------------------------------------------*/
 .columnBox {
     position: relative;
     width: 270px;
-    min-height: 90px;
+    min-height: 130px;
     padding: 17px 17px 17px 17px;
     margin-left: 20px;
     border-radius: 2px;
@@ -236,7 +410,7 @@ header {
     cursor: default;
     word-break: break-word;
     font-size: 1.6em;
-    font-weight: bold;
+    font-weight: 700;
     font-family: 'Roboto Slab', serif;
     color: #fff;
 }
@@ -351,7 +525,7 @@ header {
     margin-bottom: 10px;
     padding: 10px 5px 10px 5px;
     border-radius: 2px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .cardContent input {
@@ -382,6 +556,59 @@ header {
 .card.animated {
     animation-duration: .6s;
 }
+
+.nameInitialsContainer {
+    width: 250px;
+    margin-top: 10px;
+    margin-left: 5px;
+    padding-top: 10px;
+    display: flex;
+    align-items: flex-end;
+    align-content: flex-end;
+    justify-content: flex-end;
+    border-top: 2px solid #ff6a2f;
+}
+
+.nameInitials {
+    background-color: none;
+    border-radius: 50%;
+    min-width: 30px;
+    min-height: 30px;
+    border: 3px solid #ff6a2f;
+    margin-left: 10px;
+
+
+}
+
+.nameInitials p {
+    border-radius: 50%;
+    margin: 0;
+    min-height: 30px;
+    min-width: 30px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    line-height: 30px;
+}
+
+.cardDateEndContainer {
+    border-top: 2px solid #ff6a2f;
+    width: 250px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.cardDateEndContainer p {
+    text-align: right;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #ff6a2f;
+    border-radius: 2px;
+}
+
 
 /*------------------------------------------------
 5.0 - Card editor
@@ -420,7 +647,7 @@ header {
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid #ccc;
-    font-weight: bold;
+    font-weight: 700;
     font-family: 'Roboto Slab', serif;
 }
 
@@ -483,7 +710,7 @@ header {
     outline: none;
     cursor: pointer;
     color: #111;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 1.1em;
 }
 
@@ -628,7 +855,7 @@ textarea:focus {
     height: 210px;
     border-radius: 2px;
     background-color: #fff;
-    font-weight: bold;
+    font-weight: 700;
     z-index: 5000;
 }
 
@@ -665,7 +892,7 @@ textarea:focus {
     right: 0;
     top: 0;
     color: #111;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 12px;
 }
 
@@ -675,7 +902,7 @@ textarea:focus {
     right: 10px;
     color: #ff0;
     background: none;
-    font-weight: bold;
+    font-weight: 700;
     outline: none;
     font-size: 16px;
     border: none;
@@ -716,7 +943,7 @@ textarea:focus {
     border-radius: 2px;
     margin-top: 10px;
     padding: 5px;
-    font-weight: bold;
+    font-weight: 700;
     outline: none;
     font-size: 1.4em;
 }
@@ -907,41 +1134,4 @@ textarea:focus {
 .cardShake {
     position: absolute;
     left: -100px;
-}
-
-
-/*------------------------------------------------
-10.0 - NEW EDITS - USERS ON CARD
-------------------------------------------------*/
-.nameInitialsContainer {
-    width: 250px;
-    margin-top: 10px;
-    margin-right: 10px;
-    display: flex;
-    align-items: flex-end;
-    align-content: flex-end;
-    justify-content: flex-end;
-}
-
-.nameInitials {
-    background-color: none;
-    border-radius: 50%;
-    min-width: 30px;
-    min-height: 30px;
-    border: 3px solid #999;
-    margin-left: 10px;
-
-}
-
-.nameInitials p {
-    position: absolute;
-    bottom: 9px;
-    border-radius: 50%;
-    margin: 0;
-    min-height: 30px;
-    min-width: 30px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 700;
-    color: #999;
 }

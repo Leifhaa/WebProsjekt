@@ -3,13 +3,14 @@
 --------------------------------------------------
 1.0 - Setup
 2.0 - Header / Logo / Profile dropdown
-3.0 - Column
-4.0 - Card
-5.0 - Card editor
-6.0 - Dialogue box
-7.0 - Accessability
-8.0 - Buttons / Icons
-9.0 - Call to action
+3.0 - Index (Splash screen) / End session
+4.0 - Column
+5.0 - Card
+6.0 - Card editor
+7.0 - Dialogue box
+8.0 - Accessability
+9.0 - Buttons / Icons
+10.0 - Call to action
 ------------------------------------------------*/
 
 /*------------------------------------------------
@@ -137,7 +138,6 @@ header {
 #profile {
     position: absolute;
     right: 0;
-    margin-top: 10px;
     margin-right: 60px;
     width: 34px;
     height: 34px;
@@ -206,12 +206,236 @@ header {
 }
 
 /*------------------------------------------------
-3.0 - Column
+3.0 - Index (Splash screen) / End session
+------------------------------------------------*/
+.splashContainer {
+	max-width: 1005px;
+	margin: 0 auto;
+	padding: 2em 1em;
+	color: #4a148c;
+}
+
+.sloganContainer {
+	margin: 0 auto;
+	color: #4a148c;
+}
+
+.footerCont {
+	width: 100%;
+	background: #fff;
+}
+
+header {
+	text-align: center;
+}
+
+.logo {
+	background-image: url(images/logowhite.svg);
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 20px;
+    margin-left: 10px;
+	
+}
+
+nav {
+	margin: 2em auto 0;
+	max-width: 600px;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+nav ul li {
+	list-style: none;
+}
+
+nav ul li a {
+	font-size: 1.25em;
+	color: #4a148c;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+
+main {
+	display: flex;
+	flex-flow: column;
+}
+
+footer {
+	display: flex;
+	flex-flow: row;
+	background-color: #fff;
+	border-top: 1px solid #ccc;
+	padding-top: 30px;
+}
+
+.info {
+	text-align: center;
+	color: #fff;
+}
+
+.slogan {
+	text-align: center;
+	margin: 0 auto;
+	padding: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 330px;
+}
+
+.slogan h1 {
+	font-family: 'Roboto Slab', serif;
+	font-size: 2.5em;
+	color: #111;
+}
+
+.slogan i {
+	font-size: 50px;
+}
+
+.slogan p {
+		font-size: 1.5em;
+		padding: 0;
+		margin: 0 0 3em 0;
+		color: #999;
+}
+
+.info h1 {
+	font-size: 2.5em;
+	font-weight: 500;
+	font-family: 'Roboto Slab', serif;
+	
+}
+
+.info p {
+	font-size: 1.5em;
+	max-width: 600px;
+	line-height: 1.8em;
+	margin: 3em auto;
+	color: #fff;
+
+}
+
+.info p:before {
+	content: "";
+	display: block;
+	width: 120px;
+	margin: auto;
+	
+	border: 2px solid #29b6f6;
+}
+
+.info a {
+	background: #29b6f6;
+	padding: 1em 3em;
+	border-radius: 2px;
+	text-decoration: none;
+	font-size: 1.37em;
+	font-weight: 700;
+}
+
+.splashImgBox {
+	text-align: center;
+	background-image: url(images/splash.svg);
+	background-repeat: no-repeat;	
+	width: 500px;
+	height: 400px;
+	margin: 0;
+	padding: 0;
+	margin: auto;
+}
+
+
+.splashImg {
+	margin: 3em auto 0;
+	width: 300px;
+	height: 300px;
+	
+}
+
+
+@media screen and (min-width: 820px) {
+	header {
+		display: flex;
+		justify-content: space-between;
+		flex-flow: wrap;
+		align-items: center;
+	}
+	
+	nav {
+		margin: 0;
+	}
+	
+	nav ul {
+		margin: 0;
+		padding: 0;
+		display: flex;
+	}
+	
+	nav ul li {
+		list-style: none;
+		padding: 0.5em 2em;
+	}
+	
+	nav ul li a {
+		font-size: 1.37em;
+		color: #fff;
+		font-weight: 700;
+		text-decoration: none;
+	}
+	
+	.highlight {
+		border: 3px solid #ffdb37;
+	}
+	
+	main {
+		flex-flow: row;
+	}
+	
+	.info {
+		text-align: left;
+	}
+	
+	.info h1 {
+		font-size: 4em;
+	}
+	
+	.info p:before {
+		margin: 1em 0;
+		
+	}
+	
+	.info p {
+		font-size: 1.5em;
+		padding: 0;
+		margin: 0 0 3em 0;
+		color: #fff;
+	}
+	
+	.info a {
+		background: #29b6f6;
+		font-weight: 700;
+	}
+	
+	.splashImg {
+		width: 300px;
+		margin: 0;
+	}
+}
+
+/*------------------------------------------------
+4.0 - Column
 ------------------------------------------------*/
 .columnBox {
     position: relative;
     width: 270px;
-    min-height: 90px;
+    min-height: 130px;
     padding: 17px 17px 17px 17px;
     margin-left: 20px;
     border-radius: 2px;
@@ -322,7 +546,7 @@ header {
 }
 
 /*------------------------------------------------
-4.0 - Card
+5.0 - Card
 ------------------------------------------------*/
 #cardEditorCont {
     position: absolute;
@@ -372,14 +596,67 @@ header {
     width: 230px;
     font-size: 1.5em;
     word-break: break-word;
+    margin-left: 5px;
 }
 
 .card.animated {
     animation-duration: .6s;
 }
 
+.nameInitialsContainer {
+    width: 250px;
+    margin-top: 10px;
+    margin-left: 5px;
+    padding-top: 10px;
+    display: flex;
+    align-items: flex-end;
+    align-content: flex-end;
+    justify-content: flex-end;
+    border-top: 2px solid #ccc;
+}
+
+.nameInitials {
+    background-color: none;
+    border-radius: 50%;
+    min-width: 30px;
+    min-height: 30px;
+    border: 3px solid #ccc;
+    margin-left: 10px;
+
+
+}
+
+.nameInitials p {
+    border-radius: 50%;
+    margin: 0;
+    min-height: 30px;
+    min-width: 30px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #4a148c;
+    line-height: 30px;
+}
+
+.cardDateEndContainer {
+    border-top: 2px solid #ccc;
+    width: 250px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.cardDateEndContainer p {
+    text-align: right;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #4a148c;
+    border-radius: 2px;
+}
+
 /*------------------------------------------------
-5.0 - Card editor
+6.0 - Card editor
 ------------------------------------------------*/
 .containerEditCard {
     position: absolute;
@@ -547,8 +824,8 @@ header {
     outline: none;
     resize: none;
     font-size: 1.0em;
-
 }
+
 textarea:focus {
     border: 2px solid #4caf50;
 }
@@ -591,7 +868,6 @@ textarea:focus {
 .orangeRadio{
     color: #FF9800;
     margin-right: 10px;
-
 }
 
 .greenRadio {
@@ -610,7 +886,7 @@ textarea:focus {
 }
 
 /*------------------------------------------------
-6.0 - Dialogue box
+7.0 - Dialogue box
 ------------------------------------------------*/
 #dialogueBox {
     position: absolute;
@@ -646,7 +922,7 @@ textarea:focus {
 }
 
 /*------------------------------------------------
-7.0 - Accessability
+8.0 - Accessability
 ------------------------------------------------*/
 #accessabilityCont {
     position: relative;
@@ -700,7 +976,7 @@ textarea:focus {
 }
 
 /*------------------------------------------------
-8.0 - Buttons / Icons
+9.0 - Buttons / Icons
 ------------------------------------------------*/
 .btn {
     width: 100px;
@@ -875,7 +1151,7 @@ textarea:focus {
 }
 
 /*------------------------------------------------
-9.0 - Call to action
+10.0 - Call to action
 ------------------------------------------------*/
 #darkenPage {
     position: absolute;
@@ -895,62 +1171,4 @@ textarea:focus {
 
 .hidden {
     display: none;
-}
-
-.cardShake {
-    position: absolute;
-    left: -100px;
-}
-
-
-/*------------------------------------------------
-10.0 - NEW EDITS - USERS ON CARD
-------------------------------------------------*/
-.nameInitialsContainer {
-    width: 250px;
-    margin-top: 10px;
-    margin-right: 10px;
-    display: flex;
-    align-items: flex-end;
-    align-content: flex-end;
-    justify-content: flex-end;
-
-}
-
-.nameInitials {
-    background-color: none;
-    border-radius: 50%;
-    min-width: 30px;
-    min-height: 30px;
-    border: 3px solid #ccc;
-    margin-left: 10px;
-
-
-}
-
-.nameInitials p {
-    border-radius: 50%;
-    margin: 0;
-    min-height: 30px;
-    min-width: 30px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 700;
-    color: #4a148c;
-    line-height: 30px;
-}
-
-
-/* EDITS */
-
-.cardDateEndContainer {
-
-
-}
-
-.cardDateEndContainer p {
-    text-align: right;
-    color: #4a148c;
-    font-size:
-
 }
