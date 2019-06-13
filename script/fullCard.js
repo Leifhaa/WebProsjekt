@@ -250,8 +250,7 @@ function changeColor(newColor) {
 
 	var oldBorderColor = document.getElementById('containerEditCard').style.border;
 	var editCardBorder = document.getElementById('containerEditCard');
-
-
+	
 	if (oldBorderColor.includes(newColor)){
 		//User wants to disable the color as he has clicked same color twice.
 		editCardBorder.style.border = ''
@@ -260,6 +259,7 @@ function changeColor(newColor) {
     	editCardBorder.style.border = "7px solid " + newColor;
     }
 }
+
 
 function changeAvatarColor(color) {
     document.getElementsByClassName('avatar')[0].style.color = color;
@@ -281,22 +281,20 @@ function editCard(title, desc, dateStart, dateEnd, color, persons, id) {
     allCards.push(new Card(title, desc, dateStart, dateEnd, color, persons, id));
 }
 
+
+function GetBorderColor(borderElement){
+	var res = borderElement.replace('7px solid ','');
+	return res;
+}
+
 function GetCheckedColor(){
 	var color = '';
 	var oldBorderColor = document.getElementById('containerEditCard').style.border;
+	var oldBorderColor = GetBorderColor(oldBorderColor)
 
-    if (oldBorderColor.includes("red")) {
-        color = 'red';
-    } else if (oldBorderColor.includes("orange")) {
-        color = 'orange';
-    } else if (oldBorderColor.includes("green")) {
-        color = 'green';
-    } else if (oldBorderColor.includes("blue")) {
-        color = 'blue';
-    } else if (oldBorderColor.includes("pink")) {
-        color = 'pink';
-    }
-    return color
+
+
+    return oldBorderColor
 }
 
 
